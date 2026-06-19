@@ -1,0 +1,26 @@
+{
+    "id"              : "urn:arte:Organization:500745684",
+    "type"            : "Organization",
+    "dateCreated"     : {"type": "Property", "value": "2025-12-12T08:24:35.905712+02:00"},
+    "dateModified"    : {"type": "Property", "value": "2025-12-12T09:24:35.905712+02:00"},
+    "name"            : {"type": "Property", "value": "Gulbenkian"},
+    "location"        : {
+        "type" : "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.146596196356228, 38.724718617164854] }
+    },
+    "address"         : {
+        "type" : "Property",
+        "value": {
+            "addressLocality": "Nossa Senhora de Fátima",
+            "postalCode"     : "1067-001",
+            "streetAddress"  : "Av. de Berna 45A"
+        }
+    },
+    "url"             : {"type": "Property", "value": "https://gulbenkian.pt"},
+    "areaIntervention": { "type": "Property", "value": ["artes", "ciência", "educação"] },
+    "legalName"       : {"type": "Property", "value": "Fundação Calouste Gulbenkian"},
+    "@context"        : [
+        "https://smart-data-models.github.io/DataModel.Organization/context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Organization/master/context.jsonld"
+    ]
+}

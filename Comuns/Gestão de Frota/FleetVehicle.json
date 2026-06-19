@@ -1,0 +1,12 @@
+{
+    "id"              : "urn:anepc:FleetVehicle:63",
+    "type"            : "FleetVehicle",
+    "fleetVehicleType": {"type": "Property", "value": "Ambulance"},
+    "operatingCompany": {"type": "Property", "value": "Companhia de Bombeiros Sapadores Braga"},
+    "source"          : {
+        "type" : "Property",
+        "value": "https://www.bombeiros.pt/corpos_de_bombeiros/companhia-de-bombeiros-sapadores-braga/"
+    },
+    "vehicle"         : {"type": "Relationship", "object": "urn:anepc:Vehicle:1234455"},
+    "@context"        : ["https://smart-data-models.github.io/dataModel.Transportation/context.jsonld"]
+}

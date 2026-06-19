@@ -1,0 +1,38 @@
+{
+    "id": "urn:epal:WaterConsumptionObserved:Consumer01",
+    "type": "WaterConsumptionObserved",
+    "dataProvider": {"type": "Property", "value": "EPAL"},
+    "location": {
+        "type" : "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-8.6114406, 41.1472720], "coordinateSystem": "EPSG:3763" }
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "postalCode"     : "4000-065",
+            "addressLocality": "Porto",
+            "streetAddress"  : "Av. dos Aliados 39"
+        }
+    },
+    "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-12-10T14:57:39.000Z"} },
+    "acquisitionStageFailure": {"type": "Property", "value": 0},
+    "alarmFlowPersistence": {"type": "Text", "value": "Nothing to report"},
+    "alarmInProgress": {"type": "Property", "value": 1},
+    "alarmStopsLeaks": {"type": "Property", "value": 0},
+    "alarmTamper": {"type": "Property", "value": 0},
+    "alarmWaterQuality": {"type": "Property", "value": 0},
+    "maxFlow": {"type": "Property", "value": 620, "units": "l/h"},
+    "minFlow": {"type": "Property", "value": 1, "units": "l/h"},
+    "moduleTampered": {"type": "Property", "value": 1},
+    "persistenceFlowDuration": {
+        "type": "Property",
+        "value": "3h < 6h",
+        "description": "The duration that persistence flow (continuous flow) is recorded by the meter. Text field showing durations in minutes (m), hours (h) or days (d)"
+    },
+    "waterConsumption": {"type": "Property", "value": 191051, "units": "l/h"},
+    "@context": [
+        "https://raw.githubusercontent.com/easy-global-market/ngsild-api-data-models/master/WaterSmartMeter/jsonld-contexts/waterSmartMeter-compound.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.WaterConsumption/master/context.jsonld"
+    ]
+}

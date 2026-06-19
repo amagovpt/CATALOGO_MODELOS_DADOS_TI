@@ -1,0 +1,76 @@
+{
+    "id": "urn:ngsi-ld:Manhole:MNHL123",
+    "type": "Manhole",
+    "category": { "type": "Property", "value": ["sanitary"] },
+    "dateCreated": {"type": "Property", "value": "2024-01-15T07:30:00Z"},
+    "dateModified": {"type": "Property", "value": "2024-03-22T15:45:00Z"},
+    "name": {"type": "Property", "value": "Caixa de visita principal MNHL123"},
+    "alternateName": {"type": "Property", "value": "MH-DT-MJ-001"},
+    "description": {
+        "type": "Property",
+        "value": "Grande caixa de visita de betão que dá acesso ao cruzamento da linha de esgoto principal"
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.095620136240626, 38.769455414702975]
+        },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry" : "PT"                 ,
+            "addressLocality": "Lisboa"             ,
+            "streetAddress"  : "Alameda dos Oceanos",
+            "postalCode"     : "1990-208"
+        }
+    },
+    "areaServed": {"type": "Property", "value": "Parque das nações"},
+    "networkType": {"type": "Property", "value": "sewer"},
+    "refNetwork": {
+        "type": "Relationship",
+        "object": ["urn:ngsi-ld:DrainageNetwork:N999"]
+    },
+    "status": {
+        "type"      : "Property"            ,
+        "value"     : "operational"         ,
+        "observedAt": "2025-03-15T10:18:16Z"
+    },
+    "dimension": {
+        "type": "Property",
+        "value": {"diameter": 1.2, "depth": 3.5, "coverDiameter": 0.8},
+        "unitCode": "MTR"
+    },
+    "depth": {"type": "Property", "value": 3.5, "unitCode": "MTR"},
+    "material": {"type": "Property", "value": "concrete"},
+    "coverMaterial": {"type": "Property", "value": "castIron"},
+    "coverShape": {"type": "Property", "value": "circular"},
+    "accessType": {"type": "Property", "value": "nonLockable"},
+    "manufacturer": {"type": "Property", "value": "FUCOLI-SOMEPAL S.A."},
+    "manufacturedAt": {"type": "Property", "value": "2020-06-10T00:00:00Z"},
+    "installationDate": {"type": "Property", "value": "2021-02-03T09:25:00Z"},
+    "lastInspection": {"type": "Property", "value": "2024-02-10T08:30:00Z"},
+    "maintenanceSchedule": {"type": "Property", "value": "annual"},
+    "connectedTo": {
+        "type": "Relationship",
+        "object": ["urn:ngsi-ld:DrainagePipe:DP101"]
+    },
+    "owner": {
+        "type": "Relationship",
+        "object": ["urn:ngsi-ld:Organization:MunicipalWaterworks"]
+    },
+    "version": {"type": "Property", "value": "1.1"},
+    "updateFrequency": {"type": "Property", "value": "quarterly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld"                 ,
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

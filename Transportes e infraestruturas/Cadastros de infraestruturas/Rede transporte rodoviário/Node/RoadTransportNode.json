@@ -1,0 +1,110 @@
+{
+  "id": "urn:dgt:RoadTransportNode:RDNT-NODE-023",
+  "type": "RoadTransportNode",
+  "dataProvider": {"type": "Property", "value": "Direção-Geral do Território"},
+  "dateCreated": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2024-10-05T10:00:00.00Z"},
+    "description": "Data em que o nó rodoviário foi registado pela primeira vez no sistema"
+  },
+  "dateModified": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2024-10-15T14:30:00.00Z"},
+    "description": "Data em que os dados do nó rodoviário foram modificados pela última vez"
+  },
+  "description": "Intersecção que liga o itinerário complementar IC19 à estrada nacional N117",
+  "name": {"type": "Property", "value": "IC19-N117 Intersecção"},
+  "alternateName": {"type": "Property", "value": "Entroncamento Este 12"},
+  "location": {
+    "type"            : "GeoProperty",
+    "value"           : { "type": "Point", "coordinates": [-9.233396, 38.746397] },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "address": {
+    "type" : "Property",
+    "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+  },
+  "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
+  "nodeType": {"type": "Property", "value": "intersecção"},
+  "formType": {"type": "Property", "value": "rotunda"},
+  "trafficLightControlled": {"type": "Property", "value": true},
+  "signalTiming": {
+    "type" : "Property",
+    "value": {
+      "cycleTime"      : 120,
+      "unitCode"       : "SEC",
+      "phases"         : 4,
+      "adaptiveControl": true,
+      "lastUpdated"    : "2024-09-10T00:00:00.00Z"
+    }
+  },
+  "capacityVehiclesPerHour": {"type": "Property", "value": 1500, "unitCode": "C62"},
+  "dailyTrafficVolume": {
+    "type"      : "Property",
+    "value"     : 8500,
+    "unitCode"  : "C62",
+    "observedAt": "2024-09-15T00:00:00.00Z"
+  },
+  "peakHourCongestion": {"type": "Property", "value": "moderado", "observedAt": "2024-09-15T18:00:00.00Z"},
+  "accidents": {"type": "Property", "value": 3, "observationPeriod": "P1Y", "observedAt": "2024-09-20T00:00:00.00Z"},
+  "connects": {
+    "type"       : "Relationship",
+    "object"     : [
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-001",
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-015",
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-042"
+    ],
+    "description": "Road segments connected at this node"
+  },
+  "infrastructureElements": {
+    "type" : "Property",
+    "value": [
+      {
+        "id"              : "urn:dgt:TrafficLight:RDNT-TL-045",
+        "type"            : "TrafficLight",
+        "installationDate": "2021-03-15T00:00:00.00Z",
+        "lastMaintenance" : "2024-07-22T00:00:00.00Z",
+        "operational"     : true
+      },
+      {
+        "id"            : "urn:dgt:PedestrianCrossing:RDNT-PED-023",
+        "type"          : "PedestrianCrossing",
+        "crossingType"  : "sinalizado",
+        "accessible"    : true,
+        "lastInspection": "2024-08-05T00:00:00.00Z"
+      }
+    ]
+  },
+  "pedestrianFacilities": {
+    "type" : "Property",
+    "value": {
+      "crossings"       : 4,
+      "accessibleRoutes": true,
+      "tactilePaving"   : true,
+      "audioCues"       : true,
+      "condition"       : "bom",
+      "lastInspection"  : "2024-08-05T00:00:00.00Z"
+    }
+  },
+  "trafficManagement": {
+    "type" : "Property",
+    "value": {
+      "cameraMonitored"         : true,
+      "adaptiveControlEnabled"  : true,
+      "priorityVehicleDetection": true,
+      "controlCenterId"         : "urn:dgt:TrafficControlCenter:TCC-001"
+    }
+  },
+  "lastMaintenance": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2023-11-08T00:00:00.00Z"},
+    "description": "Data da última grande operação de manutenção"
+  },
+  "nextMaintenance": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2025-01-15T00:00:00.00Z"},
+    "description": "Data prevista para a próxima operação de manutenção"
+  },
+  "nationalId": {"type": "Property", "value": "PT-RDN-N25-J12"},
+  "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"]
+}

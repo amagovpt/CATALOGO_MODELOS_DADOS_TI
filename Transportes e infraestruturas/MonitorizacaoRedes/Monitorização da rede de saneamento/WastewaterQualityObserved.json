@@ -1,0 +1,141 @@
+{
+    "id": "urn:ersar:WastewaterQualityObserved:ETAR:001",
+    "type": "WastewaterQualityObserved",
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.038625329378092, 38.88522388832804]
+        }
+    },
+    "areaServed": {"type": "Property", "value": "Expo"},
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressLocality": "Lisboa"                              ,
+            "postalCode"     : "2615-174"                            ,
+            "streetAddress"  : "Etar De Alverca, Alverca do Ribatejo",
+            "type"           : "PostalAddress"
+        }
+    },
+    "dateObserved": {"type": "Property", "value": "2025-02-10T12:00:00Z"},
+    "biochemicalOxygenDemand": {
+        "type": "Property",
+        "value": 15,
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "chemicalOxygenDemand": {
+        "type": "Property",
+        "value": 50,
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "totalSuspendedSolids": {
+        "type": "Property",
+        "value": 25,
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "nitrates": {
+        "type": "Property",
+        "value": 10,
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "phosphates": {
+        "type": "Property",
+        "value": 2,
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "heavyMetals": {
+        "type": "Property",
+        "value": {"Lead": 0.05, "Mercury": 0.002, "Cadmium": 0.005},
+        "unitCode": "M1",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "pH": {
+        "type": "Property",
+        "value": 7.2,
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "temperature": {"type": "Property", "value": 18, "unitCode": "CEL"},
+    "treatmentLevel": {"type": "Property", "value": "Secondary"},
+    "complianceStatus": {"type": "Property", "value": "Compliant"},
+    "dischargePoint": {"type": "Property", "value": "River A"},
+    "reportingAuthority": {
+        "type" : "Property"                                ,
+        "value": "https://www.aguasdotejoatlantico.adp.pt/"
+    },
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "complianceStatus": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/complianceStatus",
+            "dateObserved": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/dateObserved",
+            "heavyMetals": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/heavyMetals",
+            "areaServed": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/areaServed",
+            "pH": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/pH",
+            "treatmentLevel": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/treatmentLevel",
+            "location": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/location",
+            "totalSuspendedSolids": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/totalSuspendedSolids",
+            "nitrates": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/nitrates",
+            "phosphates": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/phosphates",
+            "dischargePoint": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/dischargePoint",
+            "address": "https://smartdatamodels.org/address",
+            "chemicalOxygenDemand": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/chemicalOxygenDemand",
+            "temperature": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/temperature",
+            "reportingAuthority": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/reportingAuthority",
+            "biochemicalOxygenDemand": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/biochemicalOxygenDemand"
+        }
+    ]
+}

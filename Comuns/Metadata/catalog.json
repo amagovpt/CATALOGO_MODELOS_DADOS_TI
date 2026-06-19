@@ -1,0 +1,32 @@
+{
+    "@context": {
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat"   : "https://www.w3.org/ns/dcat#",
+        "foaf"   : "http://xmlns.com/foaf/0.1/",
+        "xsd"    : "http://www.w3.org/2001/XMLSchema#"
+    },
+    "@id": "urn:ngsi-ld:Catalog:id:996884",
+    "@type": "dcat:Catalog",
+    "dcterms:title": {
+        "@value"   : "Catálogo Nacional de Dados Ambientais",
+        "@language": "pt"
+    },
+    "dcterms:description": {
+        "@value": "Catálogo que reúne conjuntos de dados e serviços de dados relacionados com o ambiente em Portugal.",
+        "@language": "pt"
+    },
+    "dcterms:publisher": {
+        "@type": "foaf:Organization",
+        "foaf:name": {
+            "@value"   : "Agência Portuguesa do Ambiente",
+            "@language": "pt"
+        },
+        "foaf:homepage": {"@id": "https://apambiente.pt"}
+    },
+    "dcterms:spatial": {
+        "@type": "dcterms:Location",
+        "dcterms:title": {"@value": "Portugal", "@language": "pt"},
+        "dcat:bbox": "POLYGON((-9.5 36.8, -6.2 36.8, -6.2 42.2, -9.5 42.2, -9.5 36.8))"
+    },
+    "dcterms:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+}

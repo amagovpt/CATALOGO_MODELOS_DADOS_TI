@@ -1,0 +1,27 @@
+{
+    "id": "urn:ipma:WeatherAlert:33",
+    "type": "WeatherAlert",
+    "address": {
+        "type": "Property",
+        "value": {"addressCountry": "PT", "addressRegion": "Lisboa"}
+    },
+    "alertSource": {"type": "Property", "value": "http://www.ipma.pt"},
+    "category": {"type": "Property", "value": "weather"},
+    "dateIssued": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-11-03T13:54:01.00Z"}
+    },
+    "severity": {"type": "Property", "value": "medium"},
+    "subCategory": {"type": "Property", "value": "rain_flood"},
+    "validFrom": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-11-04T00:00:00.00Z"}
+    },
+    "validTo": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-11-05T23:59:00.00Z"}
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Weather/master/context.jsonld"
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "id"                : "urn:anepc:PublicEquipment:Lisboa:QuartelSapadores-001",
+    "type"              : "PublicEquipment",
+    "name"              : {"type": "Property", "value": "Quartel dos Sapadores Bombeiros de Lisboa"},
+    "description"       : {
+        "type" : "Property",
+        "value": "Equipamento público municipal destinado a resposta de emergência e proteção civil."
+    },
+    "category"          : {"type": "Property", "value": "emergency"},
+    "condition"         : {"type": "Property", "value": "fair"},
+    "address"           : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Lisboa",
+            "streetAddress"  : "Avenida Dom Carlos I",
+            "postalCode"     : "1249-071"
+        }
+    },
+    "assetStatus"       : {"type": "Property", "value": "functional"},
+    "location"          : {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "coordinates": [
+                [
+                    [-9.153520104237913, 38.71019846365405],
+                    [-9.154199230890953, 38.71008431391735],
+                    [-9.154156071258427, 38.70989627627205],
+                    [-9.15401220581569 , 38.70992153508945],
+                    [-9.153929483185777, 38.70961000905763],
+                    [-9.153389987774517, 38.70971104467591],
+                    [-9.153520104237913, 38.71019846365405]
+                ]
+            ],
+            "type"       : "Polygon"
+        },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "operator"          : {"type": "Relationship", "object": "urn:cml:Organization:MunicipioLisboa"},
+    "owner"             : {"type": "Relationship", "object": "urn:cml:Organization:MunicipioLisboa"},
+    "publicAccess"      : {"type": "Property", "value": false},
+    "refPointOfInterest": {
+        "type"  : "Relationship",
+        "object": "urn:cml:PointOfInterest:FireStation:SapadoresBombeirosLisboa-001"
+    },
+    "refBuilding"       : {"type": "Relationship", "object": "urn:rnc:BuildingRegistration:a63dd3b3"},
+    "startServingDate"  : {"type": "Property", "value": "1946-10-25"},
+    "serviceStatus"     : {"type": "Property", "value": "inService"},
+    "dateCreated"       : {"type": "Property", "value": "2026-04-03T10:00:00Z"},
+    "dateModified"      : {"type": "Property", "value": "2026-04-03T10:00:00Z"},
+    "@context"          : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

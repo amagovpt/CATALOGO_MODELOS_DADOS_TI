@@ -1,0 +1,29 @@
+{
+    "id": "urn:ngsi-ld:PassengerTrip:gira:trip:12345",
+    "type": "VehicleTrip",
+    "name": {"type": "Property", "value": "Gira trip (shared bike)"},
+    "description": {"type": "Property", "value": "Morning commute."},
+    "origin": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:LX:DockingStation-211"
+    },
+    "originName": {"type": "Property", "value": "Estação 211"},
+    "destination": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:LX:DockingStation-307"
+    },
+    "destinationName": {"type": "Property", "value": "Estação 307"},
+    "departureTime": {"type": "Property", "value": "2025-12-02T14:37:10Z"},
+    "arrivalTime": {"type": "Property", "value": "2025-12-02T14:58:42Z"},
+    "duration": {"type": "Property", "value": 1292, "unitCode": "SEC"},
+    "distance": {"type": "Property", "value": 2390, "unitCode": "MTR"},
+    "status": {"type": "Property", "value": "completed"},
+    "refVehicle": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:Vehicle:vehicle:bicycle:112"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

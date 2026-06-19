@@ -1,0 +1,150 @@
+{
+    "id": "urn:apa:Dam:PT:Alqueva:001",
+    "type": "Dam",
+    "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
+    "category": { "type": "Property", "value": ["HydroObject"] },
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "startOfOperation": {"type": "Property", "value": "2002-02-08T00:00:00Z"},
+    "localType": {"type": "Property", "value": "dam"},
+    "geographicalName": {
+        "type" : "Property",
+        "value": {"spelling": "Alqueva", "language": "pt", "nameStatus": "official"}
+    },
+    "hydroId": {
+        "type" : "Property",
+        "value": {"classificationScheme": "EU:WFD", "localId": "B.Alqueva", "namespace": "EU.EIONET.WATER"}
+    },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "geometry": {
+                "coordinates": [
+                    [-8.418277294000802, 41.54894322474789],
+                    [-8.418631860953667, 41.54859597022656],
+                    [-8.4189732957976  , 41.54826836991111],
+                    [-8.41927971168252 , 41.5479997364144 ],
+                    [-8.419743712880404, 41.54779007047003],
+                    [-8.420641073686369, 41.54750505473703]
+                ],
+                "type"       : "LineString"
+            }
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressLocality": "Moura (são joão baptista)",
+            "addressRegion"  : "Beja",
+            "addressCountry" : "PT",
+            "type"           : "PostalAddress"
+        }
+    },
+    "operationalStatus": {"type": "Property", "value": "operational"},
+    "condition": {"type": "Property", "value": "functional"},
+    "height": {"type": "Property", "value": 96, "unitCode": "MTR"},
+    "length": {"type": "Property", "value": 300.0, "unitCode": "MTR"},
+    "crestElevation": {"type": "Property", "value": 154, "unitCode": "MTR"},
+    "crestLength": {"type": "Property", "value": 458, "unitCode": "MTR"},
+    "storageCapacity": {"type": "Property", "value": 1000000.0, "unitCode": "MTQ"},
+    "surfaceArea": {"type": "Property", "value": 500000.0, "unitCode": "MTK"},
+    "spillwayFlowRate": {"type": "Property", "value": 6300, "unitCode": "MQS"},
+    "spillwayType": {"type": "Property", "value": "Soleira tipo wes"},
+    "maxBottomDischargeFlow": {"type": "Property", "value": 160, "unitCode": "MQS"},
+    "waterStorage": {
+        "type"      : "Property",
+        "value"     : {
+            "currentVolume"    : {"value": 800000.0, "unitCode": "MTQ", "observedAt": "2024-01-30T10:00:00Z"},
+            "fillLevel"        : {"value": 81.8, "unitCode": "P1", "observedAt": "2024-01-30T10:00:00Z"},
+            "trendIndicator"   : "decreasing",
+            "samplingFrequency": "P1M"
+        },
+        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterLevelSensor:24M-07A"},
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "levelOfDetail": { "type": "Property", "value": {"scale": 25000, "equivalentScale": "1:25000"} },
+    "manMadeObject": {
+        "type" : "Property",
+        "value": {
+            "type"            : "Dam",
+            "function"        : ["hydropower", "waterSupply", "floodControl"],
+            "constructionType": "gravity",
+            "material"        : "concrete"
+        }
+    },
+    "waterBody": {
+        "type" : "Property",
+        "value": {"artificial": true, "heavilyModified": true, "assignment": "WFD", "maintenanceResponsibility": "IH"}
+    },
+    "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
+    "waterQualityMonitoring": {
+        "type"      : "Property",
+        "value"     : {
+            "parameters"       : {
+                "temperature"    : {"value": 15.5, "unitCode": "CEL"},
+                "pH"             : {"value":  7.2                   },
+                "dissolvedOxygen": {"value":  8.5, "unitCode": "MGQ"}
+            },
+            "samplingFrequency": "P1M"
+        },
+        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterQUALITYSensor:24M-07AX"},
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "relatedHydroObject": {
+        "type"  : "Relationship",
+        "object": ["urn:apa:Reservoir:PT:Alqueva:001", "urn:apa:WaterBody:WaterStream:001"]
+    },
+    "inRiverBasin": {"type": "Relationship", "object": "urn:apa:RiverBasin:001"},
+    "operatingCompany": {
+        "type" : "Property",
+        "value": "Empresa de desenvolvimento e infraestruturas do alqueva, s.a. (edia)"
+    },
+    "@context": {
+        "ngsi-ld"                : "https://uri.etsi.org/ngsi-ld/",
+        "smartdatamodels"        : "https://smartdatamodels.org/dataModel.waterStorage/",
+        "Dam"                    : "smartdatamodels:Dam",
+        "id"                     : "@id",
+        "type"                   : "@type",
+        "startOfOperation"       : "smartdatamodels:startOfOperation",
+        "inspire"                : "http://inspire.ec.europa.eu/schemas/lcv/4.0#",
+        "beginLifespanVersion"   : "inspire:beginLifespanVersion",
+        "endLifespanVersion"     : "inspire:endLifespanVersion",
+        "localType"              : "inspire:localType",
+        "geographicalName"       : "inspire:geographicalName",
+        "hydroId"                : "inspire:hydroId",
+        "namespace"              : "inspire:namespace",
+        "localId"                : "inspire:localId",
+        "location"               : "https://uri.etsi.org/ngsi-ld/location",
+        "category"               : "smartdatamodels:category",
+        "address"                : "https://smartdatamodels.org/address",
+        "addressCountry"         : "https://smartdatamodels.org/addressCountry",
+        "addressLocality"        : "https://smartdatamodels.org/addressLocality",
+        "addressRegion"          : "https://smartdatamodels.org/addressRegion",
+        "operationalStatus"      : "operationalStatus",
+        "condition"              : "inspire:condition",
+        "height"                 : "smartdatamodels:height",
+        "length"                 : "smartdatamodels:length",
+        "crestElevation"         : "smartdatamodels:crestElevation",
+        "crestLength"            : "smartdatamodels:crestLength",
+        "storageCapacity"        : "smartdatamodels:storageCapacity",
+        "surfaceArea"            : "smartdatamodels:surfaceArea",
+        "spillwayFlowRate"       : "smartdatamodels:spillwayFlowRate",
+        "spillwayType"           : "smartdatamodels:spillwayType",
+        "maxBottomDischargeFlow" : "smartdatamodels:maxBottomDischargeFlow",
+        "waterStorage"           : "smartdatamodels:waterStorage",
+        "currentVolume"          : "smartdatamodels:currentVolume",
+        "fillLevel"              : "smartdatamodels:fillLevel",
+        "trendIndicator"         : "smartdatamodels:trendIndicator",
+        "samplingFrequency"      : "smartdatamodels:samplingFrequency",
+        "historicalLevels"       : "smartdatamodels:historicalLevels",
+        "observedBy"             : "smartdatamodels:observedBy",
+        "levelOfDetail"          : "inspire:levelOfDetail",
+        "manMadeObject"          : "http://inspire.ec.europa.eu/featureconcept/ManMadeObject",
+        "waterBody"              : "http://inspire.ec.europa.eu/codelist/ExposedElementCategoryValue/waterBody",
+        "hydrologicalPersistence": "http://inspire.ec.europa.eu/codelist/WaterPersistenceValue",
+        "waterQualityMonitoring" : "http://inspire.ec.europa.eu/codelist/BoreholePurposeValue/waterQualityMonitoring",
+        "relatedHydroObject"     : "smartdatamodels:relatedHydroObject",
+        "inRiverBasin"           : "smartdatamodels:inRiverBasin",
+        "operatingCompany"       : "smartdatamodels:operatingCompany"
+    }
+}

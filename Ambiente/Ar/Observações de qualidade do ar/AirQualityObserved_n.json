@@ -1,0 +1,54 @@
+{
+    "id"                : "urn:apa:AirQualityObserved:Lisbon:Entrecampos:20241018T150000Z",
+    "type"              : "AirQualityObserved",
+    "dateObserved"      : { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-18T15:00:00Z"} },
+    "airQualityLevel"   : {"type": "Property", "value": "good"},
+    "airQualityIndex"   : {"type": "Property", "value": 24},
+    "source"            : {"type": "Property", "value": "https://qualar.apambiente.pt"},
+    "location"          : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.149012, 38.748566] },
+        "altitude"        : {"type": "Property", "value": 10, "unitCode": "MTR"},
+        "coordinateSystem": "EPSG:3763"
+    },
+    "pm25"              : {"type": "Property", "value": 7, "unitCode": "GQ"},
+    "pm10"              : {"type": "Property", "value": 24, "unitCode": "GQ"},
+    "o3"                : {"type": "Property", "value": 69, "unitCode": "GQ"},
+    "no"                : {"type": "Property", "value": 0.387, "unitCode": "GQ"},
+    "no2"               : {"type": "Property", "value": 39, "unitCode": "GQ"},
+    "nox"               : {"type": "Property", "value": 81, "unitCode": "GQ"},
+    "so2"               : {"type": "Property", "value": 3, "unitCode": "GQ"},
+    "c6h6"              : {"type": "Property", "value": 0.6, "unitCode": "GQ"},
+    "co"                : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
+    "co2"               : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
+    "temperature"       : {"type": "Property", "value": 22.2, "unitCode": "CEL"},
+    "windDirection"     : {"type": "Property", "value": 186, "unitCode": "DD"},
+    "windSpeed"         : {"type": "Property", "value": 0.64},
+    "address"           : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Lisbon",
+            "streetAddress"  : "Praça de Entrecampos",
+            "type"           : "PostalAddress"
+        }
+    },
+    "refPointOfInterest": {"type": "Relationship", "object": "urn:apa:AirQualityStation-3072"},
+    "reliability"       : {"type": "Property", "value": 0.8},
+    "relativeHumidity"  : {"type": "Property", "value": 0.70},
+    "precipitation"     : {"type": "Property", "value": 0, "unitCode": "H67"},
+    "pm25Level"         : {"type": "Property", "value": "good"},
+    "pm10Level"         : {"type": "Property", "value": "good"},
+    "o3Level"           : {"type": "Property", "value": "good"},
+    "c6h6Level"         : {"type": "Property", "value": "good"},
+    "coLevel"           : {"type": "Property", "value": "good"},
+    "co2Level"          : {"type": "Property", "value": "good"},
+    "noLevel"           : {"type": "Property", "value": "good"},
+    "no2Level"          : {"type": "Property", "value": "good"},
+    "noxLevel"          : {"type": "Property", "value": "good"},
+    "so2Level"          : {"type": "Property", "value": "good"},
+    "@context"          : [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "id": "urn:apa:AirQualityStation:3072",
+    "type": "PointOfInterest",
+    "category": {
+        "type": "Property",
+        "value": ["AirQualityStation", "Traffic"]
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.149012, 38.748566] },
+        "altitude": {"type": "Property", "value": 10, "unitCode": "MTR"},
+        "coordinateSystem": "EPSG:3763"
+    },
+    "name": {"type": "Property", "value": "Entrecampos"},
+    "dataProvider": {"type": "Property", "value": "APA"},
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry" : "PT"             ,
+            "addressLocality": "Alvalade"       ,
+            "district"       : "Lisboa"         ,
+            "addressRegion"  : "Lisboa"         ,
+            "streetAddress"  : "Campo Grande 3A",
+            "postalCode"     : "1600"
+        }
+    },
+    "description": {
+        "type" : "Property"                                 ,
+        "value": "Estação medição qualidade do ar - Tráfego"
+    },
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"
+    ]
+}

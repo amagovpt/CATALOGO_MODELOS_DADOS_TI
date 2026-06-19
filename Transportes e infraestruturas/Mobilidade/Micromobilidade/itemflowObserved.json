@@ -1,0 +1,46 @@
+{
+    "id": "urn:ngsi-ld:ItemFlowObserved:bike-counter-5552:2025-11-15T08:00:00Z:bicycles",
+    "type": "ItemFlowObserved",
+    "dateObserved": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-11-15T08:00:00Z"}
+    },
+    "dateObservedFrom": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-11-15T08:00:00Z"}
+    },
+    "dateObservedTo": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-11-15T11:59:59Z"}
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.125968356583655, 38.745037093748806]
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "itemType": {"type": "Property", "value": "bicycle"},
+    "itemSubType": {"type": "Property", "value": "cyclist"},
+    "laneDirection": {"type": "Property", "value": "forward"},
+    "intensity": {"type": "Property", "value": 37, "unitCode": "1"},
+    "averageSpeed": {"type": "Property", "value": 15.2, "unitCode": "KMH"},
+    "averageGapDistance": {
+        "type": "Property",
+        "value": 5.3,
+        "unitCode": "KMH"
+    },
+    "refDevice": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:Device:bike-counter-5552"
+    },
+    "refRoadSegment": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:CycleLane:CL-001"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

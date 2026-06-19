@@ -1,0 +1,84 @@
+{
+    "id": "urn:cimlt:IndustrialZone:alcanede",
+    "type": "IndustrialZone",
+    "name": {"type": "Property", "value": "Zona de desenvolvimento económico de Alcanede"},
+    "alternateName": {"type": "Property", "value": "Parque Empresarial de Alcanede"},
+    "description": {
+        "type" : "Property",
+        "value": "Zona industrial destinada a atividades de produção, logística e serviços de apoio empresarial."
+    },
+    "beginLifespanVersion": {"type": "Property", "value": "2021-06-01T00:00:00Z"},
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Polygon",
+            "coordinates"     : [
+                [
+                    [-8.840006474716745, 39.4508643718452  ],
+                    [-8.83873216676281 , 39.45375475927034 ],
+                    [-8.842289609801298, 39.45418523223708 ],
+                    [-8.848820438065559, 39.455681617556934],
+                    [-8.849298303548693, 39.453877751817856],
+                    [-8.8486876976539  , 39.452934803398534],
+                    [-8.847413389699966, 39.45240182690293 ],
+                    [-8.848342572583249, 39.45100786908719 ],
+                    [-8.84733374545263 , 39.4508848714691  ],
+                    [-8.84897972656023 , 39.449593383365084],
+                    [-8.848873534230734, 39.44871187772918 ],
+                    [-8.849643428619345, 39.448158368486844],
+                    [-8.849112466971889, 39.446969333755646],
+                    [-8.847413389699966, 39.44608779490093 ],
+                    [-8.846032889416563, 39.44727684468435 ],
+                    [-8.845369187357448, 39.44686682981117 ],
+                    [-8.844705485297453, 39.448240370133675],
+                    [-8.844094879402661, 39.448465874164754],
+                    [-8.844041783238339, 39.449347382914254],
+                    [-8.844997514203811, 39.450679874957046],
+                    [-8.84467893721532 , 39.45219683485712 ],
+                    [-8.842687831037097, 39.451643353317706],
+                    [-8.841811744319017, 39.45182784765285 ],
+                    [-8.840006474716745, 39.4508643718452  ]
+                ]
+            ],
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "streetAddress"  : "Estrada 5 de Outubro",
+            "addressLocality": "Alcanede",
+            "addressRegion"  : "Santarém",
+            "postalCode"     : "2025-161",
+            "addressCountry" : "PT"
+        }
+    },
+    "municipality": {"type": "Relationship", "object": "urn:arte:AdministrativeArea:municipality:santarem"},
+    "landUse": {"type": "Property", "value": "industrial"},
+    "availabilityStatus": {"type": "Property", "value": "mixed"},
+    "occupancyRate": {"type": "Property", "value": 90},
+    "establishmentsCount": {"type": "Property", "value": 1},
+    "servicedLandArea": {"type": "Property", "value": 86000, "unitCode": "MTK"},
+    "availableLandArea": {"type": "Property", "value": 8600, "unitCode": "MTK"},
+    "reservedLandArea": {"type": "Property", "value": 0, "unitCode": "MTK"},
+    "occupiedLandArea": {"type": "Property", "value": 77400, "unitCode": "MTK"},
+    "hasElectricity": {"type": "Property", "value": true},
+    "hasWaterSupply": {"type": "Property", "value": true},
+    "hasWastewaterService": {"type": "Property", "value": false},
+    "hasGasNetwork": {"type": "Property", "value": true},
+    "hasTelecomConnectivity": {"type": "Property", "value": true},
+    "roadAccess": {"type": "Property", "value": true},
+    "railAccess": {"type": "Property", "value": false},
+    "portAccess": {"type": "Property", "value": false},
+    "environmentalCertification": {"type": "Property", "value": false},
+    "ecoIndustrialFeatures": {
+        "type" : "Property",
+        "value": ["sharedWasteManagement", "resourceEfficiency", "stormwaterManagement"]
+    },
+    "dataProvider": {"type": "Property", "value": "https://www.cimlt.eu"},
+    "source": {"type": "Property", "value": "Cadastro municipal de zonas industriais"},
+    "dateCreated": {"type": "Property", "value": "2021-06-01T00:00:00Z"},
+    "dateModified": {"type": "Property", "value": "2026-04-03T00:00:00Z"},
+    "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

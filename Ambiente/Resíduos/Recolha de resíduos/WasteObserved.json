@@ -1,0 +1,26 @@
+{
+    "id"               : "urn:cmp:wasteobserved:2024-12-10T14:57:39.000Z",
+    "type"             : "WasteObserved",
+    "location"         : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.6114406, 41.1472720] },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "address"          : {
+        "type" : "Property",
+        "value": {
+            "addressCountry": "PT",
+            "postalCode"    : "4000-065",
+            "addressRegion" : "Porto",
+            "streetAddress" : "Av. dos Aliados 39"
+        }
+    },
+    "dateObserved"     : { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-12-10T14:57:39.000Z"} },
+    "areaServed"       : {"type": "Property", "value": "Santo Ildefonso"},
+    "weight"           : {"type": "Property", "value": 20.85, "unitCode": "KGM"},
+    "grossWeight"      : {"type": "Property", "value": 50.85, "unitCode": "KGM"},
+    "tareWeight"       : {"type": "Property", "value": 30.0, "unitCode": "KGM"},
+    "@context"         : [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.WasteManagement/master/context.jsonld"
+    ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "urn:CML:RoadAccident:A1-Alverca",
+  "type": "RoadAccident",
+  "accidentDate": "2021-03-12T13:59:36Z",
+  "accidentDescription": ["61", "81"],
+  "accidentLocation": "5",
+  "accidentStatisticalDate": {
+    "year": 2021,
+    "quarter": 1,
+    "weekday": "Friday",
+    "hour": 4
+  },
+  "accidentType": ["4", "11"],
+  "address": {
+    "streetAddress"  : "A1 Portagens de Alverca",
+    "addressLocality": "Alverca do Ribatejo"    ,
+    "addressRegion"  : "Lisboa"                 ,
+    "addressCountry" : "Portugal"
+  },
+  "dataProvider": "ANSR",
+  "dateCreated": "2018-06-23T04:19:24Z",
+  "dateModified": "2020-10-29T08:36:40Z",
+  "description": "Acidente nas portagens de Alverca, sentido Norte-Sul",
+  "location": {
+    "type": "Point",
+    "coordinates": [-9.054730, 38.888134],
+    "coordinateSystem": "EPSG:4326"
+  },
+  "numPassengersDead": 0,
+  "numPassengersInjured": 2,
+  "numPedestrianDead": 0,
+  "numPedestrianInjured": 0,
+  "pedestriansInvolved": true,
+  "roadClass": "Motorway",
+  "roadPaving": "1",
+  "roadSign": "4",
+  "roadSurface": "2",
+  "roadTrunk": "12",
+  "status": "onGoing",
+  "totalDeadPeopleWithin24Hours": 0,
+  "totalDeadPeopleWithin30Days": 0,
+  "totalInjured": 2,
+  "vehiclesInvolved": ["5", "8"],
+  "weakestSubject": "5",
+  "weatherConditions": ["3", "10"],
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "urn:cml:CellMobileData:lx:340:35:00001",
+    "type": "CellMobileData",
+    "description": {
+        "type" : "Property",
+        "value": "Valores reportados sobre dispositivos móveis relativos a úma célula"
+    },
+    "refMobileDeviceCell": { "type": "Relationship", "object": ["urn:cml:MobileDeviceCell:lx:340:35:00001"] },
+    "createdAt": {"type": "Property", "value": "2025-09-01T14:20:00Z"},
+    "modifiedAt": {"type": "Property", "value": "2025-09-01T14:20:00Z"},
+    "startDate": {"type": "Property", "value": "2025-09-01T14:00:00Z"},
+    "endDate": {"type": "Property", "value": "2025-09-01T14:10:00Z"},
+    "numberOfDistinctDevices": {"type": "Property", "value": 750},
+    "numberOfDistinctDevicesInRoaming": {"type": "Property", "value": 250},
+    "numberOfEnteringDevices": {"type": "Property", "value": 150},
+    "numberOfLeavingDevices": {"type": "Property", "value": 50},
+    "numberOfEntryDevicesRoaming": {"type": "Property", "value": 50},
+    "numberOfLeavingDevicesRoaming": {"type": "Property", "value": 20},
+    "numberOfDistinctDevicesByCountry": { "type": "Property", "value": {"CAN": 3, "LKA": 20} },
+    "top10RegionOriginDevice": {
+        "type" : "Property",
+        "value": ["Amadora", "Odivelas", "Loures", "Seixal", "Barreiro", "Sintra"]
+    }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "urn:rnc:UrbanPlanningProcess:1519f7bc",
+  "type": "UrbanPlanningProcess",
+  "processNumber": {"type": "Property", "value": "234/2025"},
+  "refBuilding": {
+    "type"  : "Relationship",
+    "object": "urn:rnc:BuildingRegistration:a63dd3b3"
+  },
+  "refFraction": {
+    "type"  : "Relationship",
+    "object": "urn:rnc:HousingUnit:8dd5236d38b3"
+  },
+  "interventionType": {"type": "Property", "value": "expansão"},
+  "submittedAt": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
+  "dateModified": {"type": "Property", "value": "2025-10-09T11:00:00Z"},
+  "status": {"type": "Property", "value": "despachado"},
+  "proceedingDecision": {"type": "Property", "value": "homologação_favorável"},
+  "lastDecisionAt": {"type": "Property", "value": "2025-10-08T11:00:00Z"},
+  "procedureType": {"type": "Property", "value": "licenciamento"},
+  "urbanOperationType": {
+    "type" : "Property",
+    "value": "outras_operações_urbanísticas"
+  },
+  "licenseNumber": {"type": "Property", "value": "50/2025"},
+  "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "urn:apa:AirQualityMonitoring:id:334525717",
+  "type": "AirQualityMonitoring",
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry" : "PT"                  ,
+      "addressLocality": "Lisbon"              ,
+      "streetAddress"  : "Praça de Entrecampos",
+      "type"           : "PostalAddress"
+    }
+  },
+  "location": {
+    "type": "GeoProperty",
+    "value": { "type": "Point", "coordinates": [-9.149012, 38.748566] },
+    "altitude": {"type": "Property", "value": 86, "unitCode": "MTR"},
+    "coordinateSystem": "EPSG:3763"
+  },
+  "airQualityIndex": {"type": "Property", "value": 8},
+  "airQualityLevel": {"type": "Property", "value": "GOOD"},
+  "airTemperatureTSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 18.1,
+      "minOverTime":  7.7,
+      "maxOverTime": 30.8,
+      "instValue"  : 20.8
+    },
+    "unitCode": "CC"
+  },
+  "alternateName": {"type": "Property", "value": "AQM sampling"},
+  "aqiMajorPollutant": {"type": "Property", "value": "no2"},
+  "areaServed": {"type": "Property", "value": "AML Norte"},
+  "atmosphericPressure": {"type": "Property", "value": 633.2},
+  "atmosphericPressureTSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 1000.3,
+      "minOverTime":  961.9,
+      "maxOverTime": 1025.6,
+      "instValue"  : 1015.6
+    },
+    "unitCode": "A97"
+  },
+  "benzeneTSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 1.9,
+      "minOverTime": 0.6,
+      "maxOverTime": 5.3,
+      "instValue"  : 1.7
+    },
+    "unitCode": "GQ"
+  },
+  "coTSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 0.9,
+      "minOverTime": 0.2,
+      "maxOverTime": 1.8,
+      "instValue"  : 0.7
+    },
+    "unitCode": "GQ"
+  },
+  "dataProvider": {"type": "Property", "value": "APA"},
+  "dateCreated": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-11-29T00:00:00Z"}
+  },
+  "dateModified": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-12-13T04:21:57Z"}
+  },
+  "description": {"type": "Property", "value": "Air quality monitoring"},
+  "no2TSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime":  50.65,
+      "minOverTime":  25.70,
+      "maxOverTime": 105.00,
+      "instValue"  :  76.00
+    },
+    "unitCode": "GQ"
+  },
+  "o3TSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 65.8,
+      "minOverTime":  4.0,
+      "maxOverTime": 88.0,
+      "instValue"  :  4.0
+    },
+    "unitCode": "GQ"
+  },
+  "observationDateTime": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-12-13T00:00:00Z"}
+  },
+  "pm10TSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 17.3,
+      "minOverTime": 10.3,
+      "maxOverTime": 63.1,
+      "instValue"  : 19.0
+    },
+    "unitCode": "GQ"
+  },
+  "pm25TSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 15.3,
+      "minOverTime":  2.1,
+      "maxOverTime": 21.8,
+      "instValue"  : 10.6
+    },
+    "unitCode": "GQ"
+  },
+  "relativeHumidityTSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 65.3,
+      "minOverTime": 51.6,
+      "maxOverTime": 91.3,
+      "instValue"  : 91.2
+    },"unitCode": "P1"
+  },
+  "so2TSA": {
+    "type": "Property",
+    "value": {
+      "avgOverTime": 4.0,
+      "minOverTime": 2.9,
+      "maxOverTime": 7.0,
+      "instValue"  : 4.5
+    },
+    "unitCode": "GQ"
+  },
+  "source": {"type": "Property", "value": "https://qualar.apambiente.pt"},
+  "versionInfo": {
+    "type": "Property",
+    "value": {
+      "startDateTime": {"@type": "DateTime", "@value": "2024-11-29T00:00:00Z"},
+      "endDateTime": {"@type": "DateTime", "@value": "2024-12-13T00:00:00Z"},
+      "versionName": "Version 1"
+    }
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"
+  ]
+}

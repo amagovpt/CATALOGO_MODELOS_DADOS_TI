@@ -1,0 +1,16 @@
+{
+  "id": "urn:env:GreenspaceRecord:jsb-2025-01-2",
+  "type": "GreenspaceRecord",
+  "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-1T18:00:00Z"} },
+  "location": {
+    "type" : "GeoProperty",
+    "value": { "type": "Point", "coordinates": [-8.42228860554215, 40.21068736663281], "coordinateSystem": "EPSG:4326" }
+  },
+  "refGreenspace": {"type": "Relationship", "object": "urn:env:jardim_sa_da_bandeira"},
+  "relativeHumidity": {"type": "Property", "value": 0.87},
+  "soilMoistureEc": {"type": "Property", "value": 1, "unitCode": "D10"},
+  "soilMoisturePressure": {"type": "Property", "value": -30, "unitCode": "33"},
+  "soilTemperature": {"type": "Property", "value": 13, "unitCode": "CEL"},
+  "temperature": {"type": "Property", "value": 17, "unitCode": "CEL"},
+  "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.ParksAndGardens/master/context.jsonld"]
+}

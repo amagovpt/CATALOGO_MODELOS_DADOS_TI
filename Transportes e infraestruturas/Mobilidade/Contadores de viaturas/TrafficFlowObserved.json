@@ -1,0 +1,63 @@
+{
+    "id": "urn:ip:TrafficFlowObserved-",
+    "type": "TrafficFlowObserved",
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressLocality": "Oeiras"          ,
+            "addressCountry" : "PT"              ,
+            "streetAddress"  : "Avenida Marginal"
+        }
+    },
+    "averageHeadwayTime": {
+        "type": "Property",
+        "value": 0.5,
+        "unitCode": "SEC"
+    },
+    "averageVehicleLength": {
+        "type": "Property",
+        "value": 9.87,
+        "unitCode": "MTR"
+    },
+    "averageVehicleSpeed": {
+        "type": "Property",
+        "value": 52.6,
+        "unitCode": "KMH"
+    },
+    "dateObserved": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-12-30T11:10:00Z"}
+    },
+    "dateObservedFrom": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-12-30T11:10:00Z"}
+    },
+    "dateObservedTo": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-12-30T11:20:00Z"}
+    },
+    "intensity": {"type": "Property", "value": 197},
+    "laneDirection": {"type": "Property", "value": "forward"},
+    "laneId": {"type": "Property", "value": 1},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "coordinates": [
+                [
+                    [-9.313219523804833, 38.68487805557103 ],
+                    [-9.316051936524673, 38.68193003706307 ],
+                    [-9.315923190492583, 38.681879785695145],
+                    [-9.313080048936342, 38.68480268161082 ],
+                    [-9.313219523804833, 38.68487805557103 ]
+                ]
+            ],
+            "type": "Polygon"
+        },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "occupancy": {"type": "Property", "value": 0.76},
+    "reversedLane": {"type": "Property", "value": false},
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+    ]
+}

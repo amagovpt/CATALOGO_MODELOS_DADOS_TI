@@ -1,0 +1,45 @@
+{
+  "id": "urn:arte:ServiceInteraction:lx22333",
+  "type": "ServiceInteraction",
+  "dateStarted": {"type": "Property", "value": "2025-09-24T10:00:00Z"},
+  "dateFinished": {"type": "Property", "value": "2025-09-24T10:10:00Z"},
+  "dateCreated": {"type": "Property", "value": "2025-09-24T12:00:00Z"},
+  "dateModified": {"type": "Property", "value": "2025-09-24T12 :00:00Z"},
+  "interactionType": {"type": "Property", "value": "inPerson"},
+  "intakeChannel": {"type": "Property", "value": "counter"},
+  "serviceStatus": {"type": "Property", "value": "completed"},
+  "rating": {"type": "Property", "value": 4.5},
+  "serviceName": {"type": "Property", "value": "Segurança Social Direta"},
+  "typeOfService": {
+    "type" : "Property",
+    "value": "Pedido do Cartão Europeu do Seguro de Doença"
+  },
+  "description": {
+    "type" : "Property",
+    "value": "Public service interaction record."
+  },
+  "providingEntity": {
+    "type" : "Property",
+    "value": "Instituto da Segurança Social"
+  },
+  "competencyProfile": {
+    "type" : "Property",
+    "value": "Front-office specialist"
+  },
+  "refCustomerServiceUnit": {
+    "type"  : "Relationship",
+    "object": "urn:ngsi-ld:PointOfInterest:loja-cidadao-laranjeiras"
+  },
+   "refRelatedInteractions": {
+    "type"  : "Relationship",
+    "object": ["urn:arte:ServiceInteraction:lx25357"]
+  },
+  "bookingDate": {"type": "Property", "value": "2025-09-23T10:00:00Z"},
+  "bookingChannel": {"type": "Property", "value": "online"},
+  "bookingStatus": {"type": "Property", "value": "fulfilled"},
+  "ticketNumber": {"type": "Property", "value": "A-0321"},
+  "ticketDate": {"type": "Property", "value": "2025-09-24T9:30:00Z"},
+  "ticketType": {"type": "Property", "value": "priority"},
+  "ticketStatus": {"type": "Property", "value": "closed"},
+  "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

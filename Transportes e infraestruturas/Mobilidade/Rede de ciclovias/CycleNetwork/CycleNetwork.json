@@ -1,0 +1,74 @@
+{
+  "id": "urn:cml:CycleNetwork:Lisbon",
+  "type": "CycleNetwork",
+  "description": {"type": "Property", "value": "Rede de ciclovias da cidade de Lisboa"},
+  "name": {"type": "Property", "value": "RC-CLX"},
+  "boundingBox": {
+    "type"            : "GeoProperty",
+    "value"           : {
+      "type"       : "Polygon",
+      "coordinates": [
+        [
+          [-9.175841969597688, 38.69777428179626 ],
+          [-9.127889595040754, 38.707781457652914],
+          [-9.111776523592646, 38.72162257606375 ],
+          [-9.093206668629207, 38.757438757387476],
+          [-9.091961750801524, 38.78542169173075 ],
+          [-9.11696952342374 , 38.787384211744076],
+          [-9.14166022200573 , 38.78989450210123 ],
+          [-9.167117147832897, 38.791479258668204],
+          [-9.175450764192531, 38.78499371259652 ],
+          [-9.190587549152717, 38.7804636689722  ],
+          [-9.217521853961824, 38.73988590060475 ],
+          [-9.229523269241355, 38.698088986249815],
+          [-9.219871694726246, 38.692566257458935],
+          [-9.175841969597688, 38.69777428179626 ]
+        ]
+      ]
+    },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "address": { "type": "Property", "value": {"addressCountry": "PT", "addressRegion": "Lisboa"} },
+  "areaServed": {"type": "Property", "value": "Cidade de Lisboa"},
+  "totalLength": {"type": "Property", "value": 200, "unitCode": "KMT"},
+  "connectedNetworks": {
+    "type"  : "Relationship",
+    "object": ["urn:cml:CycleNetwork:Oeiras", "urn:cml:CycleNetwork:Loures"]
+  },
+  "hasParts": {
+    "type"  : "Relationship",
+    "object": [
+      "urn:cml:CycleLane:CL-001", "urn:cml:CycleLane:CL-002", "urn:cml:CycleLane:CL-998", "urn:cml:CycleLane:CL-999"
+    ]
+  },
+  "seeAlso": {
+    "type" : "Property",
+    "value": [
+      "http://inspire.ec.europa.eu/theme/tn",
+      "http://inspire.ec.europa.eu/featureconcept/TransportNetwork",
+      "http://inspire.ec.europa.eu/codelist/NamedPlaceTypeValue/transportNetwork",
+      "http://inspire.ec.europa.eu/codelist/SupplementaryRegulationValue/7_1_4_6_FunctionalUrbanArea"
+    ]
+  },
+  "beginLifespanVersion": {"type": "Property", "value": "2024-10-25T00:00:00.00Z"},
+  "endLifespanVersion": {"type": "Property", "value": null},
+  "createdAt": {"type": "Property", "value": "2024-10-01T08:00:00.00Z"},
+  "modifiedAt": {"type": "Property", "value": "2024-10-20T16:45:00.00Z"},
+  "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+  "maintenanceAuthority": {
+    "type" : "Property",
+    "value": {
+      "name"        : "CMLisboa",
+      "contactPoint": "estradas@ip.pt",
+      "website"     : "https://www.lisboa.pt/temas/mobilidade/entrada"
+    }
+  },
+  "lastFullInspection": {"type": "Property", "value": "2025-02-15T00:00:00.00Z"},
+  "networkStatus": { "type": "Property", "value": {"overallCondition": "good", "criticalPoints": 3} },
+  "dataProvider": {"type": "Property", "value": "CMLisboa"},
+  "datasetResponsibleParty": {"type": "Property", "value": "urn:cml:Organization:CMLisboa"},
+  "version": {"type": "Property", "value": "2.5"},
+  "networkType": {"type": "Property", "value": "road"},
+  "nationalId": {"type": "Property", "value": "PT.RDN.LXCIC"},
+  "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"]
+}

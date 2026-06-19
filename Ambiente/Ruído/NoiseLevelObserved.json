@@ -1,0 +1,30 @@
+{
+    "id"                : "urn:cml:NoiseLevelObserved:INCOGNITO:20251022T010000",
+    "type"              : "NoiseLevelObserved",
+    "LAS"               : {"type": "Property", "value": 91.6, "unitCode": "2N"},
+    "LAeq"              : {"type": "Property", "value": 67.8, "unitCode": "2N"},
+    "LAeq_d"            : {"type": "Property", "value": 65.4, "unitCode": "2N"},
+    "LAmax"             : {"type": "Property", "value": 94.5, "unitCode": "2N"},
+    "address"           : {
+        "type" : "Property",
+        "value": {
+            "addressRegion": "Lisboa",
+            "streetAddress": "Rua Dos Poiais De São Bento 37-39",
+            "postalCode"   : "1200-346"
+        }
+    },
+    "dataProvider"      : {"type": "Property", "value": "CML"},
+    "dateObservedFrom"  : { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-10-22T01:00:00.00Z"} },
+    "dateObservedTo"    : { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-10-22T01:10:00.00Z"} },
+    "location"          : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.15088242443241, 38.71078839848025] },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "refPointOfInterest": { "type": "Relationship", "object": ["urn:cml:poi:incognito:3612"] },
+    "distanceAverage"   : {"type": "Property", "value": 150, "unitCode": "CMT"},
+    "sonometerClass"    : {"type": "Property", "value": "Class2"},
+    "@context"          : [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"
+    ]
+}

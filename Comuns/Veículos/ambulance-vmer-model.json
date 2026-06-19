@@ -1,0 +1,77 @@
+{
+  "id": "urn:inem:VehicleModel:ambulance-vmer-01",
+  "type": "VehicleModel",
+  "name": {
+    "type": "Property",
+    "value": "Ambulância VMER"
+  },
+  "description": {
+    "type": "Property",
+    "value": "Viatura Médica de Emergência e Reanimação (VMER)"
+  },
+  "vehicleType": {
+    "type": "Property",
+    "value": "van"
+  },
+  "brandName": {
+    "type": "Property",
+    "value": "Mercedes-Benz"
+  },
+  "modelName": {
+    "type": "Property",
+    "value": "Sprinter 319 CDI"
+  },
+  "manufacturerName": {
+    "type": "Property",
+    "value": "Mercedes-Benz"
+  },
+  "vehicleModelDate": {
+    "type": "Property",
+    "value": {
+      "@type": "DateTime",
+      "@value": "2023-01-01T00:00:00Z"
+    }
+  },
+  "cargoVolume": {
+    "type": "Property",
+    "value": 11,
+    "unitCode": "MTQ"
+  },
+  "fuelType": {
+    "type": "Property",
+    "value": "diesel"
+  },
+  "fuelConsumption": {
+    "type": "Property",
+    "value": 9.5,
+    "unitCode": "LTR"
+  },
+  "height": {
+    "type": "Property",
+    "value": 2.75,
+    "unitCode": "MTR"
+  },
+  "width": {
+    "type": "Property",
+    "value": 2.02,
+    "unitCode": "MTR"
+  },
+  "depth": {
+    "type": "Property",
+    "value": 5.93,
+    "unitCode": "MTR"
+  },
+  "weight": {
+    "type": "Property",
+    "value": 3500,
+    "unitCode": "KGM"
+  },
+  "vehicleEngine": {
+    "type": "Property",
+    "value": "2.1L Diesel Turbo"
+  },
+  "@context": [
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+  ]
+}

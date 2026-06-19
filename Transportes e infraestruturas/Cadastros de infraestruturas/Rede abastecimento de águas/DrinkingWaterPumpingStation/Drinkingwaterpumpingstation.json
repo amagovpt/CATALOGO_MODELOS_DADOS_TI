@@ -1,0 +1,140 @@
+{
+    "id": "urn:epal:DrinkingWaterPumpingStation:DWPS01",
+    "type": "DrinkingWaterPumpingStation",
+    "name": {"type": "Property", "value": "Estação elevatória de água potável 01"},
+    "alternateName": {"type": "Property", "value": "EAP-01"},
+    "description": {"type": "Property", "value": "Estação de bombagem para distribuição de água potável"},
+    "areaServed": {"type": "Property", "value": "Parque das Nações"},
+    "location": {
+        "type" : "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.10066000973248, 38.7869070164071] }
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Lisboa",
+            "streetAddress"  : "Avenida Dom João II",
+            "postalCode"     : "1990-077"
+        }
+    },
+    "refWaterNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
+    "inletPipes": { "type": "Relationship", "object": ["urn:epal:WaterPipe:WP101"] },
+    "outletPipes": { "type": "Relationship", "object": ["urn:epal:WaterPipe:WP102"] },
+    "maxFlowRate": {"type": "Property", "value": 120, "unitCode": "MQH"},
+    "minFlowRate": {"type": "Property", "value": 10, "unitCode": "MQH"},
+    "maxHead": {"type": "Property", "value": 80, "unitCode": "MTR"},
+    "minInletPressure": {"type": "Property", "value": 0.5, "unitCode": "BAR"},
+    "maxInletPressure": {"type": "Property", "value": 6.0, "unitCode": "BAR"},
+    "minOutletPressure": {"type": "Property", "value": 2.0, "unitCode": "BAR"},
+    "maxOutletPressure": {"type": "Property", "value": 8.0, "unitCode": "BAR"},
+    "minOperatingLevel": {"type": "Property", "value": 2.0, "unitCode": "MTR"},
+    "maxOperatingLevel": {"type": "Property", "value": 10.0, "unitCode": "MTR"},
+    "numberOfPumps": {"type": "Property", "value": 3},
+    "pumpConfiguration": {"type": "Property", "value": "2+1"},
+    "pumpTypes": {
+        "type" : "Property",
+        "value": ["horizontal_centrifugal", "horizontal_centrifugal", "standby_horizontal_centrifugal"]
+    },
+    "pumpMaterial": {"type": "Property", "value": "stainless_steel_316L"},
+    "pumpEfficiencyClass": {
+        "type" : "Property",
+        "value": {
+            "IEClass"          : "IE3",
+            "minEfficiency"    : {"value": 75, "unitCode": "P1"},
+            "nominalEfficiency": {"value": 82, "unitCode": "P1"}
+        }
+    },
+    "variableSpeedDrives": {
+        "type" : "Property",
+        "value": {"installed": true, "quantity": 2, "type": "frequency_inverter"}
+    },
+    "maxPower": {"type": "Property", "value": 90, "unitCode": "KWT"},
+    "backupPower": {
+        "type" : "Property",
+        "value": {
+            "available"        : true,
+            "type"             : "diesel_generator",
+            "capacity"         : {"value": 120, "unitCode": "KWT"},
+            "autonomy"         : {"value": 72, "unitCode": "HUR"},
+            "automaticTransfer": true
+        }
+    },
+    "refParametersObserved": {
+        "type"  : "Relationship",
+        "object": ["urn:epal:WaterQualityObserved:DWPS01-WQ-001", "urn:epal:WaterQualityObserved:DWPS01-WQ-002"]
+    },
+    "disinfectionSystem": {
+        "type" : "Property",
+        "value": {
+            "available": true,
+            "type": "chlorination",
+            "method": "sodium_hypochlorite_dosing",
+            "targetResidualChlorine": {"value": 0.2, "unitCode": "M1"},
+            "maxDoseRate": {"value": 5, "unitCode": "MLT"}
+        }
+    },
+    "filteringSystem": {
+        "type" : "Property",
+        "value": {
+            "available"   : true,
+            "type"        : "strainer",
+            "meshSize"    : {"value": 1.0, "unitCode": "MMT"},
+            "location"    : "inlet_manifold",
+            "selfCleaning": true
+        }
+    },
+    "backflowPrevention": {"type": "Property", "value": "reduced_pressure_zone_valve"},
+    "leakageDetection": {
+        "type" : "Property",
+        "value": {
+            "available"       : true,
+            "method"          : "acoustic_correlator",
+            "monitoringPoints": ["inlet", "outlet"],
+            "alertThreshold"  : {"value": 2.0, "unitCode": "MQH"}
+        }
+    },
+    "flowMetering": {
+        "type" : "Property",
+        "value": {
+            "type"     : "electromagnetic",
+            "accuracy" : {"value": 0.5, "unitCode": "P1"},
+            "locations": ["inlet", "outlet_per_pump"]
+        }
+    },
+    "status": {"type": "Property", "value": "operational"},
+    "installationDate": {"type": "Property", "value": "2015-03-20T00:00:00Z"},
+    "dateModified": {"type": "Property", "value": "2025-02-20T10:30:00Z"},
+    "dateCreated": {"type": "Property", "value": "2020-01-20T11:20:00Z"},
+    "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+    "maintainer": {"type": "Relationship", "object": "urn:arte:Organization:MaintenanceCompany456"},
+    "operator": {"type": "Relationship", "object": "urn:arte:Organization:OperatorCompany456"},
+    "documentation": {"type": "Property", "value": []},
+    "version": {"type": "Property", "value": "1.0"},
+    "updateFrequency": {"type": "Property", "value": "weekly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "DrinkingWaterPumpingStation": "https://smartdatamodels.org/dataModel.WaterDistribution/DrinkingWaterPumpingStation",
+            "refWaterNetwork": "https://smartdatamodels.org/dataModel.WaterDistribution/refWaterNetwork",
+            "disinfectionSystem": "https://smartdatamodels.org/dataModel.WaterDistribution/disinfectionSystem",
+            "filteringSystem": "https://smartdatamodels.org/dataModel.WaterDistribution/filteringSystem",
+            "leakageDetection": "https://smartdatamodels.org/dataModel.WaterDistribution/leakageDetection",
+            "flowMetering": "https://smartdatamodels.org/dataModel.WaterDistribution/flowMetering",
+            "backflowPrevention": "https://smartdatamodels.org/dataModel.WaterDistribution/backflowPrevention",
+            "pumpEfficiencyClass": "https://smartdatamodels.org/dataModel.WaterDistribution/pumpEfficiencyClass",
+            "pumpMaterial": "https://smartdatamodels.org/dataModel.WaterDistribution/pumpMaterial",
+            "pumpConfiguration": "https://smartdatamodels.org/dataModel.WaterDistribution/pumpConfiguration",
+            "variableSpeedDrives": "https://smartdatamodels.org/dataModel.WaterDistribution/variableSpeedDrives",
+            "refWaterQualityObserved": "https://smartdatamodels.org/dataModel.WaterDistribution/refWaterQualityObserved",
+            "minFlowRate": "https://smartdatamodels.org/dataModel.WaterDistribution/minFlowRate",
+            "maxFlowRate": "https://smartdatamodels.org/dataModel.WaterDistribution/maxFlowRate",
+            "minOutletPressure": "https://smartdatamodels.org/dataModel.WaterDistribution/minOutletPressure",
+            "maxOutletPressure": "https://smartdatamodels.org/dataModel.WaterDistribution/maxOutletPressure"
+        }
+    ]
+}

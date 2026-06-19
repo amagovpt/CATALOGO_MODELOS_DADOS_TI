@@ -1,0 +1,8 @@
+{
+    "id"           : "urn:ngsi-ld:Organization:43",
+    "type"         : "Organization",
+    "name"         : {"type": "Property", "value": "Operador 43"},
+    "description"  : {"type": "Property", "value": "Operador de transporte público identificado pelo código 43."},
+    "alternateName": {"type": "Property", "value": "43"},
+    "@context"     : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

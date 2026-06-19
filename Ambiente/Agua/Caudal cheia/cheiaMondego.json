@@ -1,0 +1,21 @@
+{
+    "id": "urn:apa:FloodMonitoring:Mondego:2026-02-11T17:00:00",
+    "type": "FloodMonitoring",
+    "alertLevel": {"type": "Property", "value": 3.33, "unitCode": "MTR"},
+    "currentLevel": {"type": "Property", "value": 4.32, "unitCode": "MTR"},
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.4253, 40.2033] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "dangerLevel": {"type": "Property", "value": 3.59, "unitCode": "MTR"},
+    "floodLevelStatus": {"type": "Property", "value": "danger"},
+    "measuredDistance": {"type": "Property", "value": 5.68, "unitCode": "MTR"},
+    "observationDateTime": {
+        "type" : "Property",
+        "value": {"@type": "DateTime", "@value": "2026-02-11T17:00:00+00:00"}
+    },
+    "referenceLevel": {"type": "Property", "value": 10, "unitCode": "MTR"},
+    "stationID": {"type": "Property", "value": "APA-S13"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"]
+}

@@ -1,0 +1,24 @@
+{
+    "id": "urn:cml:wastecontainer:34",
+    "type": "WasteContainer",
+    "RFID": {"type": "Property", "value": "67855734"},
+    "binCapacity": {"type": "Property", "value": 60},
+    "Category": {"type": "Property", "value": "underground"},
+    "binClearedTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-28T15:00:00Z"} },
+    "binColor": {"type": "Property", "value": "Blue"},
+    "binFillingLevel": {"type": "Property", "value": 0.35},
+    "binFullnessThreshold": {"type": "Property", "value": 80},
+    "binId": {"type": "Property", "value": "33"},
+    "binLoggedTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-29T20:00:00Z"} },
+    "binMaxLoad": {"type": "Property", "value": 500},
+    "binRecommendedLoad": {"type": "Property", "value": 250},
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"} },
+    "refWasteContainerIsle": {"type": "Relationship", "object": "urn:cml:WasteContainerIsle:15"},
+    "status": {"type": "Property", "value": "unknown"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.WasteManagement/master/context.jsonld"]
+}

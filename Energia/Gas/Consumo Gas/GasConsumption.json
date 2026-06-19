@@ -1,0 +1,150 @@
+{
+    "id": "urn:ren:GasConsumption:MNCA-GCM-001",
+    "type": "GasConsumption",
+    "dataProvider": {"type": "Property", "value": "Galp Gás Natural"},
+    "dateEnergyMeteringStarted": {
+        "type"       : "Property",
+        "value"      : {"@type": "DateTime", "@value": "2024-10-20T04:00:00.00Z"},
+        "description": "The starting date for metering gas consumption in an ISO8601 UTC format"
+    },
+    "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-09-20T04:00:00.00Z"} },
+    "description": {
+        "type": "Property",
+        "value": "Gas consumption measurement for the heating system of the City Hall building in Campo Grande, Lisbon."
+    },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.1427369, 38.75397] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry": "PT",
+            "postalCode"    : "1749-099",
+            "postalCodeExt" : "099",
+            "postalCodeFull": "1000151",
+            "addressRegion" : "Lisboa",
+            "streetAddress" : "Campo Grande 25"
+        }
+    },
+    "name": {"type": "Property", "value": "Lisbon City Hall - Campo Grande Gas Meter"},
+    "alternateName": {"type": "Property", "value": "City Hall heating system gas consumption"},
+    "areaServed": {
+        "type"       : "Property",
+        "value"      : "City Hall heating and kitchen facilities",
+        "description": "The geographic area where the gas service is provided."
+    },
+    "gasType": {
+        "type"       : "Property",
+        "value"      : "natural gas",
+        "description": "Type of gas being measured (natural gas, LPG, biogas, etc.)"
+    },
+    "meterType": {
+        "type"       : "Property",
+        "value"      : "smart meter",
+        "description": "Type of gas meter (mechanical, electronic, smart meter, etc.)"
+    },
+    "pressure": {
+        "type"       : "Property",
+        "value"      : 21.5,
+        "unitCode"   : "MBR",
+        "description": "Gas pressure at the measurement point"
+    },
+    "temperature": {
+        "type"       : "Property",
+        "value"      : 18.3,
+        "unitCode"   : "CEL",
+        "description": "Gas temperature at the measurement point"
+    },
+    "volumeFlowRate": {
+        "type"       : "Property",
+        "value"      : 12.8,
+        "unitCode"   : "MQH",
+        "description": "Current volume flow rate of gas"
+    },
+    "correctedVolume": {
+        "type"       : "Property",
+        "value"      : 2847.65,
+        "unitCode"   : "MTQ",
+        "description": "Gas volume corrected to standard conditions (15°C, 1013.25 mbar)"
+    },
+    "uncorrectedVolume": {
+        "type"       : "Property",
+        "value"      : 2652.18,
+        "unitCode"   : "MTQ",
+        "description": "Gas volume at working conditions"
+    },
+    "calorificValue": {
+        "type"       : "Property",
+        "value"      : 39.2,
+        "unitCode"   : "JM",
+        "description": "Calorific value of the gas (MJ/m³)"
+    },
+    "energyContent": {
+        "type"       : "Property",
+        "value"      : 111628.38,
+        "unitCode"   : "MJ",
+        "description": "Energy content calculated from corrected volume and calorific value"
+    },
+    "totalConsumption": {
+        "type"       : "Property",
+        "value"      : 45782.96,
+        "unitCode"   : "MTQ",
+        "description": "Total accumulated gas consumption since meter installation"
+    },
+    "dailyConsumption": {
+        "type"       : "Property",
+        "value"      : 45.8,
+        "unitCode"   : "MTQ",
+        "description": "Gas consumption for the current day"
+    },
+    "monthlyConsumption": {
+        "type"       : "Property",
+        "value"      : 1247.3,
+        "unitCode"   : "MTQ",
+        "description": "Gas consumption for the current month"
+    },
+    "yearlyConsumption": {
+        "type"       : "Property",
+        "value"      : 12856.7,
+        "unitCode"   : "MTQ",
+        "description": "Gas consumption for the current year"
+    },
+    "gasQuality": {
+        "type"       : "Property",
+        "value"      : {
+            "methaneContent"        : 96.8  ,
+            "nitrogenContent"       :  1.2  ,
+            "carbonDioxideContent"  :  1.5  ,
+            "hydrogenSulfideContent":  0.003
+        },
+        "description": "Gas composition percentages by volume"
+    },
+    "conversionFactor": {
+        "type"       : "Property",
+        "value"      : 1.0236,
+        "description": "Conversion factor applied to convert working volume to standard conditions"
+    },
+    "meterStatus": {
+        "type"       : "Property",
+        "value"      : "operational",
+        "description": "Current operational status of the gas meter"
+    },
+    "lastMaintenanceDate": {
+        "type"       : "Property",
+        "value"      : {"@type": "DateTime", "@value": "2024-06-15T10:00:00.00Z"},
+        "description": "Date of last maintenance performed on the gas meter"
+    },
+    "nextCalibrationDate": {
+        "type"       : "Property",
+        "value"      : {"@type": "DateTime", "@value": "2026-10-20T00:00:00.00Z"},
+        "description": "Next scheduled calibration date for the gas meter"
+    },
+    "alarmStatus": {
+        "type"       : "Property",
+        "value"      : "normal",
+        "description": "Current alarm status (normal, warning, critical)"
+    },
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Energy/master/context.jsonld"]
+}

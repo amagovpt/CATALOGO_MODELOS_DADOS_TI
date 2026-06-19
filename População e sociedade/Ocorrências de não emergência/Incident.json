@@ -1,0 +1,61 @@
+{
+    "id": "urn:cmmc:UrbanIncident:incidente334123",
+    "type": "UrbanIncident",
+    "dateCreated": {"@type": "DateTime", "@value": "2025-01-09T10:30:00Z"},
+    "dateModified": {"@type": "DateTime", "@value": "2025-01-09T10:45:00Z"},
+    "source": "https://api.municipality.city.pt/incidents",
+    "name": "Fallen Tree Branch",
+    "description": "Large tree branch blocking sidewalk on Main Street",
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.29420099999831, 40.086201541363806] },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressLocality": "Miranda do Corvo",
+            "addressCountry" : "PT",
+            "streetAddress"  : "Rua Principal 1",
+            "postalCode"     : "3220-238"
+        }
+    },
+    "category": "infrastructure",
+    "subCategory": "sidewalk_obstruction",
+    "severity": "moderate",
+    "status": "open",
+    "reportedByID": {"type": "Property", "value": "urn:arte:citizen123"},
+    "assignedTo": {"type": "Property", "value": "parks_department"},
+    "image": { "type": "Property", "value": ["https://municipality.malaga.es/incidents/img/123.jpg"] },
+    "notes": "Emergency services have been notified",
+    "urgencyLevel": "P2",
+    "expectedResponseTime": {"type": "Property", "value": "PT4H"},
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "dateCreated"         : "https://smartdatamodels.org/dateCreated",
+            "dateModified"        : "https://smartdatamodels.org/dateModified",
+            "dateObserved"        : "https://smartdatamodels.org/dateObserved",
+            "name"                : "https://smartdatamodels.org/name",
+            "description"         : "http://purl.org/dc/terms/description",
+            "location"            : "https://uri.etsi.org/ngsi-ld/location",
+            "address"             : "https://smartdatamodels.org/address",
+            "addressCountry"      : "https://smartdatamodels.org/addressCountry",
+            "addressLocality"     : "https://smartdatamodels.org/addressLocality",
+            "addressRegion"       : "https://smartdatamodels.org/addressRegion",
+            "streetAddress"       : "https://smartdatamodels.org/streetAddress",
+            "postalCode"          : "https://smartdatamodels.org/postalCode",
+            "category"            : "https://smartdatamodels.org/category",
+            "subCategory"         : "https://smartdatamodels.org/subCategory",
+            "severity"            : "https://smartdatamodels.org/severity",
+            "status"              : "https://smartdatamodels.org/status",
+            "reportedByID"        : "https://smartdatamodels.org/reportedByID",
+            "reportedByRole"      : "https://smartdatamodels.org/reportedByRole",
+            "assignedTo"          : "https://smartdatamodels.org/assignedTo",
+            "notes"               : "https://smartdatamodels.org/notes",
+            "urgencyLevel"        : "https://smartdatamodels.org/urgencyLevel",
+            "expectedResponseTime": "https://smartdatamodels.org/expectedResponseTime",
+            "image"               : "https://smartdatamodels.org/images"
+        }
+    ]
+}

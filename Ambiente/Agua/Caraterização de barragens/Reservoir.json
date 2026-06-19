@@ -1,0 +1,103 @@
+{
+    "id": "urn:apa:Reservoir:PT:Alqueva:001",
+    "type": "Reservoir",
+    "description": {
+        "type" : "Property",
+        "value": "Esta entidade contém uma descrição harmonizada da Albufeira do Alqueva"
+    },
+    "hydroId": {
+        "type" : "Property",
+        "value": {"classificationScheme": "EU:WFD", "localId": "A.Alqueva", "namespace": "EU.EIONET.WATER"}
+    },
+    "category": { "type": "Property", "value": ["HydroObject"] },
+    "areaServed": {"type": "Property", "value": "Beja"},
+    "name": {"type": "Property", "value": "Barragem do Alqueva"},
+    "elevation": {"type": "Property", "value": 129.16, "unitCode": "MTR", "observedAt": "2025-02-05T12:00:00Z"},
+    "head": {
+        "type"      : "Property",
+        "value"     : 20,
+        "unitCode"  : "MTR",
+        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:device-9845A"},
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "coordinates"     : [-7.418065516285367, 38.285922326111546],
+            "type"            : "Point",
+            "coordinateSystem": "EPSG:3763"
+        }
+    },
+    "pressure": {
+        "type"      : "Property",
+        "value"     : 20,
+        "unitCode"  : "MTR",
+        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:device-9845A"},
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "reservoirHead": {"type": "Property", "value": 120, "unitCode": "MTR", "observedAt": "2025-02-05T12:00:00Z"},
+    "address": {
+        "type" : "Property",
+        "value": {"addressLocality": "Moura", "addressRegion": "Beja", "addressCountry": "PT", "type": "PostalAddress"}
+    },
+    "relatedHydroObject": { "type": "Relationship", "object": ["urn:apa:Dam:PT:Alqueva:001"] },
+    "geographicalName": {
+        "type" : "Property",
+        "value": {"spelling": "Albufeira Alqueva", "language": "pt", "nameStatus": "official"}
+    },
+    "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "localType": {"type": "Property", "value": "reservoir"},
+    "levelOfDetail": { "type": "Property", "value": {"scale": 25000, "equivalentScale": "1:25000"} },
+    "manMadeObject": {
+        "type" : "Property",
+        "value": { "type": "Dam", "function": ["waterSupply", "floodControl"] }
+    },
+    "storageCapacity": {"type": "Property", "value": 4150000, "unitCode": "MTQ"},
+    "usefulCapacity": {"type": "Property", "value": 3117000, "unitCode": "MTQ"},
+    "currentVolume": {
+        "type"             : "Property",
+        "value"            : 2587110,
+        "unitCode"         : "MTQ",
+        "observedAt"       : "2025-02-05T12:00:00Z",
+        "samplingFrequency": "P1M"
+    },
+    "currentStorage": {
+        "value"            : 80.0,
+        "unitCode"         : "P1",
+        "observedAt"       : "2025-02-05T12:00:00Z",
+        "samplingFrequency": "P1M"
+    },
+    "surfaceArea": {"type": "Property", "value": 500000.0, "unitCode": "MTK"},
+    "deadStorage": {"type": "Property", "value": 1033000, "unitCode": "MTQ"},
+    "maximumFloodLevel": {"type": "Property", "value": 152.8, "unitCode": "MTR"},
+    "levelFullStorage": {"type": "Property", "value": 152, "unitCode": "MTR"},
+    "minimumOperatingLevel": {"type": "Property", "value": 130, "unitCode": "MTR"},
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.WaterDistributionManagementEPANET/master/context.jsonld",
+        {
+            "inspire"              : "http://inspire.ec.europa.eu/schemas/lcv/4.0#",
+            "smartdatamodels"      : "https://smartdatamodels.org/dataModel.waterStorage/",
+            "beginLifespanVersion" : "inspire:beginLifespanVersion",
+            "endLifespanVersion"   : "inspire:endLifespanVersion",
+            "localType"            : "inspire:localType",
+            "hydrographicObject"   : "smartdatamodels:hydrographicObject",
+            "geographicalName"     : "inspire:geographicalName",
+            "hydroId"              : "inspire:hydroId",
+            "namespace"            : "inspire:namespace",
+            "localId"              : "inspire:localId",
+            "manMadeObject"        : "http://inspire.ec.europa.eu/featureconcept/ManMadeObject",
+            "storageCapacity"      : "smartdatamodels:storageCapacity",
+            "usefulCapacity"       : "smartdatamodels:usefulCapacity",
+            "surfaceArea"          : "smartdatamodels:surfaceArea",
+            "deadStorage"          : "smartdatamodels:deadStorage",
+            "samplingFrequency"    : "smartdatamodels:samplingFrequency",
+            "maximumFloodLevel"    : "smartdatamodels:maximumFloodLevel",
+            "levelFullStorage"     : "smartdatamodels:levelFullStorage",
+            "minimumOperatingLevel": "smartdatamodels:minimumOperatingLevel",
+            "relatedHydroObject"   : "smartdatamodels:relatedHydroObject",
+            "inRiverBasin"         : "smartdatamodels:inRiverBasin",
+            "category"             : "smartdatamodels:category"
+        }
+    ]
+}

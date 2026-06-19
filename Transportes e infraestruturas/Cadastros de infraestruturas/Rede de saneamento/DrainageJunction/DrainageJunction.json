@@ -1,0 +1,122 @@
+{
+  "id": "urn:ersar:DrainageJunction:J101",
+  "type": "DrainageJunction",
+  "name": {"type": "Property", "value": "Junction 456"},
+  "description": {
+    "type" : "Property"                                          ,
+    "value": "Connection point for main and secondary collectors"
+  },
+  "alternateName": {"type": "Property", "value": "JT-456"},
+  "areaServed": {"type": "Property", "value": "Parque das Nações"},
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "type": "Point",
+      "coordinates": [-9.095192666270322, 38.774620476082134]
+    },
+    "coordinateSystem": "EPSG:4258"
+  },
+  "elevation": {"type": "Property", "value": 125.6, "unitCode": "MTR"},
+  "depth": {"type": "Property", "value": 2.5, "unitCode": "MTR"},
+  "invertElevation": {"type": "Property", "value": 123.1, "unitCode": "MTR"},
+  "groundElevation": {"type": "Property", "value": 125.6, "unitCode": "MTR"},
+  "junctionType": {"type": "Property", "value": "manhole"},
+  "refNetwork": {
+    "type": "Relationship",
+    "object": ["urn:ersar:DrainageNetwork:N999"]
+  },
+  "shape": {"type": "Property", "value": "circular"},
+  "dimension": {
+    "type": "Property",
+    "value": {"diameter": 1000, "unitCode": "MMT"}
+  },
+  "material": {"type": "Property", "value": "concrete"},
+  "coverMaterial": {"type": "Property", "value": "cast-iron"},
+  "coverShape": {"type": "Property", "value": "circular"},
+  "coverDimensions": {
+    "type": "Property",
+    "value": {"diameter": 600, "unitCode": "MMT"}
+  },
+  "coverWeight": {"type": "Property", "value": 85, "unitCode": "KGM"},
+  "loadRating": {"type": "Property", "value": "D400"},
+  "hasLadder": {"type": "Property", "value": true},
+  "hasLanding": {"type": "Property", "value": false},
+  "hasVent": {"type": "Property", "value": false},
+  "sumpDepth": {"type": "Property", "value": 0.15, "unitCode": "MTR"},
+  "connectedPipes": {
+    "type": "Relationship",
+    "object": [
+      "urn:ersar:DrainagePipe:DP104",
+      "urn:ersar:DrainagePipe:DP105",
+      "urn:ersar:DrainagePipe:DP106"
+    ]
+  },
+  "inflows": {
+    "type": "Relationship",
+    "object": [
+      "urn:ersar:DrainagePipe:DP104",
+      "urn:ersar:DrainagePipe:DP105"
+    ]
+  },
+  "outflows": {
+    "type": "Relationship",
+    "object": ["urn:ersar:DrainagePipe:DP106"]
+  },
+  "upstreamJunctions": {
+    "type": "Relationship",
+    "object": [
+      "urn:ersar:DrainageJunction:J123",
+      "urn:ersar:DrainageJunction:J124"
+    ]
+  },
+  "downstreamJunctions": {
+    "type": "Relationship",
+    "object": ["urn:ersar:DrainageJunction:J321"]
+  },
+  "hydraulicHead": {"type": "Property", "value": 124.8, "unitCode": "MTR"},
+  "designFlow": {"type": "Property", "value": 0.25, "unitCode": "MQS"},
+  "surchargeRisk": {"type": "Property", "value": "low"},
+  "installationDate": {"type": "Property", "value": "2010-05-10T00:00:00Z"},
+  "expectedLifespan": {"type": "Property", "value": 50, "unitCode": "ANN"},
+  "lastInspectionDate": {"type": "Property", "value": "2023-09-12T00:00:00Z"},
+  "lastCleaningDate": {"type": "Property", "value": "2023-06-20T00:00:00Z"},
+  "maintenanceSchedule": {"type": "Property", "value": "annual"},
+  "quality": {"type": "Property", "value": 4},
+  "status": {"type": "Property", "value": "operational"},
+  "criticalInfrastructure": {"type": "Property", "value": true},
+  "restrictedAccess": {"type": "Property", "value": false},
+  "owner": { "type": "Relationship", "object": ["urn:arte:Organization:CMLisboa"] },
+  "maintainer": {
+    "type"  : "Relationship"                                  ,
+    "object": "urn:arte:Organization:MaintenanceCompany123"
+  },
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry" : "PT"                 ,
+      "addressLocality": "Lisboa"             ,
+      "streetAddress"  : "Alameda dos Oceanos",
+      "postalCode"     : "1990-208"
+    }
+  },
+  "image": {
+    "type": "Property",
+    "value": [
+      "https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"
+    ]
+  },
+  "dateCreated": {"type": "Property", "value": "2023-01-1T08:45:00Z"},
+  "dateModified": {"type": "Property", "value": "2024-03-2T11:24:00Z"},
+  "version": {"type": "Property", "value": "1.1"},
+  "updateFrequency": {"type": "Property", "value": "monthly"},
+  "dataProvider": {"type": "Property", "value": "CMLisboa"},
+  "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+  "license": {
+    "type" : "Property"                                    ,
+    "value": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "@context": [
+    "https://smartdatamodels.org/context.jsonld"                 ,
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+  ]
+}

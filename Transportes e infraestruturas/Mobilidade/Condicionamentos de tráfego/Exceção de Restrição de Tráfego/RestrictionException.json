@@ -1,0 +1,16 @@
+{
+  "id": "urn:CML:RestrictedTrafficArea:R1",
+  "type": "RestrictionException",
+  "name": {"type": "string", "value": "AzinhagaDaCidade"},
+  "allowedVehicleType": {
+    "type": "array",
+    "value": ["euro6,-,petrol", "-,-,electricity"]
+  },
+  "refRestrictedTrafficArea": {
+    "type" : "string"                                        ,
+    "value": "urn:CML:RestrictedTrafficArea:AzinhagaDaCidade"
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+  ]
+}

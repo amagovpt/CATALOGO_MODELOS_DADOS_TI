@@ -1,0 +1,46 @@
+{
+    "id": "urn:cimlt:IndustrialLot:alcanede:lote-1",
+    "type": "IndustrialLot",
+    "name": {"type": "Property", "value": "Lote 1 da Zona de desenvolvimento económico de Alcanede"},
+    "description": {
+        "type" : "Property",
+        "value": "Lote industrial integrado na Zona de desenvolvimento económico de Alcanede."
+    },
+    "lotNumber": {"type": "Property", "value": 1},
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Polygon",
+            "coordinates"     : [
+                [
+                    [-8.842430931717615, 39.45366976146008 ],
+                    [-8.843116295527295, 39.453016157437645],
+                    [-8.841393238703233, 39.452016219876754],
+                    [-8.840217442065182, 39.45312075258735 ],
+                    [-8.842430931717615, 39.45366976146008 ]
+                ]
+            ],
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "streetAddress"  : "Estrada 5 de Outubro, Apartado 47",
+            "addressLocality": "Alcanede",
+            "addressRegion"  : "Santarém",
+            "postalCode"     : "2025-161",
+            "addressCountry" : "PT"
+        }
+    },
+    "beginLifespanVersion": {"type": "Property", "value": "2022-05-01T00:00:00Z"},
+    "locatedInZone": {"type": "Relationship", "object": "urn:cimlt:IndustrialZone:alcanede"},
+    "availabilityStatus": {"type": "Property", "value": "occupied"},
+    "activityCategory": {
+        "type" : "Property",
+        "value": ["Fabrico de máquinas para a indústria extrativa e construção"]
+    },
+    "activityCAE": { "type": "Property", "value": [28920] },
+    "lotArea": {"type": "Property", "value": 34500, "unitCode": "MTK"},
+    "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

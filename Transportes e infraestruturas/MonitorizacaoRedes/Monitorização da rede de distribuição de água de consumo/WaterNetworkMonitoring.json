@@ -1,0 +1,428 @@
+{
+    "id": "urn:ngsi-ld:WaterNetworkMonitoring:WNMON-001",
+    "type": "WaterNetworkMonitoring",
+    "inspireId": {
+        "type": "Property",
+        "value": {"localId": "WNMON-001", "namespace": "ES.WATER.MONITORING"}
+    },
+    "dateCreated": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "dateModified": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "dataProvider": {"type": "Property", "value": "Water Utility Company"},
+    "dataQuality": {
+        "type": "Property",
+        "value": {
+            "completeness": 98.5,
+            "accuracy": 99.9,
+            "lastValidation": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-02-02T23:00:00.00Z"
+            },
+            "validationMethod": "Automated cross-reference with calibrated sensors"
+        }
+    },
+    "updateFrequency": {
+        "type": "Property",
+        "value": "PT15M",
+        "description": "Data updated every 15 minutes using ISO 8601 duration format"
+    },
+    "location": {
+        "type": "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.1427369, 38.75397] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "networkType": {"type": "Property", "value": "drinking-water"},
+    "pH": {
+        "type": "Property",
+        "value": 7.2,
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "potentiometric",
+        "qualityAssessment": {
+            "accuracy": 0.1,
+            "precision": 0.05,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "conductivity": {
+        "type": "Property",
+        "value": 280,
+        "unitCode": "G42",
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "electrochemical",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "turbidity": {
+        "type": "Property",
+        "value": 0.15,
+        "unitCode": "NTU",
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "nephelometers",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "chlorine": {
+        "type": "Property",
+        "value": 0.5,
+        "unitCode": "MGM",
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "colorimetric",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "temperature": {
+        "type": "Property",
+        "value": 15.5,
+        "unitCode": "CEL",
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "thermometric",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "dissolvedOxygen": {
+        "type": "Property",
+        "value": 8.5,
+        "unitCode": "MGM",
+        "observedAt": {
+            "@type" : "DateTime"               ,
+            "@value": "2024-02-03T10:00:00.00Z"
+        },
+        "measuringMethod": "electrochemical",
+        "qualityAssessment": {
+            "accuracy": 1.0,
+            "precision": 0.5,
+            "lastCalibration": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            }
+        }
+    },
+    "pressure": {
+        "type": "Property",
+        "value": 3.2,
+        "unitCode": "BAR",
+        "observedAt": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "flow": {
+        "type": "Property",
+        "value": 20.5,
+        "unitCode": "G51",
+        "observedAt": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "leakDetection": {
+        "type": "Property",
+        "value": {
+            "detected": false,
+            "probability": 0.05,
+            "severity": "none",
+            "location": null
+        },
+        "observedAt": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "networkElement": {
+        "type": "Property",
+        "value": {
+            "elementType": "pipe",
+            "material": "PVC",
+            "diameter": 200,
+            "length": 150,
+            "installationDate": {
+                "@type" : "DateTime"               ,
+                "@value": "2020-01-15T00:00:00.00Z"
+            },
+            "expectedLifespan": 50
+        }
+    },
+    "maintenanceHistory": {
+        "type": "Property",
+        "value": [
+            {
+                "type": "inspection",
+                "date": {
+                    "@type" : "DateTime"               ,
+                    "@value": "2023-12-15T00:00:00.00Z"
+                },
+                "findings": "Normal wear",
+                "action": "None required",
+                "nextScheduled": {
+                    "@type" : "DateTime"               ,
+                    "@value": "2024-06-15T00:00:00.00Z"
+                }
+            }
+        ]
+    },
+    "alerts": {
+        "type": "Property",
+        "value": [
+            {
+                "type": "quality",
+                "severity": "low",
+                "timestamp": {
+                    "@type" : "DateTime"               ,
+                    "@value": "2024-02-03T09:45:00.00Z"
+                },
+                "description": "Slight pressure drop detected",
+                "status": "active"
+            }
+        ]
+    },
+    "operationalStatus": {
+        "type": "Property",
+        "value": "operational",
+        "observedAt": {"@type": "DateTime", "@value": "2024-02-03T10:00:00.00Z"}
+    },
+    "compliance": {
+        "type": "Property",
+        "value": {
+            "standards": ["EN 805", "98/83/EC"],
+            "complianceStatus": "compliant",
+            "lastAssessment": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-01-15T00:00:00.00Z"
+            },
+            "nextAssessment": {
+                "@type" : "DateTime"               ,
+                "@value": "2024-07-15T00:00:00.00Z"
+            }
+        }
+    },
+    "consumption": {
+        "type": "Property",
+        "value": {"daily": 2500, "monthly": 75000, "trend": "+2.5%"},
+        "unitCode": "MTQ"
+    },
+    "energyEfficiency": {
+        "type": "Property",
+        "value": {
+            "pumpEfficiency"   :  85.0,
+            "energyConsumption": 150.5,
+            "carbonFootprint"  :  45.2
+        }
+    },
+    "observedBy": {
+        "type"  : "Relationship"                               ,
+        "object": "urn:ngsi-ld:Device:WaterLevelSensor:24M-07A"
+    },
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "CC-BY-4.0"                                   ,
+        "url"  : "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://inspire.ec.europa.eu/schemas/us-net-common/4.0/UtilityNetworksCommon.xsd",
+        "https://inspire.ec.europa.eu/schemas/ef/4.0/EnvironmentalMonitoringFacilities.xsd",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "@context": {
+                "Curve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Curve",
+                "Junction": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Junction",
+                "Pattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Pattern",
+                "Pipe": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Pipe",
+                "Pump": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Pump",
+                "Reservoir": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Reservoir",
+                "SimulationResult": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/SimulationResult",
+                "SimulationScenario": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/SimulationScenario",
+                "Tank": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Tank",
+                "Valve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/Valve",
+                "WaterNetwork": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/WaterNetwork",
+                "accuracy": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/accuracy",
+                "address": "https://smartdatamodels.org/address",
+                "addressCountry": "https://smartdatamodels.org/addressCountry",
+                "addressLocality": "https://smartdatamodels.org/addressLocality",
+                "addressRegion": "https://smartdatamodels.org/addressRegion",
+                "alternateName": "https://smartdatamodels.org/alternateName",
+                "areaServed": "https://smartdatamodels.org/areaServed",
+                "baseDemand": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/baseDemand",
+                "bbox": {
+                    "@container": "@list"                              ,
+                    "@id"       : "https://purl.org/geojson/vocab#bbox"
+                },
+                "bulkCoeff": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/bulkCoeff",
+                "bulkOrder": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/bulkOrder",
+                "bulkReactionCoefficient": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/bulkReactionCoefficient",
+                "checkFrequency": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/checkFrequency",
+                "chemicalName": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/chemicalName",
+                "chemicalUnits": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/chemicalUnits",
+                "concentrationLimit": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/concentrationLimit",
+                "controlType": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/controlType",
+                "controlledLink": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/controlledLink",
+                "coordinates": {
+                    "@container": "@list"                                     ,
+                    "@id"       : "https://purl.org/geojson/vocab#coordinates"
+                },
+                "createdBy": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/createdBy",
+                "curveType": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/curveType",
+                "dampLimit": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/dampLimit",
+                "dataProvider": "https://smartdatamodels.org/dataProvider",
+                "dateCreated": "https://smartdatamodels.org/dateCreated",
+                "dateModified": "https://smartdatamodels.org/dateModified",
+                "demandCategory": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/demandCategory",
+                "demandCharge": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/demandCharge",
+                "demandModel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/demandModel",
+                "demandPattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/demandPattern",
+                "description": "http://purl.org/dc/terms/description",
+                "diameter": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/diameter",
+                "diffusivity": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/diffusivity",
+                "district": "https://smartdatamodels.org/district",
+                "duration": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/duration",
+                "efficCurve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/efficCurve",
+                "elevation": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/elevation",
+                "emitterCoefficient": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/emitterCoefficient",
+                "emitterExponent": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/emitterExponent",
+                "endsAt": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/endsAt",
+                "energyPattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/energyPattern",
+                "energyPrice": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/energyPrice",
+                "energyUse": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/energyUse",
+                "flow": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/flow",
+                "flowChange": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/flowChange",
+                "flowUnits": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/flowUnits",
+                "hasInlet": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hasInlet",
+                "hasInputNetwork": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hasInputNetwork",
+                "hasOutlet": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hasOutlet",
+                "hasSimulationResult": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hasSimulationResult",
+                "hasSubNetwork": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hasSubNetwork",
+                "head": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/head",
+                "headCurve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/headCurve",
+                "headError": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/headError",
+                "headPattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/headPattern",
+                "headlossFormula": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/headlossFormula",
+                "hydraulicTimeStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/hydraulicTimeStep",
+                "id": "@id",
+                "initLevel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/initLevel",
+                "initialQuality": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/initialQuality",
+                "initialStatus": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/initialStatus",
+                "inputParameter": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/inputParameter",
+                "isComposedOf": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/isComposedOf",
+                "length": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/length",
+                "level": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/level",
+                "location": "https://uri.etsi.org/ngsi-ld/location",
+                "maxCheck": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/maxCheck",
+                "maxLevel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/maxLevel",
+                "minLevel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/minLevel",
+                "minVolume": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/minVolume",
+                "minimumPressure": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/minimumPressure",
+                "minorLoss": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/minorLoss",
+                "mixingFraction": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/mixingFraction",
+                "mixingModel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/mixingModel",
+                "monitoredNode": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/monitoredNode",
+                "multipliers": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/multipliers",
+                "name": "https://smartdatamodels.org/name",
+                "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
+                "nominalDiameter": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/nominalDiameter",
+                "observedBy": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/observedBy",
+                "openStatus": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/openStatus",
+                "operationalControl": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/operationalControl",
+                "outputFile": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/outputFile",
+                "outputParameters": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/outputParameters",
+                "owner": "https://smartdatamodels.org/owner",
+                "parameter": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/parameter",
+                "parameterName": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/parameterName",
+                "patternStart": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/patternStart",
+                "patternStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/patternStep",
+                "postOfficeBoxNumber": "https://smartdatamodels.org/postOfficeBoxNumber",
+                "postalCode": "https://smartdatamodels.org/postalCode",
+                "power": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/power",
+                "pressure": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/pressure",
+                "pressureExponent": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/pressureExponent",
+                "pumpPattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/pumpPattern",
+                "quality": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/quality",
+                "qualityTimeStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/qualityTimeStep",
+                "qualityType": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/qualityType",
+                "refSimulationScenario": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/refSimulationScenario",
+                "reportStart": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/reportStart",
+                "reportStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/reportStep",
+                "requiredPressure": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/requiredPressure",
+                "reservoirHead": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/reservoirHead",
+                "roughness": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/roughness",
+                "ruleTimeStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/ruleTimeStep",
+                "seeAlso": "https://smartdatamodels.org/seeAlso",
+                "setting": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/setting",
+                "source": "https://smartdatamodels.org/source",
+                "sourceCategory": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/sourceCategory",
+                "sourceMassInflow": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/sourceMassInflow",
+                "sourcePattern": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/sourcePattern",
+                "sourceQuality": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/sourceQuality",
+                "sourceType": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/sourceType",
+                "specificGravity": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/specificGravity",
+                "speed": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/speed",
+                "startClockTime": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/startClockTime",
+                "startTime": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/startTime",
+                "startsAt": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/startsAt",
+                "statistic": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/statistic",
+                "status": "https://uri.etsi.org/ngsi-ld/status",
+                "streetAddress": "https://smartdatamodels.org/streetAddress",
+                "streetNr": "https://smartdatamodels.org/streetNr",
+                "supply": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/supply",
+                "tag": "https://smartdatamodels.org/tag",
+                "tankOrder": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/tankOrder",
+                "targetURI": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/targetURI",
+                "timeStep": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/timeStep",
+                "tolerance": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/tolerance",
+                "traceNodeID": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/traceNodeID",
+                "trials": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/trials",
+                "triggerLevel": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/triggerLevel",
+                "type": "@type",
+                "unbalanced": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/unbalanced",
+                "unbalancedN": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/unbalancedN",
+                "value": "https://uri.etsi.org/ngsi-ld/hasValue",
+                "valveCurve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/valveCurve",
+                "valveType": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/valveType",
+                "velocity": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/velocity",
+                "vertices": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/vertices",
+                "viscosity": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/viscosity",
+                "volumeCurve": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/volumeCurve",
+                "wallCoeff": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/wallCoeff",
+                "wallOrder": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/wallOrder",
+                "xData": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/xData",
+                "yData": "https://smartdatamodels.org/dataModel.WaterDistributionManagementEPANET/yData"
+            }
+        }
+    ]
+}

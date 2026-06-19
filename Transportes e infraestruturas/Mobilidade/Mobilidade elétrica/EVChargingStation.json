@@ -1,0 +1,124 @@
+{  
+  "id": "urn:ngsi-ld:EVChargingStation:MOBI-LSB-01096",  
+  "type": "EVChargingStation",  
+  "address": {  
+    "type": "Property",  
+    "value": {  
+      "addressCountry": "Portugal",  
+      "addressLocality": "Lisboa",  
+      "streetAddress": "Avenida 24 de Julho 1200-869, 74A"  
+    }  
+  },  
+  "allowedVehicleType": {  
+    "type": "Property",  
+    "value": [  
+      "car"  
+    ]  
+  },  
+  "capacity": {  
+    "type": "Property",  
+    "value": 2  
+  },  
+  "chargeType": {  
+    "type": "Property",  
+    "value": [  
+      "other"  
+    ]  
+  },  
+  
+  "location": {  
+    "type": "GeoProperty",  
+    "value": {  
+      "coordinates": [
+          -9.157936672193898,
+          38.705656416643734
+        ],
+        "type": "Point"  
+    },
+    "coordinateSystem": "EPSG:4326"  
+  },  
+  "name": {  
+    "type": "Property",  
+    "value": "MOBI-LSB-01096"  
+  },  
+  "operator": {  
+    "type": "Property",  
+    "value": "MOBI.E"  
+  },  
+  "socketType": {  
+    "type": "Property",  
+    "value": [  
+      "Mennekes"  
+    ]  
+  },  
+
+  "contactPoint": {  
+    "type": "Property",  
+    "value": {  
+      "email": "mobie@me.pt"  
+    }  
+  },  
+  "source": {  
+    "type": "Property",  
+    "value": "https://comparaervilhas.pt/"  
+  },  
+  "powerConsumption": {  
+    "type": "Property",  
+    "value": 12.0,
+    "unitCode": "KWT"
+  },  
+  "chargingUnitId": {  
+    "type": "Property",  
+    "value": "EVChargingStation:MOBI-LSB-01096:S1"  
+  },  
+  "transactionId": {  
+    "type": "Property",  
+    "value": "84068784"  
+  },  
+  "transactionType": {  
+    "type": "Property",  
+    "value": "RFID"  
+  },  
+  "stationName": {  
+    "type": "Property",  
+    "value": "MOBIEAv24Julho"  
+  },  
+  "amountCollected": {  
+    "type": "Property",  
+    "value": 0.08,  
+     "unitCode": "EUR"
+  },  
+  "taxAmountCollected": {  
+    "type": "Property",  
+    "value": 0.0,
+    "unitCode": "EUR"  
+  },  
+  "endDateTime": {  
+    "type": "Property",  
+    "value": {  
+      "@type": "DateTime",  
+      "@value": "2024-05-02T20:28:41"  
+    }  
+  },  
+  "startDateTime": {  
+    "type": "Property",  
+    "value": {  
+      "@type": "DateTime",  
+      "@value": "2024-05-02T20:29:41"  
+    }  
+  },  
+  "vehicleType": {  
+    "type": "Property",  
+    "value": "car"  
+  },  
+  "observationDateTime": {  
+    "type": "Property",  
+    "value": {  
+      "@type": "DateTime",  
+      "@value": "2024-05-02T20:28:41"  
+    }  
+  },  
+  "@context": [  
+    "https://smart-data-models.github.io/dataModel.Transportation/context.jsonld"  
+  ]  
+}  

@@ -1,0 +1,73 @@
+{
+  "id": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6",
+  "type": "OnStreetParking",
+  "modifiedAt": "2024-10-20T04:00:00.00Z",
+  "category": { "type": "Property", "value": ["blueZone", "shortTerm", "forDisabled"] },
+  "permitActiveHours": { "type": "Property", "value": {"blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-19:00"} },
+  "requiredPermit": { "type": "Property", "value": ["blueZonePermit", "disabledPermit"] },
+  "allowedVehicleType": { "type": "Property", "value": ["car"] },
+  "chargeType": { "type": "Property", "value": ["temporaryFee"] },
+  "refParkingGroup": {
+    "type" : "Relationship",
+    "object": [
+      "urn:cmcascais:ParkingGroup:dfrancisco_avilez_6-main",
+      "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6-disabled"
+    ]
+  },
+  "totalSpotNumber": {"type": "Number", "value": 6},
+  "location": {
+    "type" : "GeoProperty",
+    "value": {
+      "type"            : "Polygon",
+      "coordinates"     : [
+        [
+          [-9.423889, 38.700339], [-9.423363, 38.700649], [-9.422483, 38.699607], [-9.423063, 38.699272],
+          [-9.423068, 38.699293], [-9.423856, 38.700318]
+        ]
+      ],
+      "coordinateSystem": "EPSG:3763"
+    }
+  },
+  "address": {
+    "type" : "Property",
+    "value": {"addressLocality": "Cascais", "addressCountry": "Portugal", "streetAddress": "Rua Dom Francisco Avilez"}
+  },
+  "areaServed": {"type": "Property", "value": "Zona Centro"},
+  "maximumAllowedStay": {"type": "Property", "value": "PT2H"},
+  "dateModified": {"type": "Property", "value": "2024-10-20T04:00:00.00Z"},
+  "extraSpotNumber": {"type": "Property", "value": 2},
+  "availableSpotNumber": {"type": "Property", "value": 3},
+  "occupiedSpotNumber": {"type": "Property", "value": 3},
+  "observationDateTime": {"type": "DateTime", "value": "2021-03-11T15:51:02Z"},
+  "fourWheelerSlots": {
+    "type" : "Property",
+    "value": {"availableSpotNumber": 10, "totalSpotNumber": 10, "occupiedSpotNumber": 0}
+  },
+  "unclassifiedSlots": {
+    "type" : "Property",
+    "value": {"availableSpotNumber": 0, "totalSpotNumber": 0, "occupiedSpotNumber": 0}
+  },
+  "twoWheelerSlots": {
+    "type" : "Property",
+    "value": {"availableSpotNumber": 20, "totalSpotNumber": 20, "occupiedSpotNumber": 0}
+  },
+  "municipalityInfo": {
+    "type" : "Property",
+    "value": {
+      "district" : "Lisboa",
+      "ulbName"  : "Lx",
+      "cityId"   : "23",
+      "wardId"   : "23",
+      "stateName": "Lisboa",
+      "cityName" : "Cascais",
+      "zoneName" : "South",
+      "wardName" : "Cascais",
+      "zoneId"   : "2",
+      "wardNum"  : 4
+    }
+  },
+  "@context": [
+    "https://schema.lab.fiware.org/ld/context",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+  ]
+}

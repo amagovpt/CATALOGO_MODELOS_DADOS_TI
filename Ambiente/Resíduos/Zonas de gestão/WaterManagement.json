@@ -1,0 +1,70 @@
+{
+    "id": "urn:ersar:EnvironmentalManagementZone:33",
+    "type": "EnvironmentalManagementZone",
+    "name": {"type": "Property", "value": "Zona de gestão de distribuição de água Zona 33"},
+    "description": {"type": "Property", "value": "Uma zona designada para de de distribuição de água em baixa."},
+    "environmentalDomain": {"type": "Property", "value": "water"},
+    "controlledActivityType": {"type": "Property", "value": "WaterSupply"},
+    "controlTypeCode": {"type": "Property", "value": "Monitored"},
+    "dataProvider": {"type": "Property", "value": "https://www.sines.pt/"},
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "coordinates": [
+                [
+                    [-8.88734968011255 , 37.95921355073355 ],
+                    [-8.810355780688923, 37.93087828046049 ],
+                    [-8.806067771135417, 37.92345192661712 ],
+                    [-8.794100347248786, 37.87417344477767 ],
+                    [-8.792384109947506, 37.820124136922544],
+                    [-8.811197779470689, 37.74505803736541 ],
+                    [-8.789789780167382, 37.7220280642442  ],
+                    [-8.763347498510086, 37.7383591742649  ],
+                    [-8.73449049684973 , 37.7926189543891  ],
+                    [-8.707210971045612, 37.85542806873211 ],
+                    [-8.70639030405016 , 37.91410247270973 ],
+                    [-8.725136702676878, 37.96463055233011 ],
+                    [-8.760007817939481, 37.990904789265045],
+                    [-8.846279380086742, 38.01181071943935 ],
+                    [-8.861691041276686, 37.98214468312193 ],
+                    [-8.88734968011255 , 37.95921355073355 ]
+                ]
+            ],
+            "type"       : "Polygon"
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "areaServed": { "type": "Property", "value": ["Sines"] },
+    "managedBy": {"type": "Property", "value": "CM-Sines"},
+    "refUpperZone": {"type": "Relationship", "object": "urn:ersar:EnvironmentalManagementZone:33"},
+    "population": {"type": "Property", "value": 14711},
+    "typeOfService": {"type": "Property", "value": "low"},
+    "managementModel": {"type": "Property", "value": "delegation-state"},
+    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-10T10:00:00Z"} },
+    "dateModified": {"type": "Property", "value": "2025-01-11T10:00:00Z"},
+    "validFrom": { "type": "Property", "value": {"type": "DateTime", "value": "2023-01-02T09:25:55.00Z"} },
+    "validTo": { "type": "Property", "value": {"type": "DateTime", "value": "2028-01-02T15:25:55.00Z"} },
+    "@context": [
+        "https://schema.lab.fiware.org/ld/context",
+        {
+            "areaServed"            : "https://smartdatamodels.org/areaServed",
+            "controlledActivityType": "https://smartdatamodels.org/controlledActivityType",
+            "controlTypeCode"       : "https://smartdatamodels.org/controlTypeCode",
+            "dataProvider"          : "https://smartdatamodels.org/dataProvider",
+            "dateCreated"           : "https://smartdatamodels.org/dateCreated",
+            "dateModified"          : "https://smartdatamodels.org/dateModified",
+            "description"           : "http://purl.org/dc/terms/description",
+            "environmentalDomain"   : "https://smartdatamodels.org/environmentalDomain",
+            "location"              : "https://uri.etsi.org/ngsi-ld/location",
+            "managedBy"             : "https://smartdatamodels.org/managedBy",
+            "name"                  : "https://smartdatamodels.org/name",
+            "population"            : "https://smartdatamodels.org/population",
+            "refUpperZone"          : "https://smartdatamodels.org/refUpperZone",
+            "typeOfService"         : "https://smartdatamodels.org/typeOfService",
+            "typeOfManagement"      : "https://smartdatamodels.org/typeOfManagement",
+            "validFrom"             : "https://smartdatamodels.org/validFrom",
+            "validTo"               : "https://smartdatamodels.org/validTo",
+            "zoneTypeCode"          : "https://smartdatamodels.org/zoneTypeCode"
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "id": "urn:ngsi-ld:Vehicle:vehicle:bicycle:112",
+    "type": "Vehicle",
+    "battery": {
+        "type": "Property",
+        "value": 0.81,
+        "observedAt": "2025-12-02T15:00:02Z",
+        "unitCode": "P1"
+    },
+    "vehicleAltitude": {
+        "type": "Property",
+        "value": 54,
+        "observedAt": "2025-12-02T15:00:02Z",
+        "unitCode": "MTR"
+    },
+    "category": { "type": "Property", "value": ["public", "tracked"] },
+    "currentTripCount": {"type": "Property", "value": 2},
+    "deviceBatteryStatus": {"type": "Property", "value": "Connected"},
+    "deviceSimNumber": {"type": "Property", "value": "9942142573"},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.148809350842441, 38.72451904703979]
+        },
+        "coordinateSystem": "EPSG:4258",
+        "observedAt": "2025-12-02T15:00:02Z"
+    },
+    "fleetVehicleId": {"type": "Property", "value": "112"},
+    "municipalityInfo": {
+        "type": "Property",
+        "value": {
+            "district" : "Lisboa",
+            "stateName": "Lisboa",
+            "cityName" : "Lisboa"
+        }
+    },
+    "name": {"type": "Property", "value": "Gira Elétrica 112"},
+    "observationDateTime": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-12-02T15:00:02Z"}
+    },
+    "serviceStatus": {"type": "Property", "value": "parked"},
+    "refVehicleModel": {
+        "type"  : "Relationship",
+        "object": "urn:ngsi-ld:VehicleModel:vehiclemodel:giraeletrica1gen"
+    },
+    "reportId": {"type": "Property", "value": "21645"},
+    "vehicleRunningStatus": {"type": "Property", "value": "stopped"},
+    "vehicleTrackerDevice": {"type": "Property", "value": "Installed"},
+    "vehicleType": {"type": "Property", "value": "bicycle"},
+    "wardName": {"type": "Property", "value": "Santo António"},
+    "zoneName": {"type": "Property", "value": "Marquês de Pombal"},
+    "@context": [
+        "https://smart-data-models.github.io/dataModel.Transportation/context.jsonld"
+    ]
+}

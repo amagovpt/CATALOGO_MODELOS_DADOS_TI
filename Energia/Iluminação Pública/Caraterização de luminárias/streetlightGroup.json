@@ -1,0 +1,39 @@
+{
+    "id": "urn:eredes:StreetlightGroup:braga:G345",
+    "type": "StreetlightGroup",
+    "areaServed": {"type": "Property", "value": "Rua do Souto"},
+    "circuitId": {"type": "Property", "value": "C-456-A467"},
+    "dateLastSwitchingOff": {
+        "type" : "Property",
+        "value": {"@type": "DateTime", "@value": "2025-01-16T07:59:59.000Z"}
+    },
+    "dateLastSwitchingOn": {
+        "type" : "Property",
+        "value": {"@type": "DateTime", "@value": "2025-01-15T17:20:00.000Z"}
+    },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "MultiLineString",
+            "coordinates": [
+                [-8.42602028450122 , 41.550601906921514],
+                [-8.425671007419254, 41.55064069360077 ],
+                [-8.425346517743861, 41.550671048376756],
+                [-8.425024281469064, 41.5507030895138  ],
+                [-8.424884570635982, 41.55071995326378 ],
+                [-8.424627682977217, 41.55074693525438 ]
+            ]
+        },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "powerState": {"type": "Property", "value": "off"},
+    "refStreetlightCabinetController": {
+        "type"  : "Relationship",
+        "object": "urn:eredes:StreetlightControlCabinet:CC45A34"
+    },
+    "switchingOnHours": {
+        "type" : "Property",
+        "value": [ {"hours": "Mo,Su 17:00-7:59", "description": "Winter"} ]
+    },
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/context.jsonld"]
+}

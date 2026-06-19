@@ -1,0 +1,17 @@
+{
+    "id"              : "urn:cmpm:SocialSupportObservation:students:school:Manuel-Oliveira-Perpetua:2026-01",
+    "type"            : "SocialSupportObservation",
+    "location"        : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.830838186508117, 39.600392066784735] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "observedBy"      : {"type": "Relationship", "object": "urn:cmpm:Organization:Municipality:PortoMós1"},
+    "areaServed"      : {"type": "Property", "value": "Porto de Mós"},
+    "aggregationLevel": {"type": "Property", "value": "facility"},
+    "indicator"       : {"type": "Property", "value": "studentsCount"},
+    "value"           : {"type": "Property", "value": 410, "unitCode": "C62"},
+    "validFrom"       : {"type": "Property", "value": "2026-01-31T00:00:00Z"},
+    "validTo"         : {"type": "Property", "value": "2026-01-31T23:59:59Z"},
+    "@context"        : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

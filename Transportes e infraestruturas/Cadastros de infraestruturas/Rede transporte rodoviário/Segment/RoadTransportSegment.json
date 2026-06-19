@@ -1,0 +1,86 @@
+{
+  "id": "urn:dgt:RoadTransportSegment:RDNT-SEG-001",
+  "type": "RoadTransportSegment",
+  "dataProvider": {"type": "Property", "value": "Dire"},
+  "dateCreated": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2024-10-05T10:00:00.00Z"},
+    "description": "Data em que o segmento rodoviário foi registado pela primeira vez no sistema"
+  },
+  "dateModified": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2024-10-15T14:30:00.00Z"},
+    "description": "Data em que os dados do segmento rodoviário foram modificados pela última vez"
+  },
+  "description": "Segmento rodoviário nacional primário que liga os centros urbanos",
+  "name": {"type": "Property", "value": "N117 - km 12,5 ao km 18,3"},
+  "alternateName": {"type": "Property", "value": "Ligação do Corredor Leste"},
+  "location": {
+    "type"            : "GeoProperty",
+    "value"           : {
+      "type"       : "LineString",
+      "coordinates": [ [-9.234480, 38.746799], [-9.232828, 38.746883], [-9.231111, 38.742582], [-9.135189, 38.742481] ]
+    },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "address": {
+    "type" : "Property",
+    "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+  },
+  "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
+  "roadClass": {"type": "Property", "value": "National Road"},
+  "roadType": {"type": "Property", "value": "Large Road"},
+  "roadNumber": {"type": "Property", "value": "N117"},
+  "startKilometer": {"type": "Property", "value": 12.5, "unitCode": "KMT"},
+  "endKilometer": {"type": "Property", "value": 18.3, "unitCode": "KMT"},
+  "length": {"type": "Property", "value": 4.5, "unitCode": "KMT"},
+  "width": {"type": "Property", "value": 7.5, "unitCode": "MTR"},
+  "lanes": {"type": "Property", "value": 2},
+  "direction": {"type": "Property", "value": "Bidirectional"},
+  "speedLimit": {"type": "Property", "value": 80, "unitCode": "KMH"},
+  "pavementType": {"type": "Property", "value": "Asphalt"},
+  "pavementCondition": {"type": "Property", "value": "Satisfactory", "observedAt": "2024-09-20T09:00:00.00Z"},
+  "lastMaintenance": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2023-05-15T00:00:00.00Z"},
+    "description": "Data da última grande operação de manutenção"
+  },
+  "nextMaintenance": {
+    "type"       : "Property",
+    "value"      : {"@type": "DateTime", "@value": "2025-05-15T00:00:00.00Z"},
+    "description": "Data prevista para a próxima operação de manutenção"
+  },
+  "refNetwork": {"type": "Relationship", "object": "urn:dgt:RoadTransportNetwork:RDNW-NET-001"},
+  "dailyTrafficVolume": {
+    "type"      : "Property",
+    "value"     : 8500,
+    "unitCode"  : "C62",
+    "observedAt": "2024-09-15T00:00:00.00Z"
+  },
+  "heavyVehiclePercentage": {"type": "Property", "value": 12.5, "unitCode": "P1"},
+  "accidents": {"type": "Property", "value": 8, "observationPeriod": "P1Y", "observedAt": "2024-09-20T00:00:00.00Z"},
+  "connects": {
+    "type" : "Property",
+    "value": ["urn:dgt:RoadTransportNode:RDNT-NODE-023", "urn:dgt:RoadTransportNode:RDNT-NODE-024"]
+  },
+  "crossBorderConnections": {
+    "type"       : "Property",
+    "value"      : [],
+    "description": "Referências a troços de estradas de ligação noutras regiões/países"
+  },
+  "trafficSignals": {
+    "type" : "Property",
+    "value": [
+      {
+        "id"              : "urn:dgt:TrafficSignal:RDNT-TSIG-089",
+        "type"            : "TrafficLight",
+        "location"        : { "type": "Point", "coordinates": [-9.140125, 38.755634] },
+        "installationDate": "2020-06-12T00:00:00.00Z",
+        "operational"     : true,
+        "lastMaintenance" : "2024-08-03T00:00:00.00Z"
+      }
+    ]
+  },
+  "nationalId": {"type": "Property", "value": "PT-N25-12500-18300"},
+  "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"]
+}

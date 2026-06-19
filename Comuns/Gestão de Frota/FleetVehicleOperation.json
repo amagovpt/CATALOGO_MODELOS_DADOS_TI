@@ -1,0 +1,22 @@
+{
+    "id"                : "urn:anepc:FleetVehicleOperation:233445",
+    "type"              : "FleetVehicleOperation",
+    "description"       : {"type": "Property", "value": "Transporte grávida para hospital"},
+    "endedAt"           : {"type": "Property", "value": "2025-12-25T00:00:00Z"},
+    "dateModified"      : {"type": "Property", "value": "2025-12-25T10:00:00Z"},
+    "fleetVehicle"      : {"type": "Relationship", "object": "urn:anepc:FleetVehicle:63"},
+    "initiatingLocation": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Point",
+            "coordinates"     : [-8.406659765446863, 41.55241654243334],
+            "coordinateSystem": "EPSG:3763"
+        }
+    },
+    "operationType"     : {"type": "Property", "value": "Patient transportation"},
+    "responseTime"      : {"type": "Property", "value": 900, "unitCode": "SEC", "observedAt": "2025-12-24T23:25:16Z"},
+    "result"            : {"type": "Property", "value": "Completed"},
+    "startedAt"         : {"type": "Property", "value": "2025-12-23T23:18:16Z"},
+    "transportTime"     : {"type": "Property", "value": 2504, "unitCode": "SEC", "observedAt": "2025-12-24T23:25:16Z"},
+    "@context"          : ["https://smart-data-models.github.io/dataModel.Transportation/context.jsonld"]
+}

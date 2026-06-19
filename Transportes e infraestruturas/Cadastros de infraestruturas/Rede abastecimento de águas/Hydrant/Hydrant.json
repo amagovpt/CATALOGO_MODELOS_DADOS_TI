@@ -1,0 +1,64 @@
+{
+    "id": "urn:epal:Hydrant:PT:Lisboa:HF001",
+    "type": "Hydrant",
+    "name": {"type": "Property", "value": "Hidrante Principal HF001"},
+    "description": {
+        "type": "Property",
+        "value": "Boca de incêndio situada junto na Avenida Almirante Reis para combate a incêndios e lavagem de manutenção."
+    },
+    "category": { "type": "Property", "value": ["Hydrant"] },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.134394579842109, 38.730979655448465] },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Lisboa",
+            "streetAddress"  : "Avenida Almirante Reis, 106B",
+            "postalCode"     : "1170"
+        }
+    },
+    "status": {"type": "Property", "value": "operational", "observedAt": "2025-03-25T08:30:00Z"},
+    "quality": {"type": "Property", "value": 4},
+    "installationDate": {"type": "Property", "value": "2018-07-15T00:00:00Z"},
+    "lastInspectionDate": {"type": "Property", "value": "2024-10-12T10:00:00Z"},
+    "maintenanceSchedule": {"type": "Property", "value": "annual"},
+    "flowRate": {"type": "Property", "value": 15.0, "unitCode": "LTM", "observedAt": "2025-03-25T08:30:00Z"},
+    "pressure": {"type": "Property", "value": 2.5, "unitCode": "BAR", "observedAt": "2025-03-25T08:30:00Z"},
+    "manufacturer": {"type": "Property", "value": "FUCOLI-SOMEPAL S.A."},
+    "model": {"type": "Property", "value": "HS1000-R"},
+    "refNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
+    "connectedTo": { "type": "Relationship", "object": ["urn:epal:WaterPipe:PT:Lisboa:WP432"] },
+    "owner": { "type": "Relationship", "object": ["urn:epal:Organization:MunicipalWaterworks"] },
+    "hydroId": {
+        "type" : "Property",
+        "value": {"classificationScheme": "EU:WFD", "localId": "HYD.HF001", "namespace": "EU.EIONET.WATER"}
+    },
+    "geographicalName": {
+        "type" : "Property",
+        "value": {"spelling": "Hidrante HF001", "language": "pt", "nameStatus": "official"}
+    },
+    "criticalInfrastructure": {"type": "Property", "value": "false"},
+    "beginLifespanVersion": {"type": "Property", "value": "2018-07-15T00:00:00Z"},
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "maintainer": {"type": "Relationship", "object": "urn:arte:Organization:MaintenanceCompany123"},
+    "image": {
+        "type" : "Property",
+        "value": ["https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"]
+    },
+    "seeAlso": { "type": "Property", "value": ["http://inspire.ec.europa.eu/theme/us"] },
+    "dateCreated": {"type": "Property", "value": "2023-03-31T08:45:00Z"},
+    "dateModified": {"type": "Property", "value": "2025-03-31T11:24:00Z"},
+    "version": {"type": "Property", "value": "1.0"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

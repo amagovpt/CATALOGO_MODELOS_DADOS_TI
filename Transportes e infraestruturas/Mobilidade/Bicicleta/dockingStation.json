@@ -1,0 +1,48 @@
+{
+    "id": "urn:ngsi-ld:LX:DockingStation-307",
+    "type": "DockingStation",
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry": "PT",
+            "addressLocality": "Portugal",
+            "streetAddress": "Avenida da Liberdade, 266A",
+            "postalCode": 1250
+        }
+    },
+    "areaServed": {"type": "Property", "value": "Marquês de Pombal"},
+    "agency_name": {"type": "Property", "value": "EMEL"},
+    "agency_url": {
+        "type" : "Property",
+        "value": "https://www.gira-bicicletasdelisboa.pt/"
+    },
+    "availableVehicleNumber": {"type": "Property", "value": 10},
+    "contactPoint": {
+        "type": "Property",
+        "value": {
+            "url"      : "https://www.gira-bicicletasdelisboa.pt/",
+            "email"    : "gira@emel.pt",
+            "telephone": "+351 211 163 060"
+        }
+    },
+    "freeSlotNumber": {"type": "Property", "value": 18},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.148809350842441, 38.72451904703979]
+        },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "dockingStationType": {"type": "Property", "value": "physical"},
+    "observationDate": {"type": "Property", "value": "2025-12-02T15:00:02Z"},
+    "openingHours": {"type": "Property", "value": "Mo-Su 00:00-23:59"},
+    "outOfServiceSlotNumber": {"type": "Property", "value": 1},
+    "stationCode": {"type": "Property", "value": "307"},
+    "stationName": {"type": "Property", "value": "Estação 307"},
+    "status": {"type": "Property", "value": "working"},
+    "totalSlotNumber": {"type": "Property", "value": 29},
+    "@context": [
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+    ]
+}

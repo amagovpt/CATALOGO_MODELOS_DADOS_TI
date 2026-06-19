@@ -1,0 +1,42 @@
+{
+    "id": "urn:anepc:Alert:weather:1",
+    "type": "Alert",
+    "alertSource": {"type": "Property", "value": "https://prociv.gov.pt/pt/"},
+    "category": {"type": "Property", "value": "weather"},
+    "subCategory": {"type": "Property", "value": "flood"},
+    "dateIssued": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-01-02T09:25:55.00Z"}
+    },
+    "description": {"type": "Property", "value": "Flood Alert: Both margins of the river"},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-8.442000063643007, 40.21422753704573 ],
+                    [-8.426274646858275, 40.19308648898809 ],
+                    [-8.422320302286266, 40.19329722963519 ],
+                    [-8.422412263787976, 40.19603679845264 ],
+                    [-8.425630916346563, 40.203692955141065],
+                    [-8.438183661323933, 40.21622892250292 ],
+                    [-8.442000063643007, 40.21422753704573 ]
+                ]
+            ]
+        }
+    },
+    "severity": {"type": "Property", "value": "high"},
+    "validFrom": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-01-02T09:25:55.00Z"}
+    },
+    "validTo": {
+        "type": "Property",
+        "value": {"@type": "DateTime", "@value": "2025-01-02T15:25:55.00Z"}
+    },
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Alert/master/context.jsonld"
+    ]
+}

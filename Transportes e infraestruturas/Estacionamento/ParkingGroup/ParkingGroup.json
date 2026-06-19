@@ -1,0 +1,25 @@
+{
+  "id": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6-disabled",
+  "type": "ParkingGroup",
+  "category": { "type": "Property", "value": ["onStreet", "adjacentSpaces", "onlyDisabled"] },
+  "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6"},
+  "permitActiveHours": { "type": "Property", "value": {"Monday": "null"} },
+  "requiredPermit": { "type": "Property", "value": ["disabledPermit"] },
+  "allowedVehicleType": {"type": "Property", "value": "car"},
+  "availableSpotNumber": {"type": "Property", "value": 1},
+  "totalSpotNumber": {"type": "Property", "value": 2},
+  "location": {
+    "type" : "GeoProperty",
+    "value": {
+      "type"       : "Polygon",
+      "coordinates": [
+        [
+          [-9.423889, 38.700339], [-9.423363, 38.700649], [-9.422483, 38.699607], [-9.423063, 38.699272],
+          [-9.423068, 38.699293], [-9.423856, 38.700318]
+        ]
+      ]
+    }
+  },
+  "chargeType": { "type": "Property", "value": ["free"] },
+  "description": {"type": "Property", "value": "Two parking spots reserved for disabled people"}
+}

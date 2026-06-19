@@ -1,0 +1,29 @@
+{
+    "id"               : "urn:edp:EnergyGenerator:home-windmill-001",
+    "type"             : "EnergyGenerator",
+    "name"             : {"type": "Property", "value": "Home wind mill n. 1"},
+    "generatorType"    : {"type": "Property", "value": "windTurbine"},
+    "aggregationLevel" : {"type": "Property", "value": "device"},
+    "installedCapacity": {"type": "Property", "value": 2.0, "unitCode": "KWT"},
+    "connectionType"   : {"type": "Property", "value": "gridTied"},
+    "location"         : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.1393801, 38.747392] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "address"          : {
+        "type" : "Property",
+        "value": {"addressCountry": "PT", "addressLocality": "Lisbon", "postalCode": "1700-116"}
+    },
+    "@context"         : [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Energy/master/context.jsonld",
+        {
+            "EnergyGenerator"  : "https://territoriosinteligentes.gov.pt/dataModel.Energy/EnergyGenerator",
+            "generatorType"    : "https://territoriosinteligentes.gov.pt/dataModel.Energy/generatorType",
+            "installedCapacity": "https://territoriosinteligentes.gov.pt/dataModel.Energy/installedCapacity",
+            "connectionType"   : "https://territoriosinteligentes.gov.pt/dataModel.Energy/connectionType",
+            "aggregationLevel" : "https://territoriosinteligentes.gov.pt/dataModel.Energy/aggregationLevel"
+        }
+    ]
+}

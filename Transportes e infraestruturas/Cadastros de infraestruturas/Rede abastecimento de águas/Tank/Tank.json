@@ -1,0 +1,121 @@
+{
+    "id": "urn:epal:Tank:PT:Lisboa:TK001",
+    "type": "Tank",
+    "name": {"type": "Property", "value": "Depósito Água do Areeiro"},
+    "description": {
+        "type": "Property",
+        "value": "Reservatório elevado em betão para distribuição de água potável na zona do Areeiro."
+    },
+    "category": { "type": "Property", "value": ["elevated"] },
+    "location": {
+        "type": "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.125345, 38.741983] },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry": "PT",
+            "addressLocality": "Lisboa",
+            "streetAddress": "Rua Professora Maria de Lurdes Belchior 21, 1900",
+            "postalCode": "1900"
+        }
+    },
+    "elevation": {"type": "Property", "value": 95.5, "unitCode": "MTR"},
+    "status": {
+        "type"      : "Property"            ,
+        "value"     : "operational"         ,
+        "observedAt": "2025-03-25T08:30:00Z"
+    },
+    "quality": {
+        "type": "Property",
+        "value": 3
+    },
+    "installationDate": {"type": "Property", "value": "2001-09-12T00:00:00Z"},
+    "lastInspectionDate": {
+        "type" : "Property"            ,
+        "value": "2024-09-10T10:00:00Z"
+    },
+    "inspectionFrequency": {"type": "Property", "value": "biennial"},
+    "storageCapacity": {
+        "type": "Property",
+        "value": 2500.0,
+        "unitCode": "MTQ"
+    },
+    "currentVolume": {
+        "type": "Property",
+        "value": 1980.0,
+        "unitCode": "MTQ",
+        "observedAt": "2025-03-25T08:30:00Z"
+    },
+    "currentStorage": {
+        "type": "Property",
+        "value": 88,
+        "unitCode": "P1",
+        "observedAt": "2025-03-25T08:30:00Z"
+    },
+    "material": {"type": "Property", "value": "concrete"},
+    "dimension": {
+        "type": "Property",
+        "value": {"diameter": 14.5, "height": 16},
+        "unitCode": "MTR"
+    },
+    "refNetwork": {
+        "type": "Relationship",
+        "object": ["urn:epal:WaterDistributionNetwork:W001"]
+    },
+    "connectedTo": {
+        "type": "Relationship",
+        "object": ["urn:epal:Pipe:PT:Lisboa:WP045"]
+    },
+    "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+    "hydroId": {
+        "type": "Property",
+        "value": {
+            "classificationScheme": "EU:WFD"         ,
+            "localId"             : "TK001-Areeiro"  ,
+            "namespace"           : "EU.EIONET.WATER"
+        }
+    },
+    "geographicalName": {
+        "type": "Property",
+        "value": {
+            "spelling"  : "Depósito Areeiro",
+            "language"  : "pt"              ,
+            "nameStatus": "official"
+        }
+    },
+    "beginLifespanVersion": {
+        "type" : "Property"            ,
+        "value": "2001-09-12T00:00:00Z"
+    },
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "criticalInfrastructure": {
+        "type": "Property",
+        "value": "false"
+    },
+    "image": {
+        "type": "Property",
+        "value": [
+            "https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"
+        ]
+    },
+    "seeAlso": {
+        "type": "Property",
+        "value": ["http://inspire.ec.europa.eu/theme/us"]
+    },
+    "dateCreated": {"type": "Property", "value": "2023-03-31T08:45:00Z"},
+    "dateModified": {"type": "Property", "value": "2025-03-31T11:24:00Z"},
+    "version": {"type": "Property", "value": "1.0"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld"                 ,
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

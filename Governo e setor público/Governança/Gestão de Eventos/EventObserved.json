@@ -1,0 +1,36 @@
+{
+    "id"               : "urn:cml:EventObserved:209583",
+    "type"             : "EventObserved",
+    "description"      : {"type": "Property", "value": "Uma antologia fotográfica de Manuel Gomes da Costa..."},
+    "dateStarted"      : {"type": "Property", "value": "2025-02-22T11:00:00Z"},
+    "dateFinished"     : {"type": "Property", "value": "2025-05-22T17:00:00Z"},
+    "dateCreated"      : {"type": "Property", "value": "2025-02-22T12:00:00Z"},
+    "dateModified"     : {"type": "Property", "value": "2025-05-22T18 :00:00Z"},
+    "location"         : {
+        "type"            : "GeoProperty",
+        "value"           : { "coordinates": [-9.1531378134911, 38.7244912199003], "type": "Point" },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "address"          : {
+        "type" : "Property",
+        "value": {
+            "addressCountry": "PT",
+            "addressRegion" : "Lisboa",
+            "streetAddress" : "Rua Castilho, 69, Lj. Esq",
+            "postalCode"    : "1250-067"
+        }
+    },
+    "peopleInvolved"   : {"type": "Property", "value": 10},
+    "refEvent"         : {"type": "Relationship", "object": "urn:cml:Event:209583"},
+    "refRestrictions"  : { "type": "Relationship", "value": ["urn:cml:RestrictedTrafficArea:AzinhagaDaCidade"] },
+    "refAffectedPlaces": { "type": "Relationship", "object": ["urn:cml:Place:loja-costa-nova"] },
+    "refUsedMeans"     : { "type": "Relationship", "value": ["urn:cml:Vehicle:Fireman:vuci:223"] },
+    "promoter"         : { "type": "Property", "value": ["ArtesEOfícios"] },
+    "minimumOccupancy" : {"type": "Property", "value": 0, "calculationMethod": "estimation"},
+    "averageOccupancy" : {"type": "Property", "value": 75, "calculationMethod": "estimation"},
+    "maximumOccupancy" : {"type": "Property", "value": 150, "calculationMethod": "estimation"},
+    "@context"         : [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://schema.fiware.org/ld/context"
+    ]
+}

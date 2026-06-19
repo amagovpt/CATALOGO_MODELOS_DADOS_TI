@@ -1,0 +1,14 @@
+{
+    "country": "IT",
+    "magvar": 0,
+    "subtype": "ROAD_CLOSED_EVENT",
+    "city": "Braga",
+    "street": "Avenida Do Covedêlo",
+    "reportRating": 0,
+    "reliability": 9,
+    "reportDescription": "intervenção de repavimentação",
+    "location": {"x":-8.45525182013597, "y": 41.51463028423623},
+    "type": "ROAD_CLOSED",
+    "uuid": "1064e72c-0d3b-332d-95c6-1dcab524aa54",
+    "pubMillis": 1446918728242
+}

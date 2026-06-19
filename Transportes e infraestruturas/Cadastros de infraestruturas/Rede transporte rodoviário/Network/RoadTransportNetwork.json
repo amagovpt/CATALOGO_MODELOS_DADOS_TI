@@ -1,0 +1,161 @@
+{
+  "id": "urn:dgt:RoadTransportNetwork:RDNW-NET-001",
+  "type": "RoadTransportNetwork",
+  "dataProvider": {"type": "Property", "value": "Direção-Geral do Território"},
+  "dateCreated": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-10-01T08:00:00.00Z"},
+    "description": "Data em que a rede rodoviária foi registada pela primeira vez no sistema"
+  },
+  "dateModified": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-10-20T16:45:00.00Z"},
+    "description": "Data da última modificação dos dados da rede rodoviária"
+  },
+  "description": "Rede rodoviária metropolitana que abrange a área de Lisboa, incluindo estradas nacionais, regionais e locais",
+  "name": {
+    "type" : "Property"                                   ,
+    "value": "Rede Viária da Área Metropolitana de Lisboa"
+  },
+  "alternateName": {"type": "Property", "value": "RV-AML"},
+  "version": {"type": "Property", "value": "2.3"},
+  "beginLifespanVersion": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-10-25T00:00:00.00Z"},
+    "description": "Data a partir da qual esta versão de rede é válida"
+  },
+  "endLifespanVersion": {
+    "type": "Property",
+    "value": null,
+    "description": "Data até à qual esta versão de rede é válida"
+  },
+  "boundingBox": {
+    "type": "GeoProperty",
+    "value": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [-9.219202, 38.411408],
+          [-8.937677, 38.487769],
+          [-8.863971, 38.666275],
+          [-8.939630, 38.761091],
+          [-9.006418, 38.933384],
+          [-9.419778, 38.982507],
+          [-9.493936, 38.715126],
+          [-9.219202, 38.411408]
+        ]
+      ]
+    },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "address": {
+    "type": "Property",
+    "value": {"addressCountry": "PT", "addressRegion": "Lisboa"}
+  },
+  "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
+  "networkType": {"type": "Property", "value": "road"},
+  "networkClassification": {"type": "Property", "value": "metropolitan"},
+  "totalLength": {"type": "Property", "value": 3001, "unitCode": "KMT"},
+  "totalNodes": {"type": "Property", "value": 1236},
+  "totalSegments": {"type": "Property", "value": 1875},
+  "accessibility": {
+    "type": "Property",
+    "value": 0.92,
+    "description": "Índice de acessibilidade da rede entre 0 e 1"
+  },
+  "connectivity": {
+    "type": "Property",
+    "value": 0.88,
+    "description": "Índice de conectividade da rede entre 0 e 1"
+  },
+  "roadClass": {
+    "type": "Property",
+    "value": {
+      "highway":  359.0,
+      "national":  385.7,
+      "regional":  742.1,
+      "local"   : 2907.5
+    },
+    "unitCode": "KMT"
+  },
+  "hasParts": {
+    "type": "Relationship",
+    "object": [
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-001",
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-002",
+      "urn:dgt:RoadTransportSegment:RDNT-SEG-003",
+      "urn:dgt:RoadTransportNode:RDNT-NODE-001"  ,
+      "urn:dgt:RoadTransportNode:RDNT-NODE-002"
+    ],
+    "description": "Referências aos segmentos e nós que compõem esta rede (mostrando os primeiros)"
+  },
+  "connectedNetworks": {
+    "type": "Relationship",
+    "object": [
+      "urn:dgt:RoadTransportNetwork:RDNW-NET-002",
+      "urn:dgt:RoadTransportNetwork:RDNW-NET-003"
+    ],
+    "description": "Referências a redes rodoviárias adjacentes ou ligadas"
+  },
+  "crossBorderPoints": {
+    "type": "Property",
+    "value": {
+      "id": "urn:dgt:CrossBorderPoint:RDNT-CBP-001",
+      "connectedNetwork": "urn:dgt:RoadTransportNetwork:RDNW-NET-002",
+      "location": { "type": "Point", "coordinates": [-9.2135, 38.9201] },
+      "connectionType": "regional",
+      "dailyTrafficVolume": 2500,
+      "crossingTime": 0
+    },
+    "description": "Pontos de ligação desta rede a outras regiões administrativas"
+  },
+  "concessionary": {
+    "type": "Relationship",
+    "object": ["urn:dgt:concessionaire:EP", "urn:dgt:concessionaire:BRISA"],
+    "description": "Referências para as concessionários na rede de estada modelada"
+  },
+  "maintenanceAuthority": {
+    "type": "Property",
+    "value": {
+      "name": "Infraestruturas de Portugal",
+      "contactPoint": "estradas@ip.pt",
+      "website": "https://www.infraestruturasdeportugal.pt/pt-pt/rede-rodoviaria-ip"
+    }
+  },
+  "lastFullInspection": {
+    "type": "Property",
+    "value": {"@type": "DateTime", "@value": "2024-06-15T00:00:00.00Z"},
+    "description": "Data da última inspeção completa da rede"
+  },
+  "networkStatus": {
+    "type": "Property",
+    "value": {
+      "overallCondition": "bom",
+      "criticalPoints": 3,
+      "congestionLevel": "moderado"
+    },
+    "observedAt": "2024-10-19T00:00:00.00Z"
+  },
+  "emergencyRoutes": {
+    "type": "Relationship",
+    "object": [
+      "urn:dgt:EmergencyRoute:EMRG-RT-001",
+      "urn:dgt:EmergencyRoute:EMRG-RT-002"
+    ],
+    "description": "Referências a itinerários definidos para a evacuação de emergência"
+  },
+  "trafficStatistics": {
+    "type": "Property",
+    "value": {
+      "averageDailyVolume": 785640,
+      "peakHourVolume": 92450,
+      "congestionHours": 4.2,
+      "observationPeriod": "P30D"
+    },
+    "observedAt": "2024-10-19T00:00:00.00Z"
+  },
+  "nationalId": {"type": "Property", "value": "PT-RDN-LXMET"},
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+  ]
+}

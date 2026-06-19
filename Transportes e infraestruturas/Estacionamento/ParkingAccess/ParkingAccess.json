@@ -1,0 +1,13 @@
+{
+  "id": "urn:cmporto:ParkingAccess:accesspoint-trinidade-1",
+  "type": "ParkingAccess",
+  "category": { "type": "Property", "value": ["vehicleEntrance"] },
+  "features": { "type": "Property", "value": ["barrier"] },
+  "location": {
+    "type"            : "geo:json",
+    "value"           : { "type": "Point", "coordinates": [-8.60961198807, 41.150691773] },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "name": {"type": "Property", "value": "Trinidade main entrance"},
+  "refOffStreetParking": {"type": "Property", "value": "urn:cmporto:OffStreetParking:porto-OffStreetParking-23889"}
+}

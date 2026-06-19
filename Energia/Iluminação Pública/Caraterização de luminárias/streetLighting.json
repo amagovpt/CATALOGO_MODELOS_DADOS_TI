@@ -1,0 +1,33 @@
+{
+    "id": "urn:eredes:Streetlight:braga:1234",
+    "type": "Streetlight",
+    "areaServed": {"type": "Property", "value": "Roundabouts city entrance"},
+    "circuit": {"type": "Property", "value": "C-456-A467"},
+    "controllingMethod": {"type": "Property", "value": "individual"},
+    "current": {"type": "Property", "value": 250, "unitCode": "4K"},
+    "dateLastLampChange": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-09-08T07:02:21.753Z"} },
+    "illuminanceLevel": {"type": "Property", "value": 0.85},
+    "feederID": {"type": "Property", "value": "F1"},
+    "feederPillarNum": {"type": "Property", "value": "70"},
+    "lanternHeight": {"type": "Property", "value": 10, "unitCode": "MTR"},
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Point",
+            "coordinates"     : [-8.425175259303757, 41.55069465763688],
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "locationCategory": {"type": "Property", "value": "pedestrianPath"},
+    "municipalityInfo": { "type": "Property", "value": {"district": "Braga", "cityName": "Braga", "zoneId": "2"} },
+    "observationDateTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-16T10:51:02Z"} },
+    "powerConsumption": {"type": "Property", "value": 100, "unitCode": "WTT"},
+    "powerFactor": {"type": "Property", "value": 0.9},
+    "powerState": {"type": "Property", "value": "off"},
+    "refStreetlightGroup": {"type": "Relationship", "object": "urn:eredes:StreetlightGroup:braga:G345"},
+    "refStreetlightModel": {"type": "Relationship", "object": "urn:eredes:StreetlightModel:braga:STEEL_Tubular_10m"},
+    "status": {"type": "Property", "value": "ok"},
+    "streetPoleNum": {"type": "Property", "value": "2"},
+    "voltage": {"type": "Property", "value": 220, "unitCode": "VLT"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/context.jsonld"]
+}

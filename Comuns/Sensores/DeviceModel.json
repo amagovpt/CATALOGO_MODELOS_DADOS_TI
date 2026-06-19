@@ -1,0 +1,42 @@
+{  
+  "id": "urn:cml:DeviceModel:wastecontainer-sensor-123",  
+  "type": "DeviceModel",  
+  "brandName": {  
+    "type": "Property",  
+    "value": "myDevice"  
+  },  
+  "Category": {  
+    "type": "Property",  
+    "value": [  
+      "sensor"  
+    ]  
+  },  
+  "controlledProperty": {  
+    "type": "Property",  
+    "value": [  
+      "fillingLevel",  
+      "temperature"  
+    ]  
+  },  
+  "function": {  
+    "type": "Property",  
+    "value": [  
+      "sensing"  
+    ]  
+  },  
+  "manufacturerName": {  
+    "type": "Property",  
+    "value": "IPF Electronic"  
+  },  
+  "modelName": {  
+    "type": "Property",  
+    "value": "FI520171"  
+  },  
+  "name": {  
+    "type": "Property",  
+    "value": "Inductive Filling Level Sensor"  
+  },  
+  "@context": [  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"  
+  ]  
+}  

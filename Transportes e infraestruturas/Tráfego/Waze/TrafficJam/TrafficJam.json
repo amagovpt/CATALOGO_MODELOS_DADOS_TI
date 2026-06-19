@@ -1,0 +1,27 @@
+{
+    "jams": [
+        {
+            "country": "PT",
+            "city": "Braga",
+            "level": 5,
+            "line": [
+                {"x": -8.4284027288368, "y": 41.53147911031161},
+                {"x": -8.431020564835507, "y": 41.530258308349914}
+            ],
+            "speedKMH": 0,
+            "length": 65,
+            "turnType": "NONE",
+            "type": "NONE",
+            "uuid": 1320005295,
+            "endNode": "Rua 25 De Abril",
+            "speed": 0,
+            "segments": [{}],
+            "blockingAlertUuid": "9fd8bf93-0e69-46c3-8447-270181a98b92",
+            "roadType": 7,
+            "delay": -1,
+            "street": "Rua 25 De Abril",
+            "id": 1320005295,
+            "pubMillis": 1659939026804
+        }
+    ]
+}

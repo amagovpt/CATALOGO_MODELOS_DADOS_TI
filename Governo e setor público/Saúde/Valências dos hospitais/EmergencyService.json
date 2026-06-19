@@ -1,0 +1,82 @@
+{
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        {
+            "EmergencyService": "https://schema.org/EmergencyService",
+            "location": "http://schema.org/location",
+            "address": "http://schema.org/address",
+            "contactPoint": "http://schema.org/contactPoint",
+            "name": "http://schema.org/name",
+            "dateCreated": "https://smartdatamodels.org/dateCreated",
+            "dateModified": "https://smartdatamodels.org/dateModified",
+            "dateObserved": "https://smartdatamodels.org/dateObserved",
+            "description": "http://purl.org/dc/terms/description",
+            "areaServed": "https://schema.org/areaServed",
+            "ageRange": "https://schema.org/typicalAgeRange",
+            "legalNature": "https://smartdatamodels.org/legalNature",
+            "hospitalGroup": "https://smartdatamodels.org/hospitalGroup",
+            "emergencyServiceType": "https://smartdatamodels.org/emergencyServiceType",
+            "speciality": "https://smartdatamodels.org/speciality",
+            "accessByPatientInitiative": "https://smartdatamodels.org/accessViaSNS24",
+            "accessViaSNS24": "https://smartdatamodels.org/accessViaSNS24",
+            "accessByCSPInitiative": "https://smartdatamodels.org/accessViaSNS24",
+            "accessByUrgencyDoctorsInitiative": "https://smartdatamodels.org/accessViaSNS24",
+            "accessByHospitalDoctorsInitiative": "https://smartdatamodels.org/accessViaSNS24",
+            "operationalHours": "https://smartdatamodels.org/operationalHours",
+            "facilityCapacity": "https://smartdatamodels.org/facilityCapacity",
+            "ambulanceServiceAvailability": "https://smartdatamodels.org/ambulanceServiceAvailability"
+        }
+    ],
+    "id": "urn:sns:EmergencyService:SUB-Cinfaes",
+    "type": "EmergencyService",
+    "name": {"type": "Property", "value": "SUB Cinfães"},
+    "region": {"type": "Property", "value": "ARS Norte"},
+    "legalNature": {"type": "Property", "value": "IP"},
+    "hospitalGroup": {
+        "type" : "Property"                                  ,
+        "value": "Grupo C"
+    },
+    "emergencyServiceType": {
+        "type" : "Property"                  ,
+        "value": "Serviço de Urgência Básica"
+    },
+    "speciality": {"type": "Property", "value": "Urgência Adultos"},
+    "ageRange": {"type": "Property", "value": "18 aos 150 anos"},
+    "accessByPatientInitiative": {"type": "Property", "value": true},
+    "accessViaSNS24": {"type": "Property", "value": true},
+    "accessByCSPInitiative": {"type": "Property", "value": true},
+    "accessByUrgencyDoctorsInitiative": {"type": "Property", "value": true},
+    "accessByHospitalDoctorsInitiative": {"type": "Property", "value": false},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-8.0912927613, 41.074141271]
+        },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "streetAddress"  : "Rua Capitão Salgueiro Maia",
+            "postalCode"     : "4690-047"                  ,
+            "addressLocality": "Cinfães"                   ,
+            "addressCountry" : "PT"
+        }
+    },
+    "areaServed": {"type": "Property", "value": "Freguesia de Cinfães"},
+    "contactPoint": {
+        "type": "Property",
+        "value": {
+            "telephone": "+351255431374"                         ,
+            "email"    : "aces.baixotamega@arsnorte.min-saude.pt"
+        }
+    },
+    "operationalHours": {"type": "Property", "value": "24/7"},
+    "facilityCapacity": {
+        "type": "Property",
+        "value": {"bedCapacity": 20, "staffCapacity": 50}
+    },
+    "ambulanceServiceAvailability": {"type": "Property", "value": true},
+    "dateModified": {"type": "Property", "value": "2025-01-14T12:00:00Z"}
+}

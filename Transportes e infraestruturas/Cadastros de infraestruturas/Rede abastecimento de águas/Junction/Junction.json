@@ -1,0 +1,145 @@
+{
+    "id": "urn:epal:Junction:J101",
+    "type": "Junction",
+    "name": {"type": "Property", "value": "Junction 456"},
+    "description": {
+        "type" : "Property" ,                                         
+        "value": "Connection point for main and secondary collectors"
+    },
+    "alternateName": {"type": "Property", "value": "JT-456"},
+    "areaServed": {"type": "Property", "value": "Parque das Nações"},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.095192666270322, 38.774620476082134]
+        },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "elevation": { "type": "Property", "value": 13.7, "unitCode": "MTR" },
+    "junctionFunction": {"type": "Property", "value": "distribution"},
+    "junctionType": {"type": "Property", "value": "crossJunction"},
+    "refNetwork": {
+        "type": "Relationship",
+        "object": ["urn:epal:WaterDistributionNetwork:W001"]
+      },
+    "dimension": {
+        "type": "Property",
+        "value": {"diameter": 1000, "unitCode": "MMT"}
+    },
+    "material": {"type": "Property", "value": "concrete"},
+    "materialClass": {"type": "Property", "value": "non-metallic"},
+    "coverDimensions": {
+        "type": "Property",
+        "value": {"diameter": 600, "unitCode": "MMT"}
+    },
+    "hasValveChamber": {"type": "Property", "value": true},
+    "hasInspectionHatch": {"type": "Property", "value": false},
+    "hasAirReleaseValve": {"type": "Property", "value": false},
+    "connectedPipes": {
+        "type": "Relationship",
+        "object": [
+            "urn:epal:Pipe:P104",
+            "urn:epal:Pipe:P105",
+            "urn:epal:Pipe:P106"
+        ]
+    },
+    "currentFlow": {
+        "type": "Property",
+        "value": 0.18,
+        "unitCode": "MQS",  
+        "observedAt": "2023-03-25T08:30:00Z"
+    },
+    "incomingFlows": {
+        "type": "Relationship",
+        "object": ["urn:epal:Pipe:P104", "urn:epal:Pipe:P105"]
+    },
+    "outgoingFlows": {
+        "type": "Relationship",
+        "object": ["urn:epal:Pipe:P106"]
+    },
+    "upstreamJunctions": {
+        "type": "Relationship",
+        "object": ["urn:epal:Junction:J123", "urn:epal:Junction:J124"]
+    },
+    "downstreamJunctions": {
+        "type": "Relationship",
+        "object": ["urn:epal:Junction:J321"]
+    },
+    "operatingPressure": {"type": "Property", "value": 3.5, "unitCode": "BAR"},
+    "pressureClass": {  "type": "Property",  "value": "PN16"  },
+    "disinfectantResidual": {
+        "type": "Property",
+        "value": 0.5,
+        "unitCode": "MG/L",
+        "observedAt": "2023-03-25T08:30:00Z"
+    },
+    "chlorinationPoint": {
+        "type": "Property",
+        "value": true,
+        "validFor": ["potable_water"]
+    },
+    "slope": { "type": "Property",  "value": 3.2, "unitCode": "DEG" },
+    "pressureZone": {"type": "Property", "value": "Zone 3"},
+    "waterQualityIndex": {"type": "Property", "value": 95},
+    "hasBackflowPrevention": {"type": "Property", "value": true},
+    "hydraulicHead": {"type": "Property", "value": 124.8, "unitCode": "MTR"},
+    "designFlow": {"type": "Property", "value": 0.25, "unitCode": "MQS"},
+    "installationDate": {"type": "Property", "value": "2010-05-10T00:00:00Z"},
+    "expectedLifespan": {"type": "Property", "value": 50, "unitCode": "ANN"},
+    "lastInspectionDate": {
+        "type" : "Property" ,
+        "value": "2023-09-12T00:00:00Z"
+    },
+    "lastCleaningDate": {"type": "Property", "value": "2023-06-20T00:00:00Z"},
+    "maintenanceSchedule": {"type": "Property", "value": "annual"},
+    "quality": {"type": "Property", "value": 4},
+    "status": {"type": "Property", "value": "operational"},
+    "criticalInfrastructure": {"type": "Property", "value": true},
+    "restrictedAccess": {"type": "Property", "value": false},
+    "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+    "maintainer": {
+        "type"  : "Relationship"                                  ,
+        "object": "urn:arte:Organization:MaintenanceCompany123"
+    },
+    "concessionaire": {
+        "type": "Relationship",
+        "object": "urn:arte:Organization:EPAL123"
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry" : "PT"                 ,
+            "addressLocality": "Lisboa"             ,
+            "streetAddress"  : "Alameda dos Oceanos",
+            "postalCode"     : "1990-208"
+        }
+    },
+    "image": {
+        "type": "Property",
+        "value": [
+            "https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"
+        ]
+    },
+    "seeAlso": {
+        "type": "Property",
+        "value": [
+            "http://inspire.ec.europa.eu/theme/us",
+            "https://inspire.ec.europa.eu/codelist/WaterAppurtenanceTypeValue/junction"
+        ]
+    },
+    "dateCreated": {"type": "Property", "value": "2023-01-01T08:45:00Z"},
+    "dateModified": {"type": "Property", "value": "2024-03-02T11:24:00Z"},
+    "version": {"type": "Property", "value": "1.1"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld"                 ,
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

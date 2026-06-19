@@ -1,0 +1,76 @@
+{  
+  "id": "urn:cml:Device:device-2049",  
+  "type": "Device",  
+  "batteryLevel": {  
+    "type": "Property",  
+    "value": 0.75 ,
+    "unitCode": "P1"
+  },  
+  "Category": {  
+    "type": "Property",  
+    "value": [  
+      "sensor"  
+    ]  
+  },  
+  "controlledAsset": {  
+    "type": "Relationship",  
+    "object": [  
+      "urn:cml:wastecontainer:33"  
+    ]  
+  },  
+  "controlledProperty": {  
+    "type": "Property",  
+    "value": [  
+      "fillingLevel",  
+      "temperature"  
+    ]  
+  },  
+  "dateFirstUsed": {  
+    "type": "Property",  
+    "value": {  
+      "@type": "DateTime",  
+      "@value": "2025-05-10T11:00:00Z"  
+    }  
+  },  
+  "deviceState": {  
+    "type": "Property",  
+    "value": "ok"  
+  },  
+  "ipAddress": {  
+    "type": "Property",  
+    "value": [  
+      "192.14.56.79"  
+    ]  
+  },  
+  "mcc": {  
+    "type": "Property",  
+    "value": "268"  
+  },  
+  "mnc": {  
+    "type": "Property",  
+    "value": "12"  
+  },  
+  "owner": {  
+    "type": "Property",  
+    "value": [  
+      "https://www.lisboa.pt"  
+    ]  
+  },  
+  "refDeviceModel": {  
+    "type": "Relationship",  
+    "object": "urn:cml:DeviceModel:wastecontainer-sensor-123"  
+  },  
+  "rssi": {  
+    "type": "Property",  
+    "value": 0.86,
+    "unitCode":"DBM"  
+  },  
+  "serialNumber": {  
+    "type": "Property",  
+    "value": "20249845A"  
+  },    
+  "@context": [  
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",  
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Device/master/context.jsonld"  
+  ]  
+}  

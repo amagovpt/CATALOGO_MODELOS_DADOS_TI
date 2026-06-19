@@ -1,0 +1,18 @@
+{
+  "id"            : "urn:cmcascais:ParkingSpot:cascais:dfrancisco_avilez_6:3",
+  "type"          : "ParkingSpot",
+  "status"        : {"type": "Property", "value": "free"},
+  "dateModified"  : {"type": "Property", "value": "2024-10-20T04:00:00.00Z"},
+  "category"      : { "type": "Property", "value": ["onStreet"] },
+  "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6"},
+  "name"          : {"type": "Property", "value": "A-13"},
+  "location"      : {
+    "type"            : "GeoProperty",
+    "value"           : { "type": "Point", "coordinates": [-9.422483, 38.699607] },
+    "coordinateSystem": "EPSG:3763"
+  },
+  "@context"      : [
+    "https://smartdatamodels.org/context.jsonld",
+    "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+  ]
+}

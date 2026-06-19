@@ -1,0 +1,29 @@
+{
+    "id": "urn:apa:WaterObserved:MNCA-001",
+    "type": "WaterObserved",
+    "alternateName": {"type": "Property", "value": "Rio Douro, Foz"},
+    "areaServed": {"type": "Property", "value": "Foz do Rio Douro"},
+    "dateObserved": {"type": "Relationship", "object": "2025-01-10T14:07:00.209Z"},
+    "description": {"type": "Property", "value": "Observação da evolução dos níveis de água"},
+    "flow": {"type": "Property", "value": 714, "unitCode": "MQS"},
+    "height": {"type": "Property", "value": 3.52, "unitCode": "MTR"},
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Point",
+            "coordinates"     : [-8.67016611976922, 41.147585551490664],
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "measuredArea": {"type": "Property", "value": 250, "unitCode": "MTK"},
+    "name": {"type": "Property", "value": "W6CK-1YR8-E79V-CI4W"},
+    "objectArea": {"type": "Property", "value": 10, "unitCode": "P1"},
+    "objectHeightAverage": {"type": "Property", "value": 1.75, "unitCode": "MTR"},
+    "objectHeightMax": {"type": "Property", "value": 2.25, "unitCode": "MTR"},
+    "objectVolume": {"type": "Property", "value": 17.5, "unitCode": "MTQ"},
+    "waterLevel": {"type": "Property", "value": 3, "unitCode": "MTR"},
+    "swellDirection": {"type": "Property", "value": 85, "unitCode": "DD"},
+    "swellHeight": {"type": "Property", "value": 2.5, "unitCode": "MTR"},
+    "swellPeriod": {"type": "Property", "value": 12, "unitCode": "SEC"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"]
+}

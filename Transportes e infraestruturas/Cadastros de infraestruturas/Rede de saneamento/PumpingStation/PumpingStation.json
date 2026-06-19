@@ -1,0 +1,94 @@
+{
+    "id": "urn:ersar:PumpingStation:PS23",
+    "type": "PumpingStation",
+    "name": {"type": "Property", "value": "Estação elevatória 23"},
+    "description": {
+        "type": "Property",
+        "value": "Estação de bombagem de águas residuais que eleva as águas residuais da cota mais baixa para a mais alta"
+    },
+    "alternateName": {"type": "Property", "value": "EE-23"},
+    "areaServed": {"type": "Property", "value": "Parque das Nações"},
+    "location": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Point",
+            "coordinates": [-9.10066000973248, 38.7869070164071]
+        }
+    },
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry" : "PT"                 ,
+            "addressLocality": "Lisboa"             ,
+            "streetAddress"  : "Avenida Dom João II",
+            "postalCode"     : "1990-077"
+        }
+    },
+    "refNetwork": {
+        "type": "Relationship",
+        "object": ["urn:ersar:DrainageNetwork:N999"]
+    },
+    "maxFlowRate": {"type": "Property", "value": 5, "unitCode": "MQH"},
+    "maxHead": {"type": "Property", "value": 50, "unitCode": "MTR"},
+    "maxPower": {"type": "Property", "value": 750, "unitCode": "KWT"},
+    "minOperatingLevel": {"type": "Property", "value": 5.0, "unitCode": "MTR"},
+    "maxOperatingLevel": {"type": "Property", "value": 25, "unitCode": "MTR"},
+    "backupPower": {
+        "type": "Property",
+        "value": {
+            "available": true,
+            "type": "diesel_generator",
+            "capacity": {"value": 1000, "unitCode": "KWT"},
+            "autonomy": {"value": 60, "unitCode": "HUR"}
+        }
+    },
+    "minInletPressure": {"type": "Property", "value": 0.3, "unitCode": "BAR"},
+    "maxInletPressure": {"type": "Property", "value": 3, "unitCode": "BAR"},
+    "numberOfPumps": {"type": "Property", "value": 3},
+    "pumpTypes": {
+        "type": "Property",
+        "value": ["submersible", "submersible", "backup"]
+    },
+    "inletPipes": {
+        "type": "Relationship",
+        "object": ["urn:ersar:DrainagePipe:DP101", "urn:ersar:Pipe:SP131"]
+    },
+    "outletPipes": {
+        "type": "Relationship",
+        "object": ["urn:ersar:Pipe:SP132"]
+    },
+    "refParametersObserved": {
+        "type": "Relationship",
+        "object": [
+            "urn:apa:WaterObserved:MNCA-001"    ,
+            "urn:ren:ACMeasurement:MNCA-ACM-001"
+        ]
+    },
+    "status": {"type": "Property", "value": "operational"},
+    "installationDate": {"type": "Property", "value": "2012-07-15T00:00:00Z"},
+    "dateModified": {"type": "Property", "value": "2025-02-20T10:30:00Z"},
+    "dateCreated": {"type": "Property", "value": "2020-01-20T11:20:00Z"},
+    "documentation": {"type": "Property", "value": []},
+    "image": {"type": "Property", "value": []},
+    "owner": { "type": "Relationship", "object": ["urn:arte:Organization:CMLisboa"] },
+    "maintainer": {
+        "type"  : "Relationship"                                  ,
+        "object": "urn:arte:Organization:MaintenanceCompany123"
+    },
+    "operator": {
+        "type"  : "Relationship"                               ,
+        "object": "urn:arte:Organization:OperatorCompany123"
+    },
+    "version": {"type": "Property", "value": "1.3"},
+    "updateFrequency": {"type": "Property", "value": "weekly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld"                 ,
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

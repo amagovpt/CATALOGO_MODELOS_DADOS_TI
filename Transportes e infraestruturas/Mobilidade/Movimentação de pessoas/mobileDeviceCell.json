@@ -1,0 +1,52 @@
+{
+    "id"          : "urn:cml:MobileDeviceCell:lx:340:35:00001",
+    "type"        : "MobileDeviceCell",
+    "description" : {
+        "type" : "Property",
+        "value": "Caracteristicas de uma célula para reportar dados de dispositivos móveis"
+    },
+    "shortgridId" : {"type": "Property", "value": "lx:340:35:00001"},
+    "cellRow"     : {"type": "Property", "value": 340},
+    "cellColumn"  : {"type": "Property", "value": 35},
+    "areaServed"  : {"type": "Property", "value": "Cidade de Lisboa"},
+    "address"     : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressRegion"  : "Lisboa",
+            "district"       : "Distrito de Lisboa",
+            "addressLocality": "Penha de França",
+            "postalCode"     : "1170"
+        }
+    },
+    "location"    : {
+        "type"            : "GeoProperty",
+        "value"           : { "coordinates": [-9.127237954579527, 38.7242000878168], "type": "Point" },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "boundingBox" : {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "coordinates": [
+                [
+                    [-9.128387886166, 38.725100905745],
+                    [-9.126088022993, 38.725100905745],
+                    [-9.126088022993, 38.723299269889],
+                    [-9.128387886166, 38.723299269889],
+                    [-9.128387886166, 38.725100905745]
+                ]
+            ],
+            "type"       : "Polygon"
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "createdAt"   : {"type": "Property", "value": "2025-09-01T10:00:00Z"},
+    "modifiedAt"  : {"type": "Property", "value": "2025-09-01T10:00:00Z"},
+    "startDate"   : {"type": "Property", "value": "2025-09-01T10:00:00Z"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "license"     : {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
+    "@context"    : [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

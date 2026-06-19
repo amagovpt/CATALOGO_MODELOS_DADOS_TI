@@ -1,0 +1,18 @@
+{
+  "id": "urn:eredes:StreetlightModel:braga:STEEL_Tubular_10m",
+  "type": "StreetlightModel",
+  "category": { "type": "Property", "value": ["postTop"] },
+  "colorRenderingIndex": {"type": "Property", "value": 25},
+  "colorTemperature": {"type": "Property", "value": 3000, "unitCode": "KEL"},
+  "columnColor": {"type": "Property", "value": "green"},
+  "columnModelName": {"type": "Property", "value": "01 TUBULAR P/T 6M NUMANA"},
+  "lampBrandName": {"type": "Property", "value": "Philips"},
+  "lampModelName": {"type": "Property", "value": "SON-T"},
+  "lampTechnology": {"type": "Property", "value": "HPS"},
+  "lanternManufacturerName": {"type": "Property", "value": "Indal WRTL"},
+  "lanternModelName": {"type": "Property", "value": "ASR42CG"},
+  "luminousFlux": {"type": "Property", "value": 2300, "unitCode": "B61"},
+  "name": {"type": "Property", "value": "Tubular Numana 6M - ASR42CG - Son-T 100"},
+  "powerConsumption": {"type": "Property", "value": 100, "unitCode": "WTT"},
+  "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/context.jsonld"]
+}

@@ -1,0 +1,32 @@
+{
+    "id": "urn:eredes:StreetlightControlCabinet:CC45A34",
+    "type": "StreetlightControlCabinet",
+    "brandName": {"type": "Property", "value": "Siemens"},
+    "compliantWith": { "type": "Property", "value": ["IP54"] },
+    "cupboardMadeOf": {"type": "Property", "value": "plastic"},
+    "dateLastProgramming": {
+        "type" : "Property",
+        "value": {"@type": "DateTime", "@value": "2024-07-08T12:04:30.201Z"}
+    },
+    "energyConsumed": {"type": "Property", "value": 162456, "unitCode": "KWH"},
+    "intensityR": {"type": "Property", "value": 20.1, "unitCode": "AMP"},
+    "intensityS": {"type": "Property", "value": 14.4, "unitCode": "AMP"},
+    "intensityT": {"type": "Property", "value": 22, "unitCode": "AMP"},
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "type"            : "Point",
+            "coordinates"     : [-8.425175259303757, 41.55069465763688],
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "maximumPowerAvailable": {"type": "Property", "value": 10},
+    "meterReadingPeriod": {"type": "Property", "value": 60},
+    "modelName": {"type": "Property", "value": "Simatic S7 1200"},
+    "reactivePowerR": {"type": "Property", "value": 45, "unitCode": "D44"},
+    "reactivePowerS": {"type": "Property", "value": 43.5, "unitCode": "D44"},
+    "reactivePowerT": {"type": "Property", "value": 42, "unitCode": "D44"},
+    "refStreetlightGroup": { "type": "Relationship", "object": ["urn:eredes:StreetlightGroup:braga:G345"] },
+    "workingMode": {"type": "Property", "value": "automatic"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Streetlighting/master/context.jsonld"]
+}

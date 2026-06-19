@@ -1,0 +1,51 @@
+{
+    "id": "urn:env:jardim_sa_da_bandeira",
+    "type": "Garden",
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressLocality": "Coimbra",
+            "postalCode"     : "3000-351",
+            "streetAddress"  : "Av. Sá da Bandeira",
+            "type"           : "PostalAddress"
+        }
+    },
+    "areaServed": {"type": "Property", "value": "Av. Sá da Bandeira"},
+    "category": { "type": "Property", "value": ["public"] },
+    "dateLastWatering": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-2T08:00:00Z"} },
+    "nextWateringDeadline": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-02-1T08:00:00Z"} },
+    "description": {
+        "type": "Property",
+        "value": "A sua construção surge com o projeto de urbanização desta nova área da cidade. O projeto da autoria do paisagista portuense Jacinto Matos é delimitado por plátanos e por uma distribuição simétrica de canteiros em calçada portuguesa. O Jardim inaugurado em 1889, só foi concluído em 1929."
+    },
+    "location": {
+        "type" : "GeoProperty",
+        "value": {
+            "coordinates"     : [
+                [
+                    [-8.424079950529887, 40.21135559292355 ],
+                    [-8.423306329844223, 40.21117778227878 ],
+                    [-8.420249401500428, 40.20939965017641 ],
+                    [-8.42002407508744 , 40.20919889039516 ],
+                    [-8.419708618108416, 40.20908417025339 ],
+                    [-8.419325563205376, 40.209221834400154],
+                    [-8.419130280314022, 40.20942259411345 ],
+                    [-8.419182856476624, 40.2096921847926  ],
+                    [-8.419325563205376, 40.20991015094114 ],
+                    [-8.419633509303708, 40.20997324627422 ],
+                    [-8.419956477163481, 40.20986999933487 ],
+                    [-8.422953318462845, 40.21151619568542 ],
+                    [-8.42403488524684 , 40.211596496923704],
+                    [-8.424079950529887, 40.21135559292355 ]
+                ]
+            ],
+            "type"            : "Polygon",
+            "coordinateSystem": "EPSG:4326"
+        }
+    },
+    "name": {"type": "Property", "value": "Jardins da Av. Sá da Bandeira"},
+    "openingHours": { "type": "Property", "value": ["Seg-Sex 10:00-19:00", "Sa 10:00-22:00", "Dom 10:00-21:00"] },
+    "refRecord": { "type": "Relationship", "object": ["urn:env:GreenspaceRecord:jsb-2025-01-2"] },
+    "style": {"type": "Property", "value": "public"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.ParksAndGardens/master/context.jsonld"]
+}

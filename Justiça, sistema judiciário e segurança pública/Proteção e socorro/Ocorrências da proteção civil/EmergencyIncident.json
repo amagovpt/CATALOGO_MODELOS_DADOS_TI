@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://schema.lab.fiware.org/ld/context",
+    {
+      "dateCreated": "https://smartdatamodels.org/dateCreated",
+      "dateModified": "https://smartdatamodels.org/dateModified",
+      "description": "http://purl.org/dc/terms/description",
+      "location": "https://uri.etsi.org/ngsi-ld/location",
+      "severity": "https://smartdatamodels.org/severity",
+      "status": "https://smartdatamodels.org/status",
+      "reportedBy": "https://smartdatamodels.org/reportedBy",
+      "affectedArea": "https://smartdatamodels.org/affectedArea",
+      "resourcesDeployed": "https://smartdatamodels.org/resourcesDeployed",
+      "resourceType": "https://smartdatamodels.org/resourceType",
+      "quantity": "https://smartdatamodels.org/quantity",
+      "coordinatingAgencies": "https://smartdatamodels.org/coordinatingAgencies",
+      "incidentPriority": "https://smartdatamodels.org/incidentPriority"
+    }
+  ],
+  "id": "urn:anepc:EmergencyIncident:I001",
+  "type": "EmergencyIncident",
+  "incidentType": {"type": "Property", "value": "Fire"},
+  "description": {"type": "Property", "value": "Large fire."},
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "coordinates": [
+        [
+          [-7.684241623221567 , 37.140260377157844],
+          [-7.68262478180776  , 37.138108523609205],
+          [-7.6793078281770875, 37.13908765222193 ],
+          [-7.681042636561756 , 37.1412339463117  ],
+          [-7.684241623221567 , 37.140260377157844]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "coordinateSystem": "EPSG:4326"
+  },
+  "reportedBy": {"type": "Property", "value": "Citizen"},
+  "dateCreated": {"type": "Property", "value": "2025-01-16T10:00:00Z"},
+  "dateModified": {"type": "DateTime", "value": "2025-01-09T10:45:00Z"},
+  "severity": {"type": "Property", "value": "High"},
+  "status": {"type": "Property", "value": "Ongoing"},
+  "affectedArea": {"type": "Property", "value": "100 hectares"},
+  "resourcesDeployed": {
+    "type": "Property",
+    "value": [
+      {"resourceType": "Firefighters", "quantity": 10},
+      {"resourceType": "Helicopters" , "quantity":  0},
+      {"resourceType": "Ambulances"  , "quantity":  0}
+    ]
+  },
+  "coordinatingAgencies": { "type": "Property", "value": ["ANEPC", "GNR"] },
+  "incidentPriority": {"type": "Property", "value": "Emergency"}
+}

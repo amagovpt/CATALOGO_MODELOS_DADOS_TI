@@ -1,0 +1,33 @@
+{
+    "id": "urn:ipma:WeatherForecast:LX-2024111T100000Z-20241101T160000Z",
+    "type": "WeatherForecast",
+    "dataProvider": {"type": "Property", "value": "IPMA"},
+    "dateIssued": "2024-11-01T09:30:01.00Z",
+    "dateRetrieved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-11-01T10:00:00.00Z"} },
+    "validity": {"type": "Property", "value": "2024-11-01T10:00:00.00Z/2024-11-01T16:00:00.00Z"},
+    "validFrom": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-11-01T10:00:00.00Z"} },
+    "validTo": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-11-01T16:00:00.00Z"} },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.12749444, 38.76620278] },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "address": { "type": "Property", "value": {"addressLocality": "Lisboa", "addressCountry": "PT"} },
+    "dayMaximum": {
+        "type" : "Property",
+        "value": {"feelsLikeTemperature": 23.00, "temperature": 22.00, "relativeHumidity": 0.82}
+    },
+    "dayMinimum": {
+        "type" : "Property",
+        "value": {"feelsLikeTemperature": 13.00, "temperature": 14.00, "relativeHumidity": 0.66}
+    },
+    "feelsLikeTemperature": {"type": "Property", "value": 22, "unitCode": "CEL"},
+    "precipitationProbability": {"type": "Property", "value": 0.10},
+    "relativeHumidity": {"type": "Property", "value": 0.73},
+    "source": {"type": "Property", "value": "https://www.ipma.pt"},
+    "temperature": {"type": "Property", "value": 20, "unitCode": "CEL"},
+    "uVIndexMax": {"type": "Property", "value": 4.0},
+    "weatherType": {"type": "Property", "value": "Clear sky"},
+    "windSpeed": {"type": "Property", "value": 1, "unitCode": "MTS"},
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Weather/master/context.jsonld"]
+}

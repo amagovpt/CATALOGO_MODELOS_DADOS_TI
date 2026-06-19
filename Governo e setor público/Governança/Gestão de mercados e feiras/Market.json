@@ -1,0 +1,47 @@
+{
+    "id": "urn:cmp:Market:bolhao12",
+    "type": "Market",
+    "name": {"type": "Property", "value": "Mercado do Bolhão"},
+    "description": {
+        "type": "Property",
+        "value": "Mercado construído no séc. 20, em estilo neoclássico, tardio, de planta retangular, com pátio central e dois eixos, no sentido transversal e longitudinal a definir as entradas. A monumentalidade, criada pelos torreões nas esquinas em contraponto às linhas horizontais marcadas nas superfícies das fachadas, não é indiferente a Correia da Silva."
+    },
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : { "coordinates": [-8.607153057237866, 41.149355266425005], "type": "Point" },
+        "coordinateSystem": "EPSG:4326"
+    },
+    "category": { "type": "Property", "value": ["mercado"] },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Porto",
+            "postalCode"     : "4000-211",
+            "streetAddress"  : "Rua De Fernandes Tomás",
+            "type"           : "PostalAddress"
+        }
+    },
+    "buildingId": {"type": "Property", "value": "urn:rnc:BuildingRegistration:22312345"},
+    "occupancy": {"type": "Property", "value": 10},
+    "capacity": {"type": "Property", "value": 10},
+    "contactPoint": {
+        "type" : "Property",
+        "value": {
+            "telephone"  : "+351 223 326 024",
+            "email"      : "geral@mercadobolhao.pt",
+            "contactType": "Customer Service",
+            "url"        : "https://mercadobolhao.pt/contactos/"
+        }
+    },
+    "status": {"type": "Property", "value": "active"},
+    "refPOI": {"type": "Property", "value": "urn:cmp:PointOfInterest:Bolhao"},
+    "recurrence": {"type": "Property", "value": "weekly"},
+    "dateStarted": {"type": "Property", "value": "2000-01-01T07:30:00Z"},
+    "dateFinished": {"type": "Property", "value": null},
+    "openingHours": {"type": "Property", "value": "Mo-Su 09:00-17:00"},
+    "accessibility": { "type": "Property", "value": ["wheelchairAccessible"] },
+    "managementEntity": { "type": "Property", "value": ["CMPorto"] },
+    "promotingEntity": { "type": "Property", "value": ["CMPorto"] },
+    "supportingFacilities": { "type": "Property", "value": ["WC"] }
+}

@@ -1,0 +1,50 @@
+{
+  "id": "urn:CML:RestrictedTrafficArea:AzinhagaDaCidade",
+  "type": "RestrictedTrafficArea",
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry" : "PT"                ,
+      "addressLocality": "Lisboa"            ,
+      "streetAddress"  : "Azinhaga da Cidade"
+    }
+  },
+  "category": { "type": "Property", "value": ["WorkInProgress"] },
+  "description": {"type": "Property", "value": "OBRA - FAIXA DE RODAGEM"},
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "coordinates": [
+        [
+          [-9.159949219646393, 38.77556298191604 ],
+          [-9.160523467244872, 38.774990621080605],
+          [-9.160974142575753, 38.77415190581823 ],
+          [-9.16085420478555 , 38.774208576079275],
+          [-9.160428970804844, 38.77499628804233 ],
+          [-9.159847454249132, 38.77549781235007 ],
+          [-9.159949219646393, 38.77556298191604 ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "coordinateSystem": "EPSG:4326"
+  },
+  "name": {"type": "Property", "value": "Corte de estrada"},
+  "notAllowedVehicleType": { "type": "Property", "value": ["anyVehicle"] },
+  "restrictionValidityHours": {
+    "type" : "Property"                       ,
+    "value": "R-1/2024-12-16T08:00:00.00/P10H"
+  },
+  "validityEndDate": {"type": "Property", "value": "2025-04-26T18:00:00.00Z"},
+  "validityStartDate": {
+    "type" : "Property"               ,
+    "value": "2024-12-16T08:00:00.00Z"
+  },
+  "source": {
+    "type" : "Property"                                      ,
+    "value": "https://condicionamentos-transito.cm-lisboa.pt"
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+  ]
+}

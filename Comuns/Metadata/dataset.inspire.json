@@ -1,0 +1,70 @@
+{
+    "@context": {
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat"   : "https://www.w3.org/ns/dcat#",
+        "foaf"   : "http://xmlns.com/foaf/0.1/",
+        "vcard"  : "http://www.w3.org/2006/vcard/ns#",
+        "xsd"    : "http://www.w3.org/2001/XMLSchema#",
+        "skos"   : "http://www.w3.org/2004/02/skos/core#",
+        "ins"    : "http://inspire.ec.europa.eu/ont/base#"
+    },
+    "@id": "urn:ngsi-ld:Dataset:id:776884",
+    "@type": "dcat:Dataset",
+    "dcterms:title": {"@value": "Conjunto de Dados de Qualidade do Ar", "@language": "pt"},
+    "dcterms:description": {
+        "@value": "Conjunto de dados que fornece medições históricas da qualidade do ar em várias cidades, incluindo partículas em suspensão (PM2.5, PM10), NO2, e ozono.",
+        "@language": "pt"
+    },
+    "dcterms:identifier": "urn:ngsi-ld:Dataset:id:776884",
+    "dcat:keyword": [
+        {"@value": "qualidade do ar", "@language": "pt"},
+        {"@value": "poluição",        "@language": "pt"},
+        {"@value": "ambiente",        "@language": "pt"}
+    ],
+    "dcat:theme": {
+        "@value": "http://publications.europa.eu/resource/authority/data-theme/HEAL",
+        "@type" : "skos:Concept"
+    },
+    "dcat:spatialResolutionInMeters": {"@value": "1000", "@type": "xsd:decimal"},
+    "dcterms:spatial": {
+        "@type"        : "dcterms:Location",
+        "dcterms:title": {"@value": "Portugal", "@language": "pt"},
+        "dcat:bbox"    : "POLYGON((-9.5 36.8, -6.2 36.8, -6.2 42.2, -9.5 42.2, -9.5 36.8))"
+    },
+    "dcterms:temporal": {
+        "@type"         : "dcterms:PeriodOfTime",
+        "dcat:startDate": {"@value": "2020-01-01", "@type": "xsd:date"},
+        "dcat:endDate"  : {"@value": "2024-12-31", "@type": "xsd:date"}
+    },
+    "dcterms:publisher": {
+        "@type"        : "foaf:Organization",
+        "foaf:name"    : {"@value": "Agência Portuguesa do Ambiente", "@language": "pt"},
+        "foaf:homepage": {"@id": "https://apambiente.pt"}
+    },
+    "dcat:contactPoint": {
+        "@type"         : "vcard:Organization",
+        "vcard:fn"      : {"@value": "Unidade de Monitorização Ambiental", "@language": "pt"},
+        "vcard:hasEmail": {"@id": "mailto:ambiental@apambiente.pt"}
+    },
+    "dcterms:accrualPeriodicity": {"@id": "http://purl.org/cld/freq/daily"},
+    "dcterms:issued": {"@value": "2025-01-01", "@type": "xsd:date"},
+    "dcterms:modified": {"@value": "2025-07-14", "@type": "xsd:date"},
+    "dcterms:language": {"@id": "http://publications.europa.eu/resource/authority/language/POR"},
+    "dcat:distribution": [
+        {
+            "@type": "dcat:Distribution",
+            "dcterms:title": {"@value": "Distribuição em formato JSON", "@language": "pt"},
+            "dcterms:format": {"@id": "http://publications.europa.eu/resource/authority/file-type/JSON"},
+            "dcat:mediaType": {"@value": "application/json"},
+            "dcat:accessURL": {"@id": "https://apidados.apambiente.pt/qualidade-ar.json"},
+            "dcat:temporalResolution": {"@type": "xsd:duration", "@value": "P1D"},
+            "dcterms:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"},
+            "dcterms:issued": {"@value": "2020-01-01", "@type": "xsd:date"},
+            "dcterms:modified": {"@value": "2025-07-14", "@type": "xsd:date"}
+        }
+    ],
+    "ins:GeographicBoundingBox": "POLYGON((-9.5 36.8, -6.2 36.8, -6.2 42.2, -9.5 42.2, -9.5 36.8))",
+    "ins:TopicCategory": "environment",
+    "ins:SpatialReferenceSystem": "PT-TM06/ETRS89",
+    "ins:MetadataDate": "2020-01-01"
+}

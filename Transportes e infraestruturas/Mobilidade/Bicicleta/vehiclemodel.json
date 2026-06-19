@@ -1,0 +1,14 @@
+{
+    "id": "urn:ngsi-ld:VehicleModel:vehiclemodel:giraeletrica1gen",
+    "type": "VehicleModel",
+    "brandName": {"type": "Property", "value": "Órbita"},
+    "fuelType": {"type": "Property", "value": "electric"},
+    "manufacturerName": {"type": "Property", "value": "Órbita"},
+    "modelName": {"type": "Property", "value": "Gira1GenE"},
+    "name": {"type": "Property", "value": "Gira-E-2018"},
+    "vehicleType": {"type": "Property", "value": "bicycle"},
+    "@context": [
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
+        "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
+    ]
+}

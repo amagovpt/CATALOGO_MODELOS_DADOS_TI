@@ -1,0 +1,116 @@
+{
+    "id": "urn:epal:Pipe:P101",
+    "type": "Pipe",
+    "name": {"type": "Property", "value": "Conduta principal"},
+    "description": {"type": "Property", "value": "Tubagem principal"},
+    "alternateName": {"type": "Property", "value": "TP-101"},
+    "areaServed": {"type": "Property", "value": "Parque das nações"},
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "LineString",
+            "coordinates": [
+                [-9.095192666270322, 38.774620476082134],
+                [-9.095406501703962, 38.77215161162334 ],
+                [-9.095620136240626, 38.769455414702975],
+                [-9.095775501565356, 38.76750131663579 ]
+            ]
+        },
+        "coordinateSystem": "EPSG:4258"
+    },
+    "elevation": { "type": "Property", "value": {"start": 124.5, "end": 120.2}, "unitCode": "MTR" },
+    "verticalGeometry": {
+        "type" : "Property",
+        "value": {
+            "type"       : "LineString",
+            "coordinates": [
+                [-9.095192666270322, 38.774620476082134, 124.5],
+                [-9.095406501703962, 38.77215161162334 , 123.1],
+                [-9.095620136240626, 38.769455414702975, 121.5],
+                [-9.095775501565356, 38.76750131663579 , 120.2]
+            ]
+        }
+    },
+    "startsAt": {"type": "Relationship", "object": "urn:epal:Junction:J101"},
+    "endsAt": {"type": "Relationship", "object": "urn:epal:Junction:J102"},
+    "connectedTo": { "type": "Relationship", "object": ["urn:epal:Pipe:P102", "urn:epal:Pipe:P103"] },
+    "upstreamNetwork": { "type": "Relationship", "object": ["urn:epal:Pipe:P120", "urn:epal:Pipe:P121"] },
+    "downstreamNetwork": { "type": "Relationship", "object": ["urn:epal:Pipe:P126"] },
+    "length": {"type": "Property", "value": 210.4, "unitCode": "MTR"},
+    "diameter": {"type": "Property", "value": 300, "unitCode": "MMT"},
+    "crossSectionShape": {"type": "Property", "value": "circular"},
+    "dimension": { "type": "Property", "value": {"diameter": 300, "unitCode": "MMT"} },
+    "wallThickness": {"type": "Property", "value": 9.8, "unitCode": "MMT"},
+    "material": {"type": "Property", "value": "PVC"},
+    "materialClass": {"type": "Property", "value": "SDR35"},
+    "externalCoating": {"type": "Property", "value": "none"},
+    "internalLining": {"type": "Property", "value": "none"},
+    "jointType": {"type": "Property", "value": "spigot"},
+    "slope": {"type": "Property", "value": 0.005, "unitCode": "C62"},
+    "designCapacity": {"type": "Property", "value": 0.25, "unitCode": "MQS"},
+    "flow": {"type": "Property", "value": 0.12, "unitCode": "MQS", "observedAt": "2024-03-01T10:00:00Z"},
+    "velocityRange": { "type": "Property", "value": {"minimum": 0.6, "maximum": 3.0, "unitCode": "MTS"} },
+    "refNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
+    "pressureClass": {"type": "Property", "value": "PN6"},
+    "operatingPressure": {"type": "Property", "value": 3, "unitCode": "BAR", "observedAt": "2024-03-01T10:00:00Z"},
+    "maxAllowablePressure": {"type": "Property", "value": 6, "unitCode": "BAR"},
+    "installationDate": {"type": "Property", "value": "2010-05-12T00:00:00Z"},
+    "expectedLifespan": {"type": "Property", "value": 50, "unitCode": "ANN"},
+    "constructionMethod": {"type": "Property", "value": "openCut"},
+    "installationDepth": {"type": "Property", "value": 2.5, "unitCode": "MTR"},
+    "beddingMaterial": {"type": "Property", "value": "crushedStone"},
+    "backfillMaterial": {"type": "Property", "value": "native"},
+    "lastInspectionDate": {"type": "Property", "value": "2024-09-15T00:00:00Z"},
+    "lastCleaningDate": {"type": "Property", "value": "2024-06-22T00:00:00Z"},
+    "maintenanceSchedule": {"type": "Property", "value": "annual"},
+    "failureProbability": {"type": "Property", "value": 0.02, "unitCode": "C62"},
+    "status": {"type": "Property", "value": "open"},
+    "criticalInfrastructure": {"type": "Property", "value": true},
+    "surroundingSoilType": {"type": "Property", "value": "clay"},
+    "soilCorrosivity": {"type": "Property", "value": "low"},
+    "groundwaterLevel": {"type": "Property", "value": 3.5, "unitCode": "MTR", "observedAt": "2023-11-15T00:00:00Z"},
+    "seismicZone": {"type": "Property", "value": "moderate"},
+    "floodZone": {"type": "Property", "value": false},
+    "restrictedAccess": {"type": "Property", "value": false},
+    "safetyNotes": {"type": "Property", "value": "Standard confined space entry procedures required"},
+    "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+    "maintainer": {"type": "Relationship", "object": "urn:arte:Organization:MaintenanceCompany123"},
+    "operator": {"type": "Relationship", "object": "urn:arte:Organization:OperatorCompany123"},
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "PT",
+            "addressLocality": "Lisboa",
+            "streetAddress"  : "Alameda dos Oceanos",
+            "postalCode"     : "1990-208"
+        }
+    },
+    "image": {
+        "type" : "Property",
+        "value": ["https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"]
+    },
+    "quality": {
+        "type"      : "Property",
+        "value"     : 4,
+        "observedBy": {"type": "Relationship", "object": "urn:epal:Device:device-9845A"}
+    },
+    "seeAlso": {
+        "type" : "Property",
+        "value": [
+            "http://inspire.ec.europa.eu/theme/us",
+            "http://inspire.ec.europa.eu/featureconcept/Pipe",
+            "http://inspire.ec.europa.eu/featureconcept/WaterPipe"
+        ]
+    },
+    "dateCreated": {"type": "Property", "value": "2020-01-15T10:30:00Z"},
+    "dateModified": {"type": "Property", "value": "2025-03-01T09:12:00Z"},
+    "version": {"type": "Property", "value": "1.2"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

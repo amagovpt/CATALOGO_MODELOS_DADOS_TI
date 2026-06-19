@@ -1,0 +1,128 @@
+{
+    "id": "urn:ersar:DrainageNetwork:N999",
+    "type": "DrainageNetwork",
+    "name": {
+        "type" : "Property"                              ,
+        "value": "Rede de saneamento da cidade de Lisboa"
+    },
+    "description": {
+        "type": "Property",
+        "value": "Modelo que descreve a rede de saneamento. As propriedades tentam capturar a informação relevante, bem como agregar um conjunto de outras entidades que fazem parte da rede."
+    },
+    "alternateName": {"type": "Property", "value": "DN-999"},
+    "areaServed": {"type": "Property", "value": "Lisboa"},
+    "boundingBox": {
+        "type": "GeoProperty",
+        "value": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [-9.175841969597688, 38.69777428179626 ],
+                    [-9.127889595040754, 38.707781457652914],
+                    [-9.111776523592646, 38.72162257606375 ],
+                    [-9.093206668629207, 38.757438757387476],
+                    [-9.091961750801524, 38.78542169173075 ],
+                    [-9.11696952342374 , 38.787384211744076],
+                    [-9.14166022200573 , 38.78989450210123 ],
+                    [-9.167117147832897, 38.791479258668204],
+                    [-9.175450764192531, 38.78499371259652 ],
+                    [-9.190587549152717, 38.7804636689722  ],
+                    [-9.217521853961824, 38.73988590060475 ],
+                    [-9.229523269241355, 38.698088986249815],
+                    [-9.219871694726246, 38.692566257458935],
+                    [-9.175841969597688, 38.69777428179626 ]
+                ]
+            ]
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "networkType": {
+        "type": "array",
+        "items": {
+            "type": "string",
+            "enum": [
+            "wastewater",
+            "stormwater",
+            "combined",
+            "treatedEffluent",
+            "septic",
+            "drainageChannel"
+            ]
+        },
+        "minItems": 1,
+        "uniqueItems": true
+    },
+    "serviceCategory": {
+        "type": "Property", 
+        "value": ["residential", "publicSpaces", "transportInfrastructure"]
+    },
+    "connectedTo": {
+        "type": "Relationship",
+        "object": [
+            "urn:ersar:DrainageNetwork:N123",
+            "urn:ersar:DrainageNetwork:N456",
+            "urn:ersar:DrainageNetwork:N789"
+        ]
+    },
+    "refSubNetworks": {
+        "type": "Relationship",
+        "object": [
+            "urn:ersar:UrbanStormwaterNetwork:USN101",
+            "urn:ersar:SanitarySewerNetwork:SSN102"
+        ]
+    },
+    "dischargesTo": {
+        "type"  : "Relationship"                   ,
+        "object": "urn:apa:WaterBody:TejoRiver"
+    },
+    "beginLifespanVersion": {"type": "Property", "value": "2023-02-01T00:00:00Z"},
+    "endLifespanVersion": {"type": "Property", "value": null},
+    "lastInspectionDate": {
+        "type" : "Property"            ,
+        "value": "2023-09-12T00:00:00Z"
+    },
+    "maintenanceSchedule": {"type": "Property", "value": "annual"},
+    "quality": {"type": "Property", "value": 4},
+    "status": {"type": "Property", "value": "operational"},
+    "criticalInfrastructure": {"type": "Property", "value": true},
+    "owner": { "type": "Relationship", "object": ["urn:arte:Organization:CMLisboa"] },
+    "concessionaire": {
+        "type": "Relationship",
+        "object": "urn:arte:Organization:EPAL123"
+    },
+    "maintainer": {
+        "type"  : "Relationship",
+        "object": "urn:arte:Organization:MaintenanceCompany123"
+    },
+    "address": {
+        "type": "Property",
+        "value": {"addressCountry": "PT", "addressLocality": "Lisboa"}
+    },
+    "image": {
+        "type": "Property",
+        "value": [
+            "https://lisboaparapessoas.pt/wp-content/uploads/2024/01/tuneldrenagemcampolide_01.jpg"
+        ]
+    },
+    "seeAlso": {
+        "type": "Property",
+        "value": [
+            "http://inspire.ec.europa.eu/theme/us",
+            "http://inspire.ec.europa.eu/codelist/AnthropogenicGeomorphologicFeatureTypeValue/artificialDrainage"
+        ]
+    },
+    "dateCreated": {"type": "Property", "value": "2023-01-01T08:45:00Z"},
+    "dateModified": {"type": "Property", "value": "2024-03-02T11:24:00Z"},
+    "version": {"type": "Property", "value": "1.1"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "datasetResponsibleParty": {"type": "Property", "value": "CMLisboa"},
+    "license": {
+        "type" : "Property"                                    ,
+        "value": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld"                 ,
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

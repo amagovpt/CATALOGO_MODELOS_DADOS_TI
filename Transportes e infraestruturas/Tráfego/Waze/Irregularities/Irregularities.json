@@ -1,0 +1,29 @@
+{
+  "id": 1874175156,
+  "detectionDate": "Tue Apr 18 11:21:46 +0000 2024",
+  "detectionDateMillis": 1713439306000,
+  "updateDate": "Tue Apr 18 12:16:39 +0000 2024",
+  "updateDateMillis": 1713442599000,
+  "line": [
+    [-8.418277294000802, 41.54894322474789],
+    [-8.418631860953667, 41.54859597022656],
+    [-8.4189732957976  , 41.54826836991111],
+    [-8.41927971168252 , 41.5479997364144 ],
+    [-8.419743712880404, 41.54779007047003],
+    [-8.420641073686369, 41.54750505473703]
+  ],
+  "type": "SMALL",
+  "speed": 8.5,
+  "regularSpeed": 27.08,
+  "delaySeconds": 300,
+  "seconds": 355,
+  "length": 839,
+  "trend": 0,
+  "street": "Rua 25 De Abril",
+  "city": "Braga",
+  "country": "PT",
+  "severity": 5.0,
+  "jamLevel": 4,
+  "driversCount": 20,
+  "alertsCount": 1
+}

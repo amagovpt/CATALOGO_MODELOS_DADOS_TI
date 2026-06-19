@@ -1,0 +1,43 @@
+{
+  "id": "urn:arte:PointOfInterest:DrinkingWaterFountain33 ",
+  "type": "PointOfInterest",
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry": "PT",
+      "addressLocality": "Lisboa",
+      "streetAddress":"Rua Jorge Amado 33A",
+      "postalCode":"1950 Lisboa",
+      "areaServed":"Marvila"
+    }
+  },
+  "category": {
+    "type": "Property",
+    "value": [
+      "DrinkingWaterFountain"
+    ]
+  },
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+     "coordinates": [
+          -9.122146741039415,
+          38.74418151525137
+        ],
+        "type": "Point"
+    }, "coordinateSystem": "EPSG:3763"
+  },
+  "name": {
+    "type": "Property",
+    "value": "Bebedouro Parque Infantil Belas Vista sul"
+  },
+  "refSeeAlso": {
+    "type": "Property",
+    "value": [
+      "https://geodados-cml.hub.arcgis.com"
+    ]
+  },
+  "@context": [
+    "https://raw.githubusercontent.com/smart-data-models/dataModel.PointOfInterest/master/context.jsonld"
+  ]
+}

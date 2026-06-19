@@ -1,0 +1,67 @@
+{
+    "id": "urn:cml:CycleLane:CL-001",
+    "type": "CycleLane",
+    "name": {"type": "Property", "value": "Parque Urbano da Quinta da Montanha"},
+    "description": {"type": "Property", "value": "Pista Ciclável Bidirecional"},
+    "typology": {"type": "Property", "value": "two-way"},
+    "segregation": {"type": "Property", "value": "fullySegregated"},
+    "areaServed": {"type": "Property", "value": "Alvalade"},
+    "location": {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "LineString",
+            "coordinates": [
+                [-9.124511376129732, 38.74429887362663 ],
+                [-9.125436611891615, 38.744763372571555],
+                [-9.125766293600208, 38.74487949683538 ],
+                [-9.125968356583655, 38.745037093748806],
+                [-9.126042800840679, 38.74521127940625 ],
+                [-9.126468196593805, 38.74546840983825 ],
+                [-9.126744703832912, 38.745700655884264],
+                [-9.127361527675106, 38.74603243463889 ],
+                [-9.127786923428232, 38.74631444536897 ]
+            ]
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "address": {
+        "type" : "Property",
+        "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+    },
+    "length": {"type": "Property", "value": 0.8, "unitCode": "KMT"},
+    "pavementType": {"type": "Property", "value": "Asphalt"},
+    "pavementCondition": {"type": "Property", "value": 4},
+    "lastMaintenance": { "type": "Property", "value": {"@type": "DateTime", "@value": "2023-05-15T00:00:00.00Z"} },
+    "nextMaintenance": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-05-15T00:00:00.00Z"} },
+    "connectsTo": { "type": "Property", "value": ["urn:cml:CycleLane:CL-002", "urn:cml:CycleLane:CL-003"] },
+    "nearBy": { "type": "Property", "value": ["DrinkingWaterFountain33"] },
+    "image": {
+        "type" : "Property",
+        "value": [
+            "https://www.vortexmag.net/wp-content/uploads/2021/08/o-vale-da-montanha-em-lisboa-e-uma-ilha-de-sossego-rodeada-de-urbanidade-2-1024x683-1.jpg"
+        ]
+    },
+    "seeAlso": {
+        "type" : "Property",
+        "value": ["http://inspire.ec.europa.eu/theme/tn", "http://inspire.ec.europa.eu/featureconcept/RoadLink"]
+    },
+    "refNetwork": { "type": "Relationship", "object": ["urn:cml:CycleNetwork:Lisbon"] },
+    "maxSlope": {"type": "Property", "value": 10, "unitCode": "P1"},
+    "averageSlope": {"type": "Property", "value": 2, "unitCode": "P1"},
+    "minAltitude": {"type": "Property", "value": 97, "unitCode": "MTR"},
+    "maxAltitude": {"type": "Property", "value": 100, "unitCode": "MTR"},
+    "beginLifespanVersion": {"type": "Property", "value": "2021-05-01T00:00:00Z"},
+    "status": {"type": "Property", "value": "excellent"},
+    "createdAt": "2020-05-01T00:00:00Z",
+    "modifiedAt": "2025-04-10T12:00:00Z",
+    "owner": { "type": "Relationship", "object": ["urn:ngsi-ld:CMLisboa"] },
+    "maintainer": {"type": "Relationship", "object": "urn:ngsi-ld:Organization:WaterUtilityCompany123"},
+    "version": {"type": "Property", "value": "1.0"},
+    "updateFrequency": {"type": "Property", "value": "monthly"},
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
+    "license": {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
+    "@context": [
+        "https://smartdatamodels.org/context.jsonld",
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+    ]
+}

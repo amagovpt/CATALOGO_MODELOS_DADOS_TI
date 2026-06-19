@@ -1,0 +1,33 @@
+{
+  "id": "urn:rnc:BuildingRegistration:a63dd3b3",
+  "type": "BuildingRegistration",
+  "buildingId": {"type": "Property", "value": "a63dd3b3"},
+  "address": {
+    "type" : "Property",
+    "value": {
+      "streetAddress"   : "Rua de Santa Marta",
+      "address.streetNr": "55",
+      "addressLocality" : "Santo António",
+      "postalCode"      : "1150 - 294",
+      "addressRegion"   : "Lisboa"
+    }
+  },
+  "occupation": {"type": "Property", "value": "ocupado"},
+  "buildingNumber": {"type": "Property", "value": "990618-U-456-B"},
+  "cadastreNumber": {"type": "Property", "value": "456"},
+  "workNumber": {"type": "Property", "value": "12234B"},
+  "dateModified": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
+  "yearOfConstruction": {"type": "Property", "value": "2005"},
+  "description": {"type": "Property", "value": "Four level building"},
+  "ownershipType": {"type": "Property", "value": "estado"},
+  "totalFractions": {"type": "Property", "value": 4},
+  "propertyNature": {"type": "Property", "value": "urbano"},
+  "use": {"type": "Property", "value": "other"},
+  "location": {
+    "type"            : "GeoProperty",
+    "value"           : { "coordinates": [-9.1466638743362, 38.72518414358991], "type": "Point" },
+    "coordinateSystem": "EPSG:4326"
+  },
+  "stateOfPreservation": {"type": "Property", "value": "bom"},
+  "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

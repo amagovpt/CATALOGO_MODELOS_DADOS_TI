@@ -1,0 +1,20 @@
+{
+  "id"               : "urn:ngsi-ld:PassengerCountAggregation:43:2024-01",
+  "type"             : "PassengerCountAggregation",
+  "name"             : {
+    "type" : "Property",
+    "value": "Agregação mensal de contagem de passageiros do operador 43 - 2024-01"
+  },
+  "description"      : {
+    "type" : "Property",
+    "value": "Contagem agregada de passageiros com validação de viagem no operador 43 durante janeiro de 2024."
+  },
+  "operator"         : {"type": "Relationship", "object": "urn:ngsi-ld:Operator:43"},
+  "measurementValue" : {"type": "Property", "value": 2902698},
+  "countType"        : {"type": "Property", "value": "tripValidation"},
+  "aggregationPeriod": {"type": "Property", "value": "month"},
+  "startDate"        : {"type": "Property", "value": "2024-01-01T00:00:00Z"},
+  "endDate"          : {"type": "Property", "value": "2024-01-31T23:59:59Z"},
+  "generatedAt"      : {"type": "Property", "value": "2026-03-15T08:59:01.929Z"},
+  "@context"         : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}

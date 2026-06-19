@@ -1,0 +1,29 @@
+{
+    "id"              : "urn:cmpm:SocialSupportObservation:financial:housingRent:households:PT-XYZ:2026-Q1",
+    "type"            : "SocialSupportObservation",
+    "observedBy"      : {"type": "Relationship", "object": "urn:cmpm:Organization:Municipality:PT-XYZ"},
+    "areaServed"      : {"type": "Property", "value": "Porto de Mós"},
+    "location"        : {
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "Polygon",
+            "coordinates": [
+                [
+                    [-8.9500, 39.7200], [-8.9200, 39.7200], [-8.8700, 39.7100], [-8.8300, 39.6900], [-8.7900, 39.6700],
+                    [-8.7600, 39.6400], [-8.7400, 39.6100], [-8.7300, 39.5800], [-8.7200, 39.5500], [-8.7300, 39.5200],
+                    [-8.7500, 39.4900], [-8.7800, 39.4700], [-8.8200, 39.4600], [-8.8600, 39.4600], [-8.9000, 39.4700],
+                    [-8.9300, 39.4900], [-8.9600, 39.5100], [-8.9800, 39.5400], [-9.0000, 39.5700], [-9.0100, 39.6000],
+                    [-9.0100, 39.6300], [-9.0000, 39.6600], [-8.9800, 39.6900], [-8.9500, 39.7200]
+                ]
+            ]
+        },
+        "coordinateSystem": "EPSG:3763"
+    },
+    "aggregationLevel": {"type": "Property", "value": "municipality"},
+    "indicator"       : {"type": "Property", "value": "beneficiaryHouseholdsCount"},
+    "value"           : {"type": "Property", "value": 86, "unitCode": "C62"},
+    "financialPurpose": {"type": "Property", "value": "housingRent"},
+    "validFrom"       : {"type": "Property", "value": "2026-01-01T00:00:00Z"},
+    "validTo"         : {"type": "Property", "value": "2026-03-31T23:59:59Z"},
+    "@context"        : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
+}
