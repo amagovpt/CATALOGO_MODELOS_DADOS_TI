@@ -1,10 +1,11 @@
 ## Perguntas Frequentes (FAQ)
 
-**Versão:** 1.2
-**Data da última atualização:** 7 de abril de 2026
+**Versão:** 1.4
+**Data da última atualização:** 22 de junho de 2026
 
 ### Histórico de alterações
 
+* **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
 * **v1.3 (2026-05-19)** – Adicionada FAQ sobre propriedades optativas para as quais não se tem valor
 * **v1.2 (2026-04-07)** – Adicionadas FAQ sobre propriedades obrigatórias, API e reestruturação do documento
 * **v1.1 (2026-03-16)** – Adicionadas FAQ sobre especificações técnicas de integração e dados geográficos
@@ -226,4 +227,12 @@ Se uma propriedade de um modelo não tem valor, então deve ser omitida do model
 Excecionalmente, e apenas para os modelos onde existam intervalos de datas (data de início e data de fim), se permite que propriedade que representa a data de fim esteja presente no modelo com o valor null.
 
 Não é admissível atribuir valores inválidos, artificiais ou inconsistentes apenas para cumprir formalmente o modelo de dados.
+</details>
+
+## 8. Sobre Modelos em geral
+
+<details>
+  <summary>Não encontro um modelo adequado aos meus dados. O que devo fazer?</summary>
+
+**Resposta:** Se não existir um modelo adequado aos dados que pretende disponibilizar, pode reportar essa necessidade à **Equipa dos Territórios Inteligentes** através do email [territorios.inteligentes@arte.gov.pt](mailto:territorios.inteligentes@arte.gov.pt).
 </details>
