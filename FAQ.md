@@ -64,7 +64,7 @@ urn:cmpeae:WaterConsumptionObserved:Local33:2025-02-18T08:00:00
 Não. O registo dos metadados no portal dados.gov não é suficiente, uma vez que existem propriedades indisponíveis ou não totalmente compatíveis com o modelo de metadados definido.
 Destacam-se, por exemplo:
 
--  *Geographical coverage*: não pode ser representado apenas como uma lista de locais (nomes); 
+- *Geographical coverage*: não pode ser representado apenas como uma lista de locais (nomes); 
 - *Temporal coverage*: deve corresponder a um período, com as datas de início e fim devidamente preenchidas.
 
 </details>
@@ -111,7 +111,6 @@ Em qualquer dos casos, o formato subjacente para a representação da informaç�
 
 Assim, uma entidade que disponibilize dados com componente geográfica através de uma API REST deve garantir que os campos espaciais seguem o formato definido no modelo de dados adotado.
 </details>
-
 
 ## 5. Sobre API e a disponibilização de dados em lote
 
@@ -218,6 +217,7 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 </details>
 
 ## 7. Sobre as propriedades em geral
+
 <details>
   <summary>Como proceder quando uma propriedade não tem valor disponível?</summary>
 

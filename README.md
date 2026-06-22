@@ -1,7 +1,7 @@
 # Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes
 
 <p align="center">
-  <img src="https://www.arte.gov.pt/wp-content/uploads/2025/10/arte-logo.svg" alt="ARTE" width="180">
+  <img src="Logo_ARTE.png" alt="ARTE" width="180">
 </p>
 
 <p align="center">

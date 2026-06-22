@@ -51,7 +51,6 @@ Os atributos obrigatórios são:
 - `name`
 - `type`
 - `location`
-- `elevation`
 - `flowRate`
 - `pressure`
 - `refNetwork`
