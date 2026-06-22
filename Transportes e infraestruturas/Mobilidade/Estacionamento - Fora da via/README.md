@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `OffStreetParking`|
 | acceptedPaymentMethod | Array | Métodos de pagamento aceites | Enumerado: <br>- ByBankTransferInAdvance,<br>- ByInvoice,<br>- Cash,<br>- CheckInAdvance,<br>- COD,<br>- DirectDebit,<br>- GoogleCheckout,<br>- PayPal,<br>- PaySwarm. Modelo: [https://schema.org/acceptedPaymentMethod](https://schema.org/acceptedPaymentMethod) |
 | accessModified | DateTime | Data e hora quando vehicleEntranceCount e vehicleExitCount foram atualizados | De acordo com a norma [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |

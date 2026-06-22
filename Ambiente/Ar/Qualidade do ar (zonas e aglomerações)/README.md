@@ -7,7 +7,7 @@ Nas anotações é possível encontrar exemplo deste modelo, ilustrando o seu us
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type                | Text         | Tipo de entidade            | Valor constante igual a `AirQualityMonitoring`|
 | address                  | Object          | Morada associada à zona | Inclui país, localidade, rua, código postal. Modelo: [https://schema.org/address](https://schema.org/address)  |
 | airQualityIndex     | Number    | Índice de qualidade do ar (AQI)    | Número utilizado para indicar a qualidade do ar num determinado dia. Modelo: [https://schema.org/Number](https://schema.org/Number) |

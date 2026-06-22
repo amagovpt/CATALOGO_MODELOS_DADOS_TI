@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `WastewaterQualityObserved`|
 | address | Object | Endereço da localização da estação de monitorização | Inclui addressLocality, postalCode, streetAddress e type. Modelo: [https://schema.org/address](https://schema.org/address) |
 | areaServed | String | Área geográfica servida pela estação de monitorização | Modelo: [https://schema.org/Text](https://schema.org/Text) |

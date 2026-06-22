@@ -13,7 +13,7 @@ Para o modelo de dados `IndustrialZone`:
 
 | Propriedade | Tipo | Descrição | Nota |
 |---|---|---|---|
-| `id` | URI | Identificador único da entidade NGSI-LD que representa a zona industrial. | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| `id` | URI | Identificador único da entidade NGSI-LD que representa a zona industrial. | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | `type` | String | Tipo da entidade. Identifica semanticamente que o recurso corresponde a uma zona industrial. | Valor fixo: `IndustrialZone` |
 | `address` | Object | Endereço postal associado à zona industrial. | Estrutura compatível com o modelo de morada postal. |
 | `address.value.addressCountry` | String | País da morada, preferencialmente em código ISO. | Valor fixo: `PT` |
@@ -56,7 +56,7 @@ Para o modelo de dados `IndustrialZone`:
 Para o modelo `IndustrialLot`:
 | Propriedade | Tipo | Descrição | Nota |
 |---|---|---|---|
-| `id` | URI | Identificador único da entidade NGSI-LD que representa o lote industrial. | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| `id` | URI | Identificador único da entidade NGSI-LD que representa o lote industrial. | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | `type` | String | Tipo da entidade. Identifica semanticamente que o recurso corresponde a um lote industrial. | Valor fixo: `IndustrialLot` |
 | `activityCAE` | Array | Código ou lista de códigos CAE correspondentes às atividades económicas exercidas no lote. | O valor deve seguir a lista oficial da CAE, consistente com a sua última publicação. |
 | `activityCategory` | Array | Designação textual da atividade económica exercida no lote. | Deve estar consistente com o código CAE indicado. |

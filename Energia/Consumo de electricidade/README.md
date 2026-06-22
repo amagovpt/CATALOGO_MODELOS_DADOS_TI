@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `ACMeasurement`|
 | activePower    | Object    | Potência ativa consumida por fase  | Valores de L1, L2 e L3 que representam valores para a fase 1, 2 e 3, respetivamente. Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue) | 
 | address                  | Object          | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  | 

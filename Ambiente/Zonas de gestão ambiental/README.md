@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id    | URI       | Identificador único da zona | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id    | URI       | Identificador único da zona | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type  | String    | Tipo de entidade | Valor constante igual a `EnvironmentalManagementZone` |
 | areaServed | Array | A área geográfica que é gerida | Usar, sempre que possível, a área geográfica mais abrangente, para minimizar o número de entradas para situações onde existe gestão por associações de municípios. Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | dataProvider  | String    | Uma sequência de caracteres que identifica o fornecedor dos dados | Modelo: [https://schema.org/Text](https://schema.org/Text)  |

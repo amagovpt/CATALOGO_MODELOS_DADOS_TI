@@ -7,7 +7,7 @@ Nas anotações é possível encontrar um exemplo destes modelos, e de outros re
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type                | Text         | Tipo de entidade            | Valor constante igual a ``WaterObserved``|
 | alternateName       | String          | Nome alternativo para a área de observação  |  Ex: nome comum ou local da localização  |
 | areaServed          | String          | Nome da zona geográfica observada  | Modelo: [https://schema.org/Text](https://schema.org/Text) |

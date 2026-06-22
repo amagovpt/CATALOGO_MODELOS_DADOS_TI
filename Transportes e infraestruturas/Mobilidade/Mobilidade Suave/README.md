@@ -5,7 +5,7 @@ Nas anotações é possível encontrar exemplos de utilização deste modelo, il
 
 ## Propriedades
 
-Para informações sobre `VehicleModel` e `Vehicle`, consultar  o [Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes (CNMD)](https://metadados.digital.gov.pt/#/catalogue/dataModel/all), na zona dos modelos comuns.
+Para informações sobre `VehicleModel` e `Vehicle`, consultar  o [Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes (CNMD)](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/), na zona dos modelos comuns.
 
 Na tabela abaixo são apresentadas as propriedades presentes nos modelos de dados.
 

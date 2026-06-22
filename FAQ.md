@@ -3,14 +3,6 @@
 **Versão:** 1.4
 **Data da última atualização:** 22 de junho de 2026
 
-### Histórico de alterações
-
-* **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
-* **v1.3 (2026-05-19)** – Adicionada FAQ sobre propriedades optativas para as quais não se tem valor
-* **v1.2 (2026-04-07)** – Adicionadas FAQ sobre propriedades obrigatórias, API e reestruturação do documento
-* **v1.1 (2026-03-16)** – Adicionadas FAQ sobre especificações técnicas de integração e dados geográficos
-* **v1.0 (2026-02-12)** – Versão inicial
-
 Este documento reúne um conjunto de perguntas frequentes com o objetivo de apoiar as entidades fornecedoras de dados na correta implementação dos modelos de dados e respetivas instruções.
 
 Após a partilha dos modelos, têm sido identificadas algumas dificuldades e inconsistências na sua aplicação. Nesse sentido, esta FAQ apresenta exemplos práticos e esclarecimentos sobre situações comuns, com o intuito de promover a uniformização, qualidade e interoperabilidade dos dados.
@@ -89,7 +81,7 @@ Consequentemente, os metadados devem igualmente ser disponibilizados através de
 **Resposta**
 Não. O documento de [Especificações Técnicas para Integração de Sistemas](https://doc.territoriosinteligentes.gov.pt/api/assets/c077f7b0-aa6c-4793-a6b7-3fb8fa626e88)  aplica-se exclusivamente às interligações entre sistemas, definindo os protocolos, formatos de mensagens e requisitos de segurança a cumprir no âmbito de integrações programáticas entre plataformas e o integrador de dados da ARTE.
 
-Os [modelos de dados](https://metadados.digital.gov.pt/#/catalogue/versionedFolder/7f9b333f-dc85-42c9-846f-60b2105623db/description), por sua vez, dizem respeito à estrutura e à semântica da informação produzida e disponibilizada por cada entidade. A sua adoção é obrigatória e independente da existência de uma integração de sistemas.
+Os [modelos de dados](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/), por sua vez, dizem respeito à estrutura e à semântica da informação produzida e disponibilizada por cada entidade. A sua adoção é obrigatória e independente da existência de uma integração de sistemas.
 </details>
 
 ## 4. Integração de mapas (WMS) vs. disponibilização de dados geográficos nos modelos de dados
@@ -118,7 +110,7 @@ Assim, uma entidade que disponibilize dados com componente geográfica através 
   <summary>O catálogo nacional de modelo de dados não indica qual o modelo a seguir para conjuntos de dados (ex.: respostas de APIs). Qual é a abordagem recomendada?</summary>
 
 **Resposta**
-A maioria dos modelos do [Catálogo Nacional de Modelos de Dados (CNMD)](https://metadados.digital.gov.pt/#/catalogue/versionedFolder/7f9b333f-dc85-42c9-846f-60b2105623db/description) é serializada em [JSON-LD](https://www.w3.org/TR/json-ld11/), de acordo com o standard [NGSI-LD](https://www.etsi.org/deliver/etsi_gr/CIM/001_099/008/01.03.01_60/gr_CIM008v010301p.pdf). O objetivo é permitir a partilha de informação de contexto (tempo, espaço e relações) num cenário de interoperabilidade entre sistemas.
+A maioria dos modelos do [Catálogo Nacional de Modelos de Dados (CNMD)](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/) é serializada em [JSON-LD](https://www.w3.org/TR/json-ld11/), de acordo com o standard [NGSI-LD](https://www.etsi.org/deliver/etsi_gr/CIM/001_099/008/01.03.01_60/gr_CIM008v010301p.pdf). O objetivo é permitir a partilha de informação de contexto (tempo, espaço e relações) num cenário de interoperabilidade entre sistemas.
 
 Neste contexto, quando se pretende disponibilizar um conjunto de dados (por exemplo, como resposta a uma API), a abordagem recomendada é a seguinte:
 
@@ -160,7 +152,7 @@ Desta forma, garante-se a interoperabilidade com o ecossistema, sem limitar a fl
   <summary>O modelo de dados que quero usar e que está disponível no Catálogo Nacional de Modelo de Dados indica um conjunto de propriedades obrigatórias. Tenho sempre de as incluir?</summary>
 
 **Resposta**
-Sim. No [Catálogo Nacional de Modelo de Dados](https://metadados.digital.gov.pt/#/catalogue/versionedFolder/7f9b333f-dc85-42c9-846f-60b2105623db/description), se as propriedades foram consideradas obrigatórias, então devem estar *sempre presentes* quando os dados são disponibilizados, com um valor admissível no domínio da propriedade.
+Sim. No [Catálogo Nacional de Modelo de Dados](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/), se as propriedades foram consideradas obrigatórias, então devem estar *sempre presentes* quando os dados são disponibilizados, com um valor admissível no domínio da propriedade.
 
 </details>
 
@@ -236,3 +228,11 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 
 **Resposta:** Se não existir um modelo adequado aos dados que pretende disponibilizar, pode reportar essa necessidade à **Equipa dos Territórios Inteligentes** através do email [territorios.inteligentes@arte.gov.pt](mailto:territorios.inteligentes@arte.gov.pt).
 </details>
+
+### Histórico de alterações
+
+* **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
+* **v1.3 (2026-05-19)** – Adicionada FAQ sobre propriedades optativas para as quais não se tem valor
+* **v1.2 (2026-04-07)** – Adicionadas FAQ sobre propriedades obrigatórias, API e reestruturação do documento
+* **v1.1 (2026-03-16)** – Adicionadas FAQ sobre especificações técnicas de integração e dados geográficos
+* **v1.0 (2026-02-12)** – Versão inicial

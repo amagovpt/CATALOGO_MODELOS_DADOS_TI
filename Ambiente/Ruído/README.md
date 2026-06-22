@@ -6,7 +6,7 @@ Nas anotações é possível encontrar um exemplo deste modelo, ilustrando o seu
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da estação | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da estação | Ver [Regra para geração de indentificadores únicos](/FAQ.md). |
 | type                | Text         | Tipo de entidade            | Valor constante igual a `NoiseLevelObserved`|
 | address                  | Object          | Morada associada ao ponto de interesse | Inclui país, cidade, freguesia e código postal. Modelo: [https://schema.org/address](https://schema.org/address)  |
 | alternateName     | String    | Nome alternativo    | Modelo: [https://schema.org/Text](https://schema.org/Text) |

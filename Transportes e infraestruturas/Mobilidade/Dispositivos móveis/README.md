@@ -8,7 +8,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 
 | Propriedade | Tipo | Descrição | Nota |
 | ----------- | ---- | --------- | ------------------------ |
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `MobileDeviceCell` |
 | address | Object | Endereço da área ocupada pela célula | Inclui país, localidade, rua, código postal. Modelo: [https://schema.org/address]( https://schema.org/address) |
 | areaServed | String | A área onde sobre a qual está definida a grelha. | Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -29,7 +29,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 
 | Propriedade | Tipo | Descrição | Nota |
 | ------------ | ---- | --------- | ------------------------ |
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `CellMobileData` |
 | createdAt | DateTime | Data e hora da criação da entidade | Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |
 | description | String | Descrição textual | Modelo: [https://schema.org/Text](https://schema.org/Text) |

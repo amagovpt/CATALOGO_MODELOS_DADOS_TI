@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `OnStreetParking`|
 | address | Object | Morada associada ao estacionamento | Inclui país, localidade, rua. Modelo: [https://schema.org/address](https://schema.org/address) |
 | allowedVehicleType | Array | Tipo(s) de veículo permitido | Enumerado: <br>- agriculturalVehicle,<br>- anyVehicle,<br>- articulatedVehicle,<br>- bicycle,<br>- bus,<br>- car,<br>- caravan,<br>- carOrLightVehicle,<br>- carWithCaravan,<br>- carWithTrailer,<br>- constructionOrMaintenanceVehicle,<br>- fourWheelDrive,<br>- highSidedVehicle,<br>- lorry,<br>- moped,<br>- motorcycle,<br>- motorcycleWithSideCar,<br>- motorscooter,<br>- tanker,<br>- threeWheeledVehicle,<br>- trailer,<br>- tram,<br>- twoWheeledVehicle,<br>- van,<br>- other. Modelo: [https://schema.org/Text](https://schema.org/Text) |

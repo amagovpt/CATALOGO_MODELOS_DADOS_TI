@@ -8,7 +8,7 @@ Nas anotações é possível encontrar um exemplo deste modelo, e de outros rela
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](https://metadados.digital.gov.pt/#/catalogue/folder/b8474afb-2c16-477c-a980-f7ce6989e48d/description?edit=false). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante a `WeatherObserved` |
 | address                  | Object          | Morada associada à estação | Inclui país, localidade, rua, código postal. Modelo: [https://schema.org/address](https://schema.org/address)  |
 | airQualityIndex  | Number     | O índice de qualidade do ar  (AQI)|  Modelo: [https://schema.org/Number](https://schema.org/Number)                |
