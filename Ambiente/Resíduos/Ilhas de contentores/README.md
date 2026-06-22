@@ -26,10 +26,10 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 ## Propriedades obrigatórias
 
 Os atributos obrigatórios são:
+
  - `id`
  - `location`
  - `type`
-
 
 ## Notas
 
