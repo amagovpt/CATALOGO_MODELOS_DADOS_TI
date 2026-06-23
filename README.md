@@ -16,6 +16,6 @@ Este catálogo foi desenvolvido para apoiar as entidades na **adoção de práti
 
 ## FAQs
 
-A área de **[FAQs](FAQ.md)** do Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes foi criada para apoiar as entidades e utilizadores na correta adequação dos dados que pretendem disponibilizar aos modelos publicados neste catálogo. Aqui encontrará esclarecimentos práticos sobre conceitos, regras e procedimentos que garantem uma aplicação consistente, interoperável e alinhada com as orientações definidas.
+A área de **[FAQ](FAQ.md)** do Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes foi criada para apoiar as entidades e utilizadores na correta adequação dos dados que pretendem disponibilizar aos modelos publicados neste catálogo. Aqui encontrará esclarecimentos práticos sobre conceitos, regras e procedimentos que garantem uma aplicação consistente, interoperável e alinhada com as orientações definidas.
 
 O Catálogo Nacional de Modelos de Dados é um instrumento em **evolução contínua**, em permanente melhoria e expansão. Por esse motivo, também as perguntas frequentes são atualizadas de forma dinâmica, acompanhando a maturidade do catálogo, as necessidades das entidades e os desafios que surgem na adoção dos modelos.
