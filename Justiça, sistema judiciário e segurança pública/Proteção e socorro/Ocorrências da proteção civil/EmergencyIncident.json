@@ -1,29 +1,12 @@
 {
-  "@context": [
-    "https://schema.lab.fiware.org/ld/context",
-    {
-      "dateCreated": "https://smartdatamodels.org/dateCreated",
-      "dateModified": "https://smartdatamodels.org/dateModified",
-      "description": "http://purl.org/dc/terms/description",
-      "location": "https://uri.etsi.org/ngsi-ld/location",
-      "severity": "https://smartdatamodels.org/severity",
-      "status": "https://smartdatamodels.org/status",
-      "reportedBy": "https://smartdatamodels.org/reportedBy",
-      "affectedArea": "https://smartdatamodels.org/affectedArea",
-      "resourcesDeployed": "https://smartdatamodels.org/resourcesDeployed",
-      "resourceType": "https://smartdatamodels.org/resourceType",
-      "quantity": "https://smartdatamodels.org/quantity",
-      "coordinatingAgencies": "https://smartdatamodels.org/coordinatingAgencies",
-      "incidentPriority": "https://smartdatamodels.org/incidentPriority"
-    }
-  ],
   "id": "urn:anepc:EmergencyIncident:I001",
   "type": "EmergencyIncident",
-  "incidentType": {"type": "Property", "value": "Fire"},
-  "description": {"type": "Property", "value": "Large fire."},
+  "incidentType": {"type": "Property", "value": "Queima"},
+  "incidentCode": {"type": "Property", "value": 3111},
+  "description": {"type": "Property", "value": "Queima não reportada previamente à entidades responsáveis."},
   "location": {
-    "type": "GeoProperty",
-    "value": {
+    "type"            : "GeoProperty",
+    "value"           : {
       "coordinates": [
         [
           [-7.684241623221567 , 37.140260377157844],
@@ -33,24 +16,22 @@
           [-7.684241623221567 , 37.140260377157844]
         ]
       ],
-      "type": "Polygon"
+      "type"       : "Polygon"
     },
-    "coordinateSystem": "EPSG:4326"
+    "coordinateSystem": "EPSG:3763"
   },
-  "reportedBy": {"type": "Property", "value": "Citizen"},
+  "reportedBy": {"type": "Property", "value": "Cidadão"},
   "dateCreated": {"type": "Property", "value": "2025-01-16T10:00:00Z"},
   "dateModified": {"type": "DateTime", "value": "2025-01-09T10:45:00Z"},
-  "severity": {"type": "Property", "value": "High"},
-  "status": {"type": "Property", "value": "Ongoing"},
-  "affectedArea": {"type": "Property", "value": "100 hectares"},
+  "startDate": {"type": "DateTime", "value": "2025-01-09T9:58:00Z"},
+  "severity": {"type": "Property", "value": "Alto"},
+  "status": {"type": "Property", "value": "Em curso"},
+  "areaServed": {"type": "Property", "value": "Via do Infante"},
   "resourcesDeployed": {
-    "type": "Property",
-    "value": [
-      {"resourceType": "Firefighters", "quantity": 10},
-      {"resourceType": "Helicopters" , "quantity":  0},
-      {"resourceType": "Ambulances"  , "quantity":  0}
-    ]
+    "type" : "Property",
+    "value": [ {"resourceType": "Meios Aéreos", "quantity": 1}, {"resourceType": "Meios Terrestes", "quantity": 2} ]
   },
   "coordinatingAgencies": { "type": "Property", "value": ["ANEPC", "GNR"] },
-  "incidentPriority": {"type": "Property", "value": "Emergency"}
+  "incidentPriority": {"type": "Property", "value": "Elevada"},
+  "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld", "https://schema.fiware.org/ld/context"]
 }
