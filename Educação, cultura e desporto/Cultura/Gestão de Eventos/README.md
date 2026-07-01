@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `EventObserved`    |
 | address                  | Object          | Endereço físico do evento | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
 | averageOccupancy | Integer | O valor médio de pessoas em simultâneo no evento.|  O valor diz respeito apenas ao período de observação e deve incluir apenas visitantes do evento. Modelo: [https://schema.org/Integer](https://schema.org/Integer). Deve ser indicado, como metainformação, no atributo `calculationMethod` qual o método usado para o cálculo do valor, usando um valor do enumerado:<br>- ticket,<br>- sensor, <br>- estimated, <br>- unknown.  |

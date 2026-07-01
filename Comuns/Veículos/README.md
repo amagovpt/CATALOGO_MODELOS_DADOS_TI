@@ -11,7 +11,7 @@ Para o `VehicleModel`:
 
 | Propriedade | Tipo | Descrição | Nota |
 | ------------- | ------ | ----------- | ------------------------- |
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `VehicleModel` |
 | address | Object | Morada associada ao ponto de interesse | Inclui país, cidade, freguesia e código postal. Modelo: [https://schema.org/address](https://schema.org/address) |
 | alternateName | String | Nome alternativo | Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -47,7 +47,7 @@ Para o `Vehicle`:
 
 | Propriedade | Tipo | Descrição | Nota |
 | ------------- | ------ | ----------- | ------------------------- |
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `Vehicle` |
 | address | Object | Morada associada ao ponto de interesse | Inclui país, cidade, freguesia e código postal. Modelo: [https://schema.org/address](https://schema.org/address) |
 | alternateName | String | Nome alternativo | Modelo: [https://schema.org/Text](https://schema.org/Text) |

@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `ServiceInteraction`    |
 | bookingDate        | DateTime | Registo de data e hora da agendamento | Apenas relevante quando há agendamento do atendimento, devendo ser omitido noutros casos. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | bookingChannel         | String          | Canal de marcação | Enumerado:<br>- app, <br>- Web,<br>- in-person, <br>- telephone. Modelo: [https://schema.org/Text](https://schema.org/Text) |

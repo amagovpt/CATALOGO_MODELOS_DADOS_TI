@@ -13,7 +13,7 @@ Para o `DockingStation`:
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `DockingStation`|
 | address                  | Object          | Morada associada ao ponto de interesse | Inclui país, cidade, freguesia e código postal. Modelo: [https://schema.org/address](https://schema.org/address)  |
 | agency_fare_url   | string | URL de uma página web que contém os detalhes das tarifas | Modelo: [https://schema.org/URL](https://schema.org/URL) |
@@ -57,7 +57,7 @@ Para o `VehicleTrip`:
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `VehicleTrip`|
 | arrivalTime | DateTime | Data do fim da viagem | De acordo com a norma [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |
 | dataProvider  | String    | Uma sequência de caracteres que identifica o fornecedor da entidade de dados | Modelo: [https://schema.org/Text](https://schema.org/Text)  |

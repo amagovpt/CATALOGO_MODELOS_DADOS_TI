@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `GasConsumption`|
 | address | Object | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [https://schema.org/address](https://schema.org/address) |
 | alarmStatus | String | Estado atual de alarme | Valores possíveis: 'normal', 'warning', 'critical'. Modelo: [https://schema.org/Text](https://schema.org/Text) |

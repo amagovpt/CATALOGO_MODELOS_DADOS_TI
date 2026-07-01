@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `ParticipatoryBudget`|
 | address | Object | Morada associada da proposta | Inclui país, região, localidade. Modelo: [https://schema.org/address](https://schema.org/address) |
 | applicant | String | Nome do proponente | Modelo: [https://schema.org/Text](https://schema.org/Text) |

@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `Alert`|
 | alertSource   | URL | Fonte do alerta | Modelo: [http://schema.org/URL](http://schema.org/URL) |
 | category | String | Categoria do alerta | Enumerado: <br>- traffic, <br>- naturalDisaster, <br>- weather, <br>- environment, <br>- health, <br>- security, <br>- agriculture. Modelo: [https://schema.org/Text](https://schema.org/Text) |

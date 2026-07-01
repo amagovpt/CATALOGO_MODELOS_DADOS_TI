@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 | ------------- | ------ | ----------- | ------------------------- |
-| `id` | URI | Identificador único da entidade | -- |
+| `id` | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | `type` | String | Tipo de entidade | Valor constante igual a `PassengerCountAggregation` |
 | `name` | String | Designação legível da entidade, adequada para apresentação a utilizadores. | Modelo: [https://schema.org/Text](https://schema.org/Text). |
 | `description` | String | Descrição textual da agregação representada pela entidade. | Deve explicar, de forma clara, o que está a ser contado, qual o operador e o período temporal.  Modelo: [https://schema.org/Text](https://schema.org/Text) |

@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `Streetlight`|
 | areaServed | String | A área geográfica onde é prestado um serviço ou oferecido um artigo | Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | circuit   | String    | Circuito ao qual o candeeiro de rua se liga e do qual obtém energia | Normalmente, contém um identificador que permite obter mais informações sobre esse circuito. Modelo: [https://schema.org/Text](https://schema.org/Text) |

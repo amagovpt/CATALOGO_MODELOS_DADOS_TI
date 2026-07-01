@@ -7,7 +7,7 @@ Nas anotações é possível encontrar um exemplo deste modelo, e de outros rela
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `RestrictionException`|
 | address | Object | Morada associada à exceção de restrição | Inclui país, localidade, rua, código postal. Modelo: [https://schema.org/address](https://schema.org/address) |
 | allowedVehicleType | Array | Tipo(s) de veículo permitido para atravessar a área de tráfego restrito | Especifica veículos que podem circular apesar da restrição geral. Pode incluir critérios como norma de emissões (euro6), tipo de combustível (petrol, electricity), etc. Modelo: [https://schema.org/Text](https://schema.org/Text) |
