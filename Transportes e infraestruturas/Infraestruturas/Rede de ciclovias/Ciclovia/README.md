@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](/FAQ.md). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `CycleLane`|
 | address | Object | Endereço da localização da ciclovia | Estrutura de endereço com país, região, distrito. Modelo: [https://schema.org/address](https://schema.org/address) |
 | areaServed | String | Indicação das áreas servidas pela ciclovia | Modelo: [https://schema.org/Text](https://schema.org/Text) |

@@ -10,7 +10,7 @@ Na tabela abaixo são apresentadas as propriedades presentes nos modelos de dado
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | Ver [Regra para geração de indentificadores únicos](/FAQ.md). |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `PumpingStation`|
 | address                  | Object          | Morada associada ao item | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
 | alternateName       | String          | Nome alternativo para a estação elevatória |  Modelo: [https://schema.org/Text](https://schema.org/Text) |
