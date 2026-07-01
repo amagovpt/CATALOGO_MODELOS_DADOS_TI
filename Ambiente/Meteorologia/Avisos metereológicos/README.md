@@ -8,7 +8,7 @@ Nas anotações é possível encontrar um exemplo deste modelo, e de outros rela
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | --  |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md).  |
 | type | String | Tipo de entidade | Valor constante igual a `WeatherAlert` |
 | address                  | Object          | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
 | alertSource | URL | Fonte do alerta | Modelo: [http://schema.org/URL](http://schema.org/URL)  |

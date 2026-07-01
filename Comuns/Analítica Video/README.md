@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da entidade | -- |
+| id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `EventCountingObserved`    |
 | aggregationPeriod | Number | Janela temporal usada para contar eventos, para efeitos de reporte | Quando adicionado a `observedAt` indica o limite superior aberto do intervalo de reporte.   Modelo: [https://schema.org/Number](https://schema.org/Number). |
 |  cumulativeCountResetedAt   | DateTime    |   Data e hora do instante em que o valor cumulativo dos eventos para  zona de observação foi reiniciado |  Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)    |

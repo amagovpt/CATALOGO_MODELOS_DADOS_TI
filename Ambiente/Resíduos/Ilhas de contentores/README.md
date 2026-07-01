@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
 |-------------|------|-----------|-------------------------|
-| id | URI | Identificador único da ilha | -- |
+| id | URI | Identificador único da ilha | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `WasteContainerIsle` |
 | address                  | Object          | Morada associada à ilha de contentores | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
 | areaServed | String | A área geográfica onde é prestado um serviço ou oferecido um artigo | Modelo: [https://schema.org/Text](https://schema.org/Text)|

@@ -11,7 +11,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 
 | Propriedade         | Tipo                    | Descrição                                                        | Nota                                                                |
 | ------------------- | ----------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `id`                | URI                     | Identificador único da entidade NGSI-LD.                         | Deve ser persistente ao longo do ciclo de vida do ativo.            |
+| `id`                | URI                     | Identificador único da entidade NGSI-LD.                         | Ver [Regra para geração de identificadores únicos](/FAQ.md).            |
 | `type`              | String                   | Tipo da entidade.                                                | Valor fixo: `EnergyGenerator`.                                      |
 | `name`              | String        | Nome legível do gerador de energia.                              | Modelo: [https://schema.org/Text](https://schema.org/Text).                  |
 | `generatorType`     | String        | Tipo de tecnologia de geração de energia.                        | Enumerado: <br>- biogas; <br>-biomass  <br>-coal;<br>-dieselGenerator; <br>-fuelOil; <br>-gasTurbine; <br>-geothermal; <br>-hybrid; <br>-hydro;<br>-nuclear;<br>-photovoltaic;<br>-smallHydro; <br>-solarThermal; <br>-tidal ;<br>-wave; <br>-windTurbine.<br> Modelo: [https://schema.org/Text](https://schema.org/Text). |
