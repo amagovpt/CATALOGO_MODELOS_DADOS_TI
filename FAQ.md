@@ -1,7 +1,7 @@
 ## Perguntas Frequentes (FAQ)
 
-**Versão:** 1.4
-**Data da última atualização:** 22 de junho de 2026
+**Versão:** 1.5
+**Data da última atualização:** 2 de julho de 2026
 
 Este documento reúne um conjunto de perguntas frequentes com o objetivo de apoiar as entidades fornecedoras de dados na correta implementação dos modelos de dados e respetivas instruções.
 
@@ -143,6 +143,13 @@ Outros formatos (por exemplo, JSON simplificado) podem ser disponibilizados adic
 * sejam explicitamente solicitados através de parâmetros na API.
 
 Desta forma, garante-se a interoperabilidade com o ecossistema, sem limitar a flexibilidade na utilização dos dados.
+</details>
+
+<details>
+  <summary>Os exemplos disponíveis no Catálogo Nacional de Modelo de Dados têm extensão JSON. Quer dizer que o seu conteúdo pode ser JSON?</summary>
+
+**Resposta**
+Não. Embora os exemplos do [Catálogo Nacional de Modelo de Dados](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/) tenham essa extensão, ela não deve ser usada como indicadora do conteúdo, que é o JSON-LD (ver questão anterior). Note-se que a extensão não é relevante quando os dados são disponibilizados por API. Nessa situação, a resposta deve ter, entre outros, o cabeçalho HTTP ```content-type``` o valor ```application/ld+json```.
 
 </details>
 
@@ -174,7 +181,6 @@ Uma propriedade obrigatória deve conter um valor válido, significativo e não 
   "name": "                 "
 }
 ```
-
 </details>
 
 <details>
@@ -231,6 +237,7 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 
 ### Histórico de alterações
 
+* **v1.5 (2026-07-02)** – Adicionada FAQ sobre extensão JSON dos ficheiros exemplo
 * **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
 * **v1.3 (2026-05-19)** – Adicionada FAQ sobre propriedades optativas para as quais não se tem valor
 * **v1.2 (2026-04-07)** – Adicionadas FAQ sobre propriedades obrigatórias, API e reestruturação do documento
