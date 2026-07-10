@@ -6,8 +6,7 @@
     "value": {
       "addressCountry" : "PT"                  ,
       "addressLocality": "Lisbon"              ,
-      "streetAddress"  : "Praça de Entrecampos",
-      "type"           : "PostalAddress"
+      "streetAddress"  : "Praça de Entrecampos"
     }
   },
   "location": {
