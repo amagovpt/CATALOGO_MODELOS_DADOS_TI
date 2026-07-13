@@ -1,6 +1,6 @@
 # Descrição
 
-O modelo de dados a seguir para representar **Irregularidades no trânstio** é o `TrafficJam` como reportado pelo [Waze for Cities](https://www.waze.com/wazeforcities/). 
+O modelo de dados a seguir para representar **Congestionamento no trânsito** é o `TrafficJam` como reportado pelo [Waze for Cities](https://www.waze.com/wazeforcities/).
 Este modelo utiliza a descrição que pode ser consultada em [Waze Data Feed specifications](https://support.google.com/waze/partners/answer/13458165).
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
