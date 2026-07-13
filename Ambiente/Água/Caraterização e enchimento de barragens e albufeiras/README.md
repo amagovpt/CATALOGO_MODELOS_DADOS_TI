@@ -13,6 +13,14 @@ Na tabela abaixo são apresentadas as propriedades presentes nos modelos de dado
 | `id` | URI | Identificador único da barragem | Padrão identificador INSPIRE |
 | `type` | String | Tipo de entidade. É constante para cada modelo de dados | Ver no exemplo o valor a incluir, de entre:`Dam`, `Reservoir`, `RiverBasin`, `WaterStorageTimeSeries`|
 |`areaServed` | String | A área geográfica onde é prestado um serviço ou oferecido um artigo |Modelo: [https://schema.org/Text](https://schema.org/Text)|
+| `address`    | Object          | Morada associada ao ponto de medição | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do [INE](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_pesquisa&frm_accao=PESQUISAR&frm_show_page_num=1&frm_modo_pesquisa=PESQUISA_SIMPLES&frm_texto=NUTS&frm_modo_texto=MODO_TEXTO_ALL&frm_data_ini=&frm_data_fim=&frm_tema=QUALQUER_TEMA&frm_area=o_ine_area_Metainformacao) |
+| address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
+| address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do [INE](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_pesquisa&frm_accao=PESQUISAR&frm_show_page_num=1&frm_modo_pesquisa=PESQUISA_SIMPLES&frm_texto=NUTS&frm_modo_texto=MODO_TEXTO_ALL&frm_data_ini=&frm_data_fim=&frm_tema=QUALQUER_TEMA&frm_area=o_ine_area_Metainformacao). Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
+| address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
+| address.streetNr       | String    | Número de polícia  |   Modelo: [https://schema.org/Text](https://schema.org/Text) |
 |`description` | String | Uma descrição do objeto representado| - |
 |`category` | Array | Uma sequência de termos que pretendem classificar o objeto hidrográfico em taxionomias externas, e.g. INSPIRE| - |
 |`name` | String | O nome do objeto | - |
@@ -31,7 +39,6 @@ Na tabela abaixo são apresentadas as propriedades presentes nos modelos de dado
 | `hydroId.localId` | String | Identificador local hidrográfico | - |
 | `hydroId.namespace` | String | Um indicador do âmbito do identificador local | No caso de um identificador hidrográfico nacional deve ser um código de país de duas letras de acordo com a norma [ISO 3166-1-Alpha-2](https://www.iso.org/obp/ui/#search)|
 | `hydroId.classificationScheme` | String | Uma descrição do sistema de identificação (nacional, europeu, etc.) que está a ser utilizado. | - |
-| `address` | Objeto | Indicação das regiões administrativas da barragem, podendo invluir a morada |  Ver [https://schema.org/address](https://schema.org/address)|
 | `location` | GeoJSON | Referência Geojson para o objeto hidrográfico. Pode ser Point, LineString, Polygon, MultiPoint, MultiLineString ou MultiPolygon|  O mesmo que [`Geometry`](https://inspire.ec.europa.eu/codelist/GeometrySpecificationValue). |
 | `levelOfDetail` | Objeto | Informação de escala | Denominador de escala |
 | `condition` | String | Condição física da barragem |  Enumerado: <br>- functional<br>- abandoned<br>- disused<br>- underConstruction<br>- underMaintenance |
@@ -74,34 +81,40 @@ Na tabela abaixo são apresentadas as propriedades presentes nos modelos de dado
 Propriedades obrigatórias:
 
 **Dam**:
- - `id`
- - `type`
- - `beginLifespanVersion`
- - `hydroId`
- - `localType`
- - `location`
+
+- `id`
+- `type`
+- `address`
+- `beginLifespanVersion`
+- `hydroId`
+- `localType`
+- `location`
 
 **Reservoir**:
- - `id`
- - `type`
- -  `beginLifespanVersion`
- - `hydroId`
- - `localType`
- - `location`
- - `reservoirHead`
- - `usefulCapacity`
+
+- `id`
+- `type`
+- `address`
+- `beginLifespanVersion`
+- `hydroId`
+- `localType`
+- `location`
+- `reservoirHead`
+- `usefulCapacity`
 
 **RiverBasin**:
- - `id`
- - `type`
- -  `beginLifespanVersion`
- - `hydroId`
- - `localType`
- - `location`
+
+- `id`
+- `type`
+- `address`
+- `beginLifespanVersion`
+- `hydroId`
+- `localType`
+- `location`
 
 ## Notas
 
 A representação a usar é NGSI-LD.
 Para alguns dos campos é requerida metainformação. A compatibilidade com a especificação acima é garantida, mas possibilita uma melhor interpretação dos valores incluídos nos campos. Nestes modelos, para a propriedade `location` é necessário adicionar como meta-informação o campo `coordinateSystem`, tendo este como valor um código [EPSG](https://epsg.org/crs_3763/ETRS89-Portugal-TM06.html), por exemplo `"coordinateSystem": "EPSG:3763"` . Nos atributos (incluindo metainformação) que não sejam percentagens ou valores a variar entre 0 e 1, existe o campo `unitCode` que indica a unidade de medida do valor. Este campo é expresso usando o código UN/CEFACT Common Code (max. 3 carácteres).
 
-A definição dos modelos de dados no catélogo nacional de dados é um processo contínuo, podendo surgir alterações ao longo do tempo, que devem de ser incorporadas nos sistemas em produção. Além disso, os modelos permitem a inclusão de atributos e de meta-informação específica para determinados verticais. No entanto, esses atributos são ignorados quando há integração de dados provenientes de várias entidades, sendo apenas usados os atributos aqui descritos.
+A definição dos modelos de dados no catálogo nacional de dados é um processo contínuo, podendo surgir alterações ao longo do tempo, que devem de ser incorporadas nos sistemas em produção. Além disso, os modelos permitem a inclusão de atributos e de meta-informação específica para determinados verticais. No entanto, esses atributos são ignorados quando há integração de dados provenientes de várias entidades, sendo apenas usados os atributos aqui descritos.
