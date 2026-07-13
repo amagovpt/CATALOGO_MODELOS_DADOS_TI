@@ -55,12 +55,14 @@ Nas anotações é possível encontrar exemplo deste modelo, ilustrando o seu us
 | source    | String    | Sequência de caracteres que fornece a fonte original dos dados da entidade como um URL    | Nome de domínio totalmente qualificado do fornecedor de origem, ou o URL para o objeto de origem. Modelo: [https://schema.org/URL](https://schema.org/URL)    |
 | versionInfo    | Object | Informação da versão correspondente a esta observação    | Modelos: [https://schema.org/Text](https://schema.org/Text)  e  [https://schema.org/DateTime](https://schema.org/DateTime) |
 
-
 ## Propriedades obrigatórias
 
 Os atributos obrigatórios são:
- - `id`
- - `type`
+
+- `id`
+- `type`
+- `address`
+- `location`
 
 ## Notas
 

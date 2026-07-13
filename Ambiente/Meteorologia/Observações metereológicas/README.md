@@ -71,6 +71,7 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
+- `address`
 - `dateObserved`
 - `dataProvider`
 - `location`

@@ -69,11 +69,12 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 Os atributos obrigatórios são:
 
 - `id`
-- `location`
 - `type`
+- `address`
 - `binCapacity`
 - `binColor`
 - `binFullnessThreshold`
+- `location`
 - `status`
 
 ## Notas
