@@ -27,10 +27,11 @@
     "address"           : {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
-            "addressLocality": "Lisbon",
-            "streetAddress"  : "Praça de Entrecampos",
-            "type"           : "PostalAddress"
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "streetAddress"  : "Praça de Entrecampos"
         }
     },
     "refPointOfInterest": {"type": "Relationship", "object": "urn:apa:AirQualityStation-3072"},
