@@ -1,49 +1,30 @@
 {
-  "id": "urn:cml:WasteContainerIsle:15",
-  "type": "WasteContainerIsle",
-  "address": {
-    "type": "Property",
+  "id"               : "urn:cml:WasteContainerIsle:15",
+  "type"             : "WasteContainerIsle",
+  "address"          : {
+    "type" : "Property",
     "value": {
+      "addressCountry" : "Portugal",
       "addressLocality": "Lisboa",
-      "addressCountry": "PT",
-      "streetAddress": "R. Professora Vigínia Vau",
-      "type": "PostalAddress"
+      "district"       : "Lisboa",
+      "addressRegion"  : "Grande Lisboa",
+      "streetAddress"  : "R. Professora Vigínia Vau"
     }
   },
-  "dateCreated": {
-    "type": "Property",
-    "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"}
+  "dateCreated"      : { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"} },
+  "description"      : {"type": "Property", "value": "Ilha Telheiras, R. Professora Vigínia Vau"},
+  "features"         : { "type": "Property", "value": ["underground"] },
+  "location"         : {
+    "type"            : "GeoProperty",
+    "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },
+    "coordinateSystem": "EPSG:3763"
   },
-  "description": {
-    "type": "Property",
-    "value": "Ilha Telheiras, R. Professora Vigínia Vau"
-  },
-  "features": {
-    "type": "Property",
-    "value": [
-      "underground"
-    ]
-  },
-  "location": {
-    "type": "GeoProperty",
-    "value": {
-        "type": "Point",
-        "coordinates": [-9.1658245766, 38.7621018101]
-    },
-     "coordinateSystem": "EPSG:3763"
-  },
-  "name": {
-    "type": "Property",
-    "value": "Virgínia Vau"
-  },
+  "name"             : {"type": "Property", "value": "Virgínia Vau"},
   "refWasteContainer": {
-    "type": "Relationship",
-    "object": [
-      "urn:cml:wastecontainer:33",
-      "urn:cml:wastecontainer:34"
-    ]
+    "type"  : "Relationship",
+    "object": ["urn:cml:wastecontainer:33", "urn:cml:wastecontainer:34"]
   },
-  "@context": [
+  "@context"         : [
     "https://raw.githubusercontent.com/smart-data-models/dataModel.WasteManagement/master/context.jsonld"
   ]
 }

@@ -2,6 +2,15 @@
     "id": "urn:cml:wastecontainer:33",
     "type": "WasteContainer",
     "RFID": {"type": "Property", "value": "67855734"},
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa"
+        }
+    },
     "binCapacity": {"type": "Property", "value": 60},
     "Category": {"type": "Property", "value": "underground"},
     "binClearedTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-28T15:00:00Z"} },
