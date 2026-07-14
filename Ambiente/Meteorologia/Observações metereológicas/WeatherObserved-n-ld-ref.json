@@ -2,34 +2,36 @@
     "id": "urn:ipma:WeatherObserved:579-20241020T040000Z",
     "type": "WeatherObserved",
     "dataProvider": {"type": "Property", "value": "IPMA"},
-    "dateObserved": {
-        "type": "Property",
-        "value": {"@type": "DateTime", "@value": "2024-10-20T04:00:00.00Z"}
-    },
+    "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-20T04:00:00.00Z"} },
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [-9.12749444, 38.76620278]
-        },
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.12749444, 38.76620278] },
         "coordinateSystem": "EPSG:3763"
     },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "district"       : "Lisboa"
+        }
+    },
     "precipitation": {
-        "type": "Property",
-        "value": 0,
+        "type"    : "Property",
+        "value"   : 0,
         "altitude": {"type": "Property", "value": 0.0, "unitCode": "MTR"}
     },
     "relativeHumidity": {
-        "type": "Property",
-        "value": 0.88,
+        "type"    : "Property",
+        "value"   : 0.88,
         "altitude": {"type": "Property", "value": 2.0, "unitCode": "MTR"}
     },
     "dewPoint": {"type": "Property", "value": 16.5, "unitCode": "CEL"},
-
     "feelLikesTemperature": {"type": "Property", "value": 17.5, "unitCode": "CEL"},
     "atmosphericPressure": {
-        "type": "Property",
-        "value": 1025.6,
+        "type"    : "Property",
+        "value"   : 1025.6,
         "altitude": {"type": "Property", "value": 2.0, "unitCode": "MTR"},
         "unitCode": "A97"
     },
@@ -38,25 +40,20 @@
     "stationCode": {"type": "Property", "value": "1200579"},
     "stationName": {"type": "Property", "value": "Lisboa - Gago Coutinho"},
     "temperature": {
-        "type": "Property",
-        "value": 16.7,
+        "type"    : "Property",
+        "value"   : 16.7,
         "accuracy": 0.8,
         "altitude": {"type": "Property", "value": 2.0, "unitCode": "MTR"},
         "unitCode": "CEL"
     },
-    "refPointOfInterest": {
-        "type"  : "Relationship"               ,
-        "object": "urn:ipma:WeatherStation-579"
-    },
+    "refPointOfInterest": {"type": "Relationship", "object": "urn:ipma:WeatherStation-579"},
     "uVIndexMax": {"type": "Property", "value": 4.0},
     "windDirection": {"type": "Property", "value": 0, "unitCode": "DD"},
     "windSpeed": {
-        "type": "Property",
-        "value": 5.8,
+        "type"    : "Property",
+        "value"   : 5.8,
         "altitude": {"type": "Property", "value": 10, "unitCode": "MTR"},
         "unitCode": "MTS"
     },
-    "@context": [
-        "https://raw.githubusercontent.com/smart-data-models/dataModel.Weather/master/context.jsonld"
-    ]
+    "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Weather/master/context.jsonld"]
 }

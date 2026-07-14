@@ -12,7 +12,15 @@
         "value"           : { "type": "Point", "coordinates": [-9.309167, 38.695833] },
         "coordinateSystem": "EPSG:3763"
     },
-    "address": { "type": "Property", "value": {"addressLocality": "Oeiras", "addressCountry": "PT"} },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "district"       : "Lisboa"
+        }
+    },
     "dayMaximum": {
         "type" : "Property",
         "value": {"feelsLikeTemperature": 22.0, "temperature": 22.0, "relativeHumidity": 0.8}
