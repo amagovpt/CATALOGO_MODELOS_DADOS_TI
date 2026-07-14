@@ -15,6 +15,17 @@
             "coordinateSystem": "EPSG:4326"
         }
     },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressRegion"  : "Norte",
+            "district"       : "Porto",
+            "addressCountry" : "Portugal",
+            "postalCode"     : "4150-190",
+            "addressLocality": "Porto",
+            "streetAddress"  : "Av. dom Carlos I"
+        }
+    },
     "measuredArea": {"type": "Property", "value": 250, "unitCode": "MTK"},
     "name": {"type": "Property", "value": "W6CK-1YR8-E79V-CI4W"},
     "objectArea": {"type": "Property", "value": 10, "unitCode": "P1"},

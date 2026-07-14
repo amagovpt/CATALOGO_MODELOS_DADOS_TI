@@ -5,9 +5,11 @@
         "type" : "Property",
         "value": {
             "addressLocality": "Coimbra",
+            "addressRegion"  : "Centro",
+            "district"       : "Coimbra",
+            "addressCountry" : "Portugal",
             "postalCode"     : "3000-351",
-            "streetAddress"  : "Av. Sá da Bandeira",
-            "type"           : "PostalAddress"
+            "streetAddress"  : "Av. Sá da Bandeira"
         }
     },
     "areaServed": {"type": "Property", "value": "Av. Sá da Bandeira"},

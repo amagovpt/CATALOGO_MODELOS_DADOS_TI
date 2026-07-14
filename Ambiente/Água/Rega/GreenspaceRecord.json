@@ -6,6 +6,15 @@
     "type" : "GeoProperty",
     "value": { "type": "Point", "coordinates": [-8.42228860554215, 40.21068736663281], "coordinateSystem": "EPSG:4326" }
   },
+  "address": {
+    "type" : "Property",
+    "value": {
+      "addressLocality": "Coimbra",
+      "addressRegion"  : "Centro",
+      "district"       : "Coimbra",
+      "addressCountry" : "Portugal"
+    }
+  },
   "refGreenspace": {"type": "Relationship", "object": "urn:env:jardim_sa_da_bandeira"},
   "relativeHumidity": {"type": "Property", "value": 0.87},
   "soilMoistureEc": {"type": "Property", "value": 1, "unitCode": "D10"},

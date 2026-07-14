@@ -2,23 +2,25 @@
     "id": "urn:apa:Basin:PT:Guadiana:001",
     "type": "RiverBasin",
     "category": { "type": "Property", "value": ["HydroObject"] },
-    "beginLifespanVersion": {
-        "type" : "Property"            ,
-        "value": "2024-01-30T10:00:00Z"
-    },
+    "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
     "endLifespanVersion": {"type": "Property", "value": null},
     "localType": {"type": "Property", "value": "river basin"},
     "hydroId": {
-        "type": "Property",
+        "type" : "Property",
+        "value": {"classificationScheme": "EU:WFD", "localId": "pt/12/a", "namespace": "EU.EIONET.WATER"}
+    },
+    "address": {
+        "type" : "Property",
         "value": {
-            "classificationScheme": "EU:WFD"         ,
-            "localId"             : "pt/12/a"        ,
-            "namespace"           : "EU.EIONET.WATER"
+            "addressLocality": "Moura",
+            "addressRegion"  : "Alentejo",
+            "district"       : "Beja",
+            "addressCountry" : "Portugal"
         }
     },
     "location": {
-        "type": "GeoProperty",
-        "value": {
+        "type"            : "GeoProperty",
+        "value"           : {
             "geometry": {
                 "coordinates": [
                     [
@@ -29,7 +31,7 @@
                         [-7.783805371865014, 38.92119185555666]
                     ]
                 ],
-                "type": "Polygon"
+                "type"       : "Polygon"
             }
         },
         "coordinateSystem": "EPSG:3763"
@@ -39,32 +41,20 @@
     "minElevation": {"type": "Property", "value": 74, "unitCode": "MTR"},
     "meanSlope": {"type": "Property", "value": 6.40, "unitCode": "P1"},
     "meanAnnualPrecipitation": {
-        "type": "Property",
-        "value": 593,
-        "unitCode": "MMT",
-        "samplingFrequency":"R/2024-09-21/P3M",
-         "observedAt": "2024-12-20T08:00:00Z"
-
+        "type"             : "Property",
+        "value"            : 593,
+        "unitCode"         : "MMT",
+        "samplingFrequency": "R/2024-09-21/P3M",
+        "observedAt"       : "2024-12-20T08:00:00Z"
     },
-    "watershedArea": {
-        "type": "Property",
-        "value": 53912.39,
-        "unitCode": "KMK"
-    },
-    "totalWatershedArea": {
-        "type": "Property",
-        "value": 55289,
-        "unitCode": "KMK"
-    },
-    "levelOfDetail": {
-        "type": "Property",
-        "value": {"scale": 25000, "equivalentScale": "1:25000"}
-    },
+    "watershedArea": {"type": "Property", "value": 53912.39, "unitCode": "KMK"},
+    "totalWatershedArea": {"type": "Property", "value": 55289, "unitCode": "KMK"},
+    "levelOfDetail": { "type": "Property", "value": {"scale": 25000, "equivalentScale": "1:25000"} },
     "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
     "relatedHydroObject": {
-        "type": "Relationship",
+        "type"  : "Relationship",
         "object": [
-            "urn:apa:Reservoir:PT:Alqueva:001" ,
+            "urn:apa:Reservoir:PT:Alqueva:001",
             "urn:apa:Reservoir:PT:Caia:005",
             "urn:apa:Reservoir:PT:Lucefécit:001",
             "urn:apa:Reservoir:PT:Vigia:002",
@@ -75,35 +65,35 @@
         ]
     },
     "operatingCompany": {
-        "type": "Property",
+        "type" : "Property",
         "value": "Empresa de desenvolvimento e infraestruturas do alqueva, s.a. (edia)"
     },
     "@context": {
-        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/",
-        "smartdatamodels": "https://smartdatamodels.org/dataModel.waterStorage/",
-        "Dam": "smartdatamodels:Dam",
-        "id": "@id",
-        "type": "@type",
-        "inspire": "http://inspire.ec.europa.eu/schemas/lcv/4.0#",
-        "beginLifespanVersion": "inspire:beginLifespanVersion",
-        "endLifespanVersion": "inspire:endLifespanVersion",
-        "localType": "inspire:localType",
-        "hydroId": "inspire:hydroId",
-        "namespace": "inspire:namespace",
-        "localId": "inspire:localId",
-        "category": "smartdatamodels:category",
-        "location": "https://uri.etsi.org/ngsi-ld/location",
-        "samplingFrequency": "smartdatamodels:samplingFrequency",
-        "maxElevation": "smartdatamodels:maxElevation",
-        "meanElevation": "smartdatamodels:meanElevation",
-        "minElevation": "smartdatamodels:minElevation",
-        "meanSlope": "smartdatamodels:meanSlope",
+        "ngsi-ld"                : "https://uri.etsi.org/ngsi-ld/",
+        "smartdatamodels"        : "https://smartdatamodels.org/dataModel.waterStorage/",
+        "Dam"                    : "smartdatamodels:Dam",
+        "id"                     : "@id",
+        "type"                   : "@type",
+        "inspire"                : "http://inspire.ec.europa.eu/schemas/lcv/4.0#",
+        "beginLifespanVersion"   : "inspire:beginLifespanVersion",
+        "endLifespanVersion"     : "inspire:endLifespanVersion",
+        "localType"              : "inspire:localType",
+        "hydroId"                : "inspire:hydroId",
+        "namespace"              : "inspire:namespace",
+        "localId"                : "inspire:localId",
+        "category"               : "smartdatamodels:category",
+        "location"               : "https://uri.etsi.org/ngsi-ld/location",
+        "samplingFrequency"      : "smartdatamodels:samplingFrequency",
+        "maxElevation"           : "smartdatamodels:maxElevation",
+        "meanElevation"          : "smartdatamodels:meanElevation",
+        "minElevation"           : "smartdatamodels:minElevation",
+        "meanSlope"              : "smartdatamodels:meanSlope",
         "meanAnnualPrecipitation": "smartdatamodels:meanAnnualPrecipitation",
-        "watershedArea": "smartdatamodels:watershedArea",
-        "totalWatershedArea": "smartdatamodels:totalWatershedArea",
-        "levelOfDetail": "inspire:levelOfDetail",
+        "watershedArea"          : "smartdatamodels:watershedArea",
+        "totalWatershedArea"     : "smartdatamodels:totalWatershedArea",
+        "levelOfDetail"          : "inspire:levelOfDetail",
         "hydrologicalPersistence": "http://inspire.ec.europa.eu/codelist/WaterPersistenceValue",
-        "relatedHydroObject": "smartdatamodels:relatedHydroObject",
-        "operatingCompany": "smartdatamodels:operatingCompany"
+        "relatedHydroObject"     : "smartdatamodels:relatedHydroObject",
+        "operatingCompany"       : "smartdatamodels:operatingCompany"
     }
 }

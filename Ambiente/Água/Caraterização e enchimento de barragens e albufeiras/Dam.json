@@ -34,10 +34,10 @@
     "address": {
         "type" : "Property",
         "value": {
-            "addressLocality": "Moura (são joão baptista)",
-            "addressRegion"  : "Beja",
-            "addressCountry" : "PT",
-            "type"           : "PostalAddress"
+            "addressLocality": "Moura",
+            "addressRegion"  : "Alentejo",
+            "district"       : "Beja",
+            "addressCountry" : "Portugal"
         }
     },
     "operationalStatus": {"type": "Property", "value": "operational"},

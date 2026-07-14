@@ -9,10 +9,13 @@
     "address": {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
+            "addressRegion"  : "Norte",
+            "district"       : "Porto",
+            "addressCountry" : "Portugal",
             "postalCode"     : "4000-065",
             "addressLocality": "Porto",
-            "streetAddress"  : "Av. dos Aliados 39"
+            "streetAddress"  : "Av. dos Aliados",
+            "streetNr"       : "39"
         }
     },
     "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-12-10T14:57:39.000Z"} },

@@ -38,7 +38,12 @@
     "reservoirHead": {"type": "Property", "value": 120, "unitCode": "MTR", "observedAt": "2025-02-05T12:00:00Z"},
     "address": {
         "type" : "Property",
-        "value": {"addressLocality": "Moura", "addressRegion": "Beja", "addressCountry": "PT", "type": "PostalAddress"}
+        "value": {
+            "addressLocality": "Moura",
+            "addressRegion"  : "Alentejo",
+            "district"       : "Beja",
+            "addressCountry" : "Portugal"
+        }
     },
     "relatedHydroObject": { "type": "Relationship", "object": ["urn:apa:Dam:PT:Alqueva:001"] },
     "geographicalName": {

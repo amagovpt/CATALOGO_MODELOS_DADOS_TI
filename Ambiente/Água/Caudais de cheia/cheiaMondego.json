@@ -3,6 +3,15 @@
     "type": "FloodMonitoring",
     "alertLevel": {"type": "Property", "value": 3.33, "unitCode": "MTR"},
     "currentLevel": {"type": "Property", "value": 4.32, "unitCode": "MTR"},
+        "address": {
+        "type" : "Property",
+        "value": {
+            "addressLocality": "Coimbra",
+            "addressRegion"  : "Centro",
+            "district"       : "Coimbra",
+            "addressCountry" : "Portugal"
+        }
+    },
     "location": {
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-8.4253, 40.2033] },
