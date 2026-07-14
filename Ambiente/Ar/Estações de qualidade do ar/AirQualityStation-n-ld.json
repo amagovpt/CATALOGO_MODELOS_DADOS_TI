@@ -17,9 +17,9 @@
         "type": "Property",
         "value": {
             "addressCountry" : "PT"             ,
-            "addressLocality": "Alvalade"       ,
+            "addressLocality": "Lisboa"       ,
             "district"       : "Lisboa"         ,
-            "addressRegion"  : "Lisboa"         ,
+            "addressRegion"  : "Grande Lisboa"         ,
             "streetAddress"  : "Campo Grande 3A",
             "postalCode"     : "1600"
         }

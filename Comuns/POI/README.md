@@ -14,15 +14,14 @@ O modelo [PointOfInterest](https://github.com/smart-data-models/dataModel.PointO
 |-------------|------|-----------|-------------------------|
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type     | String    | Tipo de entidade     |  Valor constante igual a `PointOfInterest`. Modelo: [https://schema.org/Text](https://schema.org/Text)  |
-| address    | Object          | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
-| address.addressCountry | String    | Nome do país | Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)      |
-| address.addressLocality| String    | Localidade em que se situa o endereço da rua e que se encontra na região         | Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
-| address.addressRegion  | String    | Região em que se situa a localidade e que se encontra no país | Modelo: [https://schema.org/addressRegion](https://schema.org/addressRegion)       |
-| address.district       | String    | Distrito é um tipo de divisão administrativa que, em alguns países, é gerida pelo governo local |  Modelo: [https://schema.org/Text](https://schema.org/Text)    |
-| address.postOfficeBoxNumber          | String    | Número da caixa postal | Modelo: [https://schema.org/postOfficeBoxNumber](https://schema.org/postOfficeBoxNumber) |
-| address.postalCode     | String    | Código postal. Ex: 24004| Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
-| address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)       |
-| address.streetNr       | String    | Número que identifica uma propriedade específica numa rua pública |   Modelo: [https://schema.org/Text](https://schema.org/Text)   |
+| address    | Object          | Morada associada ao ponto de medição | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do [INE](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_pesquisa&frm_accao=PESQUISAR&frm_show_page_num=1&frm_modo_pesquisa=PESQUISA_SIMPLES&frm_texto=NUTS&frm_modo_texto=MODO_TEXTO_ALL&frm_data_ini=&frm_data_fim=&frm_tema=QUALQUER_TEMA&frm_area=o_ine_area_Metainformacao) |
+| address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
+| address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do [INE](https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_pesquisa&frm_accao=PESQUISAR&frm_show_page_num=1&frm_modo_pesquisa=PESQUISA_SIMPLES&frm_texto=NUTS&frm_modo_texto=MODO_TEXTO_ALL&frm_data_ini=&frm_data_fim=&frm_tema=QUALQUER_TEMA&frm_area=o_ine_area_Metainformacao). Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
+| address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
+| address.streetNr       | String    | Número de polícia  |   Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | alternateName          | String    | Nome alternativo para este item       |   Modelo: [https://schema.org/Text](https://schema.org/Text)   |
 | areaServed             | String    | Área geográfica onde o serviço ou item é fornecido  | Modelo: [https://schema.org/Text](https://schema.org/Text)  |
 | capacity | Number    | Número total de pessoas que podem ser alocadas ao mesmo tempo     |    Modelo: [https://schema.org/Number](https://schema.org/Number)   |
@@ -76,8 +75,9 @@ O modelo [PointOfInterest](https://github.com/smart-data-models/dataModel.PointO
 Os atributos obrigatórios são:
 
 - `id`  
-- `name`  
 - `type`
+- `name`  
+- `address`
 - `category`
 - `location`
 
