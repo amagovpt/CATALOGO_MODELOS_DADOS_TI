@@ -8,9 +8,13 @@
     "address"           : {
         "type" : "Property",
         "value": {
-            "addressRegion": "Lisboa",
-            "streetAddress": "Rua Dos Poiais De São Bento 37-39",
-            "postalCode"   : "1200-346"
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "streetAddress": "Rua Dos Poiais De São Bento",
+            "postalCode"   : "1200-346",
+            "streetNr":"37-39"
         }
     },
     "dataProvider"      : {"type": "Property", "value": "CML"},

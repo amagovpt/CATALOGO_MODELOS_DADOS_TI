@@ -11,6 +11,15 @@
     "controlledActivityType": {"type": "Property", "value": "WasteManagement"},
     "controlTypeCode": {"type": "Property", "value": "Monitored"},
     "dataProvider": {"type": "Property", "value": "https://www.cm-lisboa.pt/pt"},
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa"
+        }
+    },
     "location": {
         "type"            : "GeoProperty",
         "value"           : {
