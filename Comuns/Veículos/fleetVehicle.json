@@ -1,123 +1,48 @@
 {
   "id": "urn:inem:Vehicle:ambulance-vmer-unit-63",
   "type": "Vehicle",
-  "vehicleType": {
-    "type": "Property",
-    "value": "van"
-  },
-  "category": {
-    "type": "Property",
-    "value": ["emergency","tracked"]
-  },
-  "name": {
-    "type": "Property",
-    "value": "VMER-01"
-  },
-  "description": {
-    "type": "Property",
-    "value": "Viatura Médica de Emergência e Reanimação (VMER)"
-  },
+  "vehicleType": {"type": "Property", "value": "van"},
+  "category": { "type": "Property", "value": ["emergency", "tracked"] },
+  "name": {"type": "Property", "value": "VMER-01"},
+  "description": {"type": "Property", "value": "Viatura Médica de Emergência e Reanimação (VMER)"},
   "location": {
-    "type": "GeoProperty",
-    "value": {
-      "type": "Point",
-      "coordinates": [-9.1393, 39.3515]
-    }
+    "type" : "GeoProperty",
+    "value": { "type": "Point", "coordinates": [-9.1393, 39.3515] }
   },
   "address": {
-    "type": "Property",
+    "type" : "Property",
     "value": {
-      "addressRegion": "Leiria",
-      "addressCountry": "PT"
+      "addressRegion"  : "Centro",
+      "addressCountry" : "Portugal",
+      "district"       : "Leiria",
+      "addressLocality": "Leiria"
     }
   },
-  "emergencyVehicleType": {
-    "type": "Property",
-    "value": "ambulance"
-  },
-  "vehicleIdentificationNumber": {
-    "type": "Property",
-    "value": "WDB9066351L123456"
-  },
-  "vehiclePlateIdentifier": {
-    "type": "Property",
-    "value": "AA-00-EM"
-  },
-  "fleetVehicleId": {
-    "type": "Property",
-    "value": "VMER-63"
-  },
-  "mileageFromOdometer": {
-    "type": "Property",
-    "value": 45230,
-    "unitCode": "KMT",
-    "observedAt": "2026-01-16T10:30:00Z"
-  },
-  "vehicleConfiguration": {
-    "type": "Property",
-    "value": "ambulance"
-  },
-  "color": {
-    "type": "Property",
-    "value": "white"
-  },
+  "emergencyVehicleType": {"type": "Property", "value": "ambulance"},
+  "vehicleIdentificationNumber": {"type": "Property", "value": "WDB9066351L123456"},
+  "vehiclePlateIdentifier": {"type": "Property", "value": "AA-00-EM"},
+  "fleetVehicleId": {"type": "Property", "value": "VMER-63"},
+  "mileageFromOdometer": {"type": "Property", "value": 45230, "unitCode": "KMT", "observedAt": "2026-01-16T10:30:00Z"},
+  "vehicleConfiguration": {"type": "Property", "value": "ambulance"},
+  "color": {"type": "Property", "value": "white"},
   "feature": {
-    "type": "Property",
+    "type" : "Property",
     "value": [
-      "emergencyLights",
-      "siren",
-      "medicalEquipment",
-      "defibrillator",
-      "oxygenSupply",
-      "gps",
-      "communicationSystem"     
+      "emergencyLights",     "siren",               "medicalEquipment",    "defibrillator",
+      "oxygenSupply",        "gps",                 "communicationSystem"
     ]
   },
   "serviceProvided": {
-    "type": "Property",
-    "value": [
-      "emergencyMedicalCare",
-      "advancedLifeSupport",
-      "patientTransport"
-    ]
+    "type" : "Property",
+    "value": ["emergencyMedicalCare", "advancedLifeSupport", "patientTransport"]
   },
-  "vehicleSpecialUsage": {
-    "type": "Property",
-    "value": "ambulance"
-  },
-  "refVehicleModel": {
-    "type": "Relationship",
-    "object": "urn:inem:VehicleModel:ambulance-vmer-01"
-  },
-  "serviceStatus": {
-    "type": "Property",
-    "value": "onRoute"
-  },
-  "dateVehicleFirstRegistered": {
-    "type": "Property",
-    "value": {
-      "@type": "Date",
-      "@value": "2023-03-15"
-    }
-  },
-  "dateFirstUsed": {
-    "type": "Property",
-    "value": {
-      "@type": "Date",
-      "@value": "2023-03-20"
-    }
-  },
-  "speed": {
-    "type": "Property",
-    "value": 90,
-    "unitCode": "KMH",
-    "observedAt": "2026-01-16T10:30:00Z"
-  },
-  "heading": {
-    "type": "Property",
-    "value": 180,
-    "observedAt": "2026-01-16T10:30:00Z"
-  },
+  "vehicleSpecialUsage": {"type": "Property", "value": "ambulance"},
+  "refVehicleModel": {"type": "Relationship", "object": "urn:inem:VehicleModel:ambulance-vmer-01"},
+  "serviceStatus": {"type": "Property", "value": "onRoute"},
+  "dateVehicleFirstRegistered": { "type": "Property", "value": {"@type": "Date", "@value": "2023-03-15"} },
+  "dateFirstUsed": { "type": "Property", "value": {"@type": "Date", "@value": "2023-03-20"} },
+  "speed": {"type": "Property", "value": 90, "unitCode": "KMH", "observedAt": "2026-01-16T10:30:00Z"},
+  "heading": {"type": "Property", "value": 180, "observedAt": "2026-01-16T10:30:00Z"},
   "@context": [
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
     "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"

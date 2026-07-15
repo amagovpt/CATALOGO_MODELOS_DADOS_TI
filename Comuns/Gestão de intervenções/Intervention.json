@@ -5,87 +5,57 @@
     "status": {"type": "Property", "value": "Scheduled"},
     "priority": {"type": "Property", "value": "High"},
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "LineString",
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "LineString",
             "coordinates": [
-                [-7.609006, 37.994116],
-                [-7.608823, 37.994116],
-                [-7.609038, 37.993939],
-                [-7.608834, 37.993939]
+                [-7.609006, 37.994116], [-7.608823, 37.994116], [-7.609038, 37.993939], [-7.608834, 37.993939]
             ]
         },
         "coordinateSystem": "EPSG:4326"
     },
     "address": {
-        "type": "Property",
+        "type" : "Property",
         "value": {
-            "addressCountry": "PT"             ,
-            "addressRegion" : "Serpa"          ,
-            "streetAddress" : "EN265 km 13+900"
+            "addressCountry" : "Portugal",
+            "addressLocality": "Serpa",
+            "district"       : "Beja",
+            "addressRegion"  : "Alentejo",
+            "streetAddress"  : "EN265 km 13+900"
         }
     },
-    "targetAsset": {
-        "type"  : "Relationship"  ,
-        "object": "urn:ngsi-ld:Asset:road-segment-456"
-    },
+    "targetAsset": {"type": "Relationship", "object": "urn:ngsi-ld:Asset:road-segment-456"},
     "seeAlso": {
         "type": "Property",
         "value": "https://www.infraestruturasdeportugal.pt/pt-pt/infraestruturas/investimentos/principais-investimentos-em-curso"
     },
-    "dataProvider": {
-        "type" : "Property" ,
-        "value": "Infraestruturas de Portugal"
-    },
+    "dataProvider": {"type": "Property", "value": "Infraestruturas de Portugal"},
     "dateStarted": {"type": "Property", "value": "2025-01-01T07:30:00Z"},
-    "name": {
-        "type": "Property",
-        "value": "EN265 Trabalhos de fresagem e repavimentação - Janeiro de 2025"
-    },
+    "name": {"type": "Property", "value": "EN265 Trabalhos de fresagem e repavimentação - Janeiro de 2025"},
     "dateFinished": {"type": "Property", "value": null},
     "dateModified": {"type": "Property", "value": "2025-05-12T10:30:00Z"},
-    "responsibleAgent": {
-        "type"  : "Relationship"    ,
-        "object": "urn:ngsi-ld:Organization:maintenance-team-A"
-    },
+    "responsibleAgent": {"type": "Relationship", "object": "urn:ngsi-ld:Organization:maintenance-team-A"},
     "investment": {"type": "Property", "value": 100000, "unitCode": "EUR"},
-    "inspectionAgent": {
-        "type"  : "Relationship"   ,
-        "object": "urn:ngsi-ld:Organization:inspection-team-A"
-    },
+    "inspectionAgent": {"type": "Relationship", "object": "urn:ngsi-ld:Organization:inspection-team-A"},
     "description": {
-        "type": "Property",
+        "type" : "Property",
         "value": "Repairing potholes and resurfacing a damaged segment of Via Nazionale."
     },
     "estimatedDuration": {
-        "type": "Property",
-        "value": 1,
-        "unitCode": "DAY",
+        "type"       : "Property",
+        "value"      : 1,
+        "unitCode"   : "DAY",
         "description": "Duração total estimada da intervenção"
     },
-    "completionPercentage": {
-        "type": "Property",
-        "value": 99,
-        "unitCode": "P1"
-    },
+    "completionPercentage": {"type": "Property", "value": 99, "unitCode": "P1"},
     "infrastructureType": {"type": "Property", "value": "utilityNetworks"},
     "workingHours": {"type": "Property", "value": "07:30-19:00"},
     "workingDays": { "type": "Property", "value": ["Quinta-feira"] },
     "contractor": {"type": "Property", "value": "Tecnovia"},
-    "responsibleAuthority": {
-        "type" : "Property"                   ,
-        "value": "Infraestruturas de Portugal"
-    },
+    "responsibleAuthority": {"type": "Property", "value": "Infraestruturas de Portugal"},
     "contactPoint": {
-        "type": "Property",
-        "value": {
-            "name"     : "Contacto de emergência" ,
-            "telephone": "+351210000000"          ,
-            "email"    : "emergencias@tecnovia.pt"
-        }
+        "type" : "Property",
+        "value": {"name": "Contacto de emergência", "telephone": "+351210000000", "email": "emergencias@tecnovia.pt"}
     },
-    "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        "https://schema.fiware.org/ld/context"
-    ]
+    "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld", "https://schema.fiware.org/ld/context"]
 }

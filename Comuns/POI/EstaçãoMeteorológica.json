@@ -1,34 +1,28 @@
 {
-    "id": "urn:ipma:WeatherStation:579",
-    "type": "PointOfInterest",
-    "category": { "type": "Property", "value": ["WeatherStation", "EMAI"] },
-    "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [-9.12749444, 38.76620278]
-        },
-        "altitude": {"type": "Property", "value": 104, "unitCode": "MTR"},
+    "id"          : "urn:ipma:WeatherStation:579",
+    "type"        : "PointOfInterest",
+    "category"    : { "type": "Property", "value": ["WeatherStation", "EMAI"] },
+    "location"    : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-9.12749444, 38.76620278] },
+        "altitude"        : {"type": "Property", "value": 104, "unitCode": "MTR"},
         "coordinateSystem": "EPSG:3763"
     },
-    "name": {"type": "Property", "value": "Lisboa - Gago Coutinho"},
+    "name"        : {"type": "Property", "value": "Lisboa - Gago Coutinho"},
     "dataProvider": {"type": "Property", "value": "www.ipma.pt"},
-    "address": {
-        "type": "Property",
+    "address"     : {
+        "type" : "Property",
         "value": {
-            "addressCountry" : "PT"                ,
-            "addressLocality": "Olivais"           ,
-            "district"       : "Lisboa"            ,
-            "addressRegion"  : "Lisboa"            ,
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
             "streetAddress"  : "Rua C do Aeroporto",
             "postalCode"     : "1749-077"
         }
     },
-    "description": {
-        "type" : "Property"                                            ,
-        "value": "Estação meteorológica automática de superfície (EMA)"
-    },
-    "@context": [
+    "description" : {"type": "Property", "value": "Estação meteorológica automática de superfície (EMA)"},
+    "@context"    : [
         "https://raw.githubusercontent.com/smart-data-models/dataModel.PointOfInterest/master/context.jsonld"
     ]
 }

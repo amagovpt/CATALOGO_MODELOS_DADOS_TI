@@ -1,75 +1,65 @@
 {
-    "id": "urn:cml:FireStation:SapadoresBombeirosLisboa-001",
-    "type": "PointOfInterest",
-    "name": {"type": "Property", "value": "Sapadores Bombeiros de Lisboa"},
-    "description": {
-        "type": "Property",
+    "id"                : "urn:cml:FireStation:SapadoresBombeirosLisboa-001",
+    "type"              : "PointOfInterest",
+    "name"              : {"type": "Property", "value": "Sapadores Bombeiros de Lisboa"},
+    "description"       : {
+        "type" : "Property",
         "value": "Regimento de Sapadores Bombeiros - 1ª Companhia - Quartel do Comando."
     },
-    "address": {
-        "type": "Property",
+    "address"           : {
+        "type" : "Property",
         "value": {
-            "addressCountry" : "PT"                  ,
-            "addressLocality": "Lisboa"              ,
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
             "streetAddress"  : "Avenida Dom Carlos I",
             "postalCode"     : "1249-071"
         }
     },
-    "category": {
-        "type": "Property",
+    "category"          : {
+        "type" : "Property",
         "value": ["Fire Station", "Emergency Services", "Public Safety", "Buildings"]
     },
-    "location": {
-        "type": "GeoProperty",
+    "location"          : {
+        "type" : "GeoProperty",
         "value": { "type": "Point", "coordinates": [-9.12709, 38.71762] }
     },
-    "contactPoint": {
-        "type": "Property",
+    "contactPoint"      : {
+        "type" : "Property",
         "value": {
-            "telephone": "+351 800 913 913",
-            "email": "rsb@cm-lisboa.pt",
+            "telephone"  : "+351 800 913 913",
+            "email"      : "rsb@cm-lisboa.pt",
             "contactType": "Emergency Services",
-            "url": "https://www.cm-lisboa.pt/municipio/organizacao/corpo-de-sapadores-bombeiros"
+            "url"        : "https://www.cm-lisboa.pt/municipio/organizacao/corpo-de-sapadores-bombeiros"
         }
     },
-    "openingHours": {
-        "type": "Property",
+    "openingHours"      : {
+        "type" : "Property",
         "value": [
-            {"dayOfWeek": "Monday"   , "opens": "00:00", "closes": "23:59"},
-            {"dayOfWeek": "Tuesday"  , "opens": "00:00", "closes": "23:59"},
+            {"dayOfWeek": "Monday",    "opens": "00:00", "closes": "23:59"},
+            {"dayOfWeek": "Tuesday",   "opens": "00:00", "closes": "23:59"},
             {"dayOfWeek": "Wednesday", "opens": "00:00", "closes": "23:59"},
-            {"dayOfWeek": "Thursday" , "opens": "00:00", "closes": "23:59"},
-            {"dayOfWeek": "Friday"   , "opens": "00:00", "closes": "23:59"},
-            {"dayOfWeek": "Saturday" , "opens": "00:00", "closes": "23:59"},
-            {"dayOfWeek": "Sunday"   , "opens": "00:00", "closes": "23:59"}
+            {"dayOfWeek": "Thursday",  "opens": "00:00", "closes": "23:59"},
+            {"dayOfWeek": "Friday",    "opens": "00:00", "closes": "23:59"},
+            {"dayOfWeek": "Saturday",  "opens": "00:00", "closes": "23:59"},
+            {"dayOfWeek": "Sunday",    "opens": "00:00", "closes": "23:59"}
         ]
     },
-    "owner": {
-        "type": "Relationship",
-        "object": ["urn:cml:Organization:MunicipalityOfLisboa"]
-    },
-    "accessibility": {
-        "type": "Property",
-        "value": ["Wheelchair accessible", "24/7 emergency access"]
-    },
-    "dataProvider": {
-        "type" : "Property"                               ,
-        "value": "Municipality of Lisbon Open Data Portal"
-    },
-    "administrativeUnit": {
-        "type" : "Property"                                          ,
-        "value": "NUTS-PT17 (Área Metropolitana de Lisboa, Portugal)"
-    },
-    "dateCreated": {"type": "Property", "value": "2025-02-26T11:00:00Z"},
-    "dateModified": {"type": "Property", "value": "2025-02-26T12:45:00Z"},
-    "updateFrequency": {"type": "Property", "value": "quarterly"},
-    "seeAlso": {
-        "type": "Property",
+    "owner"             : { "type": "Relationship", "object": ["urn:cml:Organization:MunicipalityOfLisboa"] },
+    "accessibility"     : { "type": "Property", "value": ["Wheelchair accessible", "24/7 emergency access"] },
+    "dataProvider"      : {"type": "Property", "value": "Municipality of Lisbon Open Data Portal"},
+    "administrativeUnit": {"type": "Property", "value": "NUTS-PT17 (Área Metropolitana de Lisboa, Portugal)"},
+    "dateCreated"       : {"type": "Property", "value": "2025-02-26T11:00:00Z"},
+    "dateModified"      : {"type": "Property", "value": "2025-02-26T12:45:00Z"},
+    "updateFrequency"   : {"type": "Property", "value": "quarterly"},
+    "seeAlso"           : {
+        "type" : "Property",
         "value": [
             "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/regimento-de-sapadores-bombeiros-1-companhia-quartel-do-comando"
         ]
     },
-    "@context": [
+    "@context"          : [
         "https://raw.githubusercontent.com/smart-data-models/dataModel.PointOfInterest/master/context.jsonld"
     ]
 }

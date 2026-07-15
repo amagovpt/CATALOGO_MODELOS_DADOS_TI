@@ -2,20 +2,20 @@
     "id": "urn:gulbenkian:EventCountingObserved:20251010T143000Z",
     "type": "EventCountingObserved",
     "observedEvents": {
-        "type": "Property",
+        "type" : "Property",
         "value": [
             {
-                "type": "person",
-                "count": 2,
-                "cumulativeCount": 50,
-                "countingDirection": "entry",
+                "type"               : "person",
+                "count"              : 2,
+                "cumulativeCount"    : 50,
+                "countingDirection"  : "entry",
                 "detectionConfidence": 0.92
             },
             {
-                "type": "animal",
-                "count": 3,
-                "cumulativeCount": 5,
-                "countingDirection": "bidirectional",
+                "type"               : "animal",
+                "count"              : 3,
+                "cumulativeCount"    : 5,
+                "countingDirection"  : "bidirectional",
                 "detectionConfidence": 0.96
             }
         ]
@@ -23,43 +23,46 @@
     "observedAt": "2025-10-10T14:30:00Z",
     "cumulativeCountResetedAt": "2025-10-10T00:00:00Z",
     "detectionZone": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Polygon",
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "Polygon",
             "coordinates": [
-                [-9.15548477207696,  38.73713056442418 ],
+                [-9.15548477207696 , 38.73713056442418 ],
                 [-9.154243734611782, 38.73713056442418 ],
                 [-9.154249223664635, 38.737680194525225],
                 [-9.154618854328533, 38.73818824289083 ],
                 [-9.155825548757946, 38.737638387047895],
-                [-9.15548477207696,  38.73713056442418 ]
+                [-9.15548477207696 , 38.73713056442418 ]
             ]
         },
         "coordinateSystem": "EPSG:4326"
     },
     "aggregationPeriod": {"type": "Property", "value": 120, "unitCode": "SEC"},
-    "observedBy": {
-        "type"  : "Relationship",
-        "object": "urn:ngsi-ld:Camera:camera01"
-    },
+    "observedBy": {"type": "Relationship", "object": "urn:ngsi-ld:Camera:camera01"},
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "MultiPoint",
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "MultiPoint",
             "coordinates": [
                 [-9.155484222464537, 38.73769109371281 ],
-                [-9.15529825129866,  38.737567157967305],
+                [-9.15529825129866 , 38.737567157967305],
                 [-9.155785748529837, 38.73762771750597 ],
                 [-9.155235057213702, 38.73788826377242 ],
-                [-9.15523325166805,  38.73785446322998 ]
+                [-9.15523325166805 , 38.73785446322998 ]
             ]
         },
         "coordinateSystem": "EPSG:4326"
     },
-    "refPointOfInterest": {
-        "type": "Relationship",
-        "object": ["urn:ngsi-ld:PointOfInterest:building-entrance-01"]
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa"
+        }
     },
+    "refPointOfInterest": { "type": "Relationship", "object": ["urn:ngsi-ld:PointOfInterest:building-entrance-01"] },
     "@context": [
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         "https://smart-data-models.github.io/data-models/context.jsonld"

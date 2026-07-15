@@ -1,64 +1,58 @@
 {
-  "id": "urn:cmp:PointOfInterest:CasaMusica-123",
-  "type": "PointOfInterest",
-  "address": {
-    "type": "Property",
+  "id"                : "urn:cmp:PointOfInterest:CasaMusica-123",
+  "type"              : "PointOfInterest",
+  "address"           : {
+    "type" : "Property",
     "value": {
-      "addressCountry" : "PT"                      ,
-      "addressLocality": "Porto"                   ,
-      "streetAddress"  : "Av. da Boavista, 604-610",
+      "addressCountry" : "Portugal",
+      "district"       : "Porto",
+      "addressRegion"  : "Norte",
+      "addressLocality": "Porto",
+      "streetAddress"  : "Av. da Boavista",
+      "streetNr"       : "604-610",
       "postalCode"     : "4149-071"
     }
   },
-  "category": {
-    "type": "Property",
-    "value": ["Concert hall", "Cultural", "Music", "Tourism"]
-  },
-  "description": {
+  "category"          : { "type": "Property", "value": ["Concert hall", "Cultural", "Music", "Tourism"] },
+  "description"       : {
     "type": "Property",
     "value": "A Casa da Música é a uma sala de concertos e a segunda maior da cidade do Porto, localizada na Avenida da Boavista, em Portugal."
   },
-  "location": {
-    "type": "GeoProperty",
+  "location"          : {
+    "type" : "GeoProperty",
     "value": { "type": "Point", "coordinates": [-8.630736, 41.15885] }
   },
-  "name": {"type": "Property", "value": "Casa da Música"},
-  "source": {"type": "Property", "value": "https://casadamusica.com"},
-  "image": {
-    "type": "Property",
+  "name"              : {"type": "Property", "value": "Casa da Música"},
+  "source"            : {"type": "Property", "value": "https://casadamusica.com"},
+  "image"             : {
+    "type" : "Property",
     "value": "https://upload.wikimedia.org/wikipedia/commons/f/f5/86724-Porto_%2849052540207%29.jpg"
   },
-  "capacity": {"type": "Property", "value": 1238},
-  "openingHours": {"type": "Property", "value": "Mo-Su 09:30-18:00"},
-  "dateCreated": {"type": "Property", "value": "2025-02-25T11:22:04Z"},
-  "dateModified": {"type": "Property", "value": "2025-02-25T12:30:00Z"},
-  "contactPoint": {
-    "type": "Property",
+  "capacity"          : {"type": "Property", "value": 1238},
+  "openingHours"      : {"type": "Property", "value": "Mo-Su 09:30-18:00"},
+  "dateCreated"       : {"type": "Property", "value": "2025-02-25T11:22:04Z"},
+  "dateModified"      : {"type": "Property", "value": "2025-02-25T12:30:00Z"},
+  "contactPoint"      : {
+    "type" : "Property",
     "value": {
-      "telephone"  : "+351 220 120 220"                               ,
-      "email"      : "info@casadamusica.com"                          ,
-      "contactType": "Customer Service"                               ,
+      "telephone"  : "+351 220 120 220",
+      "email"      : "info@casadamusica.com",
+      "contactType": "Customer Service",
       "url"        : "https://casadamusica.com/informacoes/contactos/"
     }
   },
-  "seeAlso": {
-    "type": "Property",
+  "seeAlso"           : {
+    "type" : "Property",
     "value": [
-      "https://en.wikipedia.org/wiki/Casa_da_M%C3%BAsica"      ,
+      "https://en.wikipedia.org/wiki/Casa_da_M%C3%BAsica",
       "https://www.visitportugal.com/en/content/casa-da-musica"
     ]
   },
-  "owner": {
-    "type": "Relationship",
-    "object": ["urn:cmp:Organization:FundacaoCasaDaMusica-001"]
-  },
-  "accessibility": {"type": "Property", "value": "Wheelchair accessible"},
-  "dataProvider": {"type": "Property", "value": "City of Porto Tourism Board"},
-  "administrativeUnit": {
-    "type" : "Property"                   ,
-    "value": "NUTS-PT11 (Norte, Portugal)"
-  },
-  "@context": [
+  "owner"             : { "type": "Relationship", "object": ["urn:cmp:Organization:FundacaoCasaDaMusica-001"] },
+  "accessibility"     : {"type": "Property", "value": "Wheelchair accessible"},
+  "dataProvider"      : {"type": "Property", "value": "City of Porto Tourism Board"},
+  "administrativeUnit": {"type": "Property", "value": "NUTS-PT11 (Norte, Portugal)"},
+  "@context"          : [
     "https://raw.githubusercontent.com/smart-data-models/dataModel.PointOfInterest/master/context.jsonld"
   ]
 }
