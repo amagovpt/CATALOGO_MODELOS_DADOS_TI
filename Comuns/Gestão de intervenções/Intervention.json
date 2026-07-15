@@ -27,12 +27,11 @@
     "targetAsset": {"type": "Relationship", "object": "urn:ngsi-ld:Asset:road-segment-456"},
     "seeAlso": {
         "type": "Property",
-        "value": "https://www.infraestruturasdeportugal.pt/pt-pt/infraestruturas/investimentos/principais-investimentos-em-curso"
+        "value": ["https://www.infraestruturasdeportugal.pt/pt-pt/infraestruturas/investimentos/principais-investimentos-em-curso"]
     },
     "dataProvider": {"type": "Property", "value": "Infraestruturas de Portugal"},
     "dateStarted": {"type": "Property", "value": "2025-01-01T07:30:00Z"},
     "name": {"type": "Property", "value": "EN265 Trabalhos de fresagem e repavimentação - Janeiro de 2025"},
-    "dateFinished": {"type": "Property", "value": null},
     "dateModified": {"type": "Property", "value": "2025-05-12T10:30:00Z"},
     "responsibleAgent": {"type": "Relationship", "object": "urn:ngsi-ld:Organization:maintenance-team-A"},
     "investment": {"type": "Property", "value": 100000, "unitCode": "EUR"},

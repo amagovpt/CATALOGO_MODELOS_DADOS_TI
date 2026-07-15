@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "$id": "https://example.org/schemas/MetadataDataService/schema.json",
+  "title": "ARTE JSON-LD DCAT Data Service metadata schema",
+  "description": "Schema for a JSON-LD DCAT Data Service metadata document",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "uri": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    },
+    "jsonLdId": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "required": [
+        "@id"
+      ]
+    },
+    "languageString": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "@language": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+        }
+      },
+      "required": [
+        "@value",
+        "@language"
+      ]
+    },
+    "languageStringValue": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/languageString"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/languageString"
+          },
+          "minItems": 1
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "theme": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "@value": {
+              "$ref": "#/$defs/uri"
+            },
+            "@id": {
+              "$ref": "#/$defs/uri"
+            },
+            "@type": {
+              "const": "skos:Concept"
+            }
+          },
+          "anyOf": [
+            {
+              "required": [
+                "@value"
+              ]
+            },
+            {
+              "required": [
+                "@id"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/jsonLdId"
+          },
+          "minItems": 1
+        }
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "properties": {
+        "dcterms": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dct": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dcat": {
+          "enum": [
+            "https://www.w3.org/ns/dcat#",
+            "http://www.w3.org/ns/dcat#"
+          ]
+        },
+        "foaf": {
+          "const": "http://xmlns.com/foaf/0.1/"
+        },
+        "vcard": {
+          "const": "http://www.w3.org/2006/vcard/ns#"
+        },
+        "skos": {
+          "const": "http://www.w3.org/2004/02/skos/core#"
+        },
+        "rdfs": {
+          "const": "http://www.w3.org/2000/01/rdf-schema#"
+        }
+      },
+      "required": [
+        "dcat",
+        "foaf"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "dcterms"
+          ]
+        },
+        {
+          "required": [
+            "dct"
+          ]
+        }
+      ]
+    },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@type": {
+          "enum": [
+            "foaf:Organization",
+            "foaf:Agent"
+          ]
+        },
+        "foaf:name": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "foaf:homepage": {
+          "$ref": "#/$defs/jsonLdId"
+        }
+      },
+      "required": [
+        "@type",
+        "foaf:name"
+      ]
+    },
+    "contactPoint": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@type": {
+          "anyOf": [
+            {
+              "const": "vcard:Organization"
+            },
+            {
+              "type": "array",
+              "contains": {
+                "const": "vcard:Organization"
+              }
+            }
+          ]
+        },
+        "vcard:fn": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "vcard:hasEmail": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/jsonLdId"
+            },
+            {
+              "properties": {
+                "@id": {
+                  "pattern": "^mailto:.+@.+$"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "vcard:fn",
+        "vcard:hasEmail"
+      ]
+    },
+    "endpointDescription": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/uri"
+        },
+        "@type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dcterms:conformsTo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/jsonLdId"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        },
+        "dct:conformsTo": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/jsonLdId"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "required": [
+        "@id"
+      ]
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "#/$defs/context"
+    },
+    "@id": {
+      "$ref": "#/$defs/uri"
+    },
+    "@type": {
+      "const": "dcat:DataService"
+    },
+    "dcat:endpointURL": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dcterms:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dct:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dcat:contactPoint": {
+      "$ref": "#/$defs/contactPoint"
+    },
+    "dcat:endpointDescription": {
+      "$ref": "#/$defs/endpointDescription"
+    },
+    "dcat:keyword": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/languageString"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "dcterms:publisher": {
+      "$ref": "#/$defs/publisher"
+    },
+    "dct:publisher": {
+      "$ref": "#/$defs/publisher"
+    },
+    "dcat:theme": {
+      "$ref": "#/$defs/theme"
+    },
+    "dcterms:license": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dct:license": {
+      "$ref": "#/$defs/jsonLdId"
+    }
+  },
+  "required": [
+    "@type",
+    "dcat:endpointURL",
+    "dcat:contactPoint",
+    "dcat:endpointDescription",
+    "dcat:theme"
+  ],
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:title"
+          ]
+        },
+        {
+          "required": [
+            "dct:title"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:publisher"
+          ]
+        },
+        {
+          "required": [
+            "dct:publisher"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:license"
+          ]
+        },
+        {
+          "required": [
+            "dct:license"
+          ]
+        }
+      ]
+    }
+  ]
+}

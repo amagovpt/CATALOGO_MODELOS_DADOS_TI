@@ -1,0 +1,301 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "IUDX",
+  "$id": "https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/schema.json",
+  "title": "Smart Data Models - Point of Interest schema",
+  "description": "This entity contains a harmonised geographic description of a Point of Interest",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "PointOfInterest"
+          ],
+          "description": "Property. NGSI Entity type. It has to be PointOfInterest"
+        },
+        "category": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Category of this point of interest",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Paragem de autocarro",
+              "Estação de comboio",
+              "Estação de metro",
+              "Estação fluvial",
+              "Elevador/Ascensor",
+              "Praça de táxis",
+              "Terminal de cruzeiros",
+              "Marina",
+              "Cais",
+              "Posto de abastecimento",
+              "Ponto de carregamento de veículos elétricos",
+              "Doca de bicicletas",
+              "Doca de trotinetes",
+              "Aeroporto",
+              "Terminal",
+              "Heliporto",
+              "Parque de estacionamento",
+              "Esquadra PSP",
+              "Posto GNR",
+              "Quartel de bombeiros",
+              "Prisão",
+              "Câmara Municipal",
+              "Junta de Freguesia",
+              "Tribunal",
+              "Ministério",
+              "Embaixada",
+              "Conservatória",
+              "Loja do cidadão",
+              "Finanças",
+              "Estação de correios",
+              "Abrigo para animais",
+              "Creche/Jardim de infância",
+              "Escola 1º ciclo",
+              "Escola 2º e 3º ciclo",
+              "Escola secundária",
+              "Universidade",
+              "Instituto Politécnico",
+              "Ensino Profissional",
+              "Biblioteca",
+              "Hospital",
+              "Clínica",
+              "Farmácia",
+              "Centro de saúde",
+              "Posto de primeiros socorros",
+              "Desfibrilhador",
+              "Termas",
+              "Lar de idosos",
+              "Mercado",
+              "Feira/mercado",
+              "Cinema",
+              "Centro de conferências",
+              "Sala de espetáculos e auditórios",
+              "Teatro",
+              "Museu",
+              "Parque",
+              "Casino",
+              "Jardim",
+              "Parque infantil",
+              "Campo de futebol",
+              "Campo de golfe",
+              "Piscina",
+              "Parque desportos radicais",
+              "Estádio",
+              "Equipamento de desporto ao ar livre",
+              "Hotel",
+              "Pousada/Hostel",
+              "Alojamento local",
+              "Miradouro",
+              "Monumento",
+              "Posto de turismo",
+              "Igreja",
+              "Mesquita",
+              "Cemitério",
+              "Floresta",
+              "Lago",
+              "Praia",
+              "Reserva natural",
+              "Parque natural",
+              "Subestação elétrica",
+              "Estação de tratamento",
+              "Fontanário/ponto de água",
+              "Estação Meteorológica",
+              "Ecoponto",
+              "Aterro sanitário",
+              "Central de recolha de resíduos",
+              "Instalações sanitárias públicas"
+            ]
+          }
+        },
+        "contactPoint": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Contact-Commons/properties/contactPoint"
+        },
+        "refSeeAlso": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/URL'. List of references to one or more related entities",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+              }
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "wardId": {
+          "type": "string",
+          "description": "Property. Ward ID of the entity corresponding to this observation"
+        },
+        "zoneId": {
+          "type": "string",
+          "description": "Property. Zone ID of the entity corresponding to this observation"
+        },
+        "additionalInfoURL": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
+            },
+            {
+              "type": "string",
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
+            }
+          ],
+          "description": "Relationship. URL from which additional information of the subject can be obtained"
+        },
+        "zoneName": {
+          "type": "string",
+          "description": "Property. Zone name of the entity corresponding to this observation"
+        },
+        "municipalityInfo": {
+          "type": "object",
+          "description": "Property. Model:'https://schema.org/Text. Municipality information corresponding to this observation.",
+          "properties": {
+            "district": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. District name corresponding to this observation."
+            },
+            "ulbName": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Name of the Urban Local Body corresponding to this observation."
+            },
+            "cityID": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. City ID corresponding to this observation."
+            },
+            "wardID": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Ward ID corresponding to this observation."
+            },
+            "stateName": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Name of the state corresponding to this observation."
+            },
+            "cityName": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. City name corresponding to this observation"
+            },
+            "zoneName": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Zone name corresponding to this observation."
+            },
+            "zoneID": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Zone ID corresponding to this observation."
+            },
+            "wardName": {
+              "type": "string",
+              "description": "Property. Model:'https://schema.org/Text'. Ward name corresponding to this observation."
+            },
+            "wardNum": {
+              "type": "number",
+              "description": "Property. Model:'https://schema.org/Number'. Ward number corresponding to this observation."
+            }
+          }
+        },
+        "title": {
+          "type": "string",
+          "description": "Property. This property contains a name given to the Point of interest beyond specific name."
+        },
+        "relevance": {
+          "type": "number",
+          "description": "Property. Relevance of the point of interest in order to be presented in different zoom levels. 0 is best larger values means lower relevance"
+        },
+        "image": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/PhysicalObject-Commons/properties/image"
+        },
+        "priceRange": {
+          "type": "string",
+          "description": "Property. String describing the range of prices of the access to the Point of Interest"
+        },
+        "capacity": {
+          "type": "number",
+          "description": "Property. The total number of people which can be allocated at the same time"
+        },
+        "occupancy": {
+          "type": "number",
+          "description": "Property. The count of people in the in the point of Interest. It should be smaller than capacity"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "address",
+    "category",
+    "location"
+  ]
+}

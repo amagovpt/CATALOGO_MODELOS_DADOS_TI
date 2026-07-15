@@ -1,0 +1,455 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "$id": "https://example.org/schemas/MetadataDatasetSeries/schema.json",
+  "title": "ARTE JSON-LD DCAT Dataset Series metadata schema",
+  "description": "Schema for a JSON-LD DCAT Dataset Series metadata document",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "uri": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    },
+    "jsonLdId": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "required": [
+        "@id"
+      ]
+    },
+    "languageString": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "@language": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+        }
+      },
+      "required": [
+        "@value",
+        "@language"
+      ]
+    },
+    "languageStringValue": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/languageString"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/languageString"
+          },
+          "minItems": 1
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "dateValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "@type": {
+          "const": "xsd:date"
+        }
+      },
+      "required": [
+        "@value",
+        "@type"
+      ]
+    },
+    "dateLike": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/dateValue"
+        },
+        {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "properties": {
+        "dcterms": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dct": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dcat": {
+          "enum": [
+            "https://www.w3.org/ns/dcat#",
+            "http://www.w3.org/ns/dcat#"
+          ]
+        },
+        "foaf": {
+          "const": "http://xmlns.com/foaf/0.1/"
+        },
+        "vcard": {
+          "const": "http://www.w3.org/2006/vcard/ns#"
+        },
+        "xsd": {
+          "const": "http://www.w3.org/2001/XMLSchema#"
+        }
+      },
+      "required": [
+        "dcat",
+        "foaf",
+        "vcard"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "dcterms"
+          ]
+        },
+        {
+          "required": [
+            "dct"
+          ]
+        }
+      ]
+    },
+    "spatial": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@type": {
+          "enum": [
+            "dcterms:Location",
+            "dct:Location"
+          ]
+        },
+        "dcterms:title": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "dct:title": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "dcat:bbox": {
+          "type": "string",
+          "pattern": "^POLYGON\\(\\(.+\\)\\)$"
+        },
+        "locn:geometry": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "@type"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:title"
+          ]
+        },
+        {
+          "required": [
+            "dct:title"
+          ]
+        },
+        {
+          "required": [
+            "dcat:bbox"
+          ]
+        },
+        {
+          "required": [
+            "locn:geometry"
+          ]
+        }
+      ]
+    },
+    "temporal": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@type": {
+          "enum": [
+            "dcterms:PeriodOfTime",
+            "dct:PeriodOfTime"
+          ]
+        },
+        "dcat:startDate": {
+          "$ref": "#/$defs/dateLike"
+        },
+        "dcat:endDate": {
+          "$ref": "#/$defs/dateLike"
+        }
+      },
+      "required": [
+        "@type",
+        "dcat:startDate",
+        "dcat:endDate"
+      ]
+    },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@type": {
+          "enum": [
+            "foaf:Organization",
+            "foaf:Agent"
+          ]
+        },
+        "foaf:name": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "foaf:homepage": {
+          "$ref": "#/$defs/jsonLdId"
+        }
+      },
+      "required": [
+        "@type",
+        "foaf:name"
+      ]
+    },
+    "contactPoint": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@type": {
+          "anyOf": [
+            {
+              "const": "vcard:Organization"
+            },
+            {
+              "type": "array",
+              "contains": {
+                "const": "vcard:Organization"
+              }
+            }
+          ]
+        },
+        "vcard:fn": {
+          "$ref": "#/$defs/languageStringValue"
+        },
+        "vcard:hasEmail": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/jsonLdId"
+            },
+            {
+              "properties": {
+                "@id": {
+                  "pattern": "^mailto:.+@.+$"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "vcard:fn",
+        "vcard:hasEmail"
+      ]
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "#/$defs/context"
+    },
+    "@id": {
+      "$ref": "#/$defs/uri"
+    },
+    "@type": {
+      "const": "dcat:DatasetSeries"
+    },
+    "dcterms:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dct:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dcterms:description": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dct:description": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dcterms:spatial": {
+      "$ref": "#/$defs/spatial"
+    },
+    "dct:spatial": {
+      "$ref": "#/$defs/spatial"
+    },
+    "dcat:contactPoint": {
+      "$ref": "#/$defs/contactPoint"
+    },
+    "dcterms:publisher": {
+      "$ref": "#/$defs/publisher"
+    },
+    "dct:publisher": {
+      "$ref": "#/$defs/publisher"
+    },
+    "dcterms:accrualPeriodicity": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dct:accrualPeriodicity": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dcterms:modified": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dct:modified": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dcterms:issued": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dct:issued": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dcterms:temporal": {
+      "$ref": "#/$defs/temporal"
+    },
+    "dct:temporal": {
+      "$ref": "#/$defs/temporal"
+    }
+  },
+  "required": [
+    "@type",
+    "dcat:contactPoint"
+  ],
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:title"
+          ]
+        },
+        {
+          "required": [
+            "dct:title"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:description"
+          ]
+        },
+        {
+          "required": [
+            "dct:description"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:spatial"
+          ]
+        },
+        {
+          "required": [
+            "dct:spatial"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:publisher"
+          ]
+        },
+        {
+          "required": [
+            "dct:publisher"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:accrualPeriodicity"
+          ]
+        },
+        {
+          "required": [
+            "dct:accrualPeriodicity"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:modified"
+          ]
+        },
+        {
+          "required": [
+            "dct:modified"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:issued"
+          ]
+        },
+        {
+          "required": [
+            "dct:issued"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:temporal"
+          ]
+        },
+        {
+          "required": [
+            "dct:temporal"
+          ]
+        }
+      ]
+    }
+  ]
+}

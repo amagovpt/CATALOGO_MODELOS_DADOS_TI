@@ -31,6 +31,11 @@
         "dcat:startDate": {"@value": "2025-08-01", "@type": "xsd:date"},
         "dcat:endDate"  : {"@value": "2025-12-31", "@type": "xsd:date"}
     },
+    "dcterms:spatial": {
+        "@type"        : "dcterms:Location",
+        "dcterms:title": {"@value": "Lisboa", "@language": "pt"},
+        "dcat:bbox"    : "POLYGON((-9.230 38.691, -9.230 38.795, -9.094 38.795, -9.094 38.691, -9.230 38.691))"
+    },
     "ins:GeographicBoundingBox": "POLYGON((-9.230 38.691, -9.230 38.795, -9.094 38.795, -9.094 38.691, -9.230 38.691))",
     "ins:TopicCategory": "environment",
     "ins:SpatialReferenceSystem": "PT-TM06/ETRS89",

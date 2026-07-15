@@ -1,26 +1,36 @@
 {
     "@context": {
         "dcterms": "http://purl.org/dc/terms/",
+        "dct"    : "http://purl.org/dc/terms/",
         "dcat"   : "https://www.w3.org/ns/dcat#",
-        "foaf"   : "http://xmlns.com/foaf/0.1/"    
+        "foaf"   : "http://xmlns.com/foaf/0.1/",
+        "vcard"  : "http://www.w3.org/2006/vcard/ns#",
+        "rdfs"   : "http://www.w3.org/2000/01/rdf-schema#"
     },
     "@id": "urn:ngsi-ld:DataService:id:334455",
     "@type": "dcat:DataService",
+    "dcterms:title": {"@value": "Ambiente", "@language": "pt"},
+    "dcat:endpointURL": {"@type": "rdfs:Resource", "@id": "https://apidados.apambiente.pt"},
     "dcat:endpointDescription": {
         "@type"         : "rdfs:Resource",
-        "@id"        : "https://apidados.apambiente.pt/openapi/v2",
+        "@id"           : "https://apidados.apambiente.pt/openapi/v2",
         "dct:conformsTo": "OpenAPI"
+    },
+    "dcat:contactPoint": {
+        "@type"         : "vcard:Organization",
+        "vcard:fn"      : {"@value": "Unidade de Monitorização Ambiental", "@language": "pt"},
+        "vcard:hasEmail": {"@id": "mailto:ambiental@apambiente.pt"}
     },
     "dcterms:publisher": {
         "@type"        : "foaf:Organization",
         "foaf:name"    : {"@value": "Agência Portuguesa do Ambiente", "@language": "pt"},
         "foaf:homepage": {"@id": "https://apambiente.pt"}
     },
-    "dcat:theme": {"@type": "foaf:Organization", "@value": "http://inspire.ec.europa.eu/theme/ef"},
+    "dcat:theme": {"@id": "http://inspire.ec.europa.eu/theme/ac"},
     "dcat:keyword": [
         {"@value": "qualidade do ar", "@language": "pt"},
         {"@value": "poluição",        "@language": "pt"},
         {"@value": "ambiente",        "@language": "pt"}
     ],
-     "dcterms:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    "dcterms:license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
 }

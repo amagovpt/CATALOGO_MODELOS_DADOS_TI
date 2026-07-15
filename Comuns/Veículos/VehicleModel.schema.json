@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/VehicleModel/schema.json",
+  "title": "Vehicle Model schema",
+  "description": "Schema describing the characteristics of a vehicle model",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "VehicleModel",
+          "description": "Property. NGSI entity type. It has to be VehicleModel"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Property. Annotations about the vehicle model"
+        },
+        "brandName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Brand of the vehicle"
+        },
+        "cargoVolume": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Volume available for cargo or luggage"
+        },
+        "color": {
+          "type": "string",
+          "description": "Property. Color of the vehicle"
+        },
+        "depth": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Depth of the vehicle"
+        },
+        "fuelConsumption": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Fuel consumed to travel a given distance"
+        },
+        "fuelType": {
+          "type": "string",
+          "enum": [
+            "autogas",
+            "biodiesel",
+            "ethanol",
+            "cng",
+            "diesel",
+            "electric",
+            "gasoline",
+            "hybrid electric/diesel",
+            "hybrid electric/petrol",
+            "hydrogen",
+            "lpg",
+            "petrol",
+            "petrol (unleaded)",
+            "petrol (leaded)",
+            "other"
+          ],
+          "description": "Property. Type of fuel suitable for the vehicle engine"
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Height of the vehicle"
+        },
+        "img": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of an image of the vehicle model"
+        },
+        "manufacturerName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Name of the vehicle manufacturer"
+        },
+        "modelName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Name of the vehicle model"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Name of the item"
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Identifiers of the owners"
+        },
+        "seeAlso": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URLs to external resources"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL providing a description of the vehicle model"
+        },
+        "vehicleEngine": {
+          "type": "string",
+          "description": "Property. Information about the vehicle engine or engines"
+        },
+        "vehicleModelDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Release date and time of the vehicle model"
+        },
+        "vehicleType": {
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "anyVehicle",
+            "articulatedVehicle",
+            "bicycle",
+            "binTrolley",
+            "bus",
+            "car",
+            "caravan",
+            "carOrLightVehicle",
+            "carWithCaravan",
+            "carWithTrailer",
+            "cleaningTrolley",
+            "constructionOrMaintenanceVehicle",
+            "fourWheelDrive",
+            "highSidedVehicle",
+            "lorry",
+            "minibus",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "sweepingMachine",
+            "tanker",
+            "threeWheeledVehicle",
+            "trailer",
+            "tram",
+            "twoWheeledVehicle",
+            "trolley",
+            "van",
+            "vehicleWithoutCatalyticConverter",
+            "vehicleWithCaravan",
+            "vehicleWithTrailer",
+            "withEvenNumberedRegistrationPlates",
+            "withOddNumberedRegistrationPlates",
+            "other"
+          ],
+          "description": "Property. Vehicle type according to its structural characteristics"
+        },
+        "weight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Weight of the vehicle"
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Width of the vehicle"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "brandName",
+    "manufacturerName",
+    "modelName",
+    "name",
+    "vehicleType"
+  ]
+}

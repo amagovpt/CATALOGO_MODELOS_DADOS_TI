@@ -3,11 +3,10 @@
     "type": "RiverBasin",
     "category": { "type": "Property", "value": ["HydroObject"] },
     "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
-    "endLifespanVersion": {"type": "Property", "value": null},
     "localType": {"type": "Property", "value": "river basin"},
     "hydroId": {
         "type" : "Property",
-        "value": {"classificationScheme": "EU:WFD", "localId": "pt/12/a", "namespace": "EU.EIONET.WATER"}
+        "value": {"classificationScheme": "EU:WFD", "localId": "pt/12/a", "namespace": "PT.APA.HY-P"}
     },
     "address": {
         "type" : "Property",
@@ -21,7 +20,7 @@
     "location": {
         "type"            : "GeoProperty",
         "value"           : {
-            "geometry": {
+            
                 "coordinates": [
                     [
                         [-7.783805371865014, 38.92119185555666],
@@ -32,7 +31,7 @@
                     ]
                 ],
                 "type"       : "Polygon"
-            }
+           
         },
         "coordinateSystem": "EPSG:3763"
     },
@@ -49,7 +48,7 @@
     },
     "watershedArea": {"type": "Property", "value": 53912.39, "unitCode": "KMK"},
     "totalWatershedArea": {"type": "Property", "value": 55289, "unitCode": "KMK"},
-    "levelOfDetail": { "type": "Property", "value": {"scale": 25000, "equivalentScale": "1:25000"} },
+    "levelOfDetail": { "type": "Property", "value": {"equivalentScale": 25000} },
     "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
     "relatedHydroObject": {
         "type"  : "Relationship",

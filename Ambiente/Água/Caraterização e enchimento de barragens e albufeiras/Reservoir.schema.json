@@ -1,0 +1,198 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Reservoir.schema.json",
+  "title": "CNMD - Reservoir schema",
+  "description": "Characterisation of a reservoir, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "Reservoir",
+          "description": "Property. NGSI entity type. It must be Reservoir."
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area where a service is provided. Model:'https://schema.org/Text'."
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the reservoir. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {"type": "string"},
+            "addressLocality": {"type": "string", "minLength": 1},
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte", "Centro", "Oeste e Vale do Tejo", "Grande Lisboa",
+                "Península de Setúbal", "Alentejo", "Algarve",
+                "Região Autónoma dos Açores", "Região Autónoma da Madeira"
+              ]
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores", "Aveiro", "Beja", "Braga", "Bragança",
+                "Castelo Branco", "Coimbra", "Évora", "Faro", "Guarda",
+                "Madeira", "Leiria", "Lisboa", "Portalegre", "Porto",
+                "Santarém", "Setúbal", "Viana do Castelo", "Vila Real", "Viseu"
+              ]
+            },
+            "postalCode": {"type": "string"},
+            "streetAddress": {"type": "string"},
+            "streetNr": {"type": "string"}
+          },
+          "required": ["addressLocality", "addressRegion", "district"]
+        },
+        "alternateName": {"type": "string"},
+        "description": {"type": "string"},
+        "category": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "name": {"type": "string"},
+        "elevation": {"type": "number"},
+        "head": {"type": "number"},
+        "pressure": {"type": "number"},
+        "reservoirHead": {
+          "type": "number",
+          "description": "Property. Observed water head in the reservoir, normally elevation plus head. Units:'MTR'."
+        },
+        "currentVolume": {
+          "$ref": "#/$defs/nonNegativeNumber",
+          "description": "Property. Current stored water volume. Units:'MTQ'."
+        },
+        "currentStorage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Property. Current storage percentage. Units:'P1'."
+        },
+        "usefulCapacity": {
+          "$ref": "#/$defs/nonNegativeNumber",
+          "description": "Property. Useful storage capacity of the reservoir. Units:'MTQ'."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Beginning of the real-world version."
+        },
+        "endLifespanVersion": {"type": "string", "format": "date-time"},
+        "startOfOperation": {"type": "string", "format": "date-time"},
+        "localType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Local classification of the reservoir."
+        },
+        "geographicalName": {
+          "type": "object",
+          "description": "Property. Official geographical name information."
+        },
+        "hydroId": {
+          "type": "object",
+          "description": "Property. Hydrographic identifier.",
+          "properties": {
+            "localId": {"type": "string", "minLength": 1},
+            "namespace": {
+              "type": "string",
+              "pattern"    : "^PT\\.[A-Za-z0-9.-]+$",
+              "description": "Namespace in the form PT.xxxxxxx."
+            },
+            "classificationScheme": {"type": "string"}
+          },
+          "required": ["localId", "namespace"]
+        },
+        "location": {
+          "allOf": [
+            {
+              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons/properties/location"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "coordinateSystem": {
+                  "type": "string",
+                  "pattern": "^EPSG:[0-9]+$",
+                  "description": "Property. EPSG coordinate reference system code, for example EPSG:3763."
+                }
+              }
+            }
+          ]
+        },
+        "levelOfDetail": {
+          "type": "object",
+          "description": "Property. Scale information.",
+          "properties": {
+            "equivalentScale": {"type": "number", "exclusiveMinimum": 0}
+          },
+          "required": ["equivalentScale"]
+        },
+        "storageCapacity": {"$ref": "#/$defs/nonNegativeNumber"},
+        "surfaceArea": {"$ref": "#/$defs/nonNegativeNumber"},
+        "deadStorage": {"$ref": "#/$defs/nonNegativeNumber"},
+        "maximumFloodLevel": {"type": "number"},
+        "levelFullStorage": {"type": "number"},
+        "minimumOperatingLevel": {"type": "number"},
+        "waterStorage": {
+          "type": "object",
+          "properties": {
+            "currentVolume": {"$ref": "#/$defs/nonNegativeNumber"},
+            "fillLevel": {"type": "number", "minimum": 0, "maximum": 100},
+            "trendIndicator": {
+              "type": "string",
+              "enum": ["increasing", "stable", "decreasing"]
+            },
+            "reserveVolume": {"$ref": "#/$defs/nonNegativeNumber"},
+            "samplingFrequency": {"type": "string", "format": "duration"},
+            "observedBy": {"$ref": "#/$defs/entityIdentifier"}
+          }
+        },
+        "waterBody": {
+          "type": "object",
+          "properties": {
+            "artificial": {"type": "boolean"},
+            "heavilyModified": {"type": "boolean"},
+            "assignment": {
+              "type": "string",
+              "enum": ["WFD", "national", "regional"]
+            }
+          }
+        },
+        "hydrologicalPersistence": {
+          "type": "string",
+          "enum": ["perennial", "intermittent", "ephemeral"]
+        },
+        "relatedHydroObject": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/entityIdentifier"}
+        },
+        "inRiverBasin": {"$ref": "#/$defs/entityIdentifier"},
+        "operatingCompany": {"type": "string"}
+      }
+    }
+  ],
+  "$defs": {
+    "nonNegativeNumber": {"type": "number", "minimum": 0},
+    "entityIdentifier": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    }
+  },
+  "required": [
+    "id", "type", "address", "beginLifespanVersion", "hydroId",
+    "localType", "location", "reservoirHead", "usefulCapacity"
+  ]
+}

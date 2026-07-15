@@ -13,7 +13,7 @@
       "postalCode"     : "4149-071"
     }
   },
-  "category"          : { "type": "Property", "value": ["Concert hall", "Cultural", "Music", "Tourism"] },
+  "category"          : { "type": "Property", "value": ["Sala de espetáculos e auditórios"] },
   "description"       : {
     "type": "Property",
     "value": "A Casa da Música é a uma sala de concertos e a segunda maior da cidade do Porto, localizada na Avenida da Boavista, em Portugal."

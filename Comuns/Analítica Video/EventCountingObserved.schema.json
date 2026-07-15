@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/EventCountingObserved/schema.json",
+  "title": "Event Counting Observed schema",
+  "description": "Schema for events detected and counted during an observation period",
+  "type": "object",
+  "$defs": {
+    "position": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 2
+      
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "EventCountingObserved",
+          "description": "Property. NGSI entity type. It has to be EventCountingObserved"
+        },
+        "aggregationPeriod": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Time window used to count events for reporting purposes"
+        },
+        "cumulativeCountResetedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when cumulative event counts were reset"
+        },
+        "detectionZone": {
+          "$ref": "https://geojson.org/schema/Polygon.json",
+          "description": "GeoProperty. Polygon defining the observation zone"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Lower bound of the event aggregation period"
+        },
+        "observedBy": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Sensor that made the observation"
+        },
+        "observedEvents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "animal",
+                  "bicycle",
+                  "bus",
+                  "car",
+                  "counterflow",
+                  "crowd",
+                  "double_parking",
+                  "flame",
+                  "luggage",
+                  "motorcycle",
+                  "object",
+                  "queue",
+                  "scooter",
+                  "smoke_column",
+                  "truck",
+                  "vehicle",
+                  "person"
+                ],
+                "description": "Type of detected event"
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Number of events detected during the observation period"
+              },
+              "cumulativeCount": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Accumulated number of events over an extended period"
+              },
+              "countingDirection": {
+                "type": "string",
+                "enum": [
+                  "entry",
+                  "exit",
+                  "bidirectional"
+                ],
+                "description": "Direction of the event-causing element relative to the observation location"
+              },
+              "detectionConfidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Average confidence of event detection"
+              }
+            },
+            "required": [
+              "type",
+              "count",
+              "detectionConfidence"
+            ]
+          },
+          "description": "Property. Events identified during the observation period; empty when no events were detected"
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "MultiPoint"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/position"
+              }
+            }
+          },
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "description": "GeoProperty. MultiPoint containing the locations where events occurred"
+        },
+        "refPointOfInterest": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Points of interest at the observation location"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "aggregationPeriod",
+    "detectionZone",
+    "location",
+    "observedEvents",
+    "observedAt"
+  ]
+}

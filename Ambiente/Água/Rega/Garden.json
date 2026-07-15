@@ -46,7 +46,7 @@
         }
     },
     "name": {"type": "Property", "value": "Jardins da Av. Sá da Bandeira"},
-    "openingHours": { "type": "Property", "value": ["Seg-Sex 10:00-19:00", "Sa 10:00-22:00", "Dom 10:00-21:00"] },
+    "openingHours": { "type": "Property", "value": "Seg-Sex 10:00-19:00; Sa 10:00-22:00; Dom 10:00-21:00" },
     "refRecord": { "type": "Relationship", "object": ["urn:env:GreenspaceRecord:jsb-2025-01-2"] },
     "style": {"type": "Property", "value": "public"},
     "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.ParksAndGardens/master/context.jsonld"]

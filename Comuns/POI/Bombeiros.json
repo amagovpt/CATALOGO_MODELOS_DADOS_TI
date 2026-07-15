@@ -19,7 +19,7 @@
     },
     "category"          : {
         "type" : "Property",
-        "value": ["Fire Station", "Emergency Services", "Public Safety", "Buildings"]
+        "value": ["Quartel de bombeiros"]
     },
     "location"          : {
         "type" : "GeoProperty",

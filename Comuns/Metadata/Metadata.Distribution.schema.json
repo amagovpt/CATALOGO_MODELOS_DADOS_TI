@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "$id": "https://example.org/schemas/MetadataDistribution/schema.json",
+  "title": "ARTE JSON-LD DCAT Distribution metadata schema",
+  "description": "Schema for a JSON-LD DCAT Distribution metadata document",
+  "type": "object",
+  "additionalProperties": true,
+  "$defs": {
+    "uri": {
+      "type": "string",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    },
+    "jsonLdId": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/uri"
+        }
+      },
+      "required": [
+        "@id"
+      ]
+    },
+    "languageString": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "@language": {
+          "type": "string",
+          "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+        }
+      },
+      "required": [
+        "@value",
+        "@language"
+      ]
+    },
+    "languageStringValue": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/languageString"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/languageString"
+          },
+          "minItems": 1
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "dateValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "@type": {
+          "const": "xsd:date"
+        }
+      },
+      "required": [
+        "@value",
+        "@type"
+      ]
+    },
+    "durationValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "pattern": "^P(?=\\d|T\\d)(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?$"
+        },
+        "@type": {
+          "const": "xsd:duration"
+        }
+      },
+      "required": [
+        "@value",
+        "@type"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "properties": {
+        "dcterms": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dct": {
+          "const": "http://purl.org/dc/terms/"
+        },
+        "dcat": {
+          "enum": [
+            "https://www.w3.org/ns/dcat#",
+            "http://www.w3.org/ns/dcat#"
+          ]
+        },
+        "xsd": {
+          "const": "http://www.w3.org/2001/XMLSchema#"
+        }
+      },
+      "required": [
+        "dcat",
+        "xsd"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "dcterms"
+          ]
+        },
+        {
+          "required": [
+            "dct"
+          ]
+        }
+      ]
+    }
+  },
+  "properties": {
+    "@context": {
+      "$ref": "#/$defs/context"
+    },
+    "@id": {
+      "$ref": "#/$defs/uri"
+    },
+    "@type": {
+      "const": "dcat:Distribution"
+    },
+    "dcterms:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dct:title": {
+      "$ref": "#/$defs/languageStringValue"
+    },
+    "dcterms:format": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dct:format": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dcat:mediaType": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "@value": {
+          "type": "string",
+          "pattern": "^[^/]+/[^/]+$"
+        }
+      },
+      "required": [
+        "@value"
+      ]
+    },
+    "dcat:accessURL": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dcterms:license": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dct:license": {
+      "$ref": "#/$defs/jsonLdId"
+    },
+    "dcat:temporalResolution": {
+      "$ref": "#/$defs/durationValue"
+    },
+    "dcterms:issued": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dct:issued": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dcterms:modified": {
+      "$ref": "#/$defs/dateValue"
+    },
+    "dct:modified": {
+      "$ref": "#/$defs/dateValue"
+    }
+  },
+  "required": [
+    "@type",
+    "dcat:accessURL",
+    "dcat:temporalResolution"
+  ],
+  "allOf": [
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:format"
+          ]
+        },
+        {
+          "required": [
+            "dct:format"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:license"
+          ]
+        },
+        {
+          "required": [
+            "dct:license"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:issued"
+          ]
+        },
+        {
+          "required": [
+            "dct:issued"
+          ]
+        }
+      ]
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "dcterms:modified"
+          ]
+        },
+        {
+          "required": [
+            "dct:modified"
+          ]
+        }
+      ]
+    }
+  ]
+}

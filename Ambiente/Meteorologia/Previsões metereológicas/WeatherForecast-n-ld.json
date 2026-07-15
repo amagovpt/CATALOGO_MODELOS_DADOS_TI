@@ -2,7 +2,7 @@
     "id": "urn:ipma:WeatherForecast:LX-2024111T100000Z-20241101T160000Z",
     "type": "WeatherForecast",
     "dataProvider": {"type": "Property", "value": "IPMA"},
-    "dateIssued": "2024-11-01T09:30:01.00Z",
+    "dateIssued": {"type": "Property", "value":"2024-11-01T09:30:01.00Z"},
     "dateRetrieved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-11-01T10:00:00.00Z"} },
     "validity": {"type": "Property", "value": "2024-11-01T10:00:00.00Z/2024-11-01T16:00:00.00Z"},
     "validFrom": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-11-01T10:00:00.00Z"} },

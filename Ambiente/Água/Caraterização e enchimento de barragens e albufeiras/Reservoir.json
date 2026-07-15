@@ -5,10 +5,7 @@
         "type" : "Property",
         "value": "Esta entidade contém uma descrição harmonizada da Albufeira do Alqueva"
     },
-    "hydroId": {
-        "type" : "Property",
-        "value": {"classificationScheme": "EU:WFD", "localId": "A.Alqueva", "namespace": "EU.EIONET.WATER"}
-    },
+    "hydroId": { "type": "Property", "value": {"localId": "A.Alqueva", "namespace": "PT.APA.HY-P"} },
     "category": { "type": "Property", "value": ["HydroObject"] },
     "areaServed": {"type": "Property", "value": "Beja"},
     "name": {"type": "Property", "value": "Barragem do Alqueva"},
@@ -51,13 +48,9 @@
         "value": {"spelling": "Albufeira Alqueva", "language": "pt", "nameStatus": "official"}
     },
     "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
-    "endLifespanVersion": {"type": "Property", "value": null},
     "localType": {"type": "Property", "value": "reservoir"},
-    "levelOfDetail": { "type": "Property", "value": {"scale": 25000, "equivalentScale": "1:25000"} },
-    "manMadeObject": {
-        "type" : "Property",
-        "value": { "type": "Dam", "function": ["waterSupply", "floodControl"] }
-    },
+    "levelOfDetail": { "type": "Property", "value": {"equivalentScale": 25000} },
+    "manMadeObject": {"type": "Property", "value": "Regula a quantidade de água"},
     "storageCapacity": {"type": "Property", "value": 4150000, "unitCode": "MTQ"},
     "usefulCapacity": {"type": "Property", "value": 3117000, "unitCode": "MTQ"},
     "currentVolume": {
@@ -68,6 +61,7 @@
         "samplingFrequency": "P1M"
     },
     "currentStorage": {
+        "type"             : "Property",
         "value"            : 80.0,
         "unitCode"         : "P1",
         "observedAt"       : "2025-02-05T12:00:00Z",

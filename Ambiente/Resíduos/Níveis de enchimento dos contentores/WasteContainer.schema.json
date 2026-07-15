@@ -18,6 +18,62 @@
     },
     {
       "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
         "type": {
           "type": "string",
           "enum": [
@@ -246,6 +302,11 @@
   "required": [
     "id",
     "type",
-    "location"
+    "location",
+   "address",
+   "binCapacity",
+   "binColor",
+   "binFullnessThreshold",
+   "status" 
   ]
 }

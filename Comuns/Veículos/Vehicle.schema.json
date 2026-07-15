@@ -1,0 +1,439 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Vehicle/schema.json",
+  "title": "Vehicle schema",
+  "description": "Schema describing a vehicle and its operational state",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "Vehicle",
+          "description": "Property. NGSI entity type. It has to be Vehicle"
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Property. Annotations about the vehicle"
+        },
+        "battery": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Remaining battery level as a value between 0 and 1"
+        },
+        "bearing": {
+          "type": "number",
+          "minimum": 0,
+          "exclusiveMaximum": 360,
+          "description": "Property. GNSS angle measured clockwise from north"
+        },
+        "cargoWeight": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Current cargo weight"
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Vehicle categories from an external-use perspective"
+        },
+        "color": {
+          "type": "string",
+          "description": "Property. Color of the vehicle"
+        },
+        "currentTripCount": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Trips accumulated during the operating day"
+        },
+        "dateFirstUsed": {
+          "type": "string",
+          "format": "date",
+          "description": "Property. Date when the vehicle was first used"
+        },
+        "dateVehicleFirstRegistered": {
+          "type": "string",
+          "format": "date",
+          "description": "Property. Date when the vehicle was first registered"
+        },
+        "deviceSimNumber": {
+          "type": "string",
+          "description": "Property. SIM number of the device installed in the vehicle"
+        },
+        "emergencyVehicleType": {
+          "type": "string",
+          "enum": [
+            "policeCar",
+            "policeMotorcycle",
+            "policeVan",
+            "policeSWAT",
+            "fireEngine",
+            "waterTender",
+            "airAmbulance",
+            "ambulance",
+            "motorcycleAmbulance",
+            "rescueVehicle",
+            "hazardousMaterialsApparatus",
+            "towTruck"
+          ],
+          "description": "Property. Type of emergency vehicle"
+        },
+        "feature": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Features incorporated into the vehicle"
+        },
+        "fleetVehicleId": {
+          "type": "string",
+          "description": "Property. Vehicle identifier within its fleet"
+        },
+        "fuelEfficiency": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Distance travelled per unit of fuel"
+        },
+        "fuelFilled": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Amount of fuel filled into the vehicle"
+        },
+        "fuelType": {
+          "type": "string",
+          "enum": [
+            "autogas",
+            "biodiesel",
+            "ethanol",
+            "cng",
+            "diesel",
+            "electric",
+            "gasoline",
+            "hybrid electric/diesel",
+            "hybrid electric/petrol",
+            "hydrogen",
+            "lpg",
+            "petrol",
+            "petrol (unleaded)",
+            "petrol (leaded)",
+            "other"
+          ],
+          "description": "Property. Type of fuel used by the vehicle"
+        },
+        "heading": {
+          "anyOf": [
+            {
+              "const": -1
+            },
+            {
+              "type": "number",
+              "minimum": 0,
+              "exclusiveMaximum": 360
+            }
+          ],
+          "description": "Property. Direction of travel in clockwise decimal degrees, or -1 when stopped"
+        },
+        "ignitionStatus": {
+          "type": "boolean",
+          "description": "Property. Whether the vehicle ignition is on"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of an image of the vehicle"
+        },
+        "license_plate": {
+          "type": "string",
+          "description": "Property. Vehicle registration plate"
+        },
+        "mileageFromOdometer": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total distance travelled according to the odometer"
+        },
+        "municipalityInfo": {
+          "type": "object",
+          "properties": {
+            "cityId": {
+              "type": "string"
+            },
+            "cityName": {
+              "type": "string"
+            },
+            "district": {
+              "type": "string"
+            },
+            "stateName": {
+              "type": "string"
+            },
+            "ulbName": {
+              "type": "string"
+            },
+            "wardId": {
+              "type": "string"
+            },
+            "wardName": {
+              "type": "string"
+            },
+            "wardNum": {
+              "type": "number"
+            }
+          },
+          "description": "Property. Municipality information corresponding to the observation"
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the vehicle"
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Identifiers of the vehicle owners"
+        },
+        "previousLocation": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons/properties/location",
+          "description": "GeoProperty. Previous vehicle location"
+        },
+        "purchaseDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the current owner acquired the vehicle"
+        },
+        "refVehicleModel": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Reference to a VehicleModel entity"
+        },
+        "reportId": {
+          "type": "string",
+          "description": "Property. Identifier assigned to the corresponding report or transaction"
+        },
+        "serviceOnDuty": {
+          "type": "boolean",
+          "description": "Property. Whether an emergency vehicle is on duty"
+        },
+        "serviceProvided": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Services the vehicle can provide or is assigned to"
+        },
+        "serviceStatus": {
+          "type": "string",
+          "enum": [
+            "broken",
+            "onRoute",
+            "outOfService",
+            "parked"
+          ],
+          "description": "Property. Vehicle status from the provided-service perspective"
+        },
+        "speed": {
+          "type": "number",
+          "minimum": -1,
+          "description": "Property. Horizontal speed, with -1 indicating a temporarily unknown value"
+        },
+        "tripNetWeightCollected": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Net weight collected by the end of the trip"
+        },
+        "vehicleAltitude": {
+          "type": "string",
+          "description": "Property. Current GNSS altitude"
+        },
+        "vehicleConfiguration": {
+          "type": "string",
+          "description": "Property. Short description of the vehicle configuration"
+        },
+        "vehicleIdentificationNumber": {
+          "type": "string",
+          "description": "Property. Vehicle identification number (VIN)"
+        },
+        "vehiclePlateIdentifier": {
+          "type": "string",
+          "description": "Property. Vehicle registration plate identifier"
+        },
+        "vehicleRunningStatus": {
+          "type": "string",
+          "enum": [
+            "running",
+            "waiting",
+            "stopped"
+          ],
+          "description": "Property. Current running status of the vehicle"
+        },
+        "vehicleSpecialUsage": {
+          "type": "string",
+          "description": "Property. Special purpose for which the vehicle is used"
+        },
+        "vehicleTrackerDevice": {
+          "type": "string",
+          "description": "Property. Installation status of the vehicle GNSS tracker"
+        },
+        "vehicleType": {
+          "type": "string",
+          "enum": [
+            "agriculturalVehicle",
+            "anyVehicle",
+            "articulatedVehicle",
+            "bicycle",
+            "binTrolley",
+            "bus",
+            "car",
+            "caravan",
+            "carOrLightVehicle",
+            "carWithCaravan",
+            "carWithTrailer",
+            "cleaningTrolley",
+            "constructionOrMaintenanceVehicle",
+            "fourWheelDrive",
+            "highSidedVehicle",
+            "lorry",
+            "minibus",
+            "moped",
+            "motorcycle",
+            "motorcycleWithSideCar",
+            "motorscooter",
+            "sweepingMachine",
+            "tanker",
+            "threeWheeledVehicle",
+            "trailer",
+            "tram",
+            "twoWheeledVehicle",
+            "trolley",
+            "van",
+            "vehicleWithoutCatalyticConverter",
+            "vehicleWithCaravan",
+            "vehicleWithTrailer",
+            "withEvenNumberedRegistrationPlates",
+            "withOddNumberedRegistrationPlates",
+            "other"
+          ],
+          "description": "Property. Vehicle type according to its structural characteristics"
+        },
+        "wardId": {
+          "type": "string",
+          "description": "Property. Identifier of the corresponding parish"
+        },
+        "wardName": {
+          "type": "string",
+          "description": "Property. Name of the corresponding parish"
+        },
+        "zoneName": {
+          "type": "string",
+          "description": "Property. Name of the corresponding zone"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "speed": {
+                "const": 0
+              }
+            },
+            "required": [
+              "speed"
+            ]
+          },
+          "then": {
+            "properties": {
+              "heading": {
+                "const": -1
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "category",
+    "location",
+    "vehicleType"
+  ]
+}

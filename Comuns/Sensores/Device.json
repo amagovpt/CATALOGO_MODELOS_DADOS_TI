@@ -7,7 +7,7 @@
   "controlledProperty": { "type": "Property", "value": ["fillingLevel", "temperature"] },
   "dateFirstUsed"     : { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-05-10T11:00:00Z"} },
   "deviceState"       : {"type": "Property", "value": "ok"},
-  "ipAddress"         : { "type": "Property", "value": ["192.14.56.79"] },
+  "ipAddress"         : { "type": "Property", "value": ["192.168.56.79"] },
   "mcc"               : {"type": "Property", "value": "268"},
   "mnc"               : {"type": "Property", "value": "12"},
   "owner"             : { "type": "Property", "value": ["https://www.lisboa.pt"] },
