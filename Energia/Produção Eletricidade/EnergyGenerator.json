@@ -11,7 +11,7 @@
         "value"           : { "type": "Point", "coordinates": [-9.1393801, 38.747392] },
         "coordinateSystem": "EPSG:3763"
     },
-   "address": {
+    "address"          : {
         "type" : "Property",
         "value": {
             "addressCountry" : "Portugal",

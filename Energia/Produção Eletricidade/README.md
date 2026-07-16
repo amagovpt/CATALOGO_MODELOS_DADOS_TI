@@ -35,7 +35,6 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 | refDevice  | URI      | Referência a um dispositivo físico (ex.: inverter, controlador). | Usado quando existe um modelo Device separado.      |
 | description| String | Descrição adicional do gerador.      | --    |
 
-
 Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados `EnergyProductionMeasurement`.
 
 | Propriedade | Tipo | Descrição | Nota |
