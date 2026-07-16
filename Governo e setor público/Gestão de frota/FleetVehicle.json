@@ -3,6 +3,17 @@
     "type"            : "FleetVehicle",
     "fleetVehicleType": {"type": "Property", "value": "Ambulance"},
     "operatingCompany": {"type": "Property", "value": "Companhia de Bombeiros Sapadores Braga"},
+   "address"         : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "postalCode"     : "4700-441",
+            "addressRegion"  : "Norte",
+            "addressLocality": "Braga",
+            "district"       : "Braga",
+            "streetAddress"  : "Av. do Estádio"
+        }
+    },
     "source"          : {
         "type" : "Property",
         "value": "https://www.bombeiros.pt/corpos_de_bombeiros/companhia-de-bombeiros-sapadores-braga/"

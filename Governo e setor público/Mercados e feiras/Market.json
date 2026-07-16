@@ -15,11 +15,13 @@
     "address": {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
+            "addressCountry" : "Portugal",
+            "postalCode"     : "4000-428",
+            "addressRegion"  : "Norte",
             "addressLocality": "Porto",
-            "postalCode"     : "4000-211",
-            "streetAddress"  : "Rua De Fernandes Tomás",
-            "type"           : "PostalAddress"
+            "district"       : "Porto",
+            "streetAddress"  : "Rua de Sá da Bandeira",
+            "streetNr"       : "388"
         }
     },
     "buildingId": {"type": "Property", "value": "urn:rnc:BuildingRegistration:22312345"},

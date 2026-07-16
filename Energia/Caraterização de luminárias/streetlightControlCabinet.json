@@ -20,6 +20,18 @@
             "coordinateSystem": "EPSG:4326"
         }
     },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "postalCode"     : "4700-314",
+            "addressRegion"  : "Norte",
+            "addressLocality": "Braga",
+            "district"       : "Braga",
+            "streetAddress"  : "R. do Souto",
+            "streetNr"       : "51"
+        }
+    },
     "maximumPowerAvailable": {"type": "Property", "value": 10},
     "meterReadingPeriod": {"type": "Property", "value": 60},
     "modelName": {"type": "Property", "value": "Simatic S7 1200"},

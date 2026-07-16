@@ -18,6 +18,18 @@
             "coordinateSystem": "EPSG:4326"
         }
     },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "postalCode"     : "4700-314",
+            "addressRegion"  : "Norte",
+            "addressLocality": "Braga",
+            "district"       : "Braga",
+            "streetAddress"  : "R. do Souto",
+            "streetNr"        : "51"
+        }
+    },
     "locationCategory": {"type": "Property", "value": "pedestrianPath"},
     "municipalityInfo": { "type": "Property", "value": {"district": "Braga", "cityName": "Braga", "zoneId": "2"} },
     "observationDateTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-16T10:51:02Z"} },

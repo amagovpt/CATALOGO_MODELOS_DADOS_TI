@@ -14,18 +14,19 @@
   },
   "location": {
     "type"            : "GeoProperty",
-    "value"           : { "type": "Point", "coordinates": [-9.1427369, 38.75397] },
+    "value"           : { "type": "Point", "coordinates": [-9.1498629, 38.749206] },
     "coordinateSystem": "EPSG:3763"
   },
   "address": {
     "type" : "Property",
     "value": {
-      "addressCountry": "PT",
-      "postalCode"    : "1749-099",
-      "postalCodeExt" : "099",
-      "postalCodeFull": "1000151",
-      "addressRegion" : "Lisboa",
-      "streetAddress" : "Campo Grande 25"
+      "addressCountry" : "Portugal",
+      "postalCode"     : "1700-005",
+      "addressRegion"  : "Grande Lisboa",
+      "addressLocality": "Lisboa",
+      "district"       : "Lisboa",
+      "streetAddress"  : "Campo Grande",
+      "streetNr"       : "25"
     }
   },
   "name": {"type": "Property", "value": "Lisbon City Hall - Campo Grande Central Building"},

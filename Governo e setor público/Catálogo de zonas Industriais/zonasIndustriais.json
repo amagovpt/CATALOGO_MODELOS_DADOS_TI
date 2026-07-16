@@ -47,14 +47,12 @@
     "address": {
         "type" : "Property",
         "value": {
-            "streetAddress"  : "Estrada 5 de Outubro",
-            "addressLocality": "Alcanede",
-            "addressRegion"  : "Santarém",
-            "postalCode"     : "2025-161",
-            "addressCountry" : "PT"
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Oeste e Vale do Tejo",
+            "addressLocality": "Alcanena",
+            "district"       : "Santarém"
         }
     },
-    "municipality": {"type": "Relationship", "object": "urn:arte:AdministrativeArea:municipality:santarem"},
     "landUse": {"type": "Property", "value": "industrial"},
     "availabilityStatus": {"type": "Property", "value": "mixed"},
     "occupancyRate": {"type": "Property", "value": 90},

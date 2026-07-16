@@ -11,10 +11,13 @@
     "address"           : {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
+            "addressCountry" : "Portugal",
+            "postalCode"     : "1749-099",
+            "postalCodeExt"  : "099",
+            "postalCodeFull" : "1749099",
+            "addressRegion"  : "Grande Lisboa",
             "addressLocality": "Lisboa",
-            "streetAddress"  : "Avenida Dom Carlos I",
-            "postalCode"     : "1249-071"
+            "district": "Lisboa"
         }
     },
     "assetStatus"       : {"type": "Property", "value": "functional"},

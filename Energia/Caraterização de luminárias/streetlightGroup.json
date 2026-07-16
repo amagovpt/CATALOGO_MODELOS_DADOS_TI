@@ -26,6 +26,15 @@
         },
         "coordinateSystem": "EPSG:4326"
     },
+    "address"         : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Norte",
+            "addressLocality": "Braga",
+            "district"       : "Braga"
+        }
+    },
     "powerState": {"type": "Property", "value": "off"},
     "refStreetlightCabinetController": {
         "type"  : "Relationship",

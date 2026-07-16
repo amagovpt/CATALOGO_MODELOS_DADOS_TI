@@ -2,28 +2,23 @@
     "id": "urn:rnc:UnitRegistration:8dd5236d38b3",
     "type": "UnitRegistration",
     "fractionId": {"type": "Property", "value": "8dd5236d38b3"},
-    "refBuilding": {
-        "type"  : "Relationship",
-        "object": "urn:rnc:BuildingRegistration:a63dd3b3"
-    },
+    "refBuilding": {"type": "Relationship", "object": "urn:rnc:BuildingRegistration:a63dd3b3"},
     "address": {
-        "type": "Property",
+        "type" : "Property",
         "value": {
-            "streetAddress"   : "Rua de Santa Marta",
-            "address.streetNr": "55",
-            "addressLocality" : "Santo António",
-            "postalCode"      : "1150 - 294",
-            "addressRegion"   : "Lisboa"
+            "addressCountry" : "Portugal",
+            "postalCode"     : "1150–294 ",
+            "addressRegion"  : "Grande Lisboa",
+            "addressLocality": "Lisboa",
+            "streetAddress"  : "Rua de Santa Marta",
+            "streetNr"       : "55E, 4º"
         }
     },
     "dateModified": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
     "use": {"type": "Property", "value": "other"},
     "dwellingType": {"type": "Property", "value": "T4+"},
     "cadastreNumber": {"type": "Property", "value": "456"},
-    "description": {
-        "type": "Property",
-        "value": "Piso com salas individuais, colectivas e salas para reuniões."
-    },
+    "description": {"type": "Property", "value": "Piso com salas individuais, colectivas e salas para reuniões."},
     "ownershipType": {"type": "Property", "value": "state"},
     "occupation": {"type": "Property", "value": "ocupado"},
     "fractionNumber": {"type": "Property", "value": "A"},

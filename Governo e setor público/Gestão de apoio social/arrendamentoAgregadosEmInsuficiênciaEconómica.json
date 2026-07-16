@@ -19,6 +19,18 @@
         },
         "coordinateSystem": "EPSG:3763"
     },
+    "address"         : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "postalCode"     : "2410-021",
+            "addressRegion"  : "Centro",
+            "district"       : "Leiria",
+            "addressLocality": "Porto de Mós",
+            "streetAddress"  : "Rua da Fonte Nova",
+            "streetNr"       : "91"
+        }
+    },
     "aggregationLevel": {"type": "Property", "value": "municipality"},
     "indicator"       : {"type": "Property", "value": "beneficiaryHouseholdsCount"},
     "value"           : {"type": "Property", "value": 86, "unitCode": "C62"},

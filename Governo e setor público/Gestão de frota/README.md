@@ -5,7 +5,7 @@ Nas anotações é possível encontrar exemplos de utilização deste modelo, il
 
 ## Propriedades
 
-Para informações sobre `VehicleModel` e `Vehicle`, consultar  o [Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes (CNMD)](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/), na zona dos modelos comuns.
+Os modelos `VehicleModel` e `Vehicle` são modelos comuns, também documentados no [Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes (CNMD)](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/).
 
 Na tabela abaixo são apresentadas as propriedades para o modelo `FleetVehicle`.
 
@@ -13,7 +13,14 @@ Na tabela abaixo são apresentadas as propriedades para o modelo `FleetVehicle`.
 | ------------- | ------ | ----------- | ------------------------- |
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `FleetVehicle` |
-| address | Object | Morada associada | Inclui país, localidade, rua. Modelo: [https://schema.org/address](https://schema.org/address) |
+| address    | Object          | Morada associada ao local | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
+| address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
+| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district | String | Um distrito é um tipo de divisão administrativa | Este campo é obrigatório quando o campo 'address' é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode | String | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode) |
+| address.streetAddress | String | Endereço da rua | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)  |
+| address.streetNr | String | Número de polícia | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | alternateName | String | Nome alternativo para este item | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | areaServed | String | A área geográfica onde é prestado o serviço | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | dataProvider | String | Uma sequência de caracteres que identifica o fornecedor de dados | Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -33,7 +40,14 @@ Na tabela abaixo são apresentadas as propriedades para o modelo `FleetVehicleOp
 | ------------- | ------ | ----------- | ------------------------- |
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `FleetVehicleOperation` |
-| address | Object | Morada associada | Inclui país, localidade, rua. Modelo: [https://schema.org/address](https://schema.org/address) |
+| address | Object | Morada associada a um local | Inclui concelho, freguesia, rua, número e código postal. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. |
+| address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
+| address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
+| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district | String | Um distrito é um tipo de divisão administrativa | Este campo é obrigatório quando o campo 'address' é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode | String | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode) |
+| address.streetAddress | String | Endereço da rua | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)  |
+| address.streetNr | String | Número de polícia | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | alternateName | String | Nome alternativo para este item | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | areaServed | String | A área geográfica onde é prestado o serviço | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | dataProvider | String | Uma sequência de caracteres que identifica o fornecedor de dados | Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -61,6 +75,7 @@ As propriedades obrigatórios para `FleetVehicle`:
 
 - `id`
 - `type`
+- `address`
 
 As propriedades obrigatórios para `FleetVehicleOperation`:
 

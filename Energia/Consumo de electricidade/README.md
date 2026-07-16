@@ -14,7 +14,14 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `ACMeasurement`|
 | activePower    | Object    | Potência ativa consumida por fase  | Valores de L1, L2 e L3 que representam valores para a fase 1, 2 e 3, respetivamente. Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue) | 
-| address                  | Object          | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  | 
+| address    | Object          | Morada associada ao local | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
+| address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
+| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district | String | Um distrito é um tipo de divisão administrativa | Este campo é obrigatório quando o campo 'address' é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode | String | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode) |
+| address.streetAddress | String | Endereço da rua | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)  |
+| address.streetNr | String | Número de polícia | Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | alternateName       | String          | Nome alternativo para a área de medida  |  Ex: nome comum ou local da localização  |
 | apparentEnergyExport  | Object    | 
 | apparentPower    | Object    | Potência aparente consumida por fase  | Valores de L1, L2 e L3 que representam valores para a fase 1, 2 e 3, respetivamente. Normalmente expressa em volt-ampere (VA). Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue) | 
@@ -52,6 +59,7 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
+- `address`
 - `generatorType`
 - `location`
 - `installedCapacity`

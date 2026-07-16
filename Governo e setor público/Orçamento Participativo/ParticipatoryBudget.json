@@ -1,32 +1,33 @@
 {
-    "id": "urn:cml:ParticipatoryBudget:112233",
-    "type": "ParticipatoryBudget",
-    "name": {
-        "type" : "Property",
-        "value": "EcoEstação do Arda - Estação de Serviço da Ecovia do Arda"
+    "id"             : "urn:cml:ParticipatoryBudget:112233",
+    "type"           : "ParticipatoryBudget",
+    "name"           : {"type": "Property", "value": "EcoEstação do Arda - Estação de Serviço da Ecovia do Arda"},
+    "edition"        : {"type": "Property", "value": "OP2025"},
+    "description"    : {
+        "type": "Property",
+        "value": "A proposta EcoEstação do Arda - Estação de Serviço da Ecovia do Arda defende a implementação de uma “estação de serviço” junto ao percurso pedonal e ciclável da Ecovia do Arda por forma a colmatar uma necessidade já há muito identificada pelos arouquenses que fazem uso desta infraestrutura, um local onde se possam refrescar, repousar e satisfazer necessidades fisiológicas."
     },
-    "edition": {
-        "type" : "Property",
-        "value": "OP2025"
-    },
-    "description": {"type": "Property", "value": "A proposta EcoEstação do Arda - Estação de Serviço da Ecovia do Arda defende a implementação de uma “estação de serviço” junto ao percurso pedonal e ciclável da Ecovia do Arda por forma a colmatar uma necessidade já há muito identificada pelos arouquenses que fazem uso desta infraestrutura, um local onde se possam refrescar, repousar e satisfazer necessidades fisiológicas."},
-    "location": {
-        "type": "GeoProperty",
-        "value": { "type": "Point", "coordinates": [ -8.292200104789636,40.92606844919757] },
+    "location"       : {
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.292200104789636, 40.92606844919757] },
         "coordinateSystem": "EPSG:4326"
     },
-    "category": {"type": "Property", "value": ["Culture and Heritage"]},
-    "address": {
-        "type": "Property",
-        "value": {"addressCountry": "PT", "addressRegion": "Lisboa"}
+    "category"       : { "type": "Property", "value": ["Culture and Heritage"] },
+    "address"        : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Norte",
+            "district"       : "Aveiro",
+            "addressLocality": "Arouca"
+        }
     },
-    "dateStarted": {"type": "Property", "value": "2025-01-01T07:30:00Z"},
-    "dateSubmission": {"type": "Property", "value": "2025-01-02T07:30:00Z"},
-    "dateFinished": {"type": "Property", "value": null},
-    "status": {"type": "Property", "value": "Under analysis"},
+    "dateStarted"    : {"type": "Property", "value": "2025-01-01T07:30:00Z"},
+    "dateSubmission" : {"type": "Property", "value": "2025-01-02T07:30:00Z"},
+    "status"         : {"type": "Property", "value": "Under analysis"},
     "estimatedBudget": {"type": "Property", "value": 20000, "unitCode": "EUR"},
-    "applicant": {"type": "Property", "value": "Star"},
-    "@context": [
+    "applicant"      : {"type": "Property", "value": "Star"},
+    "@context"       : [
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         "https://schema.fiware.org/ld/context"
     ]

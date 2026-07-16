@@ -26,11 +26,10 @@
     "address": {
         "type" : "Property",
         "value": {
-            "streetAddress"  : "Estrada 5 de Outubro, Apartado 47",
-            "addressLocality": "Alcanede",
-            "addressRegion"  : "Santarém",
-            "postalCode"     : "2025-161",
-            "addressCountry" : "PT"
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Oeste e Vale do Tejo",
+            "addressLocality": "Alcanena",
+            "district"       : "Santarém"
         }
     },
     "beginLifespanVersion": {"type": "Property", "value": "2022-05-01T00:00:00Z"},

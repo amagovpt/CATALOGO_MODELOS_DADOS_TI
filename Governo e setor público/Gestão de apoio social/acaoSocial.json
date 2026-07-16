@@ -6,6 +6,18 @@
         "value"           : { "type": "Point", "coordinates": [-8.830838186508117, 39.600392066784735] },
         "coordinateSystem": "EPSG:3763"
     },
+    "address"         : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "postalCode"     : "2480-400",
+            "addressRegion"  : "Centro",
+            "addressLocality": "Porto de Mós",
+            "district"       : "Leiria",
+            "streetAddress"  : "Travessa do Carrascal",
+            "streetNr"       : "9"
+        }
+    },
     "observedBy"      : {"type": "Relationship", "object": "urn:arte:Organization:Municipality:PortoMós1"},
     "areaServed"      : {"type": "Property", "value": "Porto de Mós"},
     "aggregationLevel": {"type": "Property", "value": "facility"},

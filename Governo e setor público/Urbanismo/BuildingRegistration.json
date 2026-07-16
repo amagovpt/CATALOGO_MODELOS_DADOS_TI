@@ -5,11 +5,12 @@
   "address": {
     "type" : "Property",
     "value": {
-      "streetAddress"   : "Rua de Santa Marta",
-      "address.streetNr": "55",
-      "addressLocality" : "Santo António",
-      "postalCode"      : "1150 - 294",
-      "addressRegion"   : "Lisboa"
+      "addressCountry" : "Portugal",
+      "postalCode"     : "1150–294 ",
+      "addressRegion"  : "Grande Lisboa",
+      "addressLocality": "Lisboa",
+      "streetAddress"  : "Rua de Santa Marta",
+      "streetNr"       : "55E"
     }
   },
   "occupation": {"type": "Property", "value": "ocupado"},
