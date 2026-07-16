@@ -35,8 +35,7 @@
     "value"   : {"L1": 11996.416016, "L2": 9461.501953, "L3": 10242.351562},
     "unitCode": "VAR"
   },
-  "alternateName": {"type"    : "Property",
-    "value"   :"City Hall global consumption"},
+  "alternateName": {"type": "Property", "value": "City Hall global consumption"},
   "apparentPower": {
     "type"    : "Property",
     "value"   : {"L1": 13201.412109, "L2": 10755.304688, "L3": 11941.094727},
@@ -59,9 +58,7 @@
     "value"   : {"L12": 406.769196, "L23": 407.081238, "L31": 407.734558},
     "unitCode": "V"
   },
-  "phaseType": {
-    "type"    : "Property",
-    "value"   :"threePhase"},
+  "phaseType": {"type": "Property", "value": "threePhase"},
   "phaseVoltage": {
     "type"    : "Property",
     "value"   : {"L1": 234.961304, "L2": 234.563477, "L3": 235.354034},
