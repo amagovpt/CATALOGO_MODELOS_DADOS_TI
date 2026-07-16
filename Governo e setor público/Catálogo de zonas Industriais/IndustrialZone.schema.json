@@ -1,0 +1,304 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://territoriosinteligentes.gov.pt/dataModel.IndustrialZone/IndustrialZone/schema.json",
+  "title": "IndustrialZone schema",
+  "description": "An industrial zone, including land availability, infrastructure, access, sustainability and lifecycle information.",
+  "type": "object",
+  "$defs": {
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    },
+    "position": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 2
+    },
+    "linearRing": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/position"},
+      "minItems": 4
+    },
+    "polygonCoordinates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/linearRing"},
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "IndustrialZone",
+          "description": "Property. NGSI entity type. It has to be IndustrialZone."
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the industrial zone. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": ["addressLocality", "addressRegion", "district"]
+        },
+        "alternateName": {
+          "type": "string",
+          "description": "Property. Alternative name of the industrial zone. Model:'https://schema.org/Text'."
+        },
+        "availabilityStatus": {
+          "type": "string",
+          "enum": ["free", "occupied", "reserved", "mixed", "unavailable"],
+          "description": "Property. Aggregated availability status of the industrial zone."
+        },
+        "availableLandArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Land area available for new activities, normally expressed in square metres."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Start date and time of this record lifecycle version in ISO 8601 format."
+        },
+        "dataProvider": {
+          "type": "string",
+          "description": "Property. Identifier of the data provider. Model:'https://schema.org/Text'."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Record creation date and time in ISO 8601 format."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Date and time of the latest record modification in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the purpose of the industrial zone. Model:'https://schema.org/Text'."
+        },
+        "ecoIndustrialFeatures": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sharedWasteManagement",
+              "resourceEfficiency",
+              "stormwaterManagement",
+              "industrialSymbiosis",
+              "waterReuse",
+              "renewableEnergyIntegration"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Sustainability and industrial symbiosis features of the zone."
+        },
+        "endLifespanVersion": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. End date and time of this record lifecycle version, or null for the current version."
+        },
+        "environmentalCertification": {
+          "type": "boolean",
+          "description": "Property. Whether the industrial zone has a recognized environmental certification."
+        },
+        "establishmentsCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of establishments or operators installed in the zone."
+        },
+        "hasElectricity": {
+          "type": "boolean",
+          "description": "Property. Whether electricity supply is available."
+        },
+        "hasGasNetwork": {
+          "type": "boolean",
+          "description": "Property. Whether a gas network is available."
+        },
+        "hasLot": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/uri"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. References to IndustrialLot entities within the industrial zone."
+        },
+        "hasTelecomConnectivity": {
+          "type": "boolean",
+          "description": "Property. Whether telecommunications connectivity is available."
+        },
+        "hasWastewaterService": {
+          "type": "boolean",
+          "description": "Property. Whether wastewater drainage and treatment service is available."
+        },
+        "hasWaterSupply": {
+          "type": "boolean",
+          "description": "Property. Whether water supply is available."
+        },
+        "landUse": {
+          "type": "string",
+          "description": "Property. Land use applicable to the industrial zone."
+        },
+        "location": {
+          "type": "object",
+          "oneOf": [
+            {
+              "properties": {
+                "type": {"const": "Polygon"},
+                "coordinates": {"$ref": "#/$defs/polygonCoordinates"}
+              },
+              "required": ["type", "coordinates"]
+            },
+            {
+              "properties": {
+                "type": {"const": "MultiPolygon"},
+                "coordinates": {
+                  "type": "array",
+                  "items": {"$ref": "#/$defs/polygonCoordinates"},
+                  "minItems": 1
+                }
+              },
+              "required": ["type", "coordinates"]
+            }
+          ],
+          "description": "GeoProperty. Polygon or MultiPolygon location of the industrial zone."
+        },
+        "municipality": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to the administrative entity representing the municipality."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Main name of the industrial zone. Model:'https://schema.org/Text'."
+        },
+        "occupancyRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Property. Aggregated occupancy percentage of the industrial zone."
+        },
+        "occupiedLandArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Land area occupied by economic activities, normally expressed in square metres."
+        },
+        "portAccess": {
+          "type": "boolean",
+          "description": "Property. Whether direct or functionally associated port access is available."
+        },
+        "railAccess": {
+          "type": "boolean",
+          "description": "Property. Whether rail access is available."
+        },
+        "refPointOfInterest": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to an associated PointOfInterest entity."
+        },
+        "reservedLandArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Land area reserved but not yet physically occupied, normally expressed in square metres."
+        },
+        "roadAccess": {
+          "type": "boolean",
+          "description": "Property. Whether adequate road access is available."
+        },
+        "servicedLandArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total serviced land area, normally expressed in square metres."
+        },
+        "source": {
+          "type": "string",
+          "description": "Property. Administrative, technical or documentary source supporting the entity data."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "availabilityStatus",
+    "availableLandArea",
+    "beginLifespanVersion",
+    "location",
+    "occupiedLandArea"
+  ]
+}

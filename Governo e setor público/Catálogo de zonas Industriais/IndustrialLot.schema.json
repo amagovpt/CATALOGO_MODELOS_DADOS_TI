@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://territoriosinteligentes.gov.pt/dataModel.IndustrialZone/IndustrialLot/schema.json",
+  "title": "IndustrialLot schema",
+  "description": "An industrial lot within an industrial zone, including its area, availability, activities, tenant and lifecycle information.",
+  "type": "object",
+  "$defs": {
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    },
+    "position": {
+      "type": "array",
+      "items": {"type": "number"},
+      "minItems": 2
+    },
+    "linearRing": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/position"},
+      "minItems": 4
+    },
+    "polygonCoordinates": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/linearRing"},
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "IndustrialLot",
+          "description": "Property. NGSI entity type. It has to be IndustrialLot."
+        },
+        "activityCAE": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Official CAE codes for economic activities carried out on the lot."
+        },
+        "activityCategory": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Textual categories of economic activities carried out on the lot."
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the industrial lot. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": ["addressLocality", "addressRegion", "district"]
+        },
+        "availabilityStatus": {
+          "type": "string",
+          "enum": ["free", "occupied", "reserved", "mixed", "unavailable"],
+          "description": "Property. Availability status of the industrial lot."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Start date and time of this record lifecycle version in ISO 8601 format."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Record creation date and time in ISO 8601 format."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. Date and time of the latest record modification in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the purpose of the industrial lot. Model:'https://schema.org/Text'."
+        },
+        "endLifespanVersion": {
+          "type": ["string", "null"],
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T",
+          "description": "Property. End date and time of this record lifecycle version, or null for the current version."
+        },
+        "locatedInZone": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to the IndustrialZone containing this lot."
+        },
+        "location": {
+          "type": "object",
+          "oneOf": [
+            {
+              "properties": {
+                "type": {"const": "Polygon"},
+                "coordinates": {"$ref": "#/$defs/polygonCoordinates"}
+              },
+              "required": ["type", "coordinates"]
+            },
+            {
+              "properties": {
+                "type": {"const": "MultiPolygon"},
+                "coordinates": {
+                  "type": "array",
+                  "items": {"$ref": "#/$defs/polygonCoordinates"},
+                  "minItems": 1
+                }
+              },
+              "required": ["type", "coordinates"]
+            }
+          ],
+          "description": "GeoProperty. Polygon or MultiPolygon location of the industrial lot."
+        },
+        "lotArea": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total area of the industrial lot, normally expressed in square metres."
+        },
+        "lotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number identifying the lot within the industrial zone. Model:'https://schema.org/Integer'."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Main name of the industrial lot. Model:'https://schema.org/Text'."
+        },
+        "tenant": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to the tenant, occupant or user of the industrial lot, typically an Organization."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "availabilityStatus",
+    "beginLifespanVersion",
+    "lotArea",
+    "lotNumber",
+    "location",
+    "locatedInZone"
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://territoriosinteligentes.gov.pt/dataModel.PublicEquipment/PublicEquipment/schema.json",
+  "title": "PublicEquipment schema",
+  "description": "A public or municipal facility, including its classification, condition, accessibility, ownership and service information.",
+  "type": "object",
+  "$defs": {
+    "dateOrDateTime": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T"
+        }
+      ]
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "PublicEquipment",
+          "description": "Property. NGSI entity type. It has to be PublicEquipment."
+        },
+        "accessibility": {
+          "type": "object",
+          "description": "Property. Physical, sensory and other inclusive access conditions.",
+          "properties": {
+            "isAccessible": {"type": "boolean"},
+            "wheelchairAccessible": {"type": "boolean"},
+            "accessibleEntrance": {"type": "boolean"},
+            "accessibleToilet": {"type": "boolean"},
+            "accessibleParking": {"type": "boolean"},
+            "liftAvailable": {"type": "boolean"},
+            "brailleSignage": {"type": "boolean"},
+            "hearingLoop": {"type": "boolean"},
+            "serviceAnimalAllowed": {"type": "boolean"},
+            "signLanguageSupport": {"type": "boolean"},
+            "tactilePaving": {"type": "boolean"}
+          }
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the public equipment. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area served by the public equipment. Model:'https://schema.org/Text'."
+        },
+        "assetStatus": {
+          "type": "string",
+          "enum": ["declined", "demolished", "functional", "projected", "ruin", "under construction"],
+          "description": "Property. Inventory status based on the INSPIRE ConditionOfConstructionValue code list."
+        },
+        "capacity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Capacity or maximum occupancy of the public equipment. Model:'https://schema.org/Number'."
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "administrative",
+            "education",
+            "health",
+            "emergency",
+            "security",
+            "justice",
+            "socialCare",
+            "culture",
+            "sports",
+            "mobility",
+            "greenSpace",
+            "waste",
+            "water",
+            "sanitation",
+            "market",
+            "cemetery",
+            "animalWelfare",
+            "civilProtection",
+            "other"
+          ],
+          "description": "Property. Category of public equipment."
+        },
+        "commissioningDate": {
+          "$ref": "#/$defs/dateOrDateTime",
+          "description": "Property. Date on which the equipment entered technical operation. Model:'https://schema.org/DateTime'."
+        },
+        "condition": {
+          "type": "string",
+          "enum": ["excellent", "good", "fair", "poor", "needsRepair"],
+          "description": "Property. Physical condition of the public equipment."
+        },
+        "contactPoint": {
+          "type": "object",
+          "description": "Property. Contact information associated with the public equipment. Model:'https://schema.org/ContactPoint'."
+        },
+        "dataProvider": {
+          "type": "string",
+          "description": "Property. Entity providing the data."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Record creation date and time in ISO 8601 format."
+        },
+        "dateLastInspection": {
+          "$ref": "#/$defs/dateOrDateTime",
+          "description": "Property. Date of the latest technical inspection or assessment."
+        },
+        "dateLastRenovation": {
+          "$ref": "#/$defs/dateOrDateTime",
+          "description": "Property. Date of the latest renovation or relevant intervention."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest record modification in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the public equipment."
+        },
+        "hasPart": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/uri"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. PublicEquipment entities that are integral parts of this equipment."
+        },
+        "identifiers": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Additional identifiers assigned by internal or external systems."
+        },
+        "image": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/uri"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URLs of representative images of the public equipment."
+        },
+        "isPartOf": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to a broader PublicEquipment entity of which this equipment is part."
+        },
+        "legalBasis": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Legal act, regulation or URL associated with the public equipment."
+        },
+        "managedBy": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Entity responsible for administrative management."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Official or commonly used name of the public equipment."
+        },
+        "openingDate": {
+          "$ref": "#/$defs/dateOrDateTime",
+          "description": "Property. Official opening or inauguration date. Model:'https://schema.org/DateTime'."
+        },
+        "openingHours": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Opening hours of the public equipment. Model:'https://schema.org/openingHours'."
+        },
+        "operator": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Entity responsible for operating the public equipment."
+        },
+        
+        "publicAccess": {
+          "type": "boolean",
+          "description": "Property. Whether the equipment is accessible to the general public."
+        },
+        "refBuilding": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to an associated BuildingRegistration entity."
+        },
+        "refPointOfInterest": {
+          "$ref": "#/$defs/uri",
+          "description": "Relationship. Reference to an associated PointOfInterest entity."
+        },
+        "seeAlso": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/uri"},
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URIs of additional resources about the public equipment. Model:'https://schema.org/URL'."
+        },
+        "serviceStatus": {
+          "type": "string",
+          "enum": ["inService", "outOfService", "underMaintenance", "needsMaintenance", "planned", "closed"],
+          "description": "Property. Current service or operational status of the public equipment."
+        },
+        "source": {
+          "$ref": "#/$defs/uri",
+          "description": "Property. Original source of the public equipment data."
+        },
+        "startServingDate": {
+          "$ref": "#/$defs/dateOrDateTime",
+          "description": "Property. Date from which the equipment effectively began serving the public. Model:'https://schema.org/DateTime'."
+        },
+        "yearBuilt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Year in which the equipment was built. Model:'https://schema.org/Integer'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "category",
+    "condition",
+    "location",
+    "name",
+    "owner",
+    "serviceStatus"
+  ]
+}

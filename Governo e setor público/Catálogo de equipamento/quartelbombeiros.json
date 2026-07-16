@@ -40,7 +40,7 @@
         "coordinateSystem": "EPSG:4326"
     },
     "operator"          : {"type": "Relationship", "object": "urn:cml:Organization:MunicipioLisboa"},
-    "owner"             : {"type": "Relationship", "object": "urn:cml:Organization:MunicipioLisboa"},
+    "owner"             : {"type": "Relationship", "object": ["urn:cml:Organization:MunicipioLisboa"]},
     "publicAccess"      : {"type": "Property", "value": false},
     "refPointOfInterest": {
         "type"  : "Relationship",

@@ -39,7 +39,7 @@
         "type" : "Property",
         "value": ["Fabrico de máquinas para a indústria extrativa e construção"]
     },
-    "activityCAE": { "type": "Property", "value": [28920] },
+    "activityCAE": { "type": "Property", "value": ["28920"] },
     "lotArea": {"type": "Property", "value": 34500, "unitCode": "MTK"},
     "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
 }
