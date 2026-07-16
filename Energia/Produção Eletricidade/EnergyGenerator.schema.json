@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Energy/EnergyGenerator/schema.json",
+  "title": "EnergyGenerator schema",
+  "description": "An energy generator, including its generation technology, installed capacity, grid connection and operational information.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the generator location. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "EnergyGenerator",
+          "description": "Property. NGSI entity type. It has to be EnergyGenerator."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Human-readable name of the energy generator. Model:'https://schema.org/Text'."
+        },
+        "generatorType": {
+          "type": "string",
+          "enum": [
+            "biogas",
+            "biomass",
+            "coal",
+            "dieselGenerator",
+            "fuelOil",
+            "gasTurbine",
+            "geothermal",
+            "hybrid",
+            "hydro",
+            "nuclear",
+            "photovoltaic",
+            "smallHydro",
+            "solarThermal",
+            "tidal",
+            "wave",
+            "windTurbine"
+          ],
+          "description": "Property. Energy generation technology. Model:'https://schema.org/Text'."
+        },
+        "aggregationLevel": {
+          "type": "string",
+          "enum": [
+            "device",
+            "unit",
+            "site",
+            "building",
+            "campus",
+            "district",
+            "city",
+            "region",
+            "gridConnection",
+            "substation",
+            "marketUnit"
+          ],
+          "description": "Property. Physical or logical aggregation level represented by the entity. Model:'https://schema.org/Text'."
+        },
+        "installedCapacity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Nominal installed capacity of the generator, normally expressed in kilowatts. Model:'https://schema.org/Number'."
+        },
+        "connectionType": {
+          "type": "string",
+          "enum": [
+            "offGrid",
+            "gridTied",
+            "hybrid",
+            "islanded",
+            "microgridConnected",
+            "backupOnly"
+          ],
+          "description": "Property. Type of electrical connection to the grid. Model:'https://schema.org/Text'."
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Identifiers of the generator owners. Model:'https://schema.org/Text'."
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Property. Manufacturer of the main generation equipment."
+        },
+        "model": {
+          "type": "string",
+          "description": "Property. Commercial model of the generator."
+        },
+        "serialNumber": {
+          "type": "string",
+          "description": "Property. Equipment serial number."
+        },
+        "commissioningDate": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "Property. Date on which the generator entered service, in ISO 8601 format. Model:'https://schema.org/Date'."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "operational",
+            "maintenance",
+            "fault",
+            "decommissioned"
+          ],
+          "description": "Property. Current operational status of the generator."
+        },
+        "refDevice": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to a physical device such as an inverter or controller."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Additional description of the generator."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "location",
+    "generatorType",
+    "connectionType",
+    "installedCapacity"
+  ]
+}

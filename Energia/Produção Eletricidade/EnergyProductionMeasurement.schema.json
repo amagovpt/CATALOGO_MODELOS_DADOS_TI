@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Energy/EnergyProductionMeasurement/schema.json",
+  "title": "EnergyProductionMeasurement schema",
+  "description": "Energy production measurements for an energy generator over a time interval and at an observation instant.",
+  "type": "object",
+  "$defs": {
+    "nonNegativeMeasurement": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "object",
+          "properties": {
+            "L1": {"type": "number", "minimum": 0},
+            "L2": {"type": "number", "minimum": 0},
+            "L3": {"type": "number", "minimum": 0},
+            "N": {"type": "number", "minimum": 0}
+          },
+          "minProperties": 1,
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "EnergyProductionMeasurement",
+          "description": "Property. NGSI entity type. It has to be EnergyProductionMeasurement."
+        },
+        "refGenerator": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the energy generator to which the measurement applies."
+        },
+        "dateObservedFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Start of the energy measurement interval in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateObservedTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the energy measurement interval in ISO 8601 format. It must be later than dateObservedFrom. Model:'https://schema.org/DateTime'."
+        },
+        "dataProvider": {
+          "type": "string",
+          "description": "Property. Identifier of the data provider. Model:'https://schema.org/Text'."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Entity creation date and time in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest entity modification in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateObserved": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Observation instant for instantaneous quantities in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "energyGenerated": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total active energy generated during the measurement interval, normally expressed in kilowatt-hours. Model:'https://schema.org/Number'."
+        },
+        "activeEnergyExport": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Active energy exported to the grid during the measurement interval, normally expressed in kilowatt-hours. Model:'https://schema.org/Number'."
+        },
+        "reactiveEnergyExport": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Reactive energy exported to the grid during the measurement interval, normally expressed in kilovolt-ampere reactive hours. Model:'https://schema.org/Number'."
+        },
+        "apparentEnergyExport": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Apparent energy exported to the grid during the measurement interval, normally expressed in kilovolt-ampere hours. Model:'https://schema.org/Number'."
+        },
+        "activePower": {
+          "$ref": "#/$defs/nonNegativeMeasurement",
+          "description": "Property. Instantaneous active power, as a total or values per phase, normally expressed in kilowatts. Model:'https://schema.org/Number'."
+        },
+        "reactivePower": {
+          "$ref": "#/$defs/nonNegativeMeasurement",
+          "description": "Property. Instantaneous reactive power, as a total or values per phase, normally expressed in kilovolt-amperes reactive. Model:'https://schema.org/Number'."
+        },
+        "apparentPower": {
+          "$ref": "#/$defs/nonNegativeMeasurement",
+          "description": "Property. Instantaneous apparent power, as a total or values per phase, normally expressed in kilovolt-amperes. Model:'https://schema.org/Number'."
+        },
+        "voltage": {
+          "$ref": "#/$defs/nonNegativeMeasurement",
+          "description": "Property. Voltage, as a total or values per phase, normally expressed in volts. Model:'https://schema.org/Number'."
+        },
+        "current": {
+          "$ref": "#/$defs/nonNegativeMeasurement",
+          "description": "Property. Current, as a total or values per phase, normally expressed in amperes. Model:'https://schema.org/Number'."
+        },
+        "frequency": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Grid frequency at the observation instant, normally expressed in hertz. Model:'https://schema.org/Number'."
+        },
+        "powerFactor": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Property. Power factor at the observation instant. Model:'https://schema.org/Number'."
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of the original data source. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "dateObservedFrom",
+    "dateObservedTo",
+    "energyGenerated",
+    "activeEnergyExport"
+  ]
+}

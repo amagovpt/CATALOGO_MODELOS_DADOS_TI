@@ -68,7 +68,6 @@ Os atributos obrigatórios para o modelo `EnergyGenerator` são:
 - `id`
 - `type`
 - `address`
-- `dateObserved`
 - `location`
 - `generatorType`
 - `connectionType`

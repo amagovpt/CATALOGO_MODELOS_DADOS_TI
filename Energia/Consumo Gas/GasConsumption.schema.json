@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Energy/GasConsumption/schema.json",
+  "title": "GasConsumption schema",
+  "description": "Gas consumption measurements, including meter readings, operating conditions, energy content and gas quality.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the measurement location. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "GasConsumption",
+          "description": "Property. NGSI entity type. It has to be GasConsumption."
+        },
+        "alarmStatus": {
+          "type": "string",
+          "enum": ["normal", "warning", "critical"],
+          "description": "Property. Current alarm status. Model:'https://schema.org/Text'."
+        },
+        "alternateName": {
+          "type": "string",
+          "description": "Property. Alternate name for the measurement area. Model:'https://schema.org/Text'."
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area where the service is provided. Model:'https://schema.org/Text'."
+        },
+        "calorificValue": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Calorific value of the gas, normally expressed in megajoules per cubic metre. Model:'https://schema.org/Number'."
+        },
+        "conversionFactor": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Factor used to convert working volume to standard conditions. Model:'https://schema.org/Number'."
+        },
+        "correctedVolume": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas volume corrected to standard conditions. Model:'https://schema.org/Number'."
+        },
+        "dailyConsumption": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas consumption for the current day. Model:'https://schema.org/Number'."
+        },
+        "dataProvider": {
+          "type": "string",
+          "description": "Property. Identifier of the data provider. Model:'https://schema.org/Text'."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Entity creation date and time in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateEnergyMeteringStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time at which energy metering started, in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest entity modification in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dateObserved": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the observation in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description. Model:'https://schema.org/Text'."
+        },
+        "energyContent": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total energy contained in the measured gas volume, normally expressed in megajoules. Model:'https://schema.org/Number'."
+        },
+        "gasQuality": {
+          "type": "object",
+          "description": "Property. Gas composition percentages by volume. Model:'https://schema.org/StructuredValue'.",
+          "properties": {
+            "methaneContent": {"type": "number", "minimum": 0, "maximum": 100},
+            "nitrogenContent": {"type": "number", "minimum": 0, "maximum": 100},
+            "carbonDioxideContent": {"type": "number", "minimum": 0, "maximum": 100},
+            "hydrogenSulfideContent": {"type": "number", "minimum": 0, "maximum": 100}
+          },
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "gasType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Type of gas being measured, such as natural gas, LPG or biogas. Model:'https://schema.org/Text'."
+        },
+        "lastMaintenanceDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the latest meter maintenance in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "meterStatus": {
+          "type": "string",
+          "enum": ["operational", "maintenance", "error", "offline"],
+          "description": "Property. Current operational status of the gas meter. Model:'https://schema.org/Text'."
+        },
+        "meterType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Type of gas meter, such as mechanical, electronic or smart meter. Model:'https://schema.org/Text'."
+        },
+        "monthlyConsumption": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas consumption for the current month. Model:'https://schema.org/Number'."
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the object. Model:'https://schema.org/Text'."
+        },
+        "nextCalibrationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Next scheduled meter calibration date in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "pressure": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas pressure at the measurement point, normally expressed in millibars. Model:'https://schema.org/Number'."
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Property. Gas temperature at the measurement point, normally expressed in degrees Celsius. Model:'https://schema.org/Number'."
+        },
+        "totalConsumption": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total accumulated gas consumption since meter installation. Model:'https://schema.org/Number'."
+        },
+        "uncorrectedVolume": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas volume at working conditions. Model:'https://schema.org/Number'."
+        },
+        "volumeFlowRate": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Current volumetric gas flow rate. Model:'https://schema.org/Number'."
+        },
+        "yearlyConsumption": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Gas consumption for the current year. Model:'https://schema.org/Number'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateObserved",
+    "location",
+    "gasType"
+  ]
+}
