@@ -9,6 +9,7 @@
       "postalCode"     : "1150–294 ",
       "addressRegion"  : "Grande Lisboa",
       "addressLocality": "Lisboa",
+      "district"       : "Lisboa",
       "streetAddress"  : "Rua de Santa Marta",
       "streetNr"       : "55E"
     }
@@ -18,12 +19,12 @@
   "cadastreNumber": {"type": "Property", "value": "456"},
   "workNumber": {"type": "Property", "value": "12234B"},
   "dateModified": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
-  "yearOfConstruction": {"type": "Property", "value": "2005"},
+  "yearOfConstruction": {"type": "Property", "value": 2005},
   "description": {"type": "Property", "value": "Four level building"},
-  "ownershipType": {"type": "Property", "value": "estado"},
+  "ownershipType": {"type": "Property", "value": "estatal"},
   "totalFractions": {"type": "Property", "value": 4},
   "propertyNature": {"type": "Property", "value": "urbano"},
-  "use": {"type": "Property", "value": "other"},
+  "use": {"type": "Property", "value": "outros"},
   "location": {
     "type"            : "GeoProperty",
     "value"           : { "coordinates": [-9.1466638743362, 38.72518414358991], "type": "Point" },

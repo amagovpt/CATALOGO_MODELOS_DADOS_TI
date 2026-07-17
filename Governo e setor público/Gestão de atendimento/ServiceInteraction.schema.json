@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/ServiceInteraction.schema.json",
+  "title": "CNMD - ServiceInteraction schema",
+  "description": "Schema for an interaction in which a service is provided to a customer.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ServiceInteraction",
+          "description": "Property. NGSI entity type. It must be ServiceInteraction."
+        },
+        "bookingDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the service interaction was booked, in ISO 8601 format."
+        },
+        "bookingChannel": {
+          "type": "string",
+          "enum": [
+            "app",
+            "Web",
+            "in-person",
+            "telephone"
+          ],
+          "description": "Property. Channel through which the service interaction was booked."
+        },
+        "bookingStatus": {
+          "type": "string",
+          "enum": [
+            "confirmed",
+            "cancelled",
+            "rescheduled"
+          ],
+          "description": "Property. Current status of the booking."
+        },
+        "competencyProfile": {
+          "type": "string",
+          "description": "Property. Competency profile of the person who provided the service."
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the service interaction started, in ISO 8601 format."
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the service interaction finished, in ISO 8601 format."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was created, in ISO 8601 format."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the service interaction."
+        },
+        "interactionType": {
+          "type": "string",
+          "enum": [
+            "inPerson",
+            "videoconference",
+            "telephone",
+            "webChat",
+            "e-mail"
+          ],
+          "description": "Property. Type of service interaction."
+        },
+        "intakeChannel": {
+          "type": "string",
+          "description": "Property. Channel through which the service request was received."
+        },
+        "providingEntity": {
+          "type": "string",
+          "description": "Property. Name or URI of the entity that provides the service."
+        },
+        "serviceStatus": {
+          "type": "string",
+          "enum": [
+            "on hold",
+            "in progress",
+            "completed",
+            "cancelled"
+          ],
+          "description": "Property. Current status of the service interaction."
+        },
+        "serviceName": {
+          "type": "string",
+          "description": "Property. Name of the service in which the interaction took place."
+        },
+        "rating": {
+          "type": "integer",
+          "description": "Property. Rating assigned to the service interaction."
+        },
+        "refCustomerServiceUnit": {
+          "type": "string",
+          "description": "Relationship. Identifier of the point of interest where the service is provided."
+        },
+        "refRelatedInteractions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Relationship. References to other interactions related to the same matter."
+        },
+        "ticketNumber": {
+          "type": "string",
+          "description": "Property. Service queue ticket number."
+        },
+        "ticketDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the service queue ticket was issued, in ISO 8601 format."
+        },
+        "ticketType": {
+          "type": "string",
+          "enum": [
+            "normal",
+            "priority",
+            "scheduled"
+          ],
+          "description": "Property. Type of service queue ticket."
+        },
+        "ticketStatus": {
+          "type": "string",
+          "enum": [
+            "issued",
+            "called",
+            "answered",
+            "expired"
+          ],
+          "description": "Property. Current status of the service queue ticket."
+        },
+        "typeOfService": {
+          "type": "string",
+          "description": "Property. Objective or kind of service to be provided during the interaction."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "dateStarted",
+    "dateFinished",
+    "serviceName",
+    "typeOfService",
+    "serviceStatus"
+  ]
+}

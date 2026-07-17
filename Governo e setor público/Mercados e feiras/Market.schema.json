@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Market.schema.json",
+  "title": "CNMD - Market schema",
+  "description": "Schema for markets and fairs.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the market or fair.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. Country in which the market or fair is located."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. Locality, which must correspond to the municipality."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code of the address."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address of the market or fair."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number of the market or fair."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "Market",
+          "description": "Property. NGSI entity type. It must be Market."
+        },
+        "accessibility": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "wheelchairAccessible",
+              "audioDescription",
+              "signLanguageInterpreter"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Accessibility resources available at the market or fair."
+        },
+        "buildingId": {
+          "type": "string",
+          "description": "Property. Unique identifier of the building where the market or fair takes place."
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "market",
+            "fair"
+          ],
+          "description": "Property. Category of the market."
+        },
+        "contactPoint": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Contact-Commons/properties/contactPoint",
+          "description": "Property. Contact details for the market or fair."
+        },
+        "capacity": {
+          "type": "number",
+          "description": "Property. Total number of stalls that can be allocated."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format."
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the market or fair finished, in ISO 8601 format."
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the market or fair started, in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the market or fair."
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the market or fair."
+        },
+        "managementEntity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Identifiers or names of the market owners or management entities."
+        },
+        "occupancy": {
+          "type": "number",
+          "description": "Property. Maximum number of people allowed in the space."
+        },
+        "openingHours": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Opening hours in the form DayOfWeek-DayOfWeek HH:MM-HH:MM, with optional additional time periods."
+        },
+        "promotingEntity": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Identifiers or names of the market promoters."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "inactive",
+            "suspended"
+          ],
+          "description": "Property. Current status of the market."
+        },
+        "supportingFacilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Identifiers or names of supporting facilities available at the market."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "category",
+    "name",
+    "description",
+    "address",
+    "location"
+  ]
+}

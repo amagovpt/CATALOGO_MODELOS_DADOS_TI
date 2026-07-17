@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/UrbanPlanningProcess.schema.json",
+  "title": "CNMD - UrbanPlanningProcess schema",
+  "description": "Schema for an urban planning and licensing process.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "UrbanPlanningProcess",
+          "description": "Property. NGSI entity type. It must be UrbanPlanningProcess."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was created, in ISO 8601 format."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format."
+        },
+        "interventionType": {
+          "type": "string",
+          "enum": [
+            "alteração",
+            "ampliação",
+            "conservação",
+            "construção",
+            "demolição",
+            "reconstrução"
+          ],
+          "description": "Property. Type of intervention for which licensing is requested."
+        },
+        "lastDecisionAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest decision on the process, in ISO 8601 format."
+        },
+        "licenseNumber": {
+          "type": "string",
+          "description": "Property. Construction or works permit number."
+        },
+        "proceedingDecision": {
+          "type": "string",
+          "enum": [
+            "aceitação",
+            "aprovação",
+            "deferimento",
+            "deferimento_tácito",
+            "extinção",
+            "homologação_desfavorável",
+            "homologação_favorável",
+            "indeferimento",
+            "rejeição",
+            "rejeição_liminar"
+          ],
+          "description": "Property. Current decision on the urban planning process."
+        },
+        "processNumber": {
+          "type": "string",
+          "description": "Property. Identifier of the urban planning process."
+        },
+        "procedureType": {
+          "type": "string",
+          "enum": [
+            "comunicação_prévia_com_prazo",
+            "insenção_de_controlo_prévio",
+            "legalização",
+            "licenciamento",
+            "pedido_de_informação_prévia",
+            "outros_pedidos"
+          ],
+          "description": "Property. Type of licensing procedure."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "instruction",
+            "instrução",
+            "análise",
+            "pendente",
+            "em_decisão",
+            "despachado",
+            "concluído",
+            "arquivado"
+          ],
+          "description": "Property. Current status of the urban planning process."
+        },
+        "refBuilding": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. URN of the BuildingRegistration entity concerned by the process."
+        },
+        "refFraction": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. URN of the UnitRegistration entity concerned by the process; omitted for a whole-building process."
+        },
+        "submittedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the process was submitted, in ISO 8601 format."
+        },
+        "urbanOperationType": {
+          "type": "string",
+          "enum": [
+            "demolição",
+            "loteamento",
+            "obras_edificação",
+            "obras_urbanização",
+            "trabalhos_remodelação_terrenos",
+            "outras_operações_urbanísticas"
+          ],
+          "description": "Property. Type of urban planning operation."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "comunicação_prévia_com_prazo"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "aceitação",
+                  "extinção",
+                  "rejeição",
+                  "rejeição_liminar"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "insenção_de_controlo_prévio"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "not": {
+              "required": [
+                "proceedingDecision"
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "enum": [
+                  "legalização",
+                  "licenciamento"
+                ]
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "aprovação",
+                  "deferimento",
+                  "deferimento_tácito",
+                  "extinção",
+                  "indeferimento",
+                  "rejeição_liminar"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "pedido_de_informação_prévia"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "deferimento_tácito",
+                  "extinção",
+                  "homologação_desfavorável",
+                  "homologação_favorável",
+                  "rejeição_liminar"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "outros_pedidos"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "deferimento_tácito",
+                  "extinção",
+                  "rejeição_liminar"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "refBuilding",
+    "interventionType",
+    "processNumber",
+    "procedureType",
+    "urbanOperationType",
+    "status"
+  ]
+}

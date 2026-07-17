@@ -8,7 +8,7 @@
   "interactionType": {"type": "Property", "value": "inPerson"},
   "intakeChannel": {"type": "Property", "value": "counter"},
   "serviceStatus": {"type": "Property", "value": "completed"},
-  "rating": {"type": "Property", "value": 4.5},
+  "rating": {"type": "Property", "value": 4},
   "serviceName": {"type": "Property", "value": "Segurança Social Direta"},
   "typeOfService": {
     "type" : "Property",
@@ -35,11 +35,11 @@
     "object": ["urn:arte:ServiceInteraction:lx25357"]
   },
   "bookingDate": {"type": "Property", "value": "2025-09-23T10:00:00Z"},
-  "bookingChannel": {"type": "Property", "value": "online"},
-  "bookingStatus": {"type": "Property", "value": "fulfilled"},
+  "bookingChannel": {"type": "Property", "value": "Web"},
+  "bookingStatus": {"type": "Property", "value": "confirmed"},
   "ticketNumber": {"type": "Property", "value": "A-0321"},
   "ticketDate": {"type": "Property", "value": "2025-09-24T9:30:00Z"},
   "ticketType": {"type": "Property", "value": "priority"},
-  "ticketStatus": {"type": "Property", "value": "closed"},
+  "ticketStatus": {"type": "Property", "value": "issued"},
   "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
 }

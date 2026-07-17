@@ -11,7 +11,7 @@
         "value"           : { "coordinates": [-8.607153057237866, 41.149355266425005], "type": "Point" },
         "coordinateSystem": "EPSG:4326"
     },
-    "category": { "type": "Property", "value": ["mercado"] },
+    "category": { "type": "Property", "value": "market" },
     "address": {
         "type" : "Property",
         "value": {
@@ -40,7 +40,6 @@
     "refPOI": {"type": "Property", "value": "urn:cmp:PointOfInterest:Bolhao"},
     "recurrence": {"type": "Property", "value": "weekly"},
     "dateStarted": {"type": "Property", "value": "2000-01-01T07:30:00Z"},
-    "dateFinished": {"type": "Property", "value": null},
     "openingHours": {"type": "Property", "value": "Mo-Su 09:00-17:00"},
     "accessibility": { "type": "Property", "value": ["wheelchairAccessible"] },
     "managementEntity": { "type": "Property", "value": ["CMPorto"] },

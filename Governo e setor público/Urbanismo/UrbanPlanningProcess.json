@@ -10,13 +10,13 @@
     "type"  : "Relationship",
     "object": "urn:rnc:HousingUnit:8dd5236d38b3"
   },
-  "interventionType": {"type": "Property", "value": "expansão"},
+  "interventionType": {"type": "Property", "value": "ampliação"},
   "submittedAt": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
   "dateModified": {"type": "Property", "value": "2025-10-09T11:00:00Z"},
   "status": {"type": "Property", "value": "despachado"},
   "proceedingDecision": {"type": "Property", "value": "homologação_favorável"},
   "lastDecisionAt": {"type": "Property", "value": "2025-10-08T11:00:00Z"},
-  "procedureType": {"type": "Property", "value": "licenciamento"},
+  "procedureType": {"type": "Property", "value": "pedido_de_informação_prévia"},
   "urbanOperationType": {
     "type" : "Property",
     "value": "outras_operações_urbanísticas"

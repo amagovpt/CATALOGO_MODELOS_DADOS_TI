@@ -42,7 +42,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 | type | String | Tipo de entidade | Valor constante igual a `BuildingRegistration`    |
 | buildingId | String | O identificador do edifício| Idenficador único dentro do sistema fonte, e.g. CODSIG existentes em vários sistemas cartográficos de municípios. Modelo: [https://schema.org/Text](https://schema.org/Text).|
 | buildingNumber | String | O identificador do edifico no registo predial.| Modelo: [https://schema.org/Text](https://schema.org/Text).|
-| address    | Object          | Morada associada ao local | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address | Object | Morada associada ao local | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
 | address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
 | address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
@@ -56,7 +56,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados 
 | description   | String   | Descrição textual | Descrição adicional da fração. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | location | GeoJSON |Localização a que reportam os valores |  Valores possíveis: 'Point',  'Polygon'.  |
 | workNumber   | String   | Identificador do volume de obra do edifício | Modelo: [https://schema.org/Text](https://schema.org/Text) |
-| occupation   | String   | Situação da fração | Enumerado: <br>- occupied,<br>- partially_occupied, <br>- vacant. Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| occupation   | String   | Situação da fração | Enumerado: <br>- ocupado,<br>- parcialmente_ocupado, <br>- livre. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | ownershipType   | String   | Tipo de propriedade | Enumerado:<br> - municipal,<br> - privado,<br> - estatal,<br> - principalmente_municipal,<br> - principalmente_privado,<br> - outro. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | propertyNature       | String    | Natureza do edifício | Enumerado:<br>- rustico, <br>- urbano, <br>- misto. Modelo: [https://schema.org/Text](https://schema.org/Text)    |
 | stateOfPreservation       | String    | Estado de conservação do edifício | Enumerado:<br>- excelente, <br>- bom, <br>- suficiente, <br>- mau, <br>- medíocre. Modelo: [https://schema.org/Text](https://schema.org/Text)    |

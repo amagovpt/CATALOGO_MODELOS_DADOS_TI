@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/ParticipatoryBudget.schema.json",
+  "title": "CNMD - ParticipatoryBudget schema",
+  "description": "Schema for a proposal submitted to a participatory budget.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the proposal.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. Country in which the proposal is located."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. Locality, which must correspond to the municipality."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code of the address."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address associated with the proposal."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number associated with the proposal."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ParticipatoryBudget",
+          "description": "Property. NGSI entity type. It must be ParticipatoryBudget."
+        },
+        "applicant": {
+          "type": "string",
+          "description": "Property. Name of the proposal applicant."
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Environment",
+              "Animal Welfare",
+              "Culture and Heritage",
+              "Sport",
+              "Social Rights",
+              "Economy and Innovation",
+              "Education",
+              "Waste Management",
+              "Infrastructure",
+              "Mobility and Transport",
+              "Participation and Citizenship",
+              "Safety and Prevention"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Categories assigned to the proposal."
+        },
+        "dataProvider": {
+          "type": "string",
+          "description": "Property. Identifier of the entity data provider."
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was created, in ISO 8601 format."
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the proposal intervention finished, in ISO 8601 format."
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format."
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the proposal intervention started, in ISO 8601 format."
+        },
+        "dateSubmission": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the proposal was submitted, in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the proposal."
+        },
+        "edition": {
+          "type": "string",
+          "description": "Property. Short identifier of the participatory budget edition, such as OP2025."
+        },
+        "estimatedBudget": {
+          "type": "number",
+          "description": "Property. Estimated financial investment associated with the proposal, normally expressed in euros."
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the proposal."
+        },
+        "owner": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Unique identifiers of the proposal owners."
+        },
+        "seeAlso": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URIs pointing to additional resources about the proposal."
+        },
+        "source": {
+          "type": "string",
+          "description": "Property. URL identifying the original source of the entity data."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Planned",
+            "Scheduled",
+            "InProgress",
+            "Completed",
+            "Cancelled",
+            "Under analysis"
+          ],
+          "description": "Property. Current status of the proposal."
+        },
+        "votes": {
+          "type": "number",
+          "description": "Property. Number of votes received by the proposal."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "edition",
+    "name",
+    "description",
+    "estimatedBudget"
+  ]
+}

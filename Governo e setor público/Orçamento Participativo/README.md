@@ -1,7 +1,7 @@
 # Descrição
 
 O modelo de dados a seguir para representar **Orçamento participativo**
-é o `ParticipatoryBudget` inspirado do [FIWARE Smart Data Models](https://github.com/smart-data-models/).
+é o `ParticipatoryBudget` inspirado no [FIWARE Smart Data Models](https://github.com/smart-data-models/).
 Este modelo utiliza o formato NGSI-LD, sendo compatível com [ETSI GS CIM 009 V1.5.1, Context Information Management (CIM) - NGSI-LD API](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.05.01_60/gs_cim009v010501p.pdf), da [ETSI](https://www.etsi.org/).
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
