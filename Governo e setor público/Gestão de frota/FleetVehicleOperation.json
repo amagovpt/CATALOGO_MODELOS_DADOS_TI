@@ -10,7 +10,7 @@
         "value": {
             "type"            : "Point",
             "coordinates"     : [-8.406659765446863, 41.55241654243334],
-            "coordinateSystem": "EPSG:3763"
+            "coordinateSystem": "EPSG:4258"
         }
     },
     "operationType"     : {"type": "Property", "value": "Patient transportation"},

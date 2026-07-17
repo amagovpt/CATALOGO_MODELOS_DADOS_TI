@@ -25,7 +25,7 @@
           38.74418151525137
         ],
         "type": "Point"
-    }, "coordinateSystem": "EPSG:3763"
+    }, "coordinateSystem": "EPSG:4258"
   },
   "name": {
     "type": "Property",

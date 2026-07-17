@@ -41,7 +41,7 @@
             ],
             "type"       : "Polygon"
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "areaServed": { "type": "Property", "value": ["Sines"] },
     "managedBy": {"type": "Property", "value": "CM-Sines"},

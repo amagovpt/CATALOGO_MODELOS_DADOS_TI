@@ -4,7 +4,7 @@
     "dataProvider": {"type": "Property", "value": "EPAL"},
     "location": {
         "type" : "GeoProperty",
-        "value": { "type": "Point", "coordinates": [-8.6114406, 41.1472720], "coordinateSystem": "EPSG:3763" }
+        "value": { "type": "Point", "coordinates": [-8.6114406, 41.1472720], "coordinateSystem": "EPSG:4258" }
     },
     "address": {
         "type" : "Property",

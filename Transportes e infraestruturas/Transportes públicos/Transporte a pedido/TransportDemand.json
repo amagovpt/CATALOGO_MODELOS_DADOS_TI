@@ -26,7 +26,7 @@
             "coordinates": [-8.035070047861666, 39.48083175465848],
             "type": "Point"
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "destinationLocation": {
         "type": "GeoProperty",
@@ -34,7 +34,7 @@
             "coordinates": [-7.995390012208077, 39.55542070676748],
             "type": "Point"
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "location": {
         "type": "GeoProperty",
@@ -54,7 +54,7 @@
                 [-7.995390012208077, 39.55542070676748 ]
             ]
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "seeAlso": {
         "type": "Property",

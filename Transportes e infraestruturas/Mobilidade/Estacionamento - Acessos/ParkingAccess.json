@@ -6,7 +6,7 @@
   "location": {
     "type"            : "geo:json",
     "value"           : { "type": "Point", "coordinates": [-8.60961198807, 41.150691773] },
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "name": {"type": "Property", "value": "Trinidade main entrance"},
   "refOffStreetParking": {"type": "Property", "value": "urn:cmporto:OffStreetParking:porto-OffStreetParking-23889"}

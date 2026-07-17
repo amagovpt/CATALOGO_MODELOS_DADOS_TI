@@ -22,7 +22,7 @@
     "location"    : {
         "type"            : "GeoProperty",
         "value"           : { "coordinates": [-9.127237954579527, 38.7242000878168], "type": "Point" },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "boundingBox" : {
         "type"            : "GeoProperty",
@@ -38,7 +38,7 @@
             ],
             "type"       : "Polygon"
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "createdAt"   : {"type": "Property", "value": "2025-09-01T10:00:00Z"},
     "modifiedAt"  : {"type": "Property", "value": "2025-09-01T10:00:00Z"},

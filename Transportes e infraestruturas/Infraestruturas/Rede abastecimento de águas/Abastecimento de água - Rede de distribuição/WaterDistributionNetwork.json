@@ -31,7 +31,7 @@
                 ]
             ]
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "networkType": { "type": "Property", "value": ["potableWater", "irrigation", "industrialWater"] },
     "serviceCategory": { "type": "Property", "value": ["residential", "commercial"] },

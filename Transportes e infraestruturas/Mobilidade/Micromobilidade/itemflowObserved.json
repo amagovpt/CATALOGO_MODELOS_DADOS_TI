@@ -19,7 +19,7 @@
             "type": "Point",
             "coordinates": [-9.125968356583655, 38.745037093748806]
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "itemType": {"type": "Property", "value": "bicycle"},
     "itemSubType": {"type": "Property", "value": "cyclist"},

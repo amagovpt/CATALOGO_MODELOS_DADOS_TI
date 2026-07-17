@@ -15,7 +15,7 @@
     "type"            : "GeoProperty",
     "value"           : { "type": "Point", "coordinates": [-9.149012, 38.748566] },
     "altitude"        : {"type": "Property", "value": 86, "unitCode": "MTR"},
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "airQualityIndex": {"type": "Property", "value": 8},
   "airQualityLevel": {"type": "Property", "value": "GOOD"},

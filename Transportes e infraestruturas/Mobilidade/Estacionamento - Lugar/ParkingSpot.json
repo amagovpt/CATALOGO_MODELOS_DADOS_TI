@@ -9,7 +9,7 @@
   "location"      : {
     "type"            : "GeoProperty",
     "value"           : { "type": "Point", "coordinates": [-9.422483, 38.699607] },
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "@context"      : [
     "https://smartdatamodels.org/context.jsonld",

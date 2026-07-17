@@ -26,7 +26,7 @@
         ]
       ]
     },
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "address": { "type": "Property", "value": {"addressCountry": "PT", "addressRegion": "Lisboa"} },
   "areaServed": {"type": "Property", "value": "Cidade de Lisboa"},

@@ -24,7 +24,7 @@
     "location": {
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"} },
     "refWasteContainerIsle": {"type": "Relationship", "object": "urn:cml:WasteContainerIsle:15"},

@@ -124,7 +124,7 @@
                 "coordinateSystem": {
                   "type": "string",
                   "pattern": "^EPSG:[0-9]+$",
-                  "description": "Property. EPSG coordinate reference system code, for example EPSG:3763."
+                  "description": "Property. EPSG coordinate reference system code, for example EPSG:4258."
                 }
               }
             }

@@ -97,7 +97,7 @@ A disponibilização de dados geográficos estruturados é uma questão distinta
 Nesse contexto, a representação dos dados geográficos depende do modelo adotado:
 
 * Nos **Smart Data Models FIWARE**, em formato **NGSI-LD** (utilizados na maioria dos modelos deste repositório), os campos de localização são representados como `GeoProperty`, contendo geometrias em formato **GeoJSON** (por exemplo, `Point`, `Polygon`, `LineString`). Este é o caso da generalidade dos modelos, como `ParkingAccess`, `OffStreetParking`, `WaterNetworkMonitoring`, entre outros;
-* Alguns modelos podem ainda referenciar sistemas de coordenadas específicos (por exemplo, `EPSG:3763`, utilizado na Carta Administrativa de Portugal).
+* Alguns modelos podem ainda referenciar sistemas de coordenadas específicos (por exemplo, `EPSG:4258`, utilizado na Carta Administrativa de Portugal).
 
 Em qualquer dos casos, o formato subjacente para a representação da informação geográfica é o **GeoJSON**, podendo variar o tipo de geometria conforme o modelo.
 

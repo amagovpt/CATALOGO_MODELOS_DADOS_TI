@@ -6,7 +6,7 @@
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-9.12749444, 38.76620278] },
         "altitude"        : {"type": "Property", "value": 104, "unitCode": "MTR"},
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "name"        : {"type": "Property", "value": "Lisboa - Gago Coutinho"},
     "dataProvider": {"type": "Property", "value": "www.ipma.pt"},

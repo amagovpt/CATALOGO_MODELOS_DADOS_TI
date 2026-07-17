@@ -22,7 +22,7 @@
                 [-9.127786923428232, 38.74631444536897 ]
             ]
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "address": {
         "type" : "Property",

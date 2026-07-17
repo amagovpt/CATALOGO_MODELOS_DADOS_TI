@@ -21,7 +21,7 @@
       "type"       : "LineString",
       "coordinates": [ [-9.234480, 38.746799], [-9.232828, 38.746883], [-9.231111, 38.742582], [-9.135189, 38.742481] ]
     },
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "address": {
     "type" : "Property",

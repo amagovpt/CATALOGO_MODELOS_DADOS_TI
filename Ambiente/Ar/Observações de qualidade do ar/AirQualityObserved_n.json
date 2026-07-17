@@ -9,7 +9,7 @@
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-9.149012, 38.748566] },
         "altitude"        : {"type": "Property", "value": 10, "unitCode": "MTR"},
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "pm25"              : {"type": "Property", "value": 7, "unitCode": "GQ"},
     "pm10"              : {"type": "Property", "value": 24, "unitCode": "GQ"},

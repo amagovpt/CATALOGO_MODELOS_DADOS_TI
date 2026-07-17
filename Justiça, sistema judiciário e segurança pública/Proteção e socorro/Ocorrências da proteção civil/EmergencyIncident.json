@@ -18,7 +18,7 @@
       ],
       "type"       : "Polygon"
     },
-    "coordinateSystem": "EPSG:3763"
+    "coordinateSystem": "EPSG:4258"
   },
   "reportedBy": {"type": "Property", "value": "Cidadão"},
   "dateCreated": {"type": "Property", "value": "2025-01-16T10:00:00Z"},

@@ -36,7 +36,7 @@ Os atributos obrigatórios são:
 
 ## Notas
 
-Para alguns dos campos é requerida metainformação. A compatibilidade com a especificação acima é garantida, mas possibilita uma melhor interpretação dos valores incluídos nos campos. Neste modelo, para a propriedade `location` é necessário adicionar como metainformação o campo `coordinateSystem`, tendo este valor um código [EPSG](https://epsg.org/crs_3763/ETRS89-Portugal-TM06.html), por exemplo `"coordinateSystem": "EPSG:3763"`.
+Para alguns dos campos é requerida metainformação. A compatibilidade com a especificação acima é garantida, mas possibilita uma melhor interpretação dos valores incluídos nos campos. Neste modelo, para a propriedade `location` é necessário adicionar como metainformação o campo `coordinateSystem`, tendo este valor um código [EPSG](https://epsg.org/crs_3763/ETRS89-Portugal-TM06.html), por exemplo `"coordinateSystem": "EPSG:4258"`.
 
 O campo `allowedVehicleType` deve ser preenchido com um conjunto de triplos no formato `"A, B, C"`, conforme definido em [DATEX II (Data Exchange for Traffic Information) version 2.3](https://docs.datex2.eu/v3.3/downloads/modelv23.html), onde cada elemento do triplo representa uma característica específica do veículo:
 

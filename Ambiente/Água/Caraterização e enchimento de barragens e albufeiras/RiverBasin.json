@@ -33,7 +33,7 @@
                 "type"       : "Polygon"
            
         },
-        "coordinateSystem": "EPSG:3763"
+        "coordinateSystem": "EPSG:4258"
     },
     "maxElevation": {"type": "Property", "value": 1580, "unitCode": "MTR"},
     "meanElevation": {"type": "Property", "value": 562, "unitCode": "MTR"},
