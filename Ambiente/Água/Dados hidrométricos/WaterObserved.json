@@ -11,8 +11,7 @@
         "type" : "GeoProperty",
         "value": {
             "type"            : "Point",
-            "coordinates"     : [-8.67016611976922, 41.147585551490664],
-            "coordinateSystem": "EPSG:4326"
+            "coordinates"     : [-8.67016611976922, 41.147585551490664]
         }
     },
     "address": {

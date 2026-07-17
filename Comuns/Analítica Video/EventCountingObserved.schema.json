@@ -171,25 +171,6 @@
           },
           "description": "Property. Events identified during the observation period; empty when no events were detected"
         },
-        "location": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "const": "MultiPoint"
-            },
-            "coordinates": {
-              "type": "array",
-              "items": {
-                "$ref": "#/$defs/position"
-              }
-            }
-          },
-          "required": [
-            "type",
-            "coordinates"
-          ],
-          "description": "GeoProperty. MultiPoint containing the locations where events occurred"
-        },
         "refPointOfInterest": {
           "type": "array",
           "items": {

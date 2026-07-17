@@ -41,9 +41,9 @@
                     [-8.424079950529887, 40.21135559292355 ]
                 ]
             ],
-            "type"            : "Polygon",
+            "type"            : "Polygon"
+        },
             "coordinateSystem": "EPSG:4326"
-        }
     },
     "name": {"type": "Property", "value": "Jardins da Av. Sá da Bandeira"},
     "openingHours": { "type": "Property", "value": "Seg-Sex 10:00-19:00; Sa 10:00-22:00; Dom 10:00-21:00" },

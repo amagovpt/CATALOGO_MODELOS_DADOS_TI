@@ -72,23 +72,6 @@
           },
           "required"   : ["localId", "namespace"]
         },
-        "location": {
-          "allOf": [
-            {
-              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons/properties/location"
-            },
-            {
-              "type"      : "object",
-              "properties": {
-                "coordinateSystem": {
-                  "type"       : "string",
-                  "pattern"    : "^EPSG:[0-9]+$",
-                  "description": "Property. EPSG coordinate reference system code, for example EPSG:4258."
-                }
-              }
-            }
-          ]
-        },
         "levelOfDetail": {
           "type"       : "object",
           "description": "Property. Scale information.",
