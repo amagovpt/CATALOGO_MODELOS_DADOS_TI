@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/SocialSupportObservation/schema.json",
+  "title": "SocialSupportObservation schema",
+  "description": "An aggregated observation about a public social support service or programme.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "SocialSupportObservation",
+          "description": "Property. NGSI entity type. It has to be SocialSupportObservation."
+        },
+        "publicService": {
+          "type": "string",
+          "description": "Property. Name of the public service or social support programme to which the observation refers."
+        },
+        "observedBy": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Organisation responsible for collecting or reporting the data."
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the observation location. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area to which the data refers."
+        },
+        "aggregationLevel": {
+          "type": "string",
+          "description": "Property. Data aggregation level, for example facility, parish or municipality."
+        },
+        "facilityRef": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Social facility to which the observation refers."
+        },
+        "supportType": {
+          "type": "string",
+          "enum": ["financial", "goods", "facility", "mixed", "other"],
+          "description": "Property. Type of social support."
+        },
+        "financialPurpose": {
+          "type": "string",
+          "enum": [
+            "housingRent",
+            "institutionAttendance",
+            "medicalTravel",
+            "educationTravel",
+            "pedagogicMaterials",
+            "emergencyFinancialAid",
+            "foodAssistance",
+            "frequencyInstitutions",
+            "other"
+          ],
+          "description": "Property. Purpose of financial support."
+        },
+        "facilityType": {
+          "type": "string",
+          "description": "Property. Type of social facility."
+        },
+        "indicator": {
+          "type": "string",
+          "description": "Property. Observed indicator, for example studentsCount, mealsDailyCount or usersCount."
+        },
+        "value": {
+          "type": "number",
+          "description": "Property. Aggregated numeric value of the indicator."
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Start of the data reference period in ISO 8601 format."
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the data reference period in ISO 8601 format."
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Additional description of the observation."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "location",
+    "validFrom",
+    "validTo",
+    "aggregationLevel",
+    "indicator",
+    "value"
+  ]
+}
