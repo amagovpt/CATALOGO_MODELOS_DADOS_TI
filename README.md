@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/idioma-PT--PT-green" alt="Idioma: PT-PT">
 </p>
 
-O **Catálogo Nacional de Modelos de Dados para os [Territórios Inteligentes](https://territoriosinteligentes.gov.pt)** é um instrumento fundamental para promover a interoperabilidade, harmonização e qualidade dos dados disponibilizados pelas entidades públicas. Organiza e documenta modelos de dados normalizados, garantindo uma referência comum para a publicação, partilha e reutilização de informação a nível nacional.
+O **Catálogo Nacional de Modelos de Dados para os [Territórios Inteligentes](https://territoriosinteligentes.gov.pt)** é um dos instrumentos fundamental para promover a interoperabilidade, harmonização e qualidade dos dados disponibilizados pelas entidades públicas. Organiza e documenta modelos de dados normalizados, garantindo uma referência comum para a publicação, partilha e reutilização de informação a nível nacional.
 
 Este catálogo foi desenvolvido para apoiar as entidades na **adoção de práticas consistentes**, assegurando que os dados publicados seguem padrões uniformes, tanto ao nível estrutural como semântico. Ao fazê-lo, contribui para a melhoria dos serviços digitais, para a eficiência operacional e para uma maior transparência na disponibilização de informação.
 
