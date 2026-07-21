@@ -24,10 +24,10 @@
         }
     },
     "peopleInvolved"   : {"type": "Property", "value": 10},
-    "refEvent"         : {"type": "Relationship", "object": "urn:cml:Event:209583"},
-    "refRestrictions"  : { "type": "Relationship", "value": ["urn:cml:RestrictedTrafficArea:AzinhagaDaCidade"] },
+    "refEvent"         : {"type": "Relationship", "object": ["urn:cml:Event:209583"]},
+    "refRestrictions"  : { "type": "Relationship", "object": ["urn:cml:RestrictedTrafficArea:AzinhagaDaCidade"] },
     "refAffectedPlaces": { "type": "Relationship", "object": ["urn:cml:Place:loja-costa-nova"] },
-    "refUsedMeans"     : { "type": "Relationship", "value": ["urn:cml:Vehicle:Fireman:vuci:223"] },
+    "refUsedMeans"     : { "type": "Relationship", "object": ["urn:cml:Vehicle:Fireman:vuci:223"] },
     "promoter"         : { "type": "Property", "value": ["ArtesEOfícios"] },
     "minimumOccupancy" : {"type": "Property", "value": 0, "calculationMethod": "estimation"},
     "averageOccupancy" : {"type": "Property", "value": 75, "calculationMethod": "estimation"},

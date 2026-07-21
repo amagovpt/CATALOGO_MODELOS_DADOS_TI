@@ -1,0 +1,402 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.6",
+  "modelTags": "NAIADES, DigitalWater.city, B-WaterSmart, Waterverse",
+  "$id": "https://smart-data-models.github.io/dataModel.WaterQuality/WaterQualityObserved/schema.json",
+  "title": "Water quality observed schema",
+  "description": "Water Quality data model is intended to represent water quality parameters at a certain water mass (river,  lake, sea, etc.) section",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "WaterQualityObserved"
+          ],
+          "description": "Property. NGSI Entity type. It has to be WaterQualityObserved"
+        },
+        "dateObserved": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/DateTime'. The date and time of this observation in ISO8601 UTCformat. It can be represented by an specific time instant or by an ISO8601 interval"
+        },
+        "measurand": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "Property. Every element of the array of strings containing details (see format below) about extra measurands provided by this observation"
+          },
+          "minItems": 1,
+          "description": "Property. An array of strings containing details (see format below) about extra measurands provided by this observation"
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Property. Temperature"
+        },
+        "bod": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Biochemical oxygen demand (BOD) is the amount of dissolved oxygen (DO) needed (i.e. demanded) by aerobic biological organisms to break down organic material present in a given water sample at certain temperature over a specific time period. Units:'mg/l'"
+        },
+        "cod": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Chemical oxygen demand (COD) is an indicative measure of the amount of oxygen that can be consumed by reactions in a measured solution. Units:'mg/l'"
+        },
+        "conductivity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Electrical Conductivity"
+        },
+        "conductance": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Specific Conductance"
+        },
+        "tss": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total suspended solids"
+        },
+        "tds": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total dissolved solids. "
+        },
+        "turbidity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Amount of light scattered by particles in the water column"
+        },
+        "salinity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Amount of salts dissolved in water"
+        },
+        "pH": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14,
+          "description": "Property. Acidity or basicity of an aqueous solution"
+        },
+        "orp": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Oxidation-Reduction potential"
+        },
+        "O2": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Level of free, non-compound oxygen present"
+        },
+        "Chla": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of chlorophyll A"
+        },
+        "PE": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of pigment phycoerythrin which can be measured to estimate cyanobacteria concentrations specifically"
+        },
+        "PC": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of pigment phycocyanin which can be measured to estimate cyanobacteria concentrations specifically"
+        },
+        "NH4": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of ammonium"
+        },
+        "NH3": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of ammonia"
+        },
+        "Cl-": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of chlorides"
+        },
+        "NO3": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of nitrates"
+        },
+        "PO4": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of phosphates"
+        },
+        "escherichiaColi": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of Escherichia coli. Units:'Total number of bacteria/100mL'"
+        },
+        "enterococci": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of Enterococci. Units:'Total number of bacteria/100mL'"
+        },
+        "refPointOfInterest": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
+            },
+            {
+              "type": "string",
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
+            }
+          ],
+          "description": "Relationship. A reference to a point of interest associated to this observation"
+        },
+        "flow": {
+          "type": "number",
+          "description": "Property. Units:'cubic meters/hour'. Water Flow observed. "
+        },
+        "alkalinity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. The alkalinity of water is its acid-neutralizing capacity comprised of the total of all titratable bases. Units:'mg/l'"
+        },
+        "TKN": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total Kjeldahl Nitrogen. A measure that determines both the organic and the inorganic forms of nitrogen. Units:'mg/l'"
+        },
+        "NO2": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Nitrite nitrogen. Concentration of a sample in nitrite nitrogen. Units:'mg/l'"
+        },
+        "N-TOT": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total Nitrogen. Total Nitrogen (TN) is the sum of nitrate-nitrogen (NO3-N), nitrite-nitrogen (NO2-N), ammonia-nitrogen (NH3-N) and organically bonded nitrogen. Units:'mg/l'"
+        },
+        "P-TOT": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total Phosphorus. Total phosphorus is a measure of all forms of\u00a0phosphorus\u00a0in the water, including dissolved and particulate, organic and inorganic. Units:'mg/l'"
+        },
+        "P-PO4": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Phosphate-phosphorus. Concentration of phosphorus as phosphate. Units:'mg/l'"
+        },
+        "Al": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Aluminium. Concentration of aluminium. Units:'mg/l'"
+        },
+        "As": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Arsenic. Concentration of arsenic. Units:'mg/l'"
+        },
+        "B": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Boron. Concentration of boron. Units:'mg/l'"
+        },
+        "Ba": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Barium. Concentration of barium. Units:'mg/l'"
+        },
+        "Cd": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Cadmium. Concentration of cadmium. Units:'mg/l'"
+        },
+        "Cr": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Chromium. Concentration of chromium. Units:'mg/l'"
+        },
+        "Cr-III": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Chromium III. Concentration of chromium at the oxidation state +3. Units:'mg/l'"
+        },
+        "Cr-VI": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Chromium VI. Concentration of chromium at the oxidation state +6. Units:'mg/l'"
+        },
+        "Cu": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Copper. Concentration of copper. Units:'mg/l'"
+        },
+        "Fe": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Iron. Concentration of iron. Units:'mg/l'"
+        },
+        "fluoride": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of fluoride. Units:'mg/l'"
+        },
+        "Hg": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Mercury. Concentration of mercury. Units:'mg/l'"
+        },
+        "THC": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total hydrocarbon. Concentration of total hydrocarbon. Units:'mg/l'"
+        },
+        "Ni": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Nickel. Concentration of Nickel. Units:'mg/l'"
+        },
+        "TO": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total oil content. Concentration of oil. Units:'mg/l'"
+        },
+        "Pb": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Lead. Concentration of lead. Units:'mg/l'"
+        },
+        "Se": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Selenium. Concentration of selenium. Units:'mg/l'"
+        },
+        "Sn": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Tin. Concentration of tin. Units:'mg/l'"
+        },
+        "sulphate": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of sulfate. Units:'mg/l'"
+        },
+        "sulphite": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of sulfite. Units:'mg/l'"
+        },
+        "anionic-surfactants": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of anionic surfactants. Units:'mg/l'"
+        },
+        "cationic-surfactants": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentrtation of cationic surfactants. Units:'mg/l'"
+        },
+        "non-ionic-surfactants": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of non-ionic surfactants. Units:'mg/l'"
+        },
+        "total-surfactants": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Concentration of total surfactants. Units:'mg/l'"
+        },
+        "Zn": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Zinc. Concentration of zinc. Units:'mg/l'"
+        },
+        "componentAnalyzed": {
+          "type": "string",
+          "description": "Property. The component symbol analyzed in the sample"
+        },
+        "componentName": {
+          "type": "string",
+          "description": "Property. The component full name analyzed in the sample"
+        },
+        "concentration": {
+          "type": "number",
+          "description": "Property. The concentration of the component analyzed in the sample. Units:'mg/l'"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateObserved",
+    "location"
+  ]
+}

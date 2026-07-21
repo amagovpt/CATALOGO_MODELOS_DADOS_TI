@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/EventObserved/schema.json",
+  "title": "Event Observed schema",
+  "description": "Schema for observations made during an event",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "EventObserved",
+          "description": "Property. NGSI entity type. It has to be EventObserved"
+        },
+        "averageOccupancy": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Average number of event visitors present simultaneously during the observation period"
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time at which the reported data collection ended"
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time at which the reported data collection started"
+        },
+        "promoter": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Names or identifiers of the event promoters valid during the observation period"
+        },
+        "peopleInvolved": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of people supporting the event during the observation period, excluding visitors"
+        },
+        "maximumOccupancy": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Maximum number of event visitors present simultaneously during the observation period"
+        },
+        "minimumOccupancy": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Minimum number of event visitors present simultaneously during the observation period"
+        },
+        "refEvent": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Event to which the observed data refers"
+        },
+        "refRestrictions": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true,
+          "description": "Relationship. Traffic restrictions active during the observation period"
+        },
+        "refAffectedPlaces": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Places affected by the event"
+        },
+        "refUsedMeans": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true,
+          "description": "Relationship. Means used or kept ready to support the event during the observation period"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "location",
+    "promoter",
+    "dateStarted",
+    "dateFinished",
+    "refEvent",
+    "address"
+  ]
+}

@@ -11,6 +11,7 @@
         "altitude"        : {"type": "Property", "value": 10, "unitCode": "MTR"},
         "coordinateSystem": "EPSG:4258"
     },
+    "name"              : {"type": "Property", "value": "Entrecampos"},
     "pm25"              : {"type": "Property", "value": 7, "unitCode": "GQ"},
     "pm10"              : {"type": "Property", "value": 24, "unitCode": "GQ"},
     "o3"                : {"type": "Property", "value": 69, "unitCode": "GQ"},
@@ -22,7 +23,7 @@
     "co"                : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
     "co2"               : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
     "temperature"       : {"type": "Property", "value": 22.2, "unitCode": "CEL"},
-    "windDirection"     : {"type": "Property", "value": 186, "unitCode": "DD"},
+    "windDirection"     : {"type": "Property", "value": 180, "unitCode": "DD"},
     "windSpeed"         : {"type": "Property", "value": 0.64},
     "address"           : {
         "type" : "Property",
@@ -34,6 +35,7 @@
             "streetAddress"  : "Praça de Entrecampos"
         }
     },
+    "dataProvider": {"type": "Property", "value": "APA"},
     "refPointOfInterest": {"type": "Relationship", "object": "urn:apa:AirQualityStation-3072"},
     "reliability"       : {"type": "Property", "value": 0.8},
     "relativeHumidity"  : {"type": "Property", "value": 0.70},
