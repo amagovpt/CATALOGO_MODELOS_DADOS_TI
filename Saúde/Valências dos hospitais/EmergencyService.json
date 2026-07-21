@@ -58,10 +58,13 @@
     "address": {
         "type": "Property",
         "value": {
-            "streetAddress"  : "Rua Capitão Salgueiro Maia",
-            "postalCode"     : "4690-047"                  ,
+            "addressCountry" : "Portugal"                  ,
             "addressLocality": "Cinfães"                   ,
-            "addressCountry" : "PT"
+            "district"       : "Viseu"                     ,
+            "addressRegion"  : "Centro"                    ,
+            "streetAddress"  : "Rua Capitão Salgueiro Maia",
+            "streetNr"       : "s/n"                       ,
+            "postalCode"     : "4690-047"
         }
     },
     "areaServed": {"type": "Property", "value": "Freguesia de Cinfães"},

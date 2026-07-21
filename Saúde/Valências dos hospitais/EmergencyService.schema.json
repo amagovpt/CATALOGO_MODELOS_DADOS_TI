@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "$id": "https://smart-data-models.github.io/dataModel.Health/EmergencyService/schema.json",
+  "title": "Smart Data models - Emergency Service schema",
+  "description": "This model represents a hospital's emergency service unit (valência), including access conditions, capacity, contact details and operating conditions",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "EmergencyService"
+          ],
+          "description": "Property. It has to be EmergencyService. NGSI type"
+        },
+        "region": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Região administrativa de saúde a que a unidade pertence",
+          "enum": [
+            "ARS Norte",
+            "ARS Lisboa e Vale do Tejo",
+            "ARS Centro",
+            "ARS Alentejo",
+            "SRS Açores",
+            "ARS Algarve",
+            "IASAÚDE Madeira"
+          ]
+        },
+        "legalNature": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Natureza jurídica da entidade",
+          "enum": [
+            "EPE",
+            "IP",
+            "IPSS",
+            "PPP",
+            "ULS-EPE"
+          ]
+        },
+        "hospitalGroup": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Grupo hospitalar ao qual pertence a unidade. Consultar Grupos e Instituições do SNS",
+          "enum": [
+            "Grupo B",
+            "Grupo C",
+            "Grupo D",
+            "Grupo E",
+            "Grupo F"
+          ]
+        },
+        "emergencyServiceType": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Tipo de serviço de urgência",
+          "enum": [
+            "Serviço de Urgência Básica",
+            "Serviço de Urgência Médico-Cirúrgico",
+            "Serviço de Urgência Polivalente",
+            "Serviço de Urgência Polivalente com Centro de Trauma"
+          ]
+        },
+        "speciality": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Especialidade atendida pela unidade"
+        },
+        "ageRange": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Faixa etária dos pacientes atendidos",
+          "enum": [
+            "0 aos 0 anos",
+            "0 aos 150 anos",
+            "0 aos 17 anos",
+            "1 aos 150 anos",
+            "18 aos 150 anos"
+          ]
+        },
+        "accessByPatientInitiative": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido o acesso por iniciativa do próprio paciente"
+        },
+        "accessByCSPInitiative": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de um médico do Centro de Saúde e Proteção (CSP)"
+        },
+        "accessViaSNS24": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso via linha Saúde 24"
+        },
+        "accessByHospitalDoctorsInitiative": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de médicos hospitalares"
+        },
+        "accessByUrgencyDoctorsInitiative": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de médicos de urgência"
+        },
+        "ambulanceServiceAvailability": {
+          "type": "boolean",
+          "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é disponibilidade de serviços de ambulância"
+        },
+        "operationalHours": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Horário de funcionamento da unidade hospitalar"
+        },
+        "facilityCapacity": {
+          "type": "object",
+          "description": "Property. Model:'https://schema.org/Text'. Capacidade operacional da unidade, incluindo o número de leitos e profissionais",
+          "properties": {
+            "bedCapacity": {
+              "type": "number",
+              "minimum": 0
+            },
+            "staffCapacity": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "contactPoint": {
+          "type": "object",
+          "description": "Property. Model:'https://schema.org/Text'. Dados de contacto da unidade hospitalar, incluindo número de telefone e e-mail",
+          "properties": {
+            "telephone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "location",
+    "address",
+    "dateModified",
+    "operationalHours",
+    "emergencyServiceType",
+    "speciality"
+  ]
+}

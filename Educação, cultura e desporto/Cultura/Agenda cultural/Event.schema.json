@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "$id": "https://smart-data-models.github.io/dataModel.Event/Event/schema.json",
+  "title": "Smart Data models - Event schema",
+  "description": "This model represents a cultural event, such as an exhibition, concert or festival, including its schedule, location, pricing and access conditions",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Event"
+          ],
+          "description": "Property. It has to be Event. NGSI type"
+        },
+        "title": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Título do evento"
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Subtítulo do evento"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Tema ou área artística do evento"
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. Model:'https://schema.org/URL'. Imagem associada ao evento"
+        },
+        "ageRating": {
+          "type": "string",
+          "description": "Property. Model:'https://schema.org/Text'. Classificação etária do evento"
+        },
+        "category": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Uma sequência de termos que pretendem classificar o evento. Podem ser combinados vários valores",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Literário",
+              "Cinema",
+              "Música",
+              "Tradicional",
+              "Religioso",
+              "Culinária",
+              "Educação",
+              "Comunitária",
+              "Desporto",
+              "Espetáculo",
+              "Artes Visuais",
+              "Festivais",
+              "Outros"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "tags": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Palavras-chave associadas ao evento. Exemplos: 'erudito', 'rock', 'pop'",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "targetAudience": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Público-alvo do evento",
+          "items": {
+            "type": "string",
+            "enum": [
+              "general",
+              "families",
+              "adults"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "accessibility": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Recursos de acessibilidade disponíveis",
+          "items": {
+            "type": "string",
+            "enum": [
+              "wheelchairAccessible",
+              "audioDescription",
+              "signLanguageInterpreter"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "dateStarted": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Registo de data e hora de início do evento. De acordo com a norma ISO 8601-1:2019"
+        },
+        "dateFinished": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Model:'https://schema.org/DateTime'. Registo de data e hora da conclusão do evento. Omitido quando o evento está a decorrer. De acordo com a norma ISO 8601-1:2019"
+        },
+        "eventSchedule": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Horário do evento, incluindo data, hora, recorrência e exceções",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "time": {
+                "type": "string",
+                "description": "Intervalo horário, no formato 'HH:MM-HH:MM'"
+              },
+              "recurrence": {
+                "type": "string"
+              },
+              "exceptions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "date"
+                }
+              }
+            }
+          }
+        },
+        "maximumCapacity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Model:'https://schema.org/Number'. Capacidade máxima permitida de participantes"
+        },
+        "priceSpecification": {
+          "type": "array",
+          "description": "Property. Model:'https://schema.org/Text'. Informação sobre os preços do evento, incluindo tipo de audiência, valor e tipo de moeda. Normalmente expressa em euros (EUR)",
+          "items": {
+            "type": "object",
+            "properties": {
+              "audience": {
+                "type": "string",
+                "description": "Exemplos: 'adult', 'student'"
+              },
+              "price": {
+                "type": "number",
+                "minimum": 0
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "venues": {
+          "type": "array",
+          "description": "Relationship. Referência a entidades que representam os locais do evento",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "refEvent": {
+          "type": "array",
+          "description": "Relationship. Referência para o evento agregador. Relevante para modelar sub-eventos co-localizados temporalmente, ou não, mas que fazem parte de um evento mais alargado",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "title",
+    "category",
+    "location",
+    "address",
+    "dateStarted",
+    "dateFinished",
+    "ageRating"
+  ]
+}

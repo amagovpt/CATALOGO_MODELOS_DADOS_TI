@@ -14,7 +14,14 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | id  | URI    | Identificador único da unidade hospitalar       | Referência URN a uma entidade.  Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | type | String  | Tipo de entidade  | Valor constante igual a `EmergencyService`  |
 | name | String  | Nome da unidade hospitalar |  Modelo: [https://schema.org/Text](https://schema.org/Text) |
-| address                  | Object          | Morada associada ao ponto de medição | Inclui país, localidade, rua, código postal. Modelo: [ https://schema.org/address]( https://schema.org/address)  |
+| address    | Object          | Morada associada à unidade hospitalar | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
+| address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
+| address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
+| address.streetNr       | String    | Número de polícia  |   Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | accessByCSPInitiative | Boolean | Especifica se é permitido acesso por iniciativa de um médico do Centro de Saúde e Proteção (CSP)       | Valor: true ou false. Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
 | accessByPatientInitiative  | Boolean | Especifica se é permitido o acesso por iniciativa do próprio paciente  | Valor: true ou false.  Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
 | accessViaHealth24     | Boolean | Especifica se é permitido acesso via linha Saúde 24       | Valor: true ou false.  Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
@@ -47,6 +54,7 @@ Os atributos obrigatórios são:
 - `operationalHours`
 - `emergencyServiceType`
 - `specialty`
+- `address`
 
 ## Notas
 

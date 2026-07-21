@@ -21,10 +21,13 @@
     "address"           : {
         "type" : "Property",
         "value": {
-            "addressCountry": "PT",
-            "addressRegion" : "Lisboa",
-            "streetAddress" : "Rua Castilho, 69, Lj. Esq",
-            "postalCode"    : "1250-067"
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "streetAddress"  : "Rua Castilho",
+            "streetNr"       : "69",
+            "postalCode"     : "1250-067"
         }
     },
     "eventSchedule"     : {
