@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$schemaVersion": "0.0.1",
-  "modelTags": "",
+  "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Health/EmergencyService/schema.json",
   "title": "Smart Data models - Emergency Service schema",
   "description": "This model represents a hospital's emergency service unit (valência), including access conditions, capacity, contact details and operating conditions",
@@ -163,15 +163,15 @@
           "type": "boolean",
           "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de um médico do Centro de Saúde e Proteção (CSP)"
         },
-        "accessViaSNS24": {
+        "accessViaHealth24": {
           "type": "boolean",
           "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso via linha Saúde 24"
         },
-        "accessByHospitalDoctorsInitiative": {
+        "accessByHospitalDoctors": {
           "type": "boolean",
           "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de médicos hospitalares"
         },
-        "accessByUrgencyDoctorsInitiative": {
+        "accessByUrgentCareDoctors": {
           "type": "boolean",
           "description": "Property. Model:'https://schema.org/Boolean'. Especifica se é permitido acesso por iniciativa de médicos de urgência"
         },

@@ -39,7 +39,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | location | GeoJSON | Referência Geojson para o objeto hidrográfico |  Valores possíveis: 'Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString' ou 'MultiPolygon'. O mesmo que [Geometry](https://inspire.ec.europa.eu/codelist/GeometrySpecificationValue) |
 | operationalHours      | String  | Horário de funcionamento da unidade hospitalar         | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | region      | String  | Região administrativa de saúde a que a unidade pertence| Enumerado: <br>- ARS Norte,<br>- ARS Lisboa e Vale do Tejo,<br>- ARS Centro,<br>- ARS Alentejo,<br>- SRS Açores, <br>- ARS Algarve,<br>- IASAÚDE Madeira.  Modelo: [https://schema.org/Text](https://schema.org/Text)   |
-| specialty   | String  | Especialidade atendida pela unidade  | Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| speciality   | String  | Especialidade atendida pela unidade  | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 
 
 
@@ -53,7 +53,7 @@ Os atributos obrigatórios são:
 - `name`
 - `operationalHours`
 - `emergencyServiceType`
-- `specialty`
+- `speciality`
 - `address`
 
 ## Notas

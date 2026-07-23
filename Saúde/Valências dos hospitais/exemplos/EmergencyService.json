@@ -1,31 +1,6 @@
 {
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        {
-            "EmergencyService": "https://schema.org/EmergencyService",
-            "location": "http://schema.org/location",
-            "address": "http://schema.org/address",
-            "contactPoint": "http://schema.org/contactPoint",
-            "name": "http://schema.org/name",
-            "dateCreated": "https://smartdatamodels.org/dateCreated",
-            "dateModified": "https://smartdatamodels.org/dateModified",
-            "dateObserved": "https://smartdatamodels.org/dateObserved",
-            "description": "http://purl.org/dc/terms/description",
-            "areaServed": "https://schema.org/areaServed",
-            "ageRange": "https://schema.org/typicalAgeRange",
-            "legalNature": "https://smartdatamodels.org/legalNature",
-            "hospitalGroup": "https://smartdatamodels.org/hospitalGroup",
-            "emergencyServiceType": "https://smartdatamodels.org/emergencyServiceType",
-            "speciality": "https://smartdatamodels.org/speciality",
-            "accessByPatientInitiative": "https://smartdatamodels.org/accessViaSNS24",
-            "accessViaSNS24": "https://smartdatamodels.org/accessViaSNS24",
-            "accessByCSPInitiative": "https://smartdatamodels.org/accessViaSNS24",
-            "accessByUrgencyDoctorsInitiative": "https://smartdatamodels.org/accessViaSNS24",
-            "accessByHospitalDoctorsInitiative": "https://smartdatamodels.org/accessViaSNS24",
-            "operationalHours": "https://smartdatamodels.org/operationalHours",
-            "facilityCapacity": "https://smartdatamodels.org/facilityCapacity",
-            "ambulanceServiceAvailability": "https://smartdatamodels.org/ambulanceServiceAvailability"
-        }
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ],
     "id": "urn:sns:EmergencyService:SUB-Cinfaes",
     "type": "EmergencyService",
@@ -45,8 +20,8 @@
     "accessByPatientInitiative": {"type": "Property", "value": true},
     "accessViaSNS24": {"type": "Property", "value": true},
     "accessByCSPInitiative": {"type": "Property", "value": true},
-    "accessByUrgencyDoctorsInitiative": {"type": "Property", "value": true},
-    "accessByHospitalDoctorsInitiative": {"type": "Property", "value": false},
+    "accessByUrgentCareDoctors": {"type": "Property", "value": true},
+    "accessByHospitalDoctors": {"type": "Property", "value": false},
     "location": {
         "type": "GeoProperty",
         "value": {
