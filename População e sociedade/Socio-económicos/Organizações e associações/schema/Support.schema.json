@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Support/schema.json",
+  "title": "Support schema",
+  "description": "Schema for support provided to an organization",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+       
+        "contributionStartDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Property. Date on which the support was authorized or provided, in ISO 8601 format"
+        },
+        "contributionEndDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Property. Date on which the support ended, in ISO 8601 format; omitted while support is ongoing"
+        },
+        
+        "financialSupport": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Financial support provided, normally expressed in euros"
+        },
+        "logisticalSupport": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Descriptions of the logistical support provided"
+        },
+        "personnelSupport": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of people made available to support the organization"
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the organization providing the support"
+        },
+        
+        "refSupportedOrganization": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Reference to the organization receiving the support"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "financialSupport"
+          ]
+        },
+        {
+          "required": [
+            "logisticalSupport"
+          ]
+        },
+        {
+          "required": [
+            "personnelSupport"
+          ]
+        }
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "contributionStartDate",
+    "refSupportedOrganization"
+  ]
+}

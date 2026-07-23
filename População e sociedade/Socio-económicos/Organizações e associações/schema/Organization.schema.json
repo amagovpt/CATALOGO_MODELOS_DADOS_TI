@@ -1,0 +1,68 @@
+{
+  "$schema"       : "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags"     : "CNMD",
+  "$id"           : "https://example.org/schemas/Organization/schema.json",
+  "title"         : "Organization schema",
+  "description"   : "Schema for entities and organizations",
+  "type"          : "object",
+  "allOf"         : [
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"},
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"},
+    {
+      "properties": {
+        "address"         : {
+          "type"      : "object",
+          "properties": {
+            "addressCountry" : {
+              "type"       : "string",
+              "description": "Property. Country where the organization is located"
+            },
+            "addressLocality": {
+              "type"       : "string",
+              "minLength"  : 1,
+              "description": "Property. Locality, which must correspond to the municipality"
+            },
+            "addressRegion"  : {
+              "type"       : "string",
+              "enum"       : [
+                "Norte",                      "Centro",                     "Oeste e Vale do Tejo",
+                "Grande Lisboa",              "Península de Setúbal",       "Alentejo",
+                "Algarve",                    "Região Autónoma dos Açores", "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located"
+            },
+            "district"       : {
+              "type"       : "string",
+              "enum"       : [
+                "Açores",           "Aveiro",           "Beja",             "Braga",            "Bragança",
+                "Castelo Branco",   "Coimbra",          "Évora",            "Faro",             "Guarda",
+                "Madeira",          "Leiria",           "Lisboa",           "Portalegre",       "Porto",
+                "Santarém",         "Setúbal",          "Viana do Castelo", "Vila Real",        "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located"
+            },
+            "postalCode"     : {"type": "string", "description": "Property. Postal code of the organization"},
+            "streetAddress"  : {"type": "string", "description": "Property. Street address of the organization"},
+            "streetNr"       : {"type": "string", "description": "Property. Street number of the organization"}
+          },
+          "required"  : ["addressLocality", "addressRegion", "district"]
+        },
+        "type"            : {
+          "type"       : "string",
+          "const"      : "Organization",
+          "description": "Property. NGSI entity type. It has to be Organization"
+        },
+        "areaIntervention": {
+          "type"       : "array",
+          "items"      : {"type": "string"},
+          "minItems"   : 1,
+          "uniqueItems": true,
+          "description": "Property. Areas in which the organization intervenes"
+        },
+        "legalName"       : {"type": "string", "description": "Property. Registered legal name of the organization"}
+      }
+    }
+  ],
+  "required"      : ["id", "type", "address", "name", "areaIntervention", "areaServed", "location"]
+}

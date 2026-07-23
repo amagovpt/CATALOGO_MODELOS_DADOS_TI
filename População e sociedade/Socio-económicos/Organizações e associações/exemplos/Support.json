@@ -4,9 +4,9 @@
   "name": {"type": "Property", "value": "Parlamento"},
   "contactInfo": { "type": "Property", "value": {"phone": "+351213919417"} },
   "description": {"type": "Property", "value": "Apoio para supporte a atividade do dia do investigador"},
-  "refSupportedOrganization": { "type": "Relationship", "object": ["urn:arte:Organization:500745684"] },
+  "refSupportedOrganization": {"type": "Relationship", "object": "urn:arte:Organization:500745684"},
   "financialSupport": {"type": "Property", "value": 1000, "unitCode": "EUR"},
-  "contributionStartDate": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-12-11T00:00:00Z"} },
+  "contributionStartDate": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-12-11"} },
   "@context": [
     "https://schema.lab.fiware.org/ld/context",
     "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"

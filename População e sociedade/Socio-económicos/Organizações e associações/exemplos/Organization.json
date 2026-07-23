@@ -8,10 +8,13 @@
         "type" : "GeoProperty",
         "value": { "type": "Point", "coordinates": [-9.146596196356228, 38.724718617164854] }
     },
+    "areaServed"      : {"type": "Property", "value": "Nossa Senhora de Fátima"},
     "address"         : {
         "type" : "Property",
         "value": {
-            "addressLocality": "Nossa Senhora de Fátima",
+            "addressLocality": "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "district"       : "Lisboa",
             "postalCode"     : "1067-001",
             "streetAddress"  : "Av. de Berna 45A"
         }

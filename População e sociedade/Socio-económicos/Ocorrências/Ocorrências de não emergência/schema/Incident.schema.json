@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Incident/schema.json",
+  "title": "Incident schema",
+  "description": "Schema for non-emergency incidents",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "Incident",
+          "description": "Property. NGSI entity type. It has to be Incident"
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area of the incident, corresponding to the district of its address"
+        },
+        "assignedTo": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Department or organization responsible for handling the incident"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "Acessos para Cidadãos com Mobilidade Reduzida",
+            "Animais Abandonados",
+            "Conservação da iluminação Pública",
+            "Conservação das Ruas e Pavimento",
+            "Conservação de Parque Escolar",
+            "Estacionamento de Veículos",
+            "Limpeza de Valetas, Bermas e Caminhos",
+            "Limpeza e Conservação de Espaços Públicos",
+            "Manutenção de Ciclovias",
+            "Manutenção e Limpeza de Contentores e Ecopontos",
+            "Manutenção, Rega e Limpeza de Jardins",
+            "Nomes ou Numeração de Ruas",
+            "Poluição Sonora",
+            "Publicidade, Outdoors e Cartazes",
+            "Recolha de Lixo",
+            "Saneamento, Ruturas de Águas ou Desvio de Tampas",
+            "Sinalização de Trânsito"
+          ],
+          "description": "Property. Main category of the incident"
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was created, in ISO 8601 format"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format"
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the incident"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the incident was administratively closed, in ISO 8601 format"
+        },
+        "expectedResponseTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Expected date and time for responding to the incident, in ISO 8601 format"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true,
+          "description": "Property. URLs of images associated with the incident"
+        },
+        "name": {
+          "type": "string",
+          "description": "Property. Name of the incident"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Property. Additional notes about the incident"
+        },
+        "reportedById": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Identifier of the authenticated user who reported the incident"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "moderate",
+            "high",
+            "critical"
+          ],
+          "description": "Property. Severity level of the incident"
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URI of the system or entity that created the incident"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "dispatch",
+            "in progress",
+            "under resolution",
+            "monitoring",
+            "closed"
+          ],
+          "description": "Property. Current status of the incident"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the incident started, in ISO 8601 format"
+        },
+        "urgencyLevel": {
+          "type": "string",
+          "enum": [
+            "P1",
+            "P2",
+            "P3",
+            "P4"
+          ],
+          "description": "Property. Priority classification, where P1 is the highest priority"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateCreated",
+    "startDate",
+    "location",
+    "status",
+    "category"
+  ]
+}
