@@ -2,13 +2,21 @@
     "id": "urn:ngsi-ld:TransportOnDemand:TX-0999",
     "type": "TransportOnDemand",
     "name": {"type": "Property", "value": "Circuito Ortiga"},
-    "description": {
+    "description": {"type": "Property", "value": "Transporte a pedido no médio tejo"},
+    "address": {
         "type" : "Property",
-        "value": "Transporte a pedido no médio tejo"
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Mação",
+            "district"       : "Santarém",
+            "addressRegion"  : "Oeste e Vale do Tejo"
+        }
     },
     "transactionid": {"type": "Property", "value": 1133441111},
     "ticketType": {"type": "Property", "value": "inteiro"},
-    "serviceType": {"type": "Property", "value": "municipal"},
+    "pricePayed": {"type": "Property", "value": 1.50, "unitCode": "EUR"},
+    "standardPrice": {"type": "Property", "value": 1.70, "unitCode": "EUR"},
+    "serviceType": {"type": "Property", "value": "Municipal"},
     "createdAt": {"type": "Property", "value": "2025-09-12T10:00:00Z"},
     "modifiedAt": {"type": "Property", "value": "2025-09-12T10:40:00Z"},
     "startDate": {"type": "Property", "value": "2025-09-12T09:57:00Z"},
@@ -21,25 +29,19 @@
     "destinationMunicipality": {"type": "Property", "value": "Mação"},
     "operator": {"type": "Property", "value": "Taxi Ideal"},
     "sourceLocation": {
-        "type": "GeoProperty",
-        "value": {
-            "coordinates": [-8.035070047861666, 39.48083175465848],
-            "type": "Point"
-        },
+        "type"            : "GeoProperty",
+        "value"           : { "coordinates": [-8.035070047861666, 39.48083175465848], "type": "Point" },
         "coordinateSystem": "EPSG:4258"
     },
     "destinationLocation": {
-        "type": "GeoProperty",
-        "value": {
-            "coordinates": [-7.995390012208077, 39.55542070676748],
-            "type": "Point"
-        },
+        "type"            : "GeoProperty",
+        "value"           : { "coordinates": [-7.995390012208077, 39.55542070676748], "type": "Point" },
         "coordinateSystem": "EPSG:4258"
     },
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "LineString",
+        "type"            : "GeoProperty",
+        "value"           : {
+            "type"       : "LineString",
             "coordinates": [
                 [-8.043848246016609, 39.47209492680628 ],
                 [-8.035070047861666, 39.48083175465848 ],
@@ -56,20 +58,11 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
-    "seeAlso": {
-        "type": "Property",
-        "value": ["https://mediotejo.pt/images/pdf/Brochura_Mação_vf.pdf"]
-    },
+    "seeAlso": { "type": "Property", "value": ["https://mediotejo.pt/images/pdf/Brochura_Mação_vf.pdf"] },
     "status": {"type": "Property", "value": "realizado"},
     "version": {"type": "Property", "value": "1.0"},
-    "dataProvider": {
-        "type" : "Property",
-        "value": "Médio Tejo, Comunidade Intermunicipal"
-    },
-    "license": {
-        "type" : "Property",
-        "value": "https://creativecommons.org/licenses/by/4.0/"
-    },
+    "dataProvider": {"type": "Property", "value": "Médio Tejo, Comunidade Intermunicipal"},
+    "license": {"type": "Property", "value": "https://creativecommons.org/licenses/by/4.0/"},
     "@context": [
         "https://smartdatamodels.org/context.jsonld",
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"

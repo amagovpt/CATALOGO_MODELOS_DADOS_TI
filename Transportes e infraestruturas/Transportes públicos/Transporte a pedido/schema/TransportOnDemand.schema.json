@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/TransportOnDemand.schema.json",
+  "title": "CNMD - TransportOnDemand schema",
+  "description": "Schema for an on-demand transport service journey.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "TransportOnDemand",
+          "description": "Property. NGSI entity type. It must be TransportOnDemand."
+        },
+        "destination": {
+          "type": "string",
+          "description": "Property. Destination of the service."
+        },
+        "destinationLocation": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Point"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "description": "Property. GeoJSON point representing the journey's endpoint."
+        },
+        "destinationMunicipalityID": {
+          "type": "integer",
+          "description": "Property. Identifier of the destination municipality."
+        },
+        "destinationMunicipality": {
+          "type": "string",
+          "description": "Property. Destination municipality of the service."
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the journey ended, in ISO 8601 format."
+        },
+        "pricePayed": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Price paid for the ticket, with up to two decimal places."
+        },
+        "serviceType": {
+          "type": "string",
+          "enum": [
+            "Municipal",
+            "Intermunicipal",
+            "Outro"
+          ],
+          "description": "Property. Type of service provided."
+        },
+        "sourceLocation": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "const": "Point"
+            },
+            "coordinates": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "type",
+            "coordinates"
+          ],
+          "description": "Property. GeoJSON point representing the journey's starting point."
+        },
+        "sourceMunicipalityID": {
+          "type": "integer",
+          "description": "Property. Identifier of the source municipality."
+        },
+        "sourceMunicipality": {
+          "type": "string",
+          "description": "Property. Source municipality of the service."
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the journey started, in ISO 8601 format."
+        },
+        "standardPrice": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "multipleOf": 0.01,
+          "description": "Property. Standard ticket price, with up to two decimal places."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "realizado",
+            "desistiu/cancelou",
+            "outro"
+          ],
+          "description": "Property. Journey status."
+        },
+        "ticketType": {
+          "type": "string",
+          "description": "Property. Type of ticket charged."
+        },
+        "transactionid": {
+          "type": "integer",
+          "description": "Property. Transaction identifier."
+        },
+        "version": {
+          "type": "string",
+          "description": "Property. Version of the data model."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "sourceLocation",
+    "destinationLocation",
+    "pricePayed",
+    "standardPrice",
+    "startDate",
+    "status"
+  ]
+}
