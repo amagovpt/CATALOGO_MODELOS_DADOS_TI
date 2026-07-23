@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/EmergencyIncident/schema.json",
+  "title": "Emergency Incident schema",
+  "description": "Schema for civil protection emergency incidents",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "EmergencyIncident",
+          "description": "Property. NGSI entity type. It has to be EmergencyIncident"
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Area affected by the incident, used when an address cannot be assigned"
+        },
+        "dateCreated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was created, in ISO 8601 format"
+        },
+        "dateModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entity was last modified, in ISO 8601 format"
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the incident"
+        },
+        "coordinatingAgencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Property. Names of the agencies involved in managing the incident"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the incident was administratively closed, in ISO 8601 format"
+        },
+        "incidentPriority": {
+          "type": "string",
+          "enum": [
+            "Reduzida",
+            "Moderada",
+            "Elevada"
+          ],
+          "description": "Property. Priority assigned to the incident"
+        },
+        "incidentType": {
+          "type": "string",
+          "enum": [
+            "Cheia",
+            "Vento forte",
+            "Sismo",
+            "Nevão",
+            "Onda de calor",
+            "Onda de frio",
+            "Seca",
+            "Inundação por galgamento costeiro",
+            "Erosão costeira",
+            "Colapso de cavidades subterrâneas",
+            "Erupção vulcânica",
+            "Queda de meteorito",
+            "Enxurrada ou aluvião",
+            "Incêndio em edifícios habitacionais",
+            "Incêndio em estacionamentos",
+            "Incêndio em edifícios administrativos",
+            "Incêndio em edifícios escolares",
+            "Incêndio em edifícios hospitalares e lares de idosos",
+            "Incêndio em recintos de espetáculos e reuniões públicas",
+            "Incêndio em edifícios hoteleiros e de restauração",
+            "Incêndio em edifícios comerciais e gares de transporte",
+            "Incêndio em edifícios e recintos desportivos e de lazer",
+            "Incêndio em museus e galerias de arte",
+            "Incêndio em bibliotecas e arquivos",
+            "Incêndio em edifícios prisionais, militares, ou de força de segurança",
+            "Incêndio em edifícios e recintos industriais, oficinas e armazéns",
+            "Incêndio em edifícios degradados ou devolutos",
+            "Incêndio em equipamentos ou produtos",
+            "Incêndio em transporte rodoviário",
+            "Incêndio em transporte aéreo",
+            "Incêndio em transporte ferroviário",
+            "Incêndio em transporte aquático",
+            "Atropelamento rodoviário",
+            "Acidente rodoviário",
+            "Acidente com tratores e máquinas",
+            "Acidente aéreo",
+            "Atropelamento ferroviário",
+            "Acidente Ferróviário",
+            "Acidente aquático",
+            "Acidente com transporte suspenso",
+            "Acidente Radiológico",
+            "Acidente Químico",
+            "Acidente biológico",
+            "Fuga de gás",
+            "Queda de satélite",
+            "Incêndio rural",
+            "Consolidação de rescaldo de incêndio rural",
+            "Gestão de combustível",
+            "Queima",
+            "Incêndio em Detritos",
+            "Queda de árvore",
+            "Desabamento de estruturas edificadas",
+            "Queda de elementos de construção",
+            "Deslizamento de terras",
+            "Inundação de estruturas",
+            "Desentupimento / Tamponamento",
+            "Queda de redes de eletricidade",
+            "Avaria na rede de abastecimento de água",
+            "Avaria na rede de abastecimento de gás",
+            "Avaria em oleoduto ou gasoduto",
+            "Queda de estruturas",
+            "Colapso de galerias e cavidades artificiais",
+            "Rutura de barragem",
+            "Explosão",
+            "Limpeza de via ou Sinalização de Perigo",
+            "Abastecimento de Água",
+            "Evacuação de Pessoas e Bens",
+            "Apoio à Busca pessoas",
+            "Resgate de pessoas",
+            "Resgate de animais",
+            "Prevenção a queimadas",
+            "Escoramento ou remoção de elementos em perigo de queda",
+            "Operação nacional de proteção e socorro",
+            "Missão internacional",
+            "Incêndio Parques Fotovoltaicos e Eólicos",
+            "Apoio à Estabilização de Emergência pós Incêndio Rural",
+            "Acidente em Escadas ou Tapetes Rolantes",
+            "Poluição Aquática",
+            "Poluição Terrestre",
+            "Poluição Atmosférica",
+            "Queda de redes de comunicações",
+            "Controlo de Pragas e Espécies Invasoras",
+            "Prevenção a aterragem de aeronaves"
+          ],
+          "description": "Property. Incident type according to NOP 3101"
+        },
+        "incidentCode": {
+          "type": "integer",
+          "description": "Property. Incident type code according to NOP 3101"
+        },
+        "internalId": {
+          "type": "string",
+          "description": "Property. Identifier used by the source entity's internal system"
+        },
+        "reportedBy": {
+          "type": "string",
+          "enum": [
+            "112",
+            "ANEPC",
+            "Bombeiros",
+            "Câmara Municipal",
+            "Posto de vigia",
+            "Sistema automático",
+            "Cidadão",
+            "Outro/Desconhecido"
+          ],
+          "description": "Property. Entity or channel that reported the incident"
+        },
+        "resourcesDeployed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "resourceType": {
+                "type": "string",
+                "enum": [
+                  "Meios Aéreos",
+                  "Meios Terrestes",
+                  "Meios Aquáticos",
+                  "Operacionais"
+                ],
+                "description": "Property. Type of resource deployed"
+              },
+              "quantity": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Property. Number of resources deployed"
+              }
+            },
+            "required": [
+              "resourceType",
+              "quantity"
+            ]
+          },
+          "description": "Property. List of resources used in the response to the incident"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "Baixo",
+            "Médio",
+            "Alto"
+          ],
+          "description": "Property. Severity level of the incident"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the incident started, in ISO 8601 format"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Despacho",
+            "Em curso",
+            "Em resolução",
+            "Vigilância",
+            "Encerrado"
+          ],
+          "description": "Property. Current status of the incident"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateCreated",
+    "dateModified",
+    "startDate",
+    "location",
+    "status",
+    "incidentType",
+    "incidentCode",
+    "resourcesDeployed"
+  ]
+}

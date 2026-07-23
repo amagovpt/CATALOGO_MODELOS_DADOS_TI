@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Alert/schema.json",
+  "title": "Alert schema",
+  "description": "Schema for alerts and warnings issued by civil protection services",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. Country associated with the alert"
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. Locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code associated with the alert"
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address associated with the alert"
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number associated with the alert"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "Alert",
+          "description": "Property. NGSI entity type. It has to be Alert"
+        },
+        "alertSource": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL identifying the source of the alert"
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "traffic",
+            "naturalDisaster",
+            "weather",
+            "environment",
+            "health",
+            "security",
+            "agriculture"
+          ],
+          "description": "Property. Category of the alert"
+        },
+        "dateIssued": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the alert was issued, in ISO 8601 format"
+        },
+        "description": {
+          "type": "string",
+          "description": "Property. Textual description of the alert"
+        },
+        "severity": {
+          "type": "string",
+          "description": "Property. Severity of the alert"
+        },
+        "subCategory": {
+          "type": "string",
+          "enum": [
+            "trafficJam",
+            "carAccident",
+            "carWrongDirection",
+            "carStopped",
+            "pothole",
+            "roadClosed",
+            "roadWorks",
+            "hazardOnRoad",
+            "injuredBiker",
+            "pedestrianOnRoad",
+            "bikerOnRoad",
+            "tramApproaching",
+            "flood",
+            "tsunami",
+            "coastalEvent",
+            "earthquake",
+            "rainfall",
+            "highTemperature",
+            "lowTemperature",
+            "heatWave",
+            "coldWave",
+            "ice",
+            "snow",
+            "wind",
+            "fog",
+            "tornado",
+            "tropicalCyclone",
+            "hurricane",
+            "snow/ice",
+            "thunderstorms",
+            "fireRisk",
+            "avalancheRisk",
+            "floodRisk",
+            "airPollution",
+            "waterPollution",
+            "pollenConcentration",
+            "asthmaAttack",
+            "bumpedPatient",
+            "fallenPatient",
+            "heartAttack",
+            "suspiciousAction",
+            "robbery",
+            "assault",
+            "civilDisorder",
+            "buildingFire",
+            "forestFire",
+            "noxiousWeed",
+            "snail",
+            "insect",
+            "rodent",
+            "bacteria",
+            "microbe",
+            "fungus",
+            "mite",
+            "virus",
+            "nematodes",
+            "irrigation",
+            "fertilisation"
+          ],
+          "description": "Property. Subcategory of the alert"
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Beginning of the alert validity period, in ISO 8601 format"
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the alert validity period, in ISO 8601 format"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "alertSource",
+    "category",
+    "dateIssued"
+  ]
+}

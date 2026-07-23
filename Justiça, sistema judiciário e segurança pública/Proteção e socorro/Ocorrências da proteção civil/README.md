@@ -32,7 +32,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | internalId | String | Identificador interno | Identificador usado no sistema interno da entidade, que permite aceder posteriormente a informação extra ou possibilita o enriquecimento dos dados em processos de transformação. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | location | GeoJSON | Referência Geojson para o objecto hidrográfico |  Valores possíveis: 'Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString' ou 'MultiPolygon'  |
 | reportedBy          | String | Entidade que relatou o incidente|  Enumerado: <br>- 112,<br>- ANEPC,<br>- Bombeiros,<br>- Câmara Municipal,<br>- Posto de vigia,<br>- Sistema automático,<br>- Cidadão,<br>- Outro/Desconhecido. <br> Modelo: [https://schema.org/Text](https://schema.org/Text)  |
-| resourcesDeployed   | Object  | Recursos utilizados na resposta ao incidente  |  Lista de recursos com definição do tipo e quantidade. o Tipo é definido na propriedade `resourceType` e pode tomar os valores: <br>- Meios Aéreos, <br>- Meios Terrestes, <br>- Meios Aquáticos , <br>- Operacionais. A quantidade é definida pela propriedade inteira `quantity`.  |
+| resourcesDeployed   | Array  | Recursos utilizados na resposta ao incidente  |  Lista de objetos com definição do tipo e quantidade. O tipo é definido na propriedade `resourceType` e pode tomar os valores: <br>- Meios Aéreos, <br>- Meios Terrestes, <br>- Meios Aquáticos , <br>- Operacionais. A quantidade é definida pela propriedade inteira `quantity`.  |
 | severity | String | Nível de gravidade do incidente | Enumerado: <br>- Baixo,<br>- Médio,<br>-  Alto. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | startDate        | DateTime | Data e hora do início da ocorrência  |  De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | status   | String | Estado atual do incidente       | Enumerado: <br>- Despacho, <br>- Em curso, <br>- Em resolução, <br>- Vigilância, <br>- Encerrado.  Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -43,6 +43,7 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
+- `address
 - `dateCreated`
 - `dateModified`
 - `startDate`

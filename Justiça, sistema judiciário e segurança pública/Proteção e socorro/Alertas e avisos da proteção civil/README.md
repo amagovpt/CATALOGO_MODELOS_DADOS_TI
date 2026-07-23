@@ -14,7 +14,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `Alert`|
 | alertSource   | URL | Fonte do alerta | Modelo: [http://schema.org/URL](http://schema.org/URL) |
-| address    | Object          | Morada associada ao ponto de medição | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address  | Object | Morada associada ao ponto de medição | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
 | address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
 | address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
@@ -37,7 +37,7 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
-`address`,
+- `address`,
 - `alertSource`
 - `category`
 - `dateIssued`

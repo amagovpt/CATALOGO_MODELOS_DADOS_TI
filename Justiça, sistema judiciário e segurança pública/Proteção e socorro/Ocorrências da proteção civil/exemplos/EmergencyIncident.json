@@ -4,6 +4,15 @@
   "incidentType": {"type": "Property", "value": "Queima"},
   "incidentCode": {"type": "Property", "value": 3111},
   "description": {"type": "Property", "value": "Queima não reportada previamente à entidades responsáveis."},
+  "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Algarve",
+            "addressLocality": "Tavira",
+            "district"       : "Faro"
+        }
+    },
   "location": {
     "type"            : "GeoProperty",
     "value"           : {
@@ -22,8 +31,8 @@
   },
   "reportedBy": {"type": "Property", "value": "Cidadão"},
   "dateCreated": {"type": "Property", "value": "2025-01-16T10:00:00Z"},
-  "dateModified": {"type": "DateTime", "value": "2025-01-09T10:45:00Z"},
-  "startDate": {"type": "DateTime", "value": "2025-01-09T9:58:00Z"},
+  "dateModified": {"type": "Property", "value": "2025-01-09T10:45:00Z"},
+  "startDate": {"type": "Property", "value": "2025-01-09T9:58:00Z"},
   "severity": {"type": "Property", "value": "Alto"},
   "status": {"type": "Property", "value": "Em curso"},
   "areaServed": {"type": "Property", "value": "Via do Infante"},

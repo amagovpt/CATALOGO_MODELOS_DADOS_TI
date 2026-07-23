@@ -9,6 +9,15 @@
         "value": {"@type": "DateTime", "@value": "2025-01-02T09:25:55.00Z"}
     },
     "description": {"type": "Property", "value": "Flood Alert: Both margins of the river"},
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressRegion"  : "Centro",
+            "addressLocality": "Coimbra",
+            "district"       : "Coimbra"
+        }
+    },
     "location": {
         "type": "GeoProperty",
         "value": {
