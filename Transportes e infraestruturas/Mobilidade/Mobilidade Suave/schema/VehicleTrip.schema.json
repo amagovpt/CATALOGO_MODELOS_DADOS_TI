@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/VehicleTrip.schema.json",
+  "title": "CNMD - VehicleTrip schema",
+  "description": "Schema for a journey made using a soft-mobility vehicle.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "VehicleTrip",
+          "description": "Property. NGSI entity type. It must be VehicleTrip."
+        },
+        "arrivalTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the trip ended, in ISO 8601 format."
+        },
+        "destination": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the destination DockingStation."
+        },
+        "departureTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the trip started, in ISO 8601 format."
+        },
+        "distance": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Distance travelled, normally expressed in metres."
+        },
+        "duration": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Duration of the trip, normally expressed in seconds."
+        },
+        "origin": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the origin DockingStation."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "planned",
+            "ongoing",
+            "completed",
+            "cancelled",
+            "aborted",
+            "disrupted",
+            "unknown"
+          ],
+          "description": "Property. Current status of the trip."
+        },
+        "refVehicle": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the Vehicle used for the trip."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "arrivalTime",
+    "departureTime",
+    "destination",
+    "origin",
+    "refVehicle"
+  ]
+}

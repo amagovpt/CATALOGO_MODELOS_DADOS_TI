@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/DockingStation.schema.json",
+  "title": "CNMD - DockingStation schema",
+  "description": "Schema for a soft-mobility vehicle docking station.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "DockingStation",
+          "description": "Property. NGSI entity type. It must be DockingStation."
+        },
+        "agency_fare_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of a web page containing fare details."
+        },
+        "agency_name": {
+          "type": "string",
+          "description": "Property. Full name of the transport agency."
+        },
+        "agency_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of the transport agency."
+        },
+        "availableVehicleNumber": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of soft-mobility vehicles available at the station."
+        },
+        "contactPoint": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Contact-Commons/properties/contactPoint"
+        },
+        "dockingStationType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Type of docking station."
+        },
+        "freeSlotNumber": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of available docks for returning and parking bicycles or scooters. It must be less than or equal to totalSlotNumber minus outOfServiceSlotNumber."
+        },
+        "mediaURL": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL providing additional information, images, or other media related to the station."
+        },
+        "observationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest observation, in ISO 8601 format."
+        },
+        "openingHours": {
+          "type": "string",
+          "description": "Property. Opening hours of the docking station."
+        },
+        "outOfServiceSlotNumber": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of unavailable docks. It must be less than or equal to totalSlotNumber."
+        },
+        "provider": {
+          "type": "string",
+          "description": "Property. Provider of the docking service."
+        },
+        "stationCode": {
+          "type": "string",
+          "description": "Property. Number or code of the docking station."
+        },
+        "stationName": {
+          "type": "string",
+          "description": "Property. Name of the docking station."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "working",
+            "outOfService",
+            "withIncidence",
+            "full",
+            "almostFull",
+            "empty",
+            "almostEmpty",
+            "other"
+          ],
+          "description": "Property. Current status of the docking station."
+        },
+        "totalSlotNumber": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total number of docks offered by the station."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "agency_name",
+    "availableVehicleNumber",
+    "dockingStationType",
+    "location",
+    "observationDate",
+    "stationName",
+    "stationCode",
+    "status"
+  ]
+}
