@@ -13,8 +13,14 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | ------------- | ------ | ----------- | ------------------------- |
 | id | URI | Identificador único da entidade | Ver [Regra para geração de identificadores únicos](/FAQ.md). |
 | type | String | Tipo de entidade | Valor constante igual a `ItemFlowObserved` |
-| address | Object | Morada associada à estação de carregamento | Inclui país, localidade, rua. Modelo: [https://schema.org/address](https://schema.org/address) |
-| alternateName | String | Nome alternativo para este item | Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| address    | Object          | Morada associada ao ponto de medição | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
+| address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
+| address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
+| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.district | String | Um distrito é um tipo de divisão administrativa | Este campo é obrigatório quando o campo 'address' é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
+| address.postalCode | String | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode) |
+| address.streetAddress | String | Endereço da rua | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)  |
+| address.streetNr | String | Número de polícia | Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | areaServed | String | A área geográfica onde é prestado um serviço ou oferecido um artigo | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | averageGapDistance | Number | Distância média entre dois itens consecutivos detetados | Superior a zero. Normalmente expressa em metros. Modelo: [https://schema.org/Number](https://schema.org/Number) |
 | averageHeadwayTime | Number | Tempo médio de intervalo | O tempo de intervalo é o tempo decorrido entre dois itens consecutivos. Superior a zero. Normalmente expressa em segundos. Modelo: [https://schema.org/Number](https://schema.org/Number) |
@@ -39,11 +45,11 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | owner | Array | Lista contendo uma sequência codificada JSON de caracteres referenciando os Ids únicos do(s) proprietário(s) | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | refDevice | URI | Referência ao dispositivo que realizou a medição | Modelo: [Device](https://github.com/smart-data-models/dataModel.Device/blob/master/Device/doc/spec.md) |
 | refRoadSegment | URI | Segmento de estrada em questão sobre o qual a observação foi feita | Referência a uma entidade. Por exemplo, uma referência para `CycleLane`. Modelo: [https://schema.org/URL](https://schema.org/URL) |
-| reversedLane | Boolean | Indica se o tráfego na faixa foi invertido durante o período de observação. | A ausência deste atributo indica que não houve inversão da faixa. Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
+| reverseLane | Boolean | Indica se o tráfego na faixa foi invertido durante o período de observação. | A ausência deste atributo indica que não houve inversão da faixa. Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
 | seeAlso | URI | Lista de uri apontando para recursos adicionais sobre o item | Modelo: [https://schema.org/URL](https://schema.org/URL) |
 | source | String | Uma sequência de caracteres dando a fonte original dos dados da entidade como URL | Modelo: [https://schema.org/Text](https://schema.org/Text) |
-| speedMax | Number | Velocidade máxima detetada durante o período de observação | Igual ou superior a zero. Normalmente expressa em Kilometer per hour (KMH). Modelo: [https://schema.org/Number](https://schema.org/Number) |
-| speedMin | Number | Velocidade mínima detetada durante o período de observação | Igual ou superior a zero. Normalmente expressa em Kilometer per hour (KMH). Modelo: [https://schema.org/Number](https://schema.org/Number) |
+| maxSpeed | Number | Velocidade máxima detetada durante o período de observação | Igual ou superior a zero. Normalmente expressa em Kilometer per hour (KMH). Modelo: [https://schema.org/Number](https://schema.org/Number) |
+| minSpeed | Number | Velocidade mínima detetada durante o período de observação | Igual ou superior a zero. Normalmente expressa em Kilometer per hour (KMH). Modelo: [https://schema.org/Number](https://schema.org/Number) |
 
 ## Propriedades obrigatórias
 
@@ -51,12 +57,13 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
+- `address`
 - `dateObserved`
 - `laneId` (*)
 - `location`
-- `refRoadSegment`
+- `refRoadSegment` (*)
 
-(*) obrigatório se não for relativo a uma pista ciclável.
+(*) `laneId` é obrigatório se `refRoadSegment` for omitido; refRoadSegment é obrigatório se `laneId` for omitido
 
 ## Notas
 

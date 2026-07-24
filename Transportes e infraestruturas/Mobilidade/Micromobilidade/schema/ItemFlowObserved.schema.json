@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/ItemFlowObserved/schema.json",
+  "title": "Item Flow Observed schema",
+  "description": "Schema for observations of the movement of items at a location during a given period",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ItemFlowObserved",
+          "description": "Property. NGSI entity type. It has to be ItemFlowObserved"
+        },
+        "averageGapDistance": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Average distance between two consecutive detected items"
+        },
+        "averageHeadwayTime": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Average elapsed time between two consecutive items"
+        },
+        "averageLength": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Average length of the items detected during the observation period"
+        },
+        "averageSpeed": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Average speed of detected items in transit during the observation period"
+        },
+        "congested": {
+          "type": "boolean",
+          "description": "Property. Whether congestion occurred during the observation period; absence means false"
+        },
+        "dateObserved": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/dateObserved"
+        },
+        "dateObservedFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Inclusive lower bound of the observation period"
+        },
+        "dateObservedTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Inclusive upper bound of the observation period"
+        },
+        "intensity": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Total number of items detected during the observation period"
+        },
+        "itemSubType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Reference to a subType attribute identifier of an NGSI entity"
+        },
+        "itemType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Reference to an existing or future NGSI-LD entity type identifier"
+        },
+        "laneDirection": {
+          "type": "string",
+          "enum": [
+            "forward",
+            "backward",
+            "inbound",
+            "outbound",
+            "right",
+            "left"
+          ],
+          "description": "Property. Usual direction of travel in the lane referred to by this observation"
+        },
+        "laneId": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Property. Lane identifier following the RoadSegment conventions based on OpenStreetMap"
+        },
+        "occupancy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Fraction of the observation time during which an item occupied the observed lane"
+        },
+        "refDevice": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Device that performed the measurement"
+        },
+        "refRoadSegment": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Road segment on which the observation was made"
+        },
+        "reverseLane": {
+          "type": "boolean",
+          "description": "Property. Whether traffic in the lane was reversed during the observation period; absence means false"
+        },
+        "maxSpeed": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Maximum speed detected during the observation period"
+        },
+        "minSpeed": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Minimum speed detected during the observation period"
+        }
+      }
+    },
+    {
+      "anyOf": [
+        {
+          "required": [
+            "laneId"
+          ]
+        },
+        {
+          "required": [
+            "refRoadSegment"
+          ]
+        }
+      ]
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateObserved",
+    "location"
+  ]
+}
