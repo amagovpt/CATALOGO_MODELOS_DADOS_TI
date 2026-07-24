@@ -1,13 +1,23 @@
 {
-  "id": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6-disabled",
+  "id": "urn:cmcascais:ParkingGroup:cascais:dfrancisco_avilez_6-disabled",
   "type": "ParkingGroup",
   "category": { "type": "Property", "value": ["onStreet", "adjacentSpaces", "onlyDisabled"] },
-  "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6"},
+  "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:ParkingGroup:cascais:dfrancisco_avilez_6"},
   "permitActiveHours": { "type": "Property", "value": {"Monday": "null"} },
   "requiredPermit": { "type": "Property", "value": ["disabledPermit"] },
   "allowedVehicleType": {"type": "Property", "value": "car"},
   "availableSpotNumber": {"type": "Property", "value": 1},
   "totalSpotNumber": {"type": "Property", "value": 2},
+  "address": {
+    "type" : "Property",
+    "value": {
+      "addressCountry"   : "Portugal",
+      "addressLocality"  : "Cascais",
+      "district"         : "Lisboa",
+      "addressRegion"    : "Grande Lisboa",
+      "addressStreetName": "R. Dom Francisco de Avilez"
+    }
+  },
   "location": {
     "type" : "GeoProperty",
     "value": {
