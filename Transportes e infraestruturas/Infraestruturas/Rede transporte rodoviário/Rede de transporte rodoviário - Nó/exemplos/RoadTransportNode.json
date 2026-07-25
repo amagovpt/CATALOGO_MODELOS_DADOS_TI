@@ -12,7 +12,9 @@
     "value"      : {"@type": "DateTime", "@value": "2024-10-15T14:30:00.00Z"},
     "description": "Data em que os dados do nó rodoviário foram modificados pela última vez"
   },
-  "description": "Intersecção que liga o itinerário complementar IC19 à estrada nacional N117",
+  "description": {
+    "type" : "Property",
+    "value":"Intersecção que liga o itinerário complementar IC19 à estrada nacional N117"},
   "name": {"type": "Property", "value": "IC19-N117 Intersecção"},
   "alternateName": {"type": "Property", "value": "Entroncamento Este 12"},
   "location": {
@@ -20,13 +22,13 @@
     "value"           : { "type": "Point", "coordinates": [-9.233396, 38.746397] },
     "coordinateSystem": "EPSG:4258"
   },
-  "address": {
+    "address": {
     "type" : "Property",
-    "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+    "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa","addressLocality": "Lisboa"}
   },
   "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
-  "nodeType": {"type": "Property", "value": "intersecção"},
-  "formType": {"type": "Property", "value": "rotunda"},
+  "nodeType": {"type": "Property", "value": "junction"},
+  "formType": {"type": "Property", "value": "roundabout"},
   "trafficLightControlled": {"type": "Property", "value": true},
   "signalTiming": {
     "type" : "Property",
@@ -45,7 +47,7 @@
     "unitCode"  : "C62",
     "observedAt": "2024-09-15T00:00:00.00Z"
   },
-  "peakHourCongestion": {"type": "Property", "value": "moderado", "observedAt": "2024-09-15T18:00:00.00Z"},
+  "peakHourCongestion": {"type": "Property", "value": "moderate", "observedAt": "2024-09-15T18:00:00.00Z"},
   "accidents": {"type": "Property", "value": 3, "observationPeriod": "P1Y", "observedAt": "2024-09-20T00:00:00.00Z"},
   "connects": {
     "type"       : "Relationship",
@@ -53,8 +55,7 @@
       "urn:dgt:RoadTransportSegment:RDNT-SEG-001",
       "urn:dgt:RoadTransportSegment:RDNT-SEG-015",
       "urn:dgt:RoadTransportSegment:RDNT-SEG-042"
-    ],
-    "description": "Road segments connected at this node"
+    ]
   },
   "infrastructureElements": {
     "type" : "Property",
@@ -97,8 +98,7 @@
   },
   "lastMaintenance": {
     "type"       : "Property",
-    "value"      : {"@type": "DateTime", "@value": "2023-11-08T00:00:00.00Z"},
-    "description": "Data da última grande operação de manutenção"
+    "value"      : {"@type": "DateTime", "@value": "2023-11-08T00:00:00.00Z"}
   },
   "nextMaintenance": {
     "type"       : "Property",

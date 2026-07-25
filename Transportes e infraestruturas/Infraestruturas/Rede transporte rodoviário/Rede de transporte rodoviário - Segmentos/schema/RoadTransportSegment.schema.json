@@ -1,0 +1,259 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/RoadTransportSegment.schema.json",
+  "title": "CNMD - RoadTransportSegment schema",
+  "description": "A segment of a road transport network, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "RoadTransportSegment",
+          "description": "Property. NGSI entity type. It must be RoadTransportSegment."
+        },
+        "accidents": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of accidents recorded on the segment during a specific observation period. Model:'https://schema.org/Number'."
+        },
+        "connects": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Road nodes connected by this segment."
+        },
+        "crossBorderConnections": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Road segments in other regions connected to this segment."
+        },
+        "dailyTrafficVolume": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Daily traffic volume, normally expressed in vehicles per day. Units:'C62'. Model:'https://schema.org/Number'."
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "bidirectional",
+            "unidirectional_positive",
+            "unidirectional_negative"
+          ],
+          "description": "Property. Direction of traffic on the segment."
+        },
+        "endKilometer": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Ending kilometre of the segment. Units:'KMT'. Model:'https://schema.org/Number'."
+        },
+        "heavyVehiclePercentage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Property. Percentage of heavy vehicles. Units:'P1'. Model:'https://schema.org/Number'."
+        },
+        "infrastructureElements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Infrastructure associated with the segment, such as bridges, tunnels and viaducts."
+        },
+        "lanes": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Property. Number of traffic lanes. Model:'https://schema.org/Number'."
+        },
+        "lastMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the last maintenance operation. Model:'https://schema.org/DateTime'."
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Length of the segment. Units:'KMT'. Model:'https://schema.org/Number'."
+        },
+        "nationalId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Unique national identifier. Model:'https://schema.org/Text'."
+        },
+        "nextMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time scheduled for the next maintenance operation. Model:'https://schema.org/DateTime'."
+        },
+        "pavementCondition": {
+          "type": "string",
+          "enum": [
+            "Good",
+            "Satisfactory",
+            "Fair",
+            "Poor",
+            "Very Poor",
+            "Serious",
+            "Failed"
+          ],
+          "description": "Property. Pavement condition based on the ASTM D6433 Pavement Condition Index."
+        },
+        "pavementType": {
+          "type": "string",
+          "enum": [
+            "Asphalt",
+            "Beton",
+            "Calçada Portuguesa",
+            "Gravel",
+            "Other"
+          ],
+          "description": "Property. Type of pavement on the segment."
+        },
+        "refNetwork": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Road network to which the segment belongs."
+        },
+        "roadClass": {
+          "type": "string",
+          "enum": [
+            "Highway",
+            "National",
+            "Regional",
+            "Local",
+            "Forest"
+          ],
+          "description": "Property. Classification of the road."
+        },
+        "roadNumber": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Identifying number of the road. Model:'https://schema.org/Text'."
+        },
+        "roadType": {
+          "type": "string",
+          "enum": [
+            "Lower Capacity",
+            "Large Road",
+            "Private",
+            "Intersecting"
+          ],
+          "description": "Property. Type of road."
+        },
+        "speedLimit": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Speed limit on the segment. Units:'KMH'. Model:'https://schema.org/Number'."
+        },
+        "startKilometer": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Starting kilometre of the segment. Units:'KMT'. Model:'https://schema.org/Number'."
+        },
+        "trafficSignals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Traffic control elements along the segment, such as traffic lights and signs."
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Width of the carriageway. Units:'MTR'. Model:'https://schema.org/Number'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "address",
+    "location",
+    "roadClass",
+    "roadNumber",
+    "startKilometer",
+    "endKilometer",
+    "length",
+    "lanes",
+    "direction",
+    "refNetwork"
+  ]
+}

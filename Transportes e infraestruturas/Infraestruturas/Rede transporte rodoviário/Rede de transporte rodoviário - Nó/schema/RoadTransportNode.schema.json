@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/RoadTransportNode.schema.json",
+  "title": "CNMD - RoadTransportNode schema",
+  "description": "A node in a road transport network, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "RoadTransportNode",
+          "description": "Property. NGSI entity type. It must be RoadTransportNode."
+        },
+        "accidents": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of accidents recorded at the node during a specific observation period. Model:'https://schema.org/Number'."
+        },
+        "capacityVehiclesPerHour": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Vehicle capacity per hour. Units:'C62'. Model:'https://schema.org/Number'."
+        },
+        "connects": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Road segments that meet at this node."
+        },
+        "dailyTrafficVolume": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Daily traffic volume, normally expressed in vehicles per day. Units:'C62'. Model:'https://schema.org/Number'."
+        },
+        "formType": {
+          "type": "string",
+          "enum": [
+            "roundabout",
+            "intersection",
+            "T-junction",
+            "fork",
+            "merge"
+          ],
+          "description": "Property. Physical form of the road node."
+        },
+        "infrastructureElements": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Infrastructure elements at the node, such as traffic lights and pedestrian crossings."
+        },
+        "lastMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the last maintenance operation. Model:'https://schema.org/DateTime'."
+        },
+        "nationalId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Unique national identifier. Model:'https://schema.org/Text'."
+        },
+        "nextMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time scheduled for the next maintenance operation. Model:'https://schema.org/DateTime'."
+        },
+        "nodeType": {
+          "type": "string",
+          "enum": [
+            "junction",
+            "terminal",
+            "bridge node",
+            "tunnel node",
+            "border node"
+          ],
+          "description": "Property. Type of road node."
+        },
+        "peakHourCongestion": {
+          "type": "string",
+          "enum": [
+            "low",
+            "moderate",
+            "high",
+            "very high"
+          ],
+          "description": "Property. Congestion level during peak hour."
+        },
+        "pedestrianFacilities": {
+          "type": "object",
+          "description": "Property. Pedestrian facilities, including crossings and accessibility features. Model:'https://schema.org/StructuredValue'."
+        },
+        "signalTiming": {
+          "type": "object",
+          "description": "Property. Traffic-light timing information, including cycle time, phases and adaptive control. Model:'https://schema.org/StructuredValue'."
+        },
+        "trafficLightControlled": {
+          "type": "boolean",
+          "description": "Property. Whether the node is controlled by traffic lights. Model:'https://schema.org/Boolean'."
+        },
+        "trafficManagement": {
+          "type": "object",
+          "description": "Property. Traffic-management systems, including camera monitoring and adaptive control. Model:'https://schema.org/StructuredValue'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "address",
+    "location",
+    "nodeType",
+    "formType",
+    "connects"
+  ]
+}

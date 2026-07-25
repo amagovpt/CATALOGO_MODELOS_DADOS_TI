@@ -4,15 +4,14 @@
   "dataProvider": {"type": "Property", "value": "Dire"},
   "dateCreated": {
     "type"       : "Property",
-    "value"      : {"@type": "DateTime", "@value": "2024-10-05T10:00:00.00Z"},
-    "description": "Data em que o segmento rodoviário foi registado pela primeira vez no sistema"
+    "value"      : "2024-10-05T10:00:00.00Z"
   },
   "dateModified": {
     "type"       : "Property",
-    "value"      : {"@type": "DateTime", "@value": "2024-10-15T14:30:00.00Z"},
-    "description": "Data em que os dados do segmento rodoviário foram modificados pela última vez"
+    "value"      : "2024-10-15T14:30:00.00Z"
   },
-  "description": "Segmento rodoviário nacional primário que liga os centros urbanos",
+  "description": {
+    "type" : "Property","value":"Segmento rodoviário nacional primário que liga os centros urbanos"},
   "name": {"type": "Property", "value": "N117 - km 12,5 ao km 18,3"},
   "alternateName": {"type": "Property", "value": "Ligação do Corredor Leste"},
   "location": {
@@ -25,10 +24,10 @@
   },
   "address": {
     "type" : "Property",
-    "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+    "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa","addressLocality": "Lisboa"}
   },
   "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
-  "roadClass": {"type": "Property", "value": "National Road"},
+  "roadClass": {"type": "Property", "value": "National"},
   "roadType": {"type": "Property", "value": "Large Road"},
   "roadNumber": {"type": "Property", "value": "N117"},
   "startKilometer": {"type": "Property", "value": 12.5, "unitCode": "KMT"},
@@ -36,14 +35,13 @@
   "length": {"type": "Property", "value": 4.5, "unitCode": "KMT"},
   "width": {"type": "Property", "value": 7.5, "unitCode": "MTR"},
   "lanes": {"type": "Property", "value": 2},
-  "direction": {"type": "Property", "value": "Bidirectional"},
+  "direction": {"type": "Property", "value": "bidirectional"},
   "speedLimit": {"type": "Property", "value": 80, "unitCode": "KMH"},
   "pavementType": {"type": "Property", "value": "Asphalt"},
   "pavementCondition": {"type": "Property", "value": "Satisfactory", "observedAt": "2024-09-20T09:00:00.00Z"},
   "lastMaintenance": {
     "type"       : "Property",
-    "value"      : {"@type": "DateTime", "@value": "2023-05-15T00:00:00.00Z"},
-    "description": "Data da última grande operação de manutenção"
+    "value"      : {"@type": "DateTime", "@value": "2023-05-15T00:00:00.00Z"}
   },
   "nextMaintenance": {
     "type"       : "Property",
@@ -63,11 +61,7 @@
     "type" : "Property",
     "value": ["urn:dgt:RoadTransportNode:RDNT-NODE-023", "urn:dgt:RoadTransportNode:RDNT-NODE-024"]
   },
-  "crossBorderConnections": {
-    "type"       : "Property",
-    "value"      : [],
-    "description": "Referências a troços de estradas de ligação noutras regiões/países"
-  },
+  
   "trafficSignals": {
     "type" : "Property",
     "value": [

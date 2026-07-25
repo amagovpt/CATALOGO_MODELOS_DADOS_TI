@@ -12,7 +12,9 @@
     "value": {"@type": "DateTime", "@value": "2024-10-20T16:45:00.00Z"},
     "description": "Data da última modificação dos dados da rede rodoviária"
   },
-  "description": "Rede rodoviária metropolitana que abrange a área de Lisboa, incluindo estradas nacionais, regionais e locais",
+  "description": {
+    "type" : "Property",
+    "value": "Rede rodoviária metropolitana que abrange a área de Lisboa, incluindo estradas nacionais, regionais e locais"},
   "name": {
     "type" : "Property"                                   ,
     "value": "Rede Viária da Área Metropolitana de Lisboa"
@@ -23,11 +25,6 @@
     "type": "Property",
     "value": {"@type": "DateTime", "@value": "2024-10-25T00:00:00.00Z"},
     "description": "Data a partir da qual esta versão de rede é válida"
-  },
-  "endLifespanVersion": {
-    "type": "Property",
-    "value": null,
-    "description": "Data até à qual esta versão de rede é válida"
   },
   "boundingBox": {
     "type": "GeoProperty",
@@ -49,8 +46,8 @@
     "coordinateSystem": "EPSG:4258"
   },
   "address": {
-    "type": "Property",
-    "value": {"addressCountry": "PT", "addressRegion": "Lisboa"}
+    "type" : "Property",
+    "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa","addressLocality": "Lisboa"}
   },
   "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
   "networkType": {"type": "Property", "value": "road"},

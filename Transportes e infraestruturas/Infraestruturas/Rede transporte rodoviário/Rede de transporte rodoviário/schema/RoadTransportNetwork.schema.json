@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/RoadTransportNetwork.schema.json",
+  "title": "CNMD - RoadTransportNetwork schema",
+  "description": "A road transport network, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "RoadTransportNetwork",
+          "description": "Property. NGSI entity type. It must be RoadTransportNetwork."
+        },
+        "accessibility": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Accessibility index of the network. Model:'https://schema.org/Number'."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time from which this network version is valid. Model:'https://schema.org/DateTime'."
+        },
+        "boundingBox": {
+          "$ref": "https://geojson.org/schema/Polygon.json",
+          "description": "GeoProperty. GeoJSON Polygon delimiting the area covered by the network."
+        },
+        "concessionary": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Concessionaires of the road network."
+        },
+        "connectivity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Connectivity index of the network. Model:'https://schema.org/Number'."
+        },
+        "connectedNetworks": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Adjacent or connected road networks."
+        },
+        "crossBorderPoints": {
+          "type": "object",
+          "description": "Property. Connection points to other administrative regions, including location, connection type and traffic volume. Model:'https://schema.org/StructuredValue'."
+        },
+        "emergencyRoutes": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Routes designated for emergency evacuation."
+        },
+        "endLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time until which this network version is valid. Model:'https://schema.org/DateTime'."
+        },
+        "hasParts": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Road segments and nodes that constitute this network."
+        },
+        "lastFullInspection": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the last full network inspection. Model:'https://schema.org/DateTime'."
+        },
+        "maintenanceAuthority": {
+          "type": "object",
+          "description": "Property. Organization responsible for network maintenance, including its name, contact details and website. Model:'https://schema.org/StructuredValue'."
+        },
+        "nationalId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Unique national identifier. Model:'https://schema.org/Text'."
+        },
+        "networkClassification": {
+          "type": "string",
+          "enum": [
+            "national",
+            "regional",
+            "metropolitan",
+            "local"
+          ],
+          "description": "Property. Classification of the road network."
+        },
+        "networkStatus": {
+          "type": "object",
+          "description": "Property. Current overall state of the network, including its general condition, critical points and congestion level. Model:'https://schema.org/StructuredValue'."
+        },
+        "networkType": {
+          "type": "string",
+          "enum": [
+            "motorway",
+            "trunk",
+            "primary",
+            "tertiary",
+            "unclassified",
+            "residential",
+            "service",
+            "track",
+            "path",
+            "road"
+          ],
+          "description": "Property. Type of road network according to the OpenStreetMap highway classification."
+        },
+        "roadClass": {
+          "type": "object",
+          "description": "Property. Distribution of road classes in the network, including length by class. Model:'https://schema.org/StructuredValue'."
+        },
+        "totalLength": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total length of the network. Units:'KMT'. Model:'https://schema.org/Number'."
+        },
+        "totalNodes": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Total number of nodes in the network. Model:'https://schema.org/Number'."
+        },
+        "totalSegments": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Total number of segments in the network. Model:'https://schema.org/Number'."
+        },
+        "trafficStatistics": {
+          "type": "object",
+          "description": "Property. Aggregated traffic information, including average daily volume, peak-hour volume and congestion hours. Model:'https://schema.org/StructuredValue'."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Version of the data model. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "address",
+    "boundingBox",
+    "networkType",
+    "networkClassification",
+    "totalLength",
+    "totalNodes",
+    "totalSegments"
+  ]
+}
