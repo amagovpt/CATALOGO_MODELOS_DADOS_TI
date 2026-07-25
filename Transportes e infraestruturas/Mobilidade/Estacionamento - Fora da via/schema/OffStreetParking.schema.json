@@ -1,0 +1,431 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Parking/OffStreetParking/schema.json",
+  "title": "CNMD - OffStreetParking schema",
+  "description": "Schema for a parking site outside the public road.",
+  "type": "object",
+  "$defs": {
+    "slotAvailability": {
+      "type": "object",
+      "properties": {
+        "availableSpotNumber": { "type": "integer", "minimum": 0 },
+        "occupiedSpotNumber": { "type": "integer", "minimum": 0 },
+        "totalSpotNumber": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "allOf": [
+    { "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons" },
+    { "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons" },
+    { "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/DateTime-Commons" },
+    { "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Contact-Commons" },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte", "Centro", "Oeste e Vale do Tejo", "Grande Lisboa",
+                "Península de Setúbal", "Alentejo", "Algarve",
+                "Região Autónoma dos Açores", "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores", "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco",
+                "Coimbra", "Évora", "Faro", "Guarda", "Madeira", "Leiria", "Lisboa",
+                "Portalegre", "Porto", "Santarém", "Setúbal", "Viana do Castelo",
+                "Vila Real", "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": ["addressLocality", "addressRegion", "district"]
+        },
+        "type": {
+          "type": "string",
+          "const": "OffStreetParking",
+          "description": "Property. NGSI entity type. It has to be OffStreetParking."
+        },
+        "acceptedPaymentMethod": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ByBankTransferInAdvance", "ByInvoice", "Cash", "CheckInAdvance", "COD",
+              "DirectDebit", "GoogleCheckout", "PayPal", "PaySwarm"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Payment methods accepted by the parking site."
+        },
+        "accessModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when the entrance and exit counts were updated."
+        },
+        "aggregateRating": {
+          "type": "object",
+          "description": "Property. Aggregated rating for the parking site."
+        },
+        "allowedVehicleType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "agriculturalVehicle", "anyVehicle", "bicycle", "bus", "car", "caravan",
+              "carWithCaravan", "carWithTrailer", "constructionOrMaintenanceVehicle", "lorry",
+              "moped", "motorcycle", "motorcycleWithSideCar", "motorscooter", "tanker",
+              "trailer", "van"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Vehicle types allowed in the parking site."
+        },
+        "availableSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of available spaces, including reserved spaces and all vehicle types."
+        },
+        "averageSpotLength": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Average length of the parking spaces."
+        },
+        "averageSpotWidth": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Average width of the parking spaces."
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["underground", "public", "feeCharged", "mediumTerm", "barrierAccess"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Categories of the off-street parking site."
+        },
+        "chargeType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "additionalIntervalPrice", "annualPayment", "firstIntervalPrice", "flat", "free",
+              "minimum", "maximum", "monthlyPayment", "other", "seasonTicket", "temporaryPrice"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Types of charge applied by the parking site."
+        },
+        "extCategory": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. External categories complementing category."
+        },
+        "extraSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of extra available spaces reserved for special purposes or other vehicle types."
+        },
+        "facilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "bikeParking", "cashMachine", "copyMachineOrService", "defibrillator",
+              "dumpingStation", "electricChargingStation", "elevator", "faxMachineOrService",
+              "fireHose", "fireExtinguisher", "fireHydrant", "firstAidEquipment", "freshWater",
+              "iceFreeScaffold", "informationPoint", "internetWireless", "luggageLocker",
+              "payDesk", "paymentMachine", "playground", "publicPhone", "refuseBin",
+              "safeDeposit", "shower", "toilet", "tollTerminal", "vendingMachine", "wasteDisposal"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Facilities available at the parking site."
+        },
+        "firstAvailableFloor": {
+          "type": "integer",
+          "description": "Property. Floor closest to ground level with available parking spaces."
+        },
+        "fourWheelerSlots": {
+          "$ref": "#/$defs/slotAvailability",
+          "description": "Property. Availability of spaces for four-wheeled vehicles."
+        },
+        "geometry": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons/properties/location",
+          "description": "GeoProperty. GeoJSON geometry of the parking site."
+        },
+        "highestFloor": {
+          "type": "integer",
+          "description": "Property. Highest floor of a multi-floor parking site."
+        },
+        "images": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URLs of images of the parking site."
+        },
+        "layout": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automatedParkingGarage", "carports", "covered", "field", "garageBoxes",
+              "multiLevel", "multiStorey", "nested", "openSpace", "rooftop", "sheds",
+              "singleLevel", "surface", "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Layouts of the parking site."
+        },
+        "lowestFloor": {
+          "type": "integer",
+          "description": "Property. Lowest floor of a multi-floor parking site."
+        },
+        "maximumAllowedHeight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Maximum vehicle height allowed."
+        },
+        "maximumAllowedWidth": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. Maximum vehicle width allowed."
+        },
+        "maximumParkingDuration": {
+          "type": "string",
+          "description": "Property. Maximum allowed stay as an ISO 8601 duration or another parking-relevant string."
+        },
+        "measuresPeriod": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Measurement period associated with availability and the per-minute rate."
+        },
+        "measuresPeriodUnit": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Unit used for measuresPeriod."
+        },
+        "municipalityInfo": {
+          "type": "object",
+          "properties": {
+            "district": { "type": "string" },
+            "ulbName": { "type": "string" },
+            "cityId": { "type": "string" },
+            "wardId": { "type": "string" },
+            "stateName": { "type": "string" },
+            "cityName": { "type": "string" },
+            "zoneName": { "type": "string" },
+            "zoneId": { "type": "string" },
+            "wardName": { "type": "string" },
+            "wardNum": { "type": "number" }
+          },
+          "description": "Property. Municipal information associated with the observation."
+        },
+        "observationDateTime": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the latest reported observation."
+        },
+        "occupancy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Proportion of occupied parking spaces."
+        },
+        "occupancyDetectionType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["balancing", "manual", "modelBased", "none", "singleSpaceDetection"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Methods used to detect occupancy."
+        },
+        "occupancyModified": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time when occupancy values were last modified."
+        },
+        "occupiedSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of occupied parking spaces."
+        },
+        "outOfServiceSlotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of parking spaces that are out of service."
+        },
+        "parkingMode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["echelonParking", "parallelParking", "perpendicularParking"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Parking modes supported by the site."
+        },
+        "parkingSiteId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Unique identifier of the parking site."
+        },
+        "priceCurrency": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Currency of priceRatePerMinute."
+        },
+        "priceRatePerMinute": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Parking price per minute."
+        },
+        "provider": {
+          "type": "object",
+          "description": "Property. Service provider for the parking site."
+        },
+        "refParkingAccess": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to a parking-site access point."
+        },
+        "refParkingGroup": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to an identified parking group at the site."
+        },
+        "refParkingSpot": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to an individual parking space at the site."
+        },
+        "requiredPermit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "employeePermit", "fairPermit", "governmentPermit", "noPermitNeeded",
+              "residentPermit", "specificIdentifiedVehiclePermit", "studentPermit", "visitorPermit"
+            ]
+          },
+          "uniqueItems": true,
+          "description": "Property. Permits that may be required to park."
+        },
+        "reservationType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["mandatory", "notAvailable", "optional", "partly"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Reservation types supported by the parking site."
+        },
+        "security": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "areaSeparatedFromSurroundings", "cctv", "dog", "externalSecurity", "fences",
+              "floodLight", "guard24hours", "lighting", "patrolled", "securityStaff"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Security features provided by the parking site."
+        },
+        "specialLocation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "airportTerminal", "cableCarStation", "campground", "cinema", "coachStation",
+              "conventionCentre", "exhibitionCentre", "ferryTerminal", "hotel", "market",
+              "publicTransportStation", "religiousCentre", "shoppingCentre", "skilift",
+              "specificFacility", "themePark", "trainStation", "vehicleOnRailTerminal", "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Special locations associated with the parking site."
+        },
+        "status": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "almostFull", "closed", "closedAbnormal", "full", "fullAtEntrance", "open",
+              "openingTimesInForce", "spacesAvailable"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Current statuses of the parking site."
+        },
+        "totalSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Total number of spaces offered by the parking site."
+        },
+        "twoWheelerSlots": {
+          "$ref": "#/$defs/slotAvailability",
+          "description": "Property. Availability of spaces for two-wheeled vehicles."
+        },
+        "unclassifiedSlots": {
+          "$ref": "#/$defs/slotAvailability",
+          "description": "Property. Availability of spaces for unclassified vehicles."
+        },
+        "usageScenario": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "automaticParkingGuidance", "carSharing", "dropOffWithValet", "dropOffMechanical",
+              "dropOff", "eventParking", "kissAndRide", "liftShare", "loadingBay",
+              "overnightParking", "parkAndCycle", "parkAndRide", "parkAndWalk", "restArea",
+              "serviceArea", "staffGuidesToSpace", "truckParking", "vehicleLift", "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Usage scenarios supported by the parking site."
+        },
+        "vehicleEntranceCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Aggregated number of vehicles entering during a period."
+        },
+        "vehicleExitCount": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Aggregated number of vehicles leaving during a period."
+        }
+      }
+    }
+  ],
+  "required": ["id", "type", "address", "location"]
+}

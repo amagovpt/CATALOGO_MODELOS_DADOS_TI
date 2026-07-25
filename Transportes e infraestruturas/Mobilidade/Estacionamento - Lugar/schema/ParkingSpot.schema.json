@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Parking/ParkingSpot/schema.json",
+  "title": "CNMD - ParkingSpot schema",
+  "description": "Schema for a delimited area where one vehicle can be parked.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/PhysicalObject-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ParkingSpot",
+          "description": "Property. NGSI entity type. It has to be ParkingSpot."
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "onStreet",
+              "offStreet"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Whether the parking spot belongs to an on-street or off-street parking site."
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Length of the parking spot."
+        },
+        "refDevice": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. References to devices representing the physical sensors used to monitor this parking spot."
+        },
+        "refParkingGroup": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the single parking group to which this parking spot belongs."
+        },
+        "refParkingSite": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the parking site to which this parking spot belongs."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "closed",
+            "free",
+            "occupied",
+            "unknown"
+          ],
+          "description": "Property. Occupancy status of the parking spot."
+        },
+        "timeInstant": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/timeInstant"
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Width of the parking spot."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "location",
+    "category",
+    "refParkingSite",
+    "status"
+  ]
+}

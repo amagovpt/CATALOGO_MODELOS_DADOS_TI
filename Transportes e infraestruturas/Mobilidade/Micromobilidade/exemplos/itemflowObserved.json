@@ -1,5 +1,5 @@
 {
-    "id": "urn:ngsi-ld:ItemFlowObserved:bike-counter-5552:2025-11-15T08:00:00Z:bicycles",
+    "id": "urn:cml:ItemFlowObserved:bike-counter-5552:2025-11-15T08:00:00Z:bicycles",
     "type": "ItemFlowObserved",
     "dateObserved": {
         "type": "Property",
@@ -12,6 +12,15 @@
     "dateObservedTo": {
         "type": "Property",
         "value": {"@type": "DateTime", "@value": "2025-11-15T11:59:59Z"}
+    },
+    "address"           : {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa"            
+        }
     },
     "location": {
         "type": "GeoProperty",

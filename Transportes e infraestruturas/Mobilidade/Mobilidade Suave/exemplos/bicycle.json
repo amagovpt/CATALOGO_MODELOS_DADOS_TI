@@ -9,7 +9,7 @@
     },
     "vehicleAltitude": {
         "type": "Property",
-        "value": 54,
+        "value": "54",
         "observedAt": "2025-12-02T15:00:02Z",
         "unitCode": "MTR"
     },
@@ -17,6 +17,16 @@
     "currentTripCount": {"type": "Property", "value": 2},
     "deviceBatteryStatus": {"type": "Property", "value": "Connected"},
     "deviceSimNumber": {"type": "Property", "value": "9942142573"},
+    "address": {
+        "type": "Property",
+        "value": {
+            "addressCountry": "Portugal",
+            "addressLocality": "Lisboa",
+            "addressRegion": "Grande Lisboa",
+            "district": "Lisboa"
+            
+        }
+    },
     "location": {
         "type": "GeoProperty",
         "value": {

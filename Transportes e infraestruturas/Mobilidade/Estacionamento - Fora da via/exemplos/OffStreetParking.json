@@ -21,8 +21,9 @@
     "value": {
       "addressLocality": "Porto",
       "addressCountry" : "Portugal",
-      "streetAddress"  : "Rua de Fernandes Tomás",
-      "type"           : "PostalAddress"
+      "addressRegion"  : "Norte",
+      "district"       : "Porto",
+      "streetAddress"  : "Rua de Fernandes Tomás"
     }
   },
   "maximumParkingDuration": {"type": "Property", "value": "PT8H"},

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Parking/ParkingAccess/schema.json",
+  "title": "CNMD - ParkingAccess schema",
+  "description": "Schema for an access point to an off-street parking site.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ParkingAccess",
+          "description": "Property. NGSI entity type. It has to be ParkingAccess."
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Access-point categories defined by DATEX II AccessCategoryEnum or meaningful application-specific values, such as vehicleEntrance, vehicleExit, pedestrianEntrance, or pedestrianExit."
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Access equipment and accessibility features defined by DATEX II or meaningful application-specific values."
+        },
+        "height": {
+          "type": "number",
+          "description": "Property. Height of the access point, normally expressed in metres."
+        },
+        "refOffStreetParking": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the off-street parking site served by this access point."
+        },
+        "slope": {
+          "type": "number",
+          "description": "Property. Relative slope of the access point."
+        },
+        "width": {
+          "type": "number",
+          "description": "Property. Width of the access point, normally expressed in metres."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "location"
+  ]
+}

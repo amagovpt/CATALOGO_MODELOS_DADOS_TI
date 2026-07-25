@@ -4,9 +4,13 @@
   "category": { "type": "Property", "value": ["vehicleEntrance"] },
   "features": { "type": "Property", "value": ["barrier"] },
   "location": {
-    "type"            : "geo:json",
+    "type"            : "GeoProperty",
     "value"           : { "type": "Point", "coordinates": [-8.60961198807, 41.150691773] },
     "coordinateSystem": "EPSG:4258"
+  },
+  "address": {
+    "type" : "Property",
+    "value": {"addressLocality": "Porto", "addressCountry": "Portugal", "addressRegion": "Norte", "district": "Porto"}
   },
   "name": {"type": "Property", "value": "Trinidade main entrance"},
   "refOffStreetParking": {"type": "Property", "value": "urn:cmporto:OffStreetParking:porto-OffStreetParking-23889"}

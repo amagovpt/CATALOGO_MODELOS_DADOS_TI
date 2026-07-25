@@ -5,7 +5,10 @@
     "type": "Property",  
     "value": {  
       "addressCountry": "Portugal",  
-      "addressLocality": "Lisboa",  
+      "addressLocality": "Lisboa",
+      "district": "Lisboa",
+      "addressRegion": "Grande Lisboa",
+      
       "streetAddress": "Avenida 24 de Julho 1200-869, 74A"  
     }  
   },  

@@ -1,20 +1,29 @@
 {
-  "id": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6",
+  "id": "urn:cmcascais:OnStreetParking::dfrancisco_avilez_6",
   "type": "OnStreetParking",
-  "modifiedAt": "2024-10-20T04:00:00.00Z",
+  "modifiedAt": {"type": "Property", "value": "2024-10-20T04:00:00.00Z"},
   "category": { "type": "Property", "value": ["blueZone", "shortTerm", "forDisabled"] },
   "permitActiveHours": { "type": "Property", "value": {"blueZonePermit": "Mo, Tu, We, Th, Fr, Sa 09:00-19:00"} },
   "requiredPermit": { "type": "Property", "value": ["blueZonePermit", "disabledPermit"] },
   "allowedVehicleType": { "type": "Property", "value": ["car"] },
   "chargeType": { "type": "Property", "value": ["temporaryFee"] },
   "refParkingGroup": {
-    "type" : "Relationship",
+    "type"  : "Relationship",
     "object": [
       "urn:cmcascais:ParkingGroup:dfrancisco_avilez_6-main",
       "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6-disabled"
     ]
   },
-  "totalSpotNumber": {"type": "Number", "value": 6},
+  "address": {
+    "type" : "Property",
+    "value": {
+      "addressCountry" : "Portugal",
+      "addressLocality": "Cascais",
+      "district"       : "Lisboa",
+      "addressRegion"  : "Grande Lisboa"
+    }
+  },
+  "totalSpotNumber": {"type": "Property", "value": 6},
   "location": {
     "type" : "GeoProperty",
     "value": {
@@ -28,17 +37,13 @@
       "coordinateSystem": "EPSG:4258"
     }
   },
-  "address": {
-    "type" : "Property",
-    "value": {"addressLocality": "Cascais", "addressCountry": "Portugal", "streetAddress": "Rua Dom Francisco Avilez"}
-  },
   "areaServed": {"type": "Property", "value": "Zona Centro"},
   "maximumAllowedStay": {"type": "Property", "value": "PT2H"},
   "dateModified": {"type": "Property", "value": "2024-10-20T04:00:00.00Z"},
   "extraSpotNumber": {"type": "Property", "value": 2},
   "availableSpotNumber": {"type": "Property", "value": 3},
   "occupiedSpotNumber": {"type": "Property", "value": 3},
-  "observationDateTime": {"type": "DateTime", "value": "2021-03-11T15:51:02Z"},
+  "observationDateTime": {"type": "Property", "value": "2021-03-11T15:51:02Z"},
   "fourWheelerSlots": {
     "type" : "Property",
     "value": {"availableSpotNumber": 10, "totalSpotNumber": 10, "occupiedSpotNumber": 0}

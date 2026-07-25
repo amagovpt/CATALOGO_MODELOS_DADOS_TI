@@ -4,10 +4,12 @@
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry": "PT",
-            "addressLocality": "Portugal",
+            "addressCountry": "Portugal",
+            "addressLocality": "Lisboa",
+            "addressRegion": "Grande Lisboa",
+            "district": "Lisboa",
             "streetAddress": "Avenida da Liberdade, 266A",
-            "postalCode": 1250
+            "postalCode": "1250"
         }
     },
     "areaServed": {"type": "Property", "value": "Marquês de Pombal"},

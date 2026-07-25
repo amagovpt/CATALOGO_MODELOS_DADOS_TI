@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.Parking/ParkingGroup/schema.json",
+  "title": "CNMD - ParkingGroup schema",
+  "description": "Schema for a group of parking spaces belonging to a parking site.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "ParkingGroup",
+          "description": "Property. NGSI entity type. It has to be ParkingGroup."
+        },
+        "allowedVehicleType": {
+          "type": "string",
+          "enum": [
+            "bicycle",
+            "bus",
+            "car",
+            "caravan",
+            "motorcycle",
+            "motorscooter",
+            "truck"
+          ],
+          "description": "Property. The vehicle type allowed in the parking group. A parking group allows only one vehicle type."
+        },
+        "areBordersMarked": {
+          "type": "boolean",
+          "description": "Property. Whether the parking spaces are delimited."
+        },
+        "availableSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. The number of available spaces in this group. It must be less than or equal to totalSpotNumber."
+        },
+        "averageSpotLength": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. The average length of the parking spaces."
+        },
+        "averageSpotWidth": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. The average width of the parking spaces."
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "adjacentSpaces",
+              "blueZone",
+              "completeFloor",
+              "free",
+              "feeCharged",
+              "greenZone",
+              "loadUnloadZone",
+              "nonAdjacentSpaces",
+              "offStreet",
+              "onlyDisabled",
+              "onlyElectricalCharging",
+              "onlyResidents",
+              "onlyWithPermit",
+              "onStreet",
+              "particularConditionsSpaces",
+              "shortTermMediumTermLongTerm",
+              "statisticsOnly",
+              "vehicleTypeSpaces"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Categories of the parking group."
+        },
+        "chargeType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "additionalIntervalPrice",
+              "annualPayment",
+              "firstIntervalPrice",
+              "flat",
+              "free",
+              "minimum",
+              "maximum",
+              "monthlyPayment",
+              "seasonTicket",
+              "temporaryFee",
+              "temporaryPrice",
+              "unknown",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Types of charge applied by the parking site."
+        },
+        "maximumAllowedHeight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. The maximum allowed vehicle height."
+        },
+        "maximumAllowedWidth": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Property. The maximum allowed vehicle width."
+        },
+        "maximumParkingDuration": {
+          "type": "string",
+          "pattern": "^(|P(?!$)(?:\\d+Y)?(?:\\d+M)?(?:\\d+D)?(?:T(?=\\d)(?:\\d+H)?(?:\\d+M)?(?:\\d+(?:\\.\\d+)?S)?)?)$",
+          "description": "Property. Maximum allowed stay as an ISO 8601 duration. An empty string means that the duration is undefined."
+        },
+        "occupancyDetectionType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "balancing",
+              "manual",
+              "modelBased",
+              "none",
+              "singleSpaceDetection"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Methods used to detect occupancy."
+        },
+        "parkingMode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "echelonParking",
+              "parallelParking",
+              "perpendicularParking"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Parking modes used by the group."
+        },
+        "permitActiveHours": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Property. Opening-hours expressions keyed by permit, indicating when each required permit is active."
+        },
+        "refParkingSite": {
+          "type": "string",
+          "format": "uri",
+          "description": "Relationship. Reference to the OffStreetParking or OnStreetParking site to which this group belongs."
+        },
+        "refParkingSpot": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. References to individual parking spaces belonging to this group."
+        },
+        "requiredPermit": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "description": "Property. Permits that may be required to park. At least one listed permit must be held."
+        },
+        "reservationType": {
+          "type": "string",
+          "enum": [
+            "mandatory",
+            "notAvailable",
+            "optional",
+            "partly"
+          ],
+          "description": "Property. Conditions for reservation."
+        },
+        "totalSpotNumber": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. The total number of spaces in this group."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "refParkingSite"
+  ]
+}

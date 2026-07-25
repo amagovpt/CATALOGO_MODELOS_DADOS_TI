@@ -6,6 +6,16 @@
   "category"      : { "type": "Property", "value": ["onStreet"] },
   "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6"},
   "name"          : {"type": "Property", "value": "A-13"},
+  "address"       : {
+    "type" : "Property",
+    "value": {
+      "addressCountry"  : "Portugal",
+      "addressLocality" : "Cascais",
+      "district"        : "Lisboa",
+      "addressRegion"   : "Grande Lisboa",
+      "addressStretName": "R. Dom Francisco de Avilez"
+    }
+  },
   "location"      : {
     "type"            : "GeoProperty",
     "value"           : { "type": "Point", "coordinates": [-9.422483, 38.699607] },
