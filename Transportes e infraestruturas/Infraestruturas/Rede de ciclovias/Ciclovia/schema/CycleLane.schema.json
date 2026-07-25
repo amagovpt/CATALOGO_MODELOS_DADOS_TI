@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/CycleLane.schema.json",
+  "title": "CNMD - CycleLane schema",
+  "description": "A cycle lane, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "CycleLane",
+          "description": "Property. NGSI entity type. It must be CycleLane."
+        },
+        "averageSlope": {
+          "type": "number",
+          "description": "Property. Average slope of the cycle lane, normally expressed as a percentage. Units:'P1'. Model:'https://schema.org/Number'."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Beginning of the real-world version. Model:'https://schema.org/DateTime'."
+        },
+        "connectsTo": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Cycle lanes directly connected to this cycle lane."
+        },
+        "endLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the real-world version. Model:'https://schema.org/DateTime'."
+        },
+        "image": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. URLs of images associated with the cycle lane. Model:'https://schema.org/URL'."
+        },
+        "lastMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the last maintenance. Model:'https://schema.org/DateTime'."
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Length of the cycle lane, normally in kilometres. Units:'KMT'. Model:'https://schema.org/Number'."
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. License associated with the data. Model:'https://schema.org/URL'."
+        },
+        "maintainer": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Party responsible for maintaining the cycle lane."
+        },
+        "maxAltitude": {
+          "type": "number",
+          "description": "Property. Maximum altitude reached by the cycle lane. Units:'MTR'. Model:'https://schema.org/Number'."
+        },
+        "maxSlope": {
+          "type": "number",
+          "description": "Property. Maximum slope of the cycle lane, normally expressed as a percentage. Units:'P1'. Model:'https://schema.org/Number'."
+        },
+        "minAltitude": {
+          "type": "number",
+          "description": "Property. Minimum altitude reached by the cycle lane. Units:'MTR'. Model:'https://schema.org/Number'."
+        },
+        "nearBy": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Nearby infrastructure and points of interest relevant to cyclists."
+        },
+        "nextMaintenance": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the next scheduled maintenance. Model:'https://schema.org/DateTime'."
+        },
+        "pavementCondition": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Property. Observed pavement quality, where 5 is excellent. Model:'https://schema.org/Number'."
+        },
+        "pavementType": {
+          "type": "string",
+          "enum": [
+            "Asphalt",
+            "Concrete",
+            "Bituminous Pavement",
+            "Precast Concrete Slabs",
+            "Compacted Gravel",
+            "Stabilised Soil",
+            "Resin-bound Gravel",
+            "Wooden Decking",
+            "Clay or Red Earth",
+            "Porous Asphalt",
+            "Rubberised",
+            "Cobbles",
+            "Other"
+          ],
+          "description": "Property. Type of pavement used on the cycle lane."
+        },
+        "refNetwork": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Cycle network to which the cycle lane belongs."
+        },
+        "segregation": {
+          "type": "string",
+          "enum": [
+            "fullySegregated",
+            "hardPhysicalSeparation",
+            "softPhysicalSeparation",
+            "visualSeparationOnly",
+            "mixedTraffic"
+          ],
+          "description": "Property. Type of separation provided for the cycle lane."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "excellent",
+            "good",
+            "fair",
+            "poor",
+            "critical"
+          ],
+          "description": "Property. State of conservation of the cycle lane."
+        },
+        "typology": {
+          "type": "string",
+          "enum": [
+            "30+Bike",
+            "one-way",
+            "two-way",
+            "contraflow",
+            "cycleLane",
+            "sharedWithPedestrians",
+            "trail",
+            "eco-trail"
+          ],
+          "description": "Property. Typology of the cycle lane."
+        },
+        "updateFrequency": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Frequency with which the data is updated. Model:'https://schema.org/Text'."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Version of the data model. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "name",
+    "address",
+    "location",
+    "beginLifespanVersion",
+    "owner",
+    "refNetwork"
+  ]
+}

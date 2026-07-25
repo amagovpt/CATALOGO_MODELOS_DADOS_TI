@@ -26,7 +26,7 @@
     },
     "address": {
         "type" : "Property",
-        "value": {"addressCountry": "PT", "addressRegion": "Lisboa", "district": "Distrito de Lisboa"}
+        "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa", "addressLocality": "Lisboa"}
     },
     "length": {"type": "Property", "value": 0.8, "unitCode": "KMT"},
     "pavementType": {"type": "Property", "value": "Asphalt"},
@@ -45,15 +45,15 @@
         "type" : "Property",
         "value": ["http://inspire.ec.europa.eu/theme/tn", "http://inspire.ec.europa.eu/featureconcept/RoadLink"]
     },
-    "refNetwork": { "type": "Relationship", "object": ["urn:cml:CycleNetwork:Lisbon"] },
+    "refNetwork": { "type": "Relationship", "object": "urn:cml:CycleNetwork:Lisbon" },
     "maxSlope": {"type": "Property", "value": 10, "unitCode": "P1"},
     "averageSlope": {"type": "Property", "value": 2, "unitCode": "P1"},
     "minAltitude": {"type": "Property", "value": 97, "unitCode": "MTR"},
     "maxAltitude": {"type": "Property", "value": 100, "unitCode": "MTR"},
     "beginLifespanVersion": {"type": "Property", "value": "2021-05-01T00:00:00Z"},
     "status": {"type": "Property", "value": "excellent"},
-    "createdAt": "2020-05-01T00:00:00Z",
-    "modifiedAt": "2025-04-10T12:00:00Z",
+    "createdAt": {"type": "Property", "value":"2020-05-01T00:00:00Z"},
+    "modifiedAt": {"type": "Property", "value":"2025-04-10T12:00:00Z"},
     "owner": { "type": "Relationship", "object": ["urn:ngsi-ld:CMLisboa"] },
     "maintainer": {"type": "Relationship", "object": "urn:ngsi-ld:Organization:WaterUtilityCompany123"},
     "version": {"type": "Property", "value": "1.0"},

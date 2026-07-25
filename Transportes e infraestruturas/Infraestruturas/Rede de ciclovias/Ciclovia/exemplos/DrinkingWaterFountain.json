@@ -1,20 +1,18 @@
 {
-  "id": "urn:arte:PointOfInterest:DrinkingWaterFountain33 ",
+  "id": "urn:arte:PointOfInterest:DrinkingWaterFountain33",
   "type": "PointOfInterest",
+
   "address": {
-    "type": "Property",
-    "value": {
-      "addressCountry": "PT",
-      "addressLocality": "Lisboa",
-      "streetAddress":"Rua Jorge Amado 33A",
-      "postalCode":"1950 Lisboa",
-      "areaServed":"Marvila"
-    }
-  },
+        "type" : "Property",
+        "value": {"addressCountry": "PT", "addressRegion": "Grande Lisboa", "district": "Lisboa", "addressLocality": "Lisboa","streetAddress":"Rua Jorge Amado",
+      "postalCode":"1950 Lisboa", "streetNr" :"33A"}
+    },
+    "description" : {"type" : "Property",
+        "value":"Fonte de Água Potável"},
   "category": {
     "type": "Property",
     "value": [
-      "DrinkingWaterFountain"
+      "Fontanário/ponto de água"
     ]
   },
   "location": {

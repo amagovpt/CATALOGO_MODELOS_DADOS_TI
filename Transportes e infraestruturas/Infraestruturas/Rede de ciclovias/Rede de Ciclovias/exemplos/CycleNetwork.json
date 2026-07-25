@@ -28,7 +28,7 @@
     },
     "coordinateSystem": "EPSG:4258"
   },
-  "address": { "type": "Property", "value": {"addressCountry": "PT", "addressRegion": "Lisboa"} },
+  "address": { "type": "Property", "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "addressLocality": "Lisboa", "district": "Lisboa" } },
   "areaServed": {"type": "Property", "value": "Cidade de Lisboa"},
   "totalLength": {"type": "Property", "value": 200, "unitCode": "KMT"},
   "connectedNetworks": {
@@ -51,7 +51,6 @@
     ]
   },
   "beginLifespanVersion": {"type": "Property", "value": "2024-10-25T00:00:00.00Z"},
-  "endLifespanVersion": {"type": "Property", "value": null},
   "createdAt": {"type": "Property", "value": "2024-10-01T08:00:00.00Z"},
   "modifiedAt": {"type": "Property", "value": "2024-10-20T16:45:00.00Z"},
   "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
