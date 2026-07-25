@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.1.0",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/CellMobileData.schema.json",
+  "title": "CNMD - CellMobileData schema",
+  "description": "Mobile-device movement metrics reported for a geographic cell and time period.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "CellMobileData",
+          "description": "Property. NGSI entity type. It must be CellMobileData."
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the reporting period, in ISO 8601 format."
+        },
+        "numberOfDistinctDevices": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct devices in the cell during the reporting period."
+        },
+        "numberOfDistinctDevicesInRoaming": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct roaming devices in the cell during the reporting period."
+        },
+        "numberOfDistinctDevicesByCountry": {
+          "type": "object",
+          "description": "Property. Number of distinct devices grouped by ISO 3166-1 alpha-3 country code.",
+          "propertyNames": {
+            "pattern": "^[A-Z]{3}$"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "numberOfEnteringDevices": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct devices that entered the cell during the reporting period."
+        },
+        "numberOfLeavingDevices": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct devices that left the cell during the reporting period."
+        },
+        "numberOfEntryDevicesRoaming": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct roaming devices that entered the cell during the reporting period."
+        },
+        "numberOfLeavingDevicesRoaming": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Property. Number of distinct roaming devices that left the cell during the reporting period."
+        },
+        "refMobileDeviceCell": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Reference to the MobileDeviceCell to which the metrics apply."
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Start of the reporting period, in ISO 8601 format."
+        },
+        "top10RegionOriginDevice": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "string"
+          },
+          "description": "Property. Between one and ten municipalities of origin for devices entering the cell."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "numberOfDistinctDevices",
+    "numberOfDistinctDevicesInRoaming",
+    "numberOfDistinctDevicesByCountry",
+    "numberOfEnteringDevices",
+    "numberOfLeavingDevicesRoaming",
+    "endDate",
+    "startDate",
+    "refMobileDeviceCell"
+  ]
+}
