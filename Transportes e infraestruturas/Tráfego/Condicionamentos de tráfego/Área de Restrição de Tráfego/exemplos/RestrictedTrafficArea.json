@@ -4,12 +4,14 @@
   "address": {
     "type": "Property",
     "value": {
-      "addressCountry" : "PT"                ,
+      "addressCountry" : "Portugal"                ,
       "addressLocality": "Lisboa"            ,
+      "addressRegion": "Grande Lisboa"            ,
+      "district": "Lisboa"            ,
       "streetAddress"  : "Azinhaga da Cidade"
     }
   },
-  "category": { "type": "Property", "value": ["WorkInProgress"] },
+  "category": { "type": "Property", "value": ["forPedestrian","onlyResident"] },
   "description": {"type": "Property", "value": "OBRA - FAIXA DE RODAGEM"},
   "location": {
     "type": "GeoProperty",

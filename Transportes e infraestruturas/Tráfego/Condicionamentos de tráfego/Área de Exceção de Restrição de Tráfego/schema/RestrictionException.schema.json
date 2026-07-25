@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/RestrictionException/schema.json",
+  "title": "Restriction Exception schema",
+  "description": "A Restriction Exception represents a particular case that specialise restriction reported in a Restricted Traffic Areas; for instance it could describe particular permissions applied to specific kind vehicles",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "RestrictionException",
+          "description": "Property. NGSI Entity type. It has to be RestrictionException"
+        },
+        "allowedVehicleType": {
+          "type": "array",
+          "description": "Property. Vehicle type(s) allowed to cross the restricted traffic area",
+          "items": {
+            "type": "string",
+            "pattern": "^(?:-|euro0|euro1|euro2|euro3|euro4|euro5|euro6|euro6c|euro6dTemp|euro6d|euroIV|euroV|euroVI|noEuroEmissionClassification)\\s*,\\s*(?:-|agriculturalVehicle|anyVehicle|articulatedVehicle|bicycle|binTrolley|bus|car|caravan|carOrLightVehicle|carWithCaravan|carWithTrailer|cleaningTrolley|constructionOrMaintenanceVehicle|fourWheelDrive|highSidedVehicle|lorry|minibus|moped|motorcycle|motorcycleWithSideCar|motorscooter|sweepingMachine|tanker|threeWheeledVehicle|trailer|tram|twoWheeledVehicle|trolley|van|vehicleWithoutCatalyticConverter|vehicleWithCaravan|vehicleWithTrailer|withEvenNumberedRegistrationPlates|withOddNumberedRegistrationPlates|other)\\s*,\\s*(?:-|battery|biodiesel|diesel|dieselBatteryHybrid|electricity|hydrogen|lpg|petrol|petrolBatteryHybrid|petrolPlugInHybridElectric|unknownFuelType)$",
+            "description": "A DATEX II triple containing emission class, vehicle type and fuel type; a hyphen means that the corresponding criterion is unrestricted"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "exceptionValidityHours": {
+          "type": "string",
+          "description": "Property. Days of the week and hours in which the exception is valid. Model:'http://schema.org/openingHours' "
+        },
+        "refVehicleModel": {
+          "type": "array",
+          "description": "Property. Specify characteristics of the vehicle for which the exception has been established",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          }
+        },
+        "refRestrictedTrafficArea": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. The Restricted Traffic Area this exception belongs"
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "allowedVehicleType",
+    "refRestrictedTrafficArea",
+    "name"
+  ]
+}

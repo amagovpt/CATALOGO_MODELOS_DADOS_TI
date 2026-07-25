@@ -1,11 +1,13 @@
 {
-    "id": "urn:ip:TrafficFlowObserved-",
+    "id": "urn:ip:TrafficFlowObserved-11123232",
     "type": "TrafficFlowObserved",
     "address": {
         "type": "Property",
         "value": {
             "addressLocality": "Oeiras"          ,
-            "addressCountry" : "PT"              ,
+            "addressRegion": "Grande Lisboa"          ,
+            "district": "Lisboa"          ,
+            "addressCountry" : "Portugal"              ,
             "streetAddress"  : "Avenida Marginal"
         }
     },

@@ -1,14 +1,23 @@
 {
   "id": "urn:CML:RestrictedTrafficArea:R1",
   "type": "RestrictionException",
-  "name": {"type": "string", "value": "AzinhagaDaCidade"},
+  "name": {"type": "Property", "value": "AzinhagaDaCidade"},
   "allowedVehicleType": {
-    "type": "array",
+    "type": "Property",
     "value": ["euro6,-,petrol", "-,-,electricity"]
   },
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry" : "Portugal"                ,
+      "addressLocality": "Lisboa"            ,
+      "addressRegion": "Grande Lisboa",
+      "district": "Lisboa"            
+    }
+  },
   "refRestrictedTrafficArea": {
-    "type" : "string"                                        ,
-    "value": "urn:CML:RestrictedTrafficArea:AzinhagaDaCidade"
+    "type" : "Relationship"                                        ,
+    "object": "urn:CML:RestrictedTrafficArea:AzinhagaDaCidade"
   },
   "@context": [
     "https://raw.githubusercontent.com/smart-data-models/dataModel.Transportation/master/context.jsonld"
