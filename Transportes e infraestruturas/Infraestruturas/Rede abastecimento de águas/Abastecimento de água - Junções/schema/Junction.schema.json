@@ -1,0 +1,382 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/Junction.schema.json",
+  "title": "CNMD - Junction schema",
+  "description": "A junction in a drinking water supply network, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "Junction",
+          "description": "Property. NGSI entity type. It must be Junction."
+        },
+        "chlorinationPoint": {
+          "type": "boolean",
+          "description": "Property. Location where disinfectants are injected into the water supply. Relevant for 'potableWater' system junctions. Model:'https://schema.org/Boolean'."
+        },
+        "concessionaire": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
+            },
+            {
+              "type": "string",
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
+            }
+          ],
+          "description": "Relationship. Concessionaire of the network."
+        },
+        "connectedPipes": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Pipes connected to the junction."
+        },
+        "criticalInfrastructure": {
+          "type": "boolean",
+          "description": "Property. Specifies whether the junction is critical infrastructure. Model:'https://schema.org/Boolean'."
+        },
+        "currentFlow": {
+          "type": "number",
+          "description": "Property. Real-time or recently measured flow passing through the junction. Units:'MQS'. Model:'https://schema.org/Number'."
+        },
+        "datasetResponsibleParty": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Party responsible for the dataset. Model:'https://schema.org/Text'."
+        },
+        "designFlow": {
+          "type": "number",
+          "description": "Property. Design flow. Units:'MQS'. Model:'https://schema.org/Number'."
+        },
+        "dimension": {
+          "type": "object",
+          "description": "Property. Dimensions of the junction, including diameter or measurements for non-circular shapes. Units:'MMT'. For circular junctions, define diameter; for others, define length and width. Model:'https://schema.org/Number'."
+        },
+        "disinfectantResidual": {
+          "type": "number",
+          "description": "Property. Residual disinfectant concentration (e.g. chlorine, chloramine). Units:'MG/L'. Relevant for 'potableWater' system junctions. Model:'https://schema.org/Number'."
+        },
+        "downstreamJunctions": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Downstream junctions."
+        },
+        "elevation": {
+          "type": "number",
+          "description": "Property. Elevation of the point where the junction is located. Units:'MTR'. Model:'https://schema.org/Number'."
+        },
+        "expectedLifespan": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Expected lifespan. Units:'ANN'. Model:'https://schema.org/Number'."
+        },
+        "hasAirReleaseValve": {
+          "type": "boolean",
+          "description": "Property. Specifies whether the junction has an air release valve. Model:'https://schema.org/Boolean'."
+        },
+        "hasBackflowPrevention": {
+          "type": "boolean",
+          "description": "Property. Specifies whether there is a mechanism preventing backflow of contaminated water into the main network. Model:'https://schema.org/Boolean'."
+        },
+        "hasInspectionHatch": {
+          "type": "boolean",
+          "description": "Property. Specifies whether the junction has an inspection hatch. Model:'https://schema.org/Boolean'."
+        },
+        "hasValveChamber": {
+          "type": "boolean",
+          "description": "Property. Specifies whether the junction has a valve chamber. Model:'https://schema.org/Boolean'."
+        },
+        "hydraulicHead": {
+          "type": "number",
+          "description": "Property. Hydraulic head. Units:'MTR'. Model:'https://schema.org/Number'."
+        },
+        "image": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true,
+          "description": "Property. Images of the junction. Model:'https://schema.org/URL'."
+        },
+        "incomingFlows": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Pipes bringing flow into the junction."
+        },
+        "installationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Installation date of the junction. Model:'https://schema.org/DateTime'."
+        },
+        "junctionFunction": {
+          "type": "string",
+          "enum": [
+            "connectPipes",
+            "changeFlowDirection",
+            "branchDistribution",
+            "regulateFlow",
+            "managePressureZones"
+          ],
+          "description": "Property. Function of the junction. Model:'https://schema.org/Text'."
+        },
+        "junctionType": {
+          "type": "string",
+          "enum": [
+            "teeJunction",
+            "crossJunction",
+            "angleJunction",
+            "reducerJunction",
+            "wyeJunction",
+            "manifoldJunction"
+          ],
+          "description": "Property. Type of junction. Model:'https://schema.org/Text'."
+        },
+        "lastInspectionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the last inspection. Model:'https://schema.org/DateTime'."
+        },
+        "lastCleaningDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the last cleaning. Model:'https://schema.org/DateTime'."
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. License associated with the data. Model:'https://schema.org/URL'."
+        },
+        "maintainer": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256,
+              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "description": "Property. Identifier format of any NGSI entity"
+            },
+            {
+              "type": "string",
+              "format": "uri",
+              "description": "Property. Identifier format of any NGSI entity"
+            }
+          ],
+          "description": "Relationship. Party responsible for the maintenance of the junction."
+        },
+        "maintenanceSchedule": {
+          "type": "string",
+          "enum": [
+            "annual",
+            "biannual",
+            "quarterly",
+            "monthly"
+          ],
+          "description": "Property. Frequency of maintenance. Model:'https://schema.org/Text'."
+        },
+        "material": {
+          "type": "string",
+          "enum": [
+            "concrete",
+            "plastic",
+            "steel",
+            "castIron"
+          ],
+          "description": "Property. Construction material of the junction structure. Model:'https://schema.org/Text'."
+        },
+        "materialClass": {
+          "type": "string",
+          "enum": [
+            "metallic",
+            "non-metallic",
+            "composite"
+          ],
+          "description": "Property. Classification of the junction material. Model:'https://schema.org/Text'."
+        },
+        "operatingPressure": {
+          "type": "number",
+          "description": "Property. Pressure at the junction. Units:'BAR'. Relevant for 'potableWater', 'irrigation', 'industrialWater' system junctions. Model:'https://schema.org/Number'."
+        },
+        "outgoingFlows": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Pipes taking flow out of the junction."
+        },
+        "pressureClass": {
+          "type": "string",
+          "enum": [
+            "PN6",
+            "PN10",
+            "PN16",
+            "PN25"
+          ],
+          "description": "Property. Pressure resistance class of the junction's construction (design-level property). Model:'ISO2531:2009 & EN 805:2025'."
+        },
+        "pressureZone": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Pressure zone. Model:'https://schema.org/Text'."
+        },
+        "quality": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Property. Observed quality of the network component, where 5 is excellent. Model:'https://schema.org/Number'."
+        },
+        "refNetwork": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Unique code identifying the network to which the component belongs."
+        },
+        "restrictedAccess": {
+          "type": "boolean",
+          "description": "Property. Specifies whether access to the junction is restricted. Model:'https://schema.org/Boolean'."
+        },
+        "slope": {
+          "type": "number",
+          "description": "Property. Slope of the junction relative to the horizontal plane, relevant to hydraulic behaviour. Units:'DEG'. Model:'https://schema.org/Number'."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "operational",
+            "planned",
+            "underConstruction",
+            "underMaintenance",
+            "outOfService",
+            "abandoned"
+          ],
+          "description": "Property. Operational status of the junction. Model:'https://schema.org/Text'."
+        },
+        "updateFrequency": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Frequency at which the data is updated. Model:'https://schema.org/Text'."
+        },
+        "upstreamJunctions": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Upstream junctions."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Version of the data model. Model:'https://schema.org/Text'."
+        },
+        "waterQualityIndex": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Property. Water quality. Units:'P1'. Model:'https://schema.org/Number'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "location",
+    "address",
+    "refNetwork",
+    "dimension",
+    "material",
+    "materialClass",
+    "pressureClass"
+  ]
+}

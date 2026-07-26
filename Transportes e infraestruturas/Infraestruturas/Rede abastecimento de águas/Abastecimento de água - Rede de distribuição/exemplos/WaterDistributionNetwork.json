@@ -52,7 +52,6 @@
         "object": ["urn:arte:Building:B001", "urn:arte:AgriculturalZone:A001", "urn:arte:IndustrialFacility:I001"]
     },
     "beginLifespanVersion": {"type": "Property", "value": "2018-07-15T00:00:00Z"},
-    "endLifespanVersion": {"type": "Property", "value": null},
     "lastInspectionDate": {"type": "Property", "value": "2024-12-01T00:00:00Z"},
     "maintenanceSchedule": {"type": "Property", "value": "biannual"},
     "quality": {"type": "Property", "value": 5},
@@ -61,7 +60,15 @@
     "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
     "maintainer": {"type": "Relationship", "object": "urn:arte:Organization:WaterUtilityCompany123"},
     "concessionaire": {"type": "Relationship", "object": "urn:arte:Organization:EPAL123"},
-    "address": { "type": "Property", "value": {"addressCountry": "PT", "addressLocality": "Lisboa"} },
+    "address": {
+        "type" : "Property",
+        "value": {
+            "addressCountry" : "Portugal",
+            "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa"
+        }
+    },
     "image": { "type": "Property", "value": ["https://example.com/imagens/rede-distribuicao.jpg"] },
     "seeAlso": {
         "type" : "Property",

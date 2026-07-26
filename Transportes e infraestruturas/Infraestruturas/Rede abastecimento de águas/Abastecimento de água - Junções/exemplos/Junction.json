@@ -17,7 +17,7 @@
         "coordinateSystem": "EPSG:4258"
     },
     "elevation": { "type": "Property", "value": 13.7, "unitCode": "MTR" },
-    "junctionFunction": {"type": "Property", "value": "distribution"},
+    "junctionFunction": {"type": "Property", "value": "branchDistribution"},
     "junctionType": {"type": "Property", "value": "crossJunction"},
     "refNetwork": {
         "type": "Relationship",
@@ -29,10 +29,6 @@
     },
     "material": {"type": "Property", "value": "concrete"},
     "materialClass": {"type": "Property", "value": "non-metallic"},
-    "coverDimensions": {
-        "type": "Property",
-        "value": {"diameter": 600, "unitCode": "MMT"}
-    },
     "hasValveChamber": {"type": "Property", "value": true},
     "hasInspectionHatch": {"type": "Property", "value": false},
     "hasAirReleaseValve": {"type": "Property", "value": false},
@@ -109,9 +105,12 @@
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry" : "PT"                 ,
-            "addressLocality": "Lisboa"             ,
-            "streetAddress"  : "Alameda dos Oceanos",
+            "addressCountry" : "Portugal"            ,
+            "addressLocality": "Lisboa"              ,
+            "district"       : "Lisboa"              ,
+            "addressRegion"  : "Grande Lisboa"       ,
+            "streetAddress"  : "Alameda dos Oceanos" ,
+            "streetNr"       : "s/n"                 ,
             "postalCode"     : "1990-208"
         }
     },
