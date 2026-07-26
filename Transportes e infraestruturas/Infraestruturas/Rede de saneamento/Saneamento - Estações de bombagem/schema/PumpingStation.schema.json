@@ -1,0 +1,310 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "$id": "https://smart-data-models.github.io/dataModel.WasteWater/PumpingStation/schema.json",
+  "title": "Smart Data Models - Pumping Station schema",
+  "description": "A pumping station for wastewater and sanitation networks",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the public equipment. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "PumpingStation"
+          ],
+          "description": "Property. NGSI Entity Type: It has to be PumpingStation"
+        },
+        "backupPower": {
+          "type": "object",
+          "description": "Property. Description of the backup power system of the pumping station. Model:'https://schema.org/StructuredValue'",
+          "properties": {
+            "available": {
+              "type": "boolean",
+              "description": "Property. Whether a backup power system is available"
+            },
+            "type": {
+              "type": "string",
+              "description": "Property. Type of backup power system"
+            },
+            "capacity": {
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/$defs/quantitativeProperty"
+                }
+              ],
+              "description": "Property. Backup power system capacity"
+            },
+            "autonomy": {
+              "oneOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "$ref": "#/$defs/quantitativeProperty"
+                }
+              ],
+              "description": "Property. Backup power system autonomy"
+            }
+          }
+        },
+        "datasetResponsibleParty": {
+          "type": "string",
+          "description": "Property. Party responsible for the dataset. Model:'https://schema.org/Text'"
+        },
+        "documentation": {
+          "type": "array",
+          "description": "Property. Pumping station documentation. Model:'https://schema.org/URL'",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "image": {
+          "type": "array",
+          "description": "Property. Pumping station images. Model:'https://schema.org/URL'",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "inletPipes": {
+          "type": "array",
+          "description": "Relationship. List of inlet pipes of the pumping station. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "installationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Installation date of the pumping station. Model:'https://schema.org/DateTime'"
+        },
+        "maintainer": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Party responsible for maintaining the pumping station. Model:'https://schema.org/Text'"
+        },
+        "maxFlowRate": {
+          "type": "number",
+          "description": "Property. Maximum pumping capacity per time unit of the pumping station. Units:'MQH'. Model:'https://schema.org/Number'"
+        },
+        "maxHead": {
+          "type": "number",
+          "description": "Property. Maximum manometric head that the pumping station can raise the fluid. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "maxInletPressure": {
+          "type": "number",
+          "description": "Property. Maximum pressure required at pump inlet for correct operation. Units:'BAR'. Model:'https://schema.org/Number'"
+        },
+        "maxOperatingLevel": {
+          "type": "number",
+          "description": "Property. Maximum fluid level in the pumping station intake reservoir. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "maxPower": {
+          "type": "number",
+          "description": "Property. Maximum energy consumption of the pumping station. Units:'KWT'. Model:'https://schema.org/Number'"
+        },
+        "minInletPressure": {
+          "type": "number",
+          "description": "Property. Minimum pressure required at pump inlet for correct operation. Units:'BAR'. Model:'https://schema.org/Number'"
+        },
+        "minOperatingLevel": {
+          "type": "number",
+          "description": "Property. Minimum fluid level in the pumping station intake reservoir. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "numberOfPumps": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Number of pumps in the pumping station. Model:'https://schema.org/Number'"
+        },
+        "operator": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Operator of the pumping station. Model:'https://schema.org/Text'"
+        },
+        "outletPipes": {
+          "type": "array",
+          "description": "Relationship. List of outlet pipes of the pumping station. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "pumpTypes": {
+          "type": "array",
+          "description": "Property. List of pump types of the pumping station. Model:'https://schema.org/Text'",
+          "items": {
+            "type": "string",
+            "enum": [
+              "submersible",
+              "centrifugal",
+              "positive_displacement",
+              "backup",
+              "other"
+            ]
+          }
+        },
+        "refNetwork": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+",
+          "description": "Relationship. Unique URI identifying the network to which the component belongs. Model:'https://schema.org/URL'"
+        },
+        "refParametersObserved": {
+          "type": "array",
+          "description": "Relationship. List of references to observed parameter measurements for the pumping station. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "type": "string",
+          "description": "Property. Operational status of the pumping station. Model:'https://schema.org/Text'",
+          "enum": [
+            "operational",
+            "planned",
+            "underConstruction",
+            "underMaintenance",
+            "outOfService",
+            "abandoned"
+          ]
+        },
+        "updateFrequency": {
+          "type": "string",
+          "description": "Property. Frequency of data updates. Model:'https://schema.org/Text'",
+          "enum": [
+            "annual",
+            "monthly",
+            "weekly",
+            "daily"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "description": "Property. Data model version. Model:'https://schema.org/Text'"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "quantitativeProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "Property"
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "type",
+    "address",
+    "location",
+    "refNetwork",
+    "status",
+    "numberOfPumps",
+    "maxFlowRate",
+    "maxHead"
+  ]
+}

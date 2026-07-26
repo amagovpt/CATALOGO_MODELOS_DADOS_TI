@@ -1,0 +1,541 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://smart-data-models.github.io/dataModel.WasteWater/DrainagePipe/schema.json",
+  "title": "Smart Data Models - Drainage Pipe schema",
+  "description": "A drainage pipe for wastewater and sanitation networks",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "DrainagePipe"
+          ],
+          "description": "Property. NGSI Entity Type: It has to be DrainagePipe"
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the building.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. Country in which the building is located."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. Locality, which must correspond to the municipality."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code of the address."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address of the building."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number of the building."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "alternateName": {
+          "type": "string",
+          "description": "Property. Alternative name for the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "areaServed": {
+          "type": "string",
+          "description": "Property. Geographic area where a service is provided. Model:'https://schema.org/Text'"
+        },
+        "backfillMaterial": {
+          "type": "string",
+          "description": "Property. Backfill material of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "beddingMaterial": {
+          "type": "string",
+          "description": "Property. Bedding material of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "bulkCoeff": {
+          "type": "number",
+          "description": "Property. Bulk reaction rate coefficient of the drainage pipe. Units:'E91'. Model:'https://schema.org/Number'"
+        },
+        "connectedTo": {
+          "type": "array",
+          "description": "Relationship. Connected drainage pipes. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "constructionMethod": {
+          "type": "string",
+          "description": "Property. Construction method of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "openCut",
+            "trenchless",
+            "microtunneling",
+            "pipeJacking",
+            "directionalDrilling"
+          ]
+        },
+        "criticalInfrastructure": {
+          "type": "boolean",
+          "description": "Property. Whether the drainage pipe is critical infrastructure. Model:'https://schema.org/Boolean'"
+        },
+        "crossSectionShape": {
+          "type": "string",
+          "description": "Property. Cross-section shape of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "circular",
+            "rectangular",
+            "elliptical",
+            "other"
+          ]
+        },
+        "datasetResponsibleParty": {
+          "type": "string",
+          "description": "Property. Party responsible for the dataset. Model:'https://schema.org/Text'"
+        },
+        "designCapacity": {
+          "type": "number",
+          "description": "Property. Designed flow capacity of the drainage pipe. Units:'MQS'. Model:'https://schema.org/Number'"
+        },
+        "diameter": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Diameter of the drainage pipe. Units:'MMT'. Model:'https://schema.org/Number'"
+        },
+        "dimension": {
+          "$ref": "#/$defs/dimensions",
+          "description": "Property. Cross-section dimensions of the drainage pipe. Units:'MMT'. Model:'https://schema.org/Number'"
+        },
+        "downstreamNetwork": {
+          "type": "array",
+          "description": "Relationship. Downstream network connected to the drainage pipe. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "drainagePipeType": {
+          "type": "string",
+          "description": "Property. Type of drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "mainSewer",
+            "branchSewer",
+            "interceptingSewerLine",
+            "stormDrain",
+            "culvert",
+            "infiltrationDrain",
+            "other"
+          ]
+        },
+        "elevation": {
+          "$ref": "#/$defs/startEndNumber",
+          "description": "Property. Start and end elevation of the drainage pipe. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "endsAt": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. End point of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "expectedLifespan": {
+          "type": "number",
+          "description": "Property. Expected lifespan of the drainage pipe. Units:'ANN'. Model:'https://schema.org/Number'"
+        },
+        "externalCoating": {
+          "type": "string",
+          "description": "Property. External coating of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "failureProbability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Property. Annual failure probability of the drainage pipe. Units:'C62'. Model:'https://schema.org/Number'"
+        },
+        "flow": {
+          "type": "number",
+          "description": "Property. Current drainage flow of the drainage pipe. Units:'MQS'. Model:'https://schema.org/Number'"
+        },
+        "flowDirection": {
+          "type": "string",
+          "description": "Property. Flow direction of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "downstream",
+            "upstream",
+            "bidirectional"
+          ]
+        },
+        "floodZone": {
+          "type": "boolean",
+          "description": "Property. Whether the drainage pipe is in a flood zone. Model:'https://schema.org/Boolean'"
+        },
+        "groundwaterLevel": {
+          "type": "number",
+          "description": "Property. Groundwater level around the drainage pipe. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "image": {
+          "type": "array",
+          "description": "Property. Drainage pipe images. Model:'https://schema.org/URL'",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "installationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Installation date of the drainage pipe. Model:'https://schema.org/DateTime'"
+        },
+        "installationDepth": {
+          "type": "number",
+          "description": "Property. Installation depth of the drainage pipe. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "internalLining": {
+          "type": "string",
+          "description": "Property. Internal lining of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "jointType": {
+          "type": "string",
+          "description": "Property. Joint type of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "spigot",
+            "flanged",
+            "welded",
+            "mechanical",
+            "other"
+          ]
+        },
+        "lastCleaningDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Last cleaning date of the drainage pipe. Model:'https://schema.org/DateTime'"
+        },
+        "lastInspectionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Last inspection date of the drainage pipe. Model:'https://schema.org/DateTime'"
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total length of the drainage pipe. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. Data license URL. Model:'https://schema.org/URL'"
+        },
+        "maintainer": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Party responsible for maintaining the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "maintenanceSchedule": {
+          "type": "string",
+          "description": "Property. Maintenance frequency of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "annual",
+            "biannual",
+            "quarterly",
+            "monthly"
+          ]
+        },
+        "material": {
+          "type": "string",
+          "description": "Property. Material of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "materialClass": {
+          "type": "string",
+          "description": "Property. Material classification of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "maxAllowablePressure": {
+          "type": "number",
+          "description": "Property. Maximum allowable pressure of the drainage pipe. Units:'BAR'. Model:'https://schema.org/Number'"
+        },
+        "operatingPressure": {
+          "type": "number",
+          "description": "Property. Operating pressure of the drainage pipe. Units:'BAR'. Model:'https://schema.org/Number'"
+        },
+        "operator": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Operator of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        
+        "pressureClass": {
+          "type": "string",
+          "description": "Property. Pressure class of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "PN6",
+            "PN10",
+            "PN12.5",
+            "PN16",
+            "PN20"
+          ]
+        },
+        "pressurized": {
+          "type": "boolean",
+          "description": "Property. Whether the drainage pipe is pressurized. Model:'https://schema.org/Boolean'"
+        },
+        "quality": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Property. Observed quality of the network component, from 1 to 5. Model:'https://schema.org/Number'"
+        },
+        "refNetwork": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+",
+          "description": "Relationship. Unique URI identifying the network to which the component belongs. Model:'https://schema.org/Text'"
+        },
+        "restrictedAccess": {
+          "type": "boolean",
+          "description": "Property. Whether access to the drainage pipe is restricted. Model:'https://schema.org/Boolean'"
+        },
+        "roughness": {
+          "type": "number",
+          "description": "Property. Roughness coefficient of the drainage pipe. Units:'SM3'. Model:'https://schema.org/Number'"
+        },
+        "safetyNotes": {
+          "type": "string",
+          "description": "Property. Safety notes of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "seismicZone": {
+          "type": "string",
+          "description": "Property. Seismic zone of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ]
+        },
+        "slope": {
+          "type": "number",
+          "description": "Property. Slope of the drainage pipe. Units:'C62'. Model:'https://schema.org/Number'"
+        },
+        "soilCorrosivity": {
+          "type": "string",
+          "description": "Property. Soil corrosivity around the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "startsAt": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Start point of the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "status": {
+          "type": "string",
+          "description": "Property. Operational status of the drainage pipe. Model:'https://schema.org/Text'",
+          "enum": [
+            "operational",
+            "planned",
+            "underConstruction",
+            "underMaintenance",
+            "outOfService",
+            "abandoned"
+          ]
+        },
+        "surroundingSoilType": {
+          "type": "string",
+          "description": "Property. Soil type around the drainage pipe. Model:'https://schema.org/Text'"
+        },
+        "updateFrequency": {
+          "type": "string",
+          "description": "Property. Frequency of data updates. Model:'https://schema.org/Text'",
+          "enum": [
+            "annual",
+            "monthly",
+            "weekly",
+            "daily"
+          ]
+        },
+        "upstreamNetwork": {
+          "type": "array",
+          "description": "Relationship. Upstream network connected to the drainage pipe. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "velocityRange": {
+          "$ref": "#/$defs/minimumMaximumNumber",
+          "description": "Property. Flow velocity range of the drainage pipe. Units:'MTS'. Model:'https://schema.org/Number'"
+        },
+        "version": {
+          "type": "string",
+          "description": "Property. Data model version. Model:'https://schema.org/Text'"
+        },
+        "verticalGeometry": {
+          "$ref": "#/$defs/geoJsonLineString",
+          "description": "Property. Vertical geometry of the drainage pipe using 3D LineString coordinates. Model:'https://schema.org/GeoShape'"
+        },
+        "wallCoeff": {
+          "type": "number",
+          "description": "Property. Wall reaction rate coefficient of the drainage pipe. Units:'RRC'. Model:'https://schema.org/Number'"
+        },
+        "wallThickness": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Wall thickness of the drainage pipe. Units:'MMT'. Model:'https://schema.org/Number'"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "diameter": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "diameter"
+          ]
+        },
+        {
+          "required": [
+            "height",
+            "width"
+          ]
+        }
+      ]
+    },
+    "geoJsonLineString": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "LineString"
+          ]
+        },
+        "coordinates": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      "required": [
+        "type",
+        "coordinates"
+      ]
+    },
+    "minimumMaximumNumber": {
+      "type": "object",
+      "properties": {
+        "minimum": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "minimum",
+        "maximum"
+      ]
+    },
+    "startEndNumber": {
+      "type": "object",
+      "properties": {
+        "start": {
+          "type": "number"
+        },
+        "end": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "type",
+    "location",
+    "elevation",
+    "address",
+    "diameter",
+    "status",
+    "material"
+  ]
+}

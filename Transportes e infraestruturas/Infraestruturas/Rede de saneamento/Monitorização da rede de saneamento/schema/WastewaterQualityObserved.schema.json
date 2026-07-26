@@ -1,0 +1,215 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/WastewaterQualityObserved.schema.json",
+  "title": "CNMD - WastewaterQualityObserved schema",
+  "description": "An observation of wastewater quality parameters, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "WastewaterQualityObserved",
+          "description": "Property. NGSI entity type. It must be WastewaterQualityObserved."
+        },
+        "biochemicalOxygenDemand": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Biochemical oxygen demand measured in wastewater, normally expressed in mg/l."
+        },
+        "chemicalOxygenDemand": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Chemical oxygen demand measured in wastewater, normally expressed in mg/l."
+        },
+        "complianceStatus": {
+          "type": "string",
+          "enum": [
+            "Compliant",
+            "Non-Compliant"
+          ],
+          "description": "Property. Compliance status against environmental standards. Model:'https://schema.org/Text'."
+        },
+        "dateObserved": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date and time of the observation in ISO 8601 format. Model:'https://schema.org/DateTime'."
+        },
+        "dischargePoint": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Discharge point for the treated wastewater. Model:'https://schema.org/Text'."
+        },
+        "heavyMetals": {
+          "$ref": "#/$defs/measuredPropertyCollection",
+          "description": "Property. Concentrations of heavy metals in the wastewater, normally expressed in mg/l."
+        },
+        "micropollutants": {
+          "$ref": "#/$defs/micropollutantCollection",
+          "description": "Property. Concentrations and, where applicable, removal rates for wastewater micropollutants."
+        },
+        "nitrates": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Nitrate concentration in the wastewater, normally expressed in mg/l."
+        },
+        "nitrogen": {
+          "$ref": "#/$defs/measuredPropertyCollection",
+          "description": "Property. Total nitrogen and its constituent forms, normally expressed in mg/l."
+        },
+        "pH": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14,
+          "description": "Property. Acidity or basicity of the wastewater, including optional quality-assessment metadata."
+        },
+        "phosphates": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Phosphate concentration in the wastewater, normally expressed in mg/l."
+        },
+        "phosphorus": {
+          "$ref": "#/$defs/measuredPropertyCollection",
+          "description": "Property. Total phosphorus and its constituent forms, normally expressed in mg/l."
+        },
+        "reportingAuthority": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Authority responsible for wastewater-quality monitoring and reporting."
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Property. Wastewater temperature, normally expressed in degrees Celsius."
+        },
+        "totalSuspendedSolids": {
+         "type": "number",
+         "minimum": 0,
+          "description": "Property. Total suspended solids in the wastewater sample, normally expressed in mg/l."
+        },
+        "treatmentLevel": {
+          "type": "string",
+          "enum": [
+            "Primary",
+            "Secondary",
+            "Tertiary",
+            "Quaternary"
+          ],
+          "description": "Property. Treatment level applied to the wastewater. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "qualityAssessment": {
+      "type": "object",
+      "properties": {
+        "accuracy": {
+          "type": "number",
+          "minimum": 0
+        },
+        "precision": {
+          "type": "number",
+          "minimum": 0
+        },
+        "lastCalibration": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "measuredProperty": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "Property"
+        },
+        "value": {
+          "type": "number"
+        },
+        "unitCode": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 3
+        },
+        "qualityAssessment": {
+          "$ref": "#/$defs/qualityAssessment"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ]
+    },
+    "nonNegativeMeasuredProperty": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/measuredProperty"
+        },
+        {
+          "properties": {
+            "value": {
+              "minimum": 0
+            }
+          }
+        }
+      ]
+    },
+    "measuredPropertyCollection": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "micropollutantCollection": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "number",
+            "minimum": 0
+          },
+          {
+            "type": "object",
+            "properties": {
+              "concentration": {
+                "type": "number",
+                "minimum": 0
+              },
+              "removalRate": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "unitCode": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 3
+              }
+            },
+            "required": [
+              "concentration"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "address",
+    "dateObserved",
+    "location"
+  ]
+}

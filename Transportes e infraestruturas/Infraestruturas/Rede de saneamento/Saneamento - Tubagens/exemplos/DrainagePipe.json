@@ -98,7 +98,7 @@
     },
     "refNetwork": {
         "type": "Relationship",
-        "object": ["urn:ersar:DrainageNetwork:N999"]
+        "object": "urn:ersar:DrainageNetwork:N999"
     },
     "drainagePipeType": {"type": "Property", "value": "mainSewer"},
     "pressurized": {"type": "Property", "value": false},
@@ -131,7 +131,7 @@
         "value": 0.02,
         "unitCode": "C62"
     },
-    "status": {"type": "Property", "value": "open"},
+    "status": {"type": "Property", "value": "operational"},
     "criticalInfrastructure": {"type": "Property", "value": true},
     "surroundingSoilType": {"type": "Property", "value": "clay"},
     "soilCorrosivity": {"type": "Property", "value": "low"},
@@ -160,8 +160,10 @@
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry" : "PT"                 ,
-            "addressLocality": "Lisboa"             ,
+            "addressCountry" : "Portugal"                 ,
+            "addressLocality": "Lisboa",
+            "addressRegion": "Grande Lisboa"  ,
+            "district": "Lisboa"            ,
             "streetAddress"  : "Alameda dos Oceanos",
             "postalCode"     : "1990-208"
         }

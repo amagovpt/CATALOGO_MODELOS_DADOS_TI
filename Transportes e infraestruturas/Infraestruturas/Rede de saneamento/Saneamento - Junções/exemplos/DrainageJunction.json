@@ -23,7 +23,7 @@
   "junctionType": {"type": "Property", "value": "manhole"},
   "refNetwork": {
     "type": "Relationship",
-    "object": ["urn:ersar:DrainageNetwork:N999"]
+    "object": "urn:ersar:DrainageNetwork:N999"
   },
   "shape": {"type": "Property", "value": "circular"},
   "dimension": {
@@ -93,8 +93,10 @@
   "address": {
     "type": "Property",
     "value": {
-      "addressCountry" : "PT"                 ,
+      "addressCountry" : "Portugal"                 ,
       "addressLocality": "Lisboa"             ,
+      "district": "Lisboa"             ,
+      "addressRegion": "Grande Lisboa"             ,
       "streetAddress"  : "Alameda dos Oceanos",
       "postalCode"     : "1990-208"
     }

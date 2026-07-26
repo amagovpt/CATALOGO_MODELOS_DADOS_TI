@@ -18,15 +18,17 @@
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry" : "PT"                 ,
+            "addressCountry" : "Portugal"                 ,
             "addressLocality": "Lisboa"             ,
+            "addressRegion": "Grande Lisboa"             ,
+            "district": "Lisboa"             ,
             "streetAddress"  : "Avenida Dom João II",
             "postalCode"     : "1990-077"
         }
     },
     "refNetwork": {
         "type": "Relationship",
-        "object": ["urn:ersar:DrainageNetwork:N999"]
+        "object": "urn:ersar:DrainageNetwork:N999"
     },
     "maxFlowRate": {"type": "Property", "value": 5, "unitCode": "MQH"},
     "maxHead": {"type": "Property", "value": 50, "unitCode": "MTR"},
@@ -38,8 +40,8 @@
         "value": {
             "available": true,
             "type": "diesel_generator",
-            "capacity": {"value": 1000, "unitCode": "KWT"},
-            "autonomy": {"value": 60, "unitCode": "HUR"}
+            "capacity": {"type": "Property","value": 1000, "unitCode": "KWT"},
+            "autonomy": {"type": "Property","value": 60, "unitCode": "HUR"}
         }
     },
     "minInletPressure": {"type": "Property", "value": 0.3, "unitCode": "BAR"},

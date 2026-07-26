@@ -1,0 +1,258 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/DrainageNetwork.schema.json",
+  "title": "CNMD - DrainageNetwork schema",
+  "description": "A drainage network for wastewater and sanitation infrastructure, aligned with FIWARE Smart Data Models and INSPIRE.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "DrainageNetwork",
+          "description": "Property. NGSI entity type. It must be DrainageNetwork."
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Beginning of the real-world version. Model:'https://schema.org/DateTime'."
+        },
+        "boundingBox": {
+          "oneOf": [
+            {
+              "$ref": "https://geojson.org/schema/Point.json"
+            },
+            {
+              "$ref": "https://geojson.org/schema/LineString.json"
+            },
+            {
+              "$ref": "https://geojson.org/schema/Polygon.json"
+            },
+            {
+              "$ref": "https://geojson.org/schema/MultiPoint.json"
+            },
+            {
+              "$ref": "https://geojson.org/schema/MultiLineString.json"
+            },
+            {
+              "$ref": "https://geojson.org/schema/MultiPolygon.json"
+            }
+          ],
+          "description": "GeoProperty. GeoJSON geometry delimiting the drainage network coverage area."
+        },
+        "concessionaire": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Concessionaire of the drainage network."
+        },
+        "connectedTo": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Other drainage networks connected to this network."
+        },
+        "criticalInfrastructure": {
+          "type": "boolean",
+          "description": "Property. Whether the drainage network is critical infrastructure. Model:'https://schema.org/Boolean'."
+        },
+        "datasetResponsibleParty": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Party responsible for the dataset. Model:'https://schema.org/Text'."
+        },
+        "dischargesTo": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Location or entity to which the drainage network discharges."
+        },
+        "endLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the real-world version. Model:'https://schema.org/DateTime'."
+        },
+        "image": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Images of the drainage network. Model:'https://schema.org/URL'."
+        },
+        "lastInspectionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Date of the last drainage network inspection. Model:'https://schema.org/DateTime'."
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. License associated with the data. Model:'https://schema.org/URL'."
+        },
+        "maintainer": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Party responsible for maintaining the drainage network."
+        },
+        "maintenanceSchedule": {
+          "type": "string",
+          "enum": [
+            "annual",
+            "biannual",
+            "quarterly",
+            "monthly"
+          ],
+          "description": "Property. Frequency of drainage network maintenance. Model:'https://schema.org/Text'."
+        },
+        "networkType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "wastewater",
+              "stormwater",
+              "combined",
+              "treatedEffluent",
+              "septic",
+              "drainageChannel"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Types of drainage handled by the network. Model:'https://schema.org/Text'."
+        },
+        "quality": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Property. Observed network quality, from 1 to 5, where 5 is excellent. Model:'https://schema.org/Number'."
+        },
+        "refSubNetworks": {
+          "type": "array",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Relationship. Subnetworks connected within the drainage network's location."
+        },
+        "serviceCategory": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "residential",
+              "commercial",
+              "industrial",
+              "agricultural",
+              "publicSpaces",
+              "transportInfrastructure",
+              "mixedUse"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "description": "Property. Service categories covered by the drainage network. Model:'https://schema.org/Text'."
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "operational",
+            "planned",
+            "underConstruction",
+            "underMaintenance",
+            "outOfService",
+            "abandoned"
+          ],
+          "description": "Property. Operational status of the drainage network. Model:'https://schema.org/Text'."
+        },
+        "updateFrequency": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Frequency with which the data is updated. Model:'https://schema.org/Text'."
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Version of the data model. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "name",
+    "type",
+    "address",
+    "boundingBox",
+    "networkType",
+    "beginLifespanVersion",
+    "areaServed",
+    "owner"
+  ]
+}

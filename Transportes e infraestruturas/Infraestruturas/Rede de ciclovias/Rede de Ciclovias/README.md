@@ -40,7 +40,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | nationalId | String | Identificador compatível com INSPIRE | Deve servir para identificar o recurso, seguindo as normas indicadas pelo INSPIRE. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | networkStatus | Object | Estado de conservação da rede | Estrutura com os campos `overallCondition` (excellent, good, fair, poor, critical) e `criticalPoints` (número de pontos críticos pendentes). Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | networkType | String | Tipo de rede | Deve servir para relacionar os dados com a tipologia existente no INSPIRE. Deve ter o valor `road`. Modelo: [https://schema.org/Text](https://schema.org/Text) |
-| owner | URI | Proprietário da rede | Referência URN a uma entidade. Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| owner | Array | Proprietário da rede | Referência URN a uma entidade, pelo menos uma. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | seeAlso | Array | Descrições e categorizações adicionais | Lista de URLs para recursos externos, incluindo referências INSPIRE. Modelo: [https://schema.org/URL](https://schema.org/URL) |
 | totalLength | Number | Comprimento total da rede de ciclovia | Normalmente expressa em quilómetros (KMT). Modelo: [https://schema.org/Number](https://schema.org/Number) |
 | updateFrequency | String | Frequência de atualização dos dados |  Modelo: [https://schema.org/Text](https://schema.org/Text) |

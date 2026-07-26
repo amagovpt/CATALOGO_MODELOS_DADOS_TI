@@ -13,9 +13,11 @@
         "type": "Property",
         "value": {
             "addressLocality": "Lisboa"                              ,
+            "addressRegion": "Grande Lisboa" ,
+            "district": "Lisboa" ,
             "postalCode"     : "2615-174"                            ,
-            "streetAddress"  : "Etar De Alverca, Alverca do Ribatejo",
-            "type"           : "PostalAddress"
+            "streetAddress"  : "Etar De Alverca, Alverca do Ribatejo"
+            
         }
     },
     "dateObserved": {"type": "Property", "value": "2025-02-10T12:00:00Z"},
@@ -118,24 +120,6 @@
         "value": "https://www.aguasdotejoatlantico.adp.pt/"
     },
     "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
-        {
-            "complianceStatus": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/complianceStatus",
-            "dateObserved": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/dateObserved",
-            "heavyMetals": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/heavyMetals",
-            "areaServed": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/areaServed",
-            "pH": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/pH",
-            "treatmentLevel": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/treatmentLevel",
-            "location": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/location",
-            "totalSuspendedSolids": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/totalSuspendedSolids",
-            "nitrates": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/nitrates",
-            "phosphates": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/phosphates",
-            "dischargePoint": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/dischargePoint",
-            "address": "https://smartdatamodels.org/address",
-            "chemicalOxygenDemand": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/chemicalOxygenDemand",
-            "temperature": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/temperature",
-            "reportingAuthority": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/reportingAuthority",
-            "biochemicalOxygenDemand": "https://smartdatamodels.org/dataModelWaterMonitoringNetwork/biochemicalOxygenDemand"
-        }
+        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
     ]
 }
