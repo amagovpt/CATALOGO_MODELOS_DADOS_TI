@@ -12,17 +12,19 @@
     "address": {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
+            "addressCountry" : "Portugal",
             "addressLocality": "Lisboa",
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
             "streetAddress"  : "Avenida Dom João II",
+            "streetNr"       : "s/n",
             "postalCode"     : "1990-077"
         }
     },
-    "refWaterNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
+    "refNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
     "inletPipes": { "type": "Relationship", "object": ["urn:epal:WaterPipe:WP101"] },
     "outletPipes": { "type": "Relationship", "object": ["urn:epal:WaterPipe:WP102"] },
     "maxFlowRate": {"type": "Property", "value": 120, "unitCode": "MQH"},
-    "minFlowRate": {"type": "Property", "value": 10, "unitCode": "MQH"},
     "maxHead": {"type": "Property", "value": 80, "unitCode": "MTR"},
     "minInletPressure": {"type": "Property", "value": 0.5, "unitCode": "BAR"},
     "maxInletPressure": {"type": "Property", "value": 6.0, "unitCode": "BAR"},
@@ -34,17 +36,9 @@
     "pumpConfiguration": {"type": "Property", "value": "2+1"},
     "pumpTypes": {
         "type" : "Property",
-        "value": ["horizontal_centrifugal", "horizontal_centrifugal", "standby_horizontal_centrifugal"]
+        "value": ["horizontalCentrifugalPumps"]
     },
-    "pumpMaterial": {"type": "Property", "value": "stainless_steel_316L"},
-    "pumpEfficiencyClass": {
-        "type" : "Property",
-        "value": {
-            "IEClass"          : "IE3",
-            "minEfficiency"    : {"value": 75, "unitCode": "P1"},
-            "nominalEfficiency": {"value": 82, "unitCode": "P1"}
-        }
-    },
+    "pumpMaterial": {"type": "Property", "value": "stainlessSteel316L"},
     "variableSpeedDrives": {
         "type" : "Property",
         "value": {"installed": true, "quantity": 2, "type": "frequency_inverter"}
@@ -120,7 +114,6 @@
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld",
         {
             "DrinkingWaterPumpingStation": "https://smartdatamodels.org/dataModel.WaterDistribution/DrinkingWaterPumpingStation",
-            "refWaterNetwork": "https://smartdatamodels.org/dataModel.WaterDistribution/refWaterNetwork",
             "disinfectionSystem": "https://smartdatamodels.org/dataModel.WaterDistribution/disinfectionSystem",
             "filteringSystem": "https://smartdatamodels.org/dataModel.WaterDistribution/filteringSystem",
             "leakageDetection": "https://smartdatamodels.org/dataModel.WaterDistribution/leakageDetection",
