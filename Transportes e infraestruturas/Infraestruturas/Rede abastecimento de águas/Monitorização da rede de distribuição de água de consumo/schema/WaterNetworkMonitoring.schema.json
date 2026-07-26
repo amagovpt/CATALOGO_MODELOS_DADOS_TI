@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "CNMD",
+  "$id": "https://example.org/schemas/WaterNetworkMonitoring.schema.json",
+  "title": "WaterNetworkMonitoring schema",
+  "description": "Monitoring of drinking water, wastewater and stormwater supply networks.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the monitoring location. Model:'https://schema.org/address'.",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. The country. Model:'https://schema.org/addressCountry'."
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. The locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'."
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. The NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'."
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. The administrative district in which the locality is located."
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'."
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'."
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'."
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "WaterNetworkMonitoring",
+          "description": "Property. NGSI Entity type. It has to be WaterNetworkMonitoring."
+        },
+        "alerts": {
+          "type": "array",
+          "description": "Property. Active alerts concerning the water network.",
+          "items": {
+            "$ref": "#/$defs/alert"
+          }
+        },
+        "chlorine": {
+          "type": "number",
+          "description": "Property. Chlorine concentration in the water. Units:'M1'. Model:'https://schema.org/Number'."
+        },
+        "compliance": {
+          "$ref": "#/$defs/compliance"
+        },
+        "conductivity": {
+          "type": "number",
+          "description": "Property. Electrical conductivity of the water. Units:'D10'. Model:'https://schema.org/Number'."
+        },
+        "consumption": {
+          "$ref": "#/$defs/consumption"
+        },
+        "dataQuality": {
+          "$ref": "#/$defs/dataQuality"
+        },
+        "dissolvedOxygen": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Dissolved oxygen concentration in the water. Units:'MGM'. Model:'https://schema.org/Number'."
+        },
+        "energyEfficiency": {
+          "$ref": "#/$defs/energyEfficiency"
+        },
+        "flow": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Water flow in the network. Units:'G51'. Model:'https://schema.org/Number'."
+        },
+        "inspireId": {
+          "$ref": "#/$defs/inspireIdentifier"
+        },
+        "leakDetection": {
+          "$ref": "#/$defs/leakDetection"
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. URL of the data license. Model:'https://schema.org/URL'."
+        },
+        "maintenanceHistory": {
+          "type": "array",
+          "description": "Property. History of maintenance and inspections performed on the network.",
+          "items": {
+            "$ref": "#/$defs/maintenanceRecord"
+          }
+        },
+        "networkElement": {
+          "$ref": "#/$defs/networkElement"
+        },
+        "networkType": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. Type of network being monitored. Model:'https://schema.org/Text'."
+        },
+        "observedBy": {
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
+          "description": "Relationship. Sensor responsible for the measurement."
+        },
+        "operationalStatus": {
+          "type": "string",
+          "enum": [
+            "operational",
+            "maintenance",
+            "offline",
+            "emergency"
+          ],
+          "description": "Property. Operational status of the water network."
+        },
+        "pH": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 14,
+          "description": "Property. pH value of the monitored water. Model:'https://schema.org/Number'."
+        },
+        "pressure": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Water pressure in the network. Units:'BAR'. Model:'https://schema.org/Number'."
+        },
+        "temperature": {
+          "type": "number",
+          "description": "Property. Temperature of the monitored water. Units:'CEL'. Model:'https://schema.org/Number'."
+        },
+        "turbidity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Turbidity of the water in nephelometric turbidity units. Model:'https://schema.org/Number'."
+        },
+        "updateFrequency": {
+          "type": "string",
+          "format": "duration",
+          "description": "Property. Data update frequency expressed as an ISO 8601 duration, for example PT15M. Model:'https://schema.org/Text'."
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "alert": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "quality",
+            "pressure",
+            "flow",
+            "leak"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "resolved"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "severity",
+        "timestamp",
+        "description",
+        "status"
+      ]
+    },
+    "compliance": {
+      "type": "object",
+      "properties": {
+        "standards": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "complianceStatus": {
+          "type": "string"
+        },
+        "lastAssessment": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "nextAssessment": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "consumption": {
+      "type": "object",
+      "description": "Property. Daily and monthly monitored water consumption. Model:'https://schema.org/Number'.",
+      "properties": {
+        "daily": {
+          "type": "number",
+          "minimum": 0
+        },
+        "monthly": {
+          "type": "number",
+          "minimum": 0
+        },
+        "unitCode": {
+          "type": "string",
+          "const": "MTQ"
+        }
+      }
+    },
+    "dataQuality": {
+      "type": "object",
+      "properties": {
+        "completeness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "lastValidation": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "validationMethod": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "completeness",
+        "accuracy",
+        "lastValidation",
+        "validationMethod"
+      ]
+    },
+    "energyEfficiency": {
+      "type": "object",
+      "properties": {
+        "pumpEfficiency": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "energyConsumption": {
+          "type": "number"
+        },
+        "carbonFootprint": {
+          "type": "number"
+        }
+      }
+    },
+    "inspireIdentifier": {
+      "type": "object",
+      "properties": {
+        "localId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "namespace": {
+          "type": "string",
+          "minLength": 1
+        },
+        "versionId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "localId",
+        "namespace",
+        "versionId"
+      ]
+    },
+    "leakDetection": {
+      "type": "object",
+      "properties": {
+        "detected": {
+          "type": "boolean"
+        },
+        "probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "description": "Description or identifier of the detected leak location."
+        }
+      },
+      "required": [
+        "detected"
+      ]
+    },
+    "maintenanceRecord": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "type"
+      ]
+    },
+    "networkElement": {
+      "type": "object",
+      "properties": {
+        "elementType": {
+          "type": "string"
+        },
+        "material": {
+          "type": "string"
+        },
+        "diameter": {
+          "type": "number",
+          "minimum": 0
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0
+        },
+        "installationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expectedLifespan": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "inspireId",
+    "address",
+    "location",
+    "networkType",
+    "dataQuality",
+    "updateFrequency"
+  ]
+}
