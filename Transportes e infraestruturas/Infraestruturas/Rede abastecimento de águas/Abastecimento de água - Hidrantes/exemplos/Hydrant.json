@@ -15,10 +15,13 @@
     "address": {
         "type" : "Property",
         "value": {
-            "addressCountry" : "PT",
+            "addressCountry" : "Portugal",
             "addressLocality": "Lisboa",
-            "streetAddress"  : "Avenida Almirante Reis, 106B",
-            "postalCode"     : "1170"
+            "district"       : "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "streetAddress"  : "Avenida Almirante Reis",
+            "streetNr"       : "106B",
+            "postalCode"     : "1170-105"
         }
     },
     "status": {"type": "Property", "value": "operational", "observedAt": "2025-03-25T08:30:00Z"},
@@ -30,7 +33,7 @@
     "pressure": {"type": "Property", "value": 2.5, "unitCode": "BAR", "observedAt": "2025-03-25T08:30:00Z"},
     "manufacturer": {"type": "Property", "value": "FUCOLI-SOMEPAL S.A."},
     "model": {"type": "Property", "value": "HS1000-R"},
-    "refNetwork": { "type": "Relationship", "object": ["urn:epal:WaterDistributionNetwork:W001"] },
+    "refNetwork": { "type": "Relationship", "object": "urn:epal:WaterDistributionNetwork:W001" },
     "connectedTo": { "type": "Relationship", "object": ["urn:epal:WaterPipe:PT:Lisboa:WP432"] },
     "owner": { "type": "Relationship", "object": ["urn:epal:Organization:MunicipalWaterworks"] },
     "hydroId": {
@@ -41,9 +44,8 @@
         "type" : "Property",
         "value": {"spelling": "Hidrante HF001", "language": "pt", "nameStatus": "official"}
     },
-    "criticalInfrastructure": {"type": "Property", "value": "false"},
+    "criticalInfrastructure": {"type": "Property", "value": false},
     "beginLifespanVersion": {"type": "Property", "value": "2018-07-15T00:00:00Z"},
-    "endLifespanVersion": {"type": "Property", "value": null},
     "maintainer": {"type": "Relationship", "object": "urn:arte:Organization:MaintenanceCompany123"},
     "image": {
         "type" : "Property",
