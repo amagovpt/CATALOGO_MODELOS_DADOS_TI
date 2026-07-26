@@ -1,0 +1,306 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.0.1",
+  "modelTags": "",
+  "$id": "https://smart-data-models.github.io/dataModel.WaterDistributionManagementEPANET/Tank/schema.json",
+  "title": "Smart Data Models - Tank schema",
+  "description": "A tank for water network management",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "Tank"
+          ],
+          "description": "Property. NGSI Entity Type: It has to be Tank"
+        },
+        "address": {
+          "type": "object",
+          "description": "Property. Address associated with the tank. Model:'https://schema.org/address'",
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "description": "Property. Country in which the tank is located. Model:'https://schema.org/addressCountry'"
+            },
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Property. Locality, which must correspond to the municipality. Model:'https://schema.org/addressLocality'"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 2 region in which the locality is located. Model:'https://schema.org/addressRegion'"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "Property. Administrative district in which the locality is located"
+            },
+            "postalCode": {
+              "type": "string",
+              "description": "Property. Postal code. Model:'https://schema.org/postalCode'"
+            },
+            "streetAddress": {
+              "type": "string",
+              "description": "Property. Street address. Model:'https://schema.org/streetAddress'"
+            },
+            "streetNr": {
+              "type": "string",
+              "description": "Property. Street number. Model:'https://schema.org/Text'"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "beginLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Beginning of the real-world version. Model:'https://schema.org/DateTime'"
+        },
+        "category": {
+          "type": "array",
+          "description": "Property. List of categories associated with the tank. Model:'https://schema.org/Text'",
+          "items": {
+            "type": "string",
+            "enum": [
+              "elevated",
+              "ground",
+              "underground",
+              "floating"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "connectedTo": {
+          "type": "array",
+          "description": "Relationship. Pipe to which the tank is connected. Model:'https://schema.org/Text'",
+          "items": {
+            "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType"
+          },
+          "uniqueItems": true
+        },
+        "criticalInfrastructure": {
+          "type": "boolean",
+          "description": "Property. Whether the tank is critical infrastructure. Model:'https://schema.org/Boolean'"
+        },
+        "currentStorage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Property. Current storage percentage. Units:'P1'. Model:'https://schema.org/Number'"
+        },
+        "currentVolume": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Current water volume in the tank. Units:'MTQ'. Model:'https://schema.org/Number'"
+        },
+        "datasetResponsibleParty": {
+          "type": "string",
+          "description": "Property. Party responsible for the dataset. Model:'https://schema.org/Text'"
+        },
+        "dimension": {
+          "$ref": "#/$defs/dimensions",
+          "description": "Property. Tank dimensions. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "elevation": {
+          "type": "number",
+          "description": "Property. Elevation of the point where the tank is located. Units:'MTR'. Model:'https://schema.org/Number'"
+        },
+        "endLifespanVersion": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End of the real-world version. Model:'https://schema.org/DateTime'"
+        },
+        "geographicalName": {
+          "type": "object",
+          "description": "Property. Official geographical name information. Model:'https://schema.org/Text'"
+        },
+        "hydroId": {
+          "type": "object",
+          "description": "Property. Hydrographic identifier associated with the component"
+        },
+        "image": {
+          "type": "array",
+          "description": "Property. Tank images. Model:'https://schema.org/URL'",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "uniqueItems": true
+        },
+        "inspectionFrequency": {
+          "type": "string",
+          "description": "Property. Inspection frequency of the tank. Model:'https://schema.org/Text'",
+          "enum": [
+            "annual",
+            "biennial",
+            "triennial",
+            "quinquennial"
+          ]
+        },
+        "installationDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Installation date of the tank. Model:'https://schema.org/DateTime'"
+        },
+        "lastInspectionDate": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Last inspection date of the tank. Model:'https://schema.org/DateTime'"
+        },
+        "license": {
+          "type": "string",
+          "format": "uri",
+          "description": "Property. Data license URL. Model:'https://schema.org/URL'"
+        },
+        "material": {
+          "type": "string",
+          "description": "Property. Construction material of the tank. Model:'https://schema.org/Text'",
+          "enum": [
+            "concrete",
+            "steel",
+            "fiberglass",
+            "polyethylene",
+            "prestressed_concrete"
+          ]
+        },
+        "quality": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Property. Observed quality of the network component, from 1 to 5. Model:'https://schema.org/Number'"
+        },
+        "refNetwork": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+",
+          "description": "Relationship. Unique URI identifying the network to which the component belongs. Model:'https://schema.org/Text'"
+        },
+        "status": {
+          "type": "string",
+          "description": "Property. Operational status of the tank. Model:'https://schema.org/Text'",
+          "enum": [
+            "operational",
+            "planned",
+            "underConstruction",
+            "underMaintenance",
+            "outOfService",
+            "abandoned"
+          ]
+        },
+        "storageCapacity": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Property. Total storage capacity of the tank. Units:'MTQ'. Model:'https://schema.org/Number'"
+        },
+        "updateFrequency": {
+          "type": "string",
+          "description": "Property. Frequency of data updates. Model:'https://schema.org/Text'",
+          "enum": [
+            "annual",
+            "monthly",
+            "weekly",
+            "daily"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "description": "Property. Data model version. Model:'https://schema.org/Text'"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "diameter": {
+          "type": "number",
+          "minimum": 0
+        },
+        "height": {
+          "type": "number",
+          "minimum": 0
+        },
+        "length": {
+          "type": "number",
+          "minimum": 0
+        },
+        "width": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "diameter",
+            "height"
+          ]
+        },
+        {
+          "required": [
+            "length",
+            "width",
+            "height"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "address",
+    "type",
+    "location",
+    "elevation",
+    "storageCapacity",
+    "refNetwork",
+    "status",
+    "currentVolume"
+  ]
+}

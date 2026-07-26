@@ -15,8 +15,10 @@
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry": "PT",
+            "addressCountry": "Portugal",
             "addressLocality": "Lisboa",
+            "addressRegion": "Grande Lisboa",
+            "district": "Lisboa",
             "streetAddress": "Rua Professora Maria de Lurdes Belchior 21, 1900",
             "postalCode": "1900"
         }
@@ -62,7 +64,7 @@
     },
     "refNetwork": {
         "type": "Relationship",
-        "object": ["urn:epal:WaterDistributionNetwork:W001"]
+        "object": "urn:epal:WaterDistributionNetwork:W001"
     },
     "connectedTo": {
         "type": "Relationship",
@@ -89,10 +91,9 @@
         "type" : "Property"            ,
         "value": "2001-09-12T00:00:00Z"
     },
-    "endLifespanVersion": {"type": "Property", "value": null},
     "criticalInfrastructure": {
         "type": "Property",
-        "value": "false"
+        "value": false
     },
     "image": {
         "type": "Property",
