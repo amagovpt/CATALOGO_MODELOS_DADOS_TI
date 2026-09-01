@@ -286,7 +286,6 @@
   "required": [
     "id",
     "type",
-    "address",
     "dateCreated",
     "dateModified",
     "startDate",

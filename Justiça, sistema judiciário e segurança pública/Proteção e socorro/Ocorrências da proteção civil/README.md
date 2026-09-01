@@ -43,7 +43,6 @@ Os atributos obrigatórios são:
 
 - `id`
 - `type`
-- `address
 - `dateCreated`
 - `dateModified`
 - `startDate`
