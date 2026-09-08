@@ -1,6 +1,6 @@
 ## Perguntas Frequentes (FAQ)
 
-**Versão:** 1.5
+**Versão:** 1.6
 **Data da última atualização:** 2 de julho de 2026
 
 Este documento reúne um conjunto de perguntas frequentes com o objetivo de apoiar as entidades fornecedoras de dados na correta implementação dos modelos de dados e respetivas instruções.
@@ -71,6 +71,13 @@ De acordo com o Aviso de Abertura de Concurso n.º 04/C19-i08/2024, ponto 3.2(b)
 
 Consequentemente, os metadados devem igualmente ser disponibilizados através de API e incluídos nos mecanismos de descarregamento em bloco, garantindo a sua consistência com os conjuntos de dados disponibilizados.
 
+</details>
+
+<details>
+  <summary>Como determinar se devem ser incluídos os atributos inspire?</summary>
+
+**Resposta**
+Como indicado no README.md do modelo de metadados, os atributos inspire, i.e., alinhados com a [iniciativa do mesmo nome](https://knowledge-base.inspire.ec.europa.eu/index_en), são obrigatórios apenas quando se referem a entidades ou conceitos geográficos. Se tem dúvidas se o conjunto de dados a disponibilizar se enquadra nos dados geográficos, deve consultar os temas inspire em [https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en](https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en). Foram incluídos alguns exemplos, com e sem os atributos inspire, que permite a comparação e a interpretação do que deve ser incluído. Por exemplo, ``dataset.inspire.json``e ``dataset.json``.
 </details>
 
 ## 3. Especificações técnicas de integração e os modelos de dados
@@ -237,6 +244,7 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 
 ### Histórico de alterações
 
+* **v1.6 (2026-09-08)** – Adicionada FAQ sobre metadados e propriedades inspire
 * **v1.5 (2026-07-02)** – Adicionada FAQ sobre extensão JSON dos ficheiros exemplo
 * **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
 * **v1.3 (2026-05-19)** – Adicionada FAQ sobre propriedades optativas para as quais não se tem valor
