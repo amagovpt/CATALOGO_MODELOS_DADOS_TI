@@ -26,7 +26,7 @@
     "status": {"type": "Property", "value": "in progress"},
     "reportedByID": {"type": "Property", "value": "urn:arte:citizen123"},
     "assignedTo": {"type": "Property", "value": "parks_department"},
-    "image": { "type": "Property", "value": ["https://municipality.malaga.es/incidents/img/123.jpg"] },
+    "image": { "type": "Property", "value": ["https://api.municipality.city.pt/incidents/img/123.jpg"] },
     "notes": {"type": "Property", "value": "Emergency services have been notified"},
     "urgencyLevel": {"type": "Property", "value": "P2"},
     "expectedResponseTime": {"type": "Property", "value": "PT4H"},
