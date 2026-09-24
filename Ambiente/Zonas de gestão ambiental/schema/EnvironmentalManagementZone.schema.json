@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.1",
+  "modelTags": "CNMD",
+  "$id": "https://territoriosinteligentes.gov.pt/dataModel.EnvironmentalManagementZone/EnvironmentalManagementZone/schema.json",
+  "title": "EnvironmentalManagementZone schema",
+  "description": "An environmental management zone, including regulated activities, environmental domain and management responsibilities.",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
+    },
+    {
+      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
+    },
+    {
+      "properties": {
+        "address": {
+          "type": "object",
+          "properties": {
+            "addressLocality": {
+              "type": "string",
+              "minLength": 1,
+              "description": "The locality, which must correspond to the municipality"
+            },
+            "addressRegion": {
+              "type": "string",
+              "enum": [
+                "Norte",
+                "Centro",
+                "Oeste e Vale do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "The NUTS 2 region in which the locality is located"
+            },
+            "district": {
+              "type": "string",
+              "enum": [
+                "Açores",
+                "Aveiro",
+                "Beja",
+                "Braga",
+                "Bragança",
+                "Castelo Branco",
+                "Coimbra",
+                "Évora",
+                "Faro",
+                "Guarda",
+                "Madeira",
+                "Leiria",
+                "Lisboa",
+                "Portalegre",
+                "Porto",
+                "Santarém",
+                "Setúbal",
+                "Viana do Castelo",
+                "Vila Real",
+                "Viseu"
+              ],
+              "description": "The administrative district in which the locality is located"
+            }
+          },
+          "required": [
+            "addressLocality",
+            "addressRegion",
+            "district"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "const": "EnvironmentalManagementZone",
+          "description": "Property. NGSI entity type. It has to be EnvironmentalManagementZone."
+        },
+        "controlledActivityType": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "WasteManagement",
+              "LandUse",
+              "IndustrialActivities",
+              "ConstructionActivities",
+              "AgriculturalPractices",
+              "FishingAndAquaculture",
+              "TransportOperations",
+              "WaterSupply",
+              "WasteWater"
+            ]
+          },
+          "description": "Property. Activities controlled or regulated in the zone."
+        },
+        "controlTypeCode": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Prohibited",
+              "Restricted",
+              "Managed",
+              "Permitted",
+              "Monitored"
+            ]
+          },
+          "not": {
+            "allOf": [
+              {
+                "contains": {
+                  "const": "Prohibited"
+                }
+              },
+              {
+                "contains": {
+                  "const": "Permitted"
+                }
+              }
+            ]
+          },
+          "description": "Property. How activities in the zone are controlled. Prohibited and Permitted cannot be combined."
+        },
+        "environmentalDomain": {
+          "type": "string",
+          "enum": [
+            "waste",
+            "water",
+            "air",
+            "soil",
+            "biota",
+            "naturalResources",
+            "health",
+            "climate"
+          ],
+          "description": "Property. Environmental domain associated with the managed zone."
+        },
+        "managedBy": {
+          "type": "string",
+          "description": "Property. Description of the organization or entity responsible for managing the zone."
+        },
+        "managementModel": {
+          "type": "string",
+          "enum": [
+            "direct_provision-CIM",
+            "direct_provision-municipal_service",
+            "direct_provision-municipalised_intermunicipalised_service",
+            "delegation-state",
+            "delegation-partnerships",
+            "delegation-municipalised_intermunicipalised_companies",
+            "concession-municipal",
+            "concession-multimunicipal",
+            "other"
+          ],
+          "description": "Property. Management model for the zone."
+        },
+        "population": {
+          "type": "number",
+          "description": "Property. Population covered by the zone, based on the latest census; approximate when statistical areas intersect the zone."
+        },
+        "refUpperZone": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^urn:",
+          "description": "Relationship. URN identifier of the parent zone."
+        },
+        "typeOfService": {
+          "type": "string",
+          "enum": [
+            "high",
+            "low"
+          ],
+          "description": "Property. Type of service reported for the zone."
+        },
+        "validFrom": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. Start date and time of validity of the zone version."
+        },
+        "validTo": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Property. End date and time of validity of the zone version."
+        },
+        "zoneTypeCode": {
+          "type": "string",
+          "examples": [
+            "WasteDisposalZone",
+            "RestrictedArea",
+            "RegulatedFairway",
+            "DrinkingWaterProtectionArea",
+            "AirQualityManagementZone",
+            "NitrateVulnerableZone",
+            "SensitiveArea",
+            "MunicipalSolidWasteZone",
+            "HazardousWasteZone"
+          ],
+          "description": "Property. INSPIRE zone classification, extensible with domain-specific types."
+        }
+      }
+    }
+  ],
+  "required": [
+    "id",
+    "type",
+    "address",
+    "validFrom",
+    "dataProvider",
+    "location",
+    "managementModel",
+    "managedBy",
+    "controlledActivityType",
+    "environmentalDomain"
+  ]
+}

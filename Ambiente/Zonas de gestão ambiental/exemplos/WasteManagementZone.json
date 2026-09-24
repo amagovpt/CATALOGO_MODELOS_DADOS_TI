@@ -8,8 +8,8 @@
     },
     "zoneTypeCode": {"type": "Property", "value": "WasteDisposalZone"},
     "environmentalDomain": {"type": "Property", "value": "waste"},
-    "controlledActivityType": {"type": "Property", "value": "WasteManagement"},
-    "controlTypeCode": {"type": "Property", "value": "Monitored"},
+    "controlledActivityType": {"type": "Property", "value": ["WasteManagement"]},
+    "controlTypeCode": {"type": "Property", "value": ["Monitored"]},
     "dataProvider": {"type": "Property", "value": "https://www.cm-lisboa.pt/pt"},
     "address": {
         "type" : "Property",
@@ -38,7 +38,7 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
-    "areaServed": { "type": "Property", "value": ["Lisboa"] },
+    "areaServed": { "type": "Property", "value": "Lisboa" },
     "managedBy": {"type": "Property", "value": "CM-Lisboa"},
     "population": {"type": "Property", "value": 545796},
     "typeOfService": {"type": "Property", "value": "high"},

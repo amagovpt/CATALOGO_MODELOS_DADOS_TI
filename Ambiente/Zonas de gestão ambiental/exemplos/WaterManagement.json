@@ -4,8 +4,8 @@
     "name": {"type": "Property", "value": "Zona de gestão de distribuição de água Zona 33"},
     "description": {"type": "Property", "value": "Uma zona designada para de de distribuição de água em baixa."},
     "environmentalDomain": {"type": "Property", "value": "water"},
-    "controlledActivityType": {"type": "Property", "value": "WaterSupply"},
-    "controlTypeCode": {"type": "Property", "value": "Monitored"},
+    "controlledActivityType": {"type": "Property", "value": ["WaterSupply"]},
+    "controlTypeCode": {"type": "Property", "value": ["Monitored"]},
     "dataProvider": {"type": "Property", "value": "https://www.sines.pt/"},
     "address": {
         "type" : "Property",
@@ -43,7 +43,7 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
-    "areaServed": { "type": "Property", "value": ["Sines"] },
+    "areaServed": { "type": "Property", "value": "Sines" },
     "managedBy": {"type": "Property", "value": "CM-Sines"},
     "refUpperZone": {"type": "Relationship", "object": "urn:ersar:EnvironmentalManagementZone:33"},
     "population": {"type": "Property", "value": 14711},
