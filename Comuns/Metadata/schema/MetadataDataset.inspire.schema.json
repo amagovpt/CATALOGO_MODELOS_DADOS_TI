@@ -401,23 +401,10 @@
       },
       "required": [
         "@type",
-        "dcat:accessURL"
+        "dcat:accessURL",
+        "dcat:temporalResolution"
       ],
       "allOf": [
-        {
-          "anyOf": [
-            {
-              "required": [
-                "dcterms:title"
-              ]
-            },
-            {
-              "required": [
-                "dct:title"
-              ]
-            }
-          ]
-        },
         {
           "anyOf": [
             {
@@ -442,6 +429,34 @@
             {
               "required": [
                 "dct:license"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "dcterms:issued"
+              ]
+            },
+            {
+              "required": [
+                "dct:issued"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "dcterms:modified"
+              ]
+            },
+            {
+              "required": [
+                "dct:modified"
               ]
             }
           ]
@@ -671,34 +686,6 @@
         {
           "required": [
             "dct:publisher"
-          ]
-        }
-      ]
-    },
-    {
-      "anyOf": [
-        {
-          "required": [
-            "dcterms:issued"
-          ]
-        },
-        {
-          "required": [
-            "dct:issued"
-          ]
-        }
-      ]
-    },
-    {
-      "anyOf": [
-        {
-          "required": [
-            "dcterms:modified"
-          ]
-        },
-        {
-          "required": [
-            "dct:modified"
           ]
         }
       ]

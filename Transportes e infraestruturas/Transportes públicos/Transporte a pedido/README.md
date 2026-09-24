@@ -49,7 +49,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 Os atributos obrigatórios são:
 
-- `ìd`
+- `id`
 - `type`
 - `address`
 - `sourceLocation`

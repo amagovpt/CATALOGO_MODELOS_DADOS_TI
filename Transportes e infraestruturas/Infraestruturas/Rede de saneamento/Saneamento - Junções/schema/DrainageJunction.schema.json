@@ -17,9 +17,7 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": [
-            "DrainageJunction"
-          ],
+          "const": "DrainageJunction",
           "description": "Property. NGSI Entity Type: It has to be DrainageJunction"
         },
         "address": {
@@ -267,9 +265,7 @@
           "description": "Property. Observed quality of the network component, from 1 to 5. Model:'https://schema.org/Number'"
         },
         "refNetwork": {
-          "type": "string",
-          "format": "uri",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+",
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship. Unique URI identifying the network to which the component belongs. Model:'https://schema.org/Text'"
         },
         "restrictedAccess": {
@@ -307,13 +303,8 @@
         },
         "updateFrequency": {
           "type": "string",
-          "description": "Property. Frequency of data updates. Model:'https://schema.org/Text'",
-          "enum": [
-            "annual",
-            "monthly",
-            "weekly",
-            "daily"
-          ]
+          "minLength": 1,
+          "description": "Property. Frequency of data updates. Model:'https://schema.org/Text'"
         },
         "upstreamJunctions": {
           "type": "array",
@@ -377,6 +368,9 @@
     "type",
     "location",
     "junctionType",
-    "status"
+    "status",
+    "address",
+    "dimension",
+    "refNetwork"
   ]
 }

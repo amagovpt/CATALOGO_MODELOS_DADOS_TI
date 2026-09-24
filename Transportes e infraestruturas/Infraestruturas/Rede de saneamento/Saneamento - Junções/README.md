@@ -75,7 +75,6 @@ Os atributos obrigatórios são:
 - `address`
 - `dimension
 - `location`
-- `maxFlowRate`
 - `junctionType`
 - `status`
 - `refNetwork`
