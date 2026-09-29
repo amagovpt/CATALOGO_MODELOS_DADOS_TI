@@ -1,7 +1,7 @@
 ## Perguntas Frequentes (FAQ)
 
-**Versão:** 1.6
-**Data da última atualização:** 2 de julho de 2026
+**Versão:** 1.7
+**Data da última atualização:** 29 de setembro de 2026
 
 Este documento reúne um conjunto de perguntas frequentes com o objetivo de apoiar as entidades fornecedoras de dados na correta implementação dos modelos de dados e respetivas instruções.
 
@@ -77,7 +77,7 @@ Consequentemente, os metadados devem igualmente ser disponibilizados através de
   <summary>Como determinar se devem ser incluídos os atributos inspire?</summary>
 
 **Resposta**
-Como indicado no README.md do modelo de metadados, os atributos inspire, i.e., alinhados com a [iniciativa do mesmo nome](https://knowledge-base.inspire.ec.europa.eu/index_en), são obrigatórios apenas quando se referem a entidades ou conceitos geográficos. Se tem dúvidas se o conjunto de dados a disponibilizar se enquadra nos dados geográficos, deve consultar os temas inspire em [https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en](https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en). Foram incluídos alguns exemplos, com e sem os atributos inspire, que permite a comparação e a interpretação do que deve ser incluído. Por exemplo, ``dataset.inspire.json``e ``dataset.json``.
+Como indicado no README.md do modelo de metadados, os atributos inspire, i.e., alinhados com a [iniciativa do mesmo nome](https://knowledge-base.inspire.ec.europa.eu/index_en), são obrigatórios apenas quando se referem a entidades ou conceitos geográficos. Se tem dúvidas se o conjunto de dados a disponibilizar se enquadra nos dados geográficos, deve consultar os temas inspire em [https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en](https://knowledge-base.inspire.ec.europa.eu/tools/inspire-themes_en). Foram incluídos alguns exemplos, com e sem os atributos inspire, que permite a comparação e a interpretação do que deve ser incluído. Por exemplo, ``dataset.inspire.json``e ``dataset.json``. Foram identificados pela ARTE um conjunto de modelos que se enquadram num tema inspire e, por essa razão, os seus metadados deve contemplar os atributos inspire. Ver [README.md](Comuns/Metadata/README.md) do modelo de metadados.
 </details>
 
 ## 3. Especificações técnicas de integração e os modelos de dados
@@ -244,6 +244,7 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 
 ### Histórico de alterações
 
+* **v1.7 (2026-09-29)** – Mehorada a FAQ sobre metadados e propriedades inspire
 * **v1.6 (2026-09-08)** – Adicionada FAQ sobre metadados e propriedades inspire
 * **v1.5 (2026-07-02)** – Adicionada FAQ sobre extensão JSON dos ficheiros exemplo
 * **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta

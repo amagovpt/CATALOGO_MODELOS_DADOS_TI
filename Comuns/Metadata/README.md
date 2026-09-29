@@ -48,10 +48,55 @@ Na tabela abaixo são apresentadas as propriedades presentes, bem como algumas n
 | DCAT-AP | [Data Series](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries) | [modification date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries.modificationdate) | A data mais recente em que a série de conjuntos de dados foi alterada. | OBRIGATÓRIO | -- |
 | DCAT-AP | [Data Series](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries) | [release date](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries.releasedate) | A data de publicação da série de conjuntos de dados. | OBRIGATÓRIO | -- |
 | DCAT-AP | [Data Series](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries) | [temporal coverage](https://semiceu.github.io/DCAT-AP/releases/3.0.0/#DatasetSeries.temporalcoverage) | Um período temporal que a série de conjunto de dados abrange. | OBRIGATÓRIO | -- |
-| INSPIRE | -- | [topic category](http://inspire.ec.europa.eu/metadata-codelist/TopicCategory) | Tema geográfico abordado (ex: _environment_, _transportation_, _elevation_, etc.). | OBRIGATÓRIO | Apenas para objectos geográficos. |
-| INSPIRE | -- | [geographic bounding box](http://inspire.ec.europa.eu/glossary/MetadataElement-GeographicBoundingBox) | Delimitação espacial do recurso: sul, norte, oeste, leste (em WGS84). | OBRIGATÓRIO | Apenas para objectos geográficos. |
-| INSPIRE | -- | [spatial reference system](http://inspire.ec.europa.eu/glossary/SpatialReferenceSystem) | Sistema de coordenadas usado para representar os dados espaciais nacionais (PTRA08-UTM/ITRF93, PT-TM06/ETRS89, e outros). | OBRIGATÓRIO | Apenas para objectos geográficos |
-| INSPIRE | -- | [metadata date](http://inspire.ec.europa.eu/glossary/MetadataElement-MetadataDate) | Data de criação ou atualização dos metadados. | OBRIGATÓRIO | Apenas para objectos geográficos. |
+| INSPIRE | -- | [topic category](http://inspire.ec.europa.eu/metadata-codelist/TopicCategory) | Tema geográfico abordado (ex: _environment_, _transportation_, _elevation_, etc.). | OBRIGATÓRIO | Apenas para objectos geográficos. Ver tabela abaixo. |
+| INSPIRE | -- | [geographic bounding box](http://inspire.ec.europa.eu/glossary/MetadataElement-GeographicBoundingBox) | Delimitação espacial do recurso: sul, norte, oeste, leste (em WGS84). | OBRIGATÓRIO | Apenas para objectos geográficos. Ver tabela abaixo. |
+| INSPIRE | -- | [spatial reference system](http://inspire.ec.europa.eu/glossary/SpatialReferenceSystem) | Sistema de coordenadas usado para representar os dados espaciais nacionais (PTRA08-UTM/ITRF93, PT-TM06/ETRS89, e outros). | OBRIGATÓRIO | Apenas para objectos geográficos. Ver tabela abaixo. |
+| INSPIRE | -- | [metadata date](http://inspire.ec.europa.eu/glossary/MetadataElement-MetadataDate) | Data de criação ou atualização dos metadados. | OBRIGATÓRIO | Apenas para objectos geográficos. Ver tabela abaixo. |
+
+## Conjuntos INSPIRE
+
+Considere que os seguintes conjuntos como incluídos numa temática INSPIRE. 
+
+| Dataset | Tema_INSPIRE |
+|---|---|
+| AirQualityMonitoring | Instalações de monitorização ambiental |
+| BuildingRegistration | Edifícios |
+| CycleLane | Redes de Transportes |
+| CycleNetwork | Redes de Transportes |
+| Dam | Hidrografia |
+| DockingStation | Redes de Transportes |
+| DrainageJunction | Serviços de Utilidade Pública e Governamentais |
+| DrainageNetwork | Serviços de Utilidade Pública e Governamentais |
+| DrainagePipe | Serviços de Utilidade Pública e Governamentais |
+| DrinkingWaterPumpingStation | Serviços de Utilidade Pública e Governamentais |
+| EnergyGenerator | Serviços de Utilidade Pública e Governamentais |
+| EVChargingStation | Redes de Transportes |
+| Garden | Uso e Ocupação do Solo |
+| Hydrant | Serviços de Utilidade Pública e Governamentais |
+| IndustrialLot | Uso e Ocupação do Solo |
+| IndustrialZone | Uso e Ocupação do Solo |
+| Junction | Serviços de Utilidade Pública e Governamentais |
+| Market | Serviços de utilidade pública e serviços governamentais |
+| OffStreetParking | Redes de Transportes |
+| OnStreetParking | Redes de Transportes |
+| ParkingAccess | Redes de Transportes |
+| ParkingGroup | Redes de Transportes |
+| ParkingSpot | Redes de Transportes |
+| Pipe | Serviços de Utilidade Pública e Governamentais |
+| PointOfInterest | Serviços de Utilidade Pública e Governamentais |
+| PublicEquipment | Serviços de Utilidade Pública e Governamentais |
+| PumpingStation | Serviços de Utilidade Pública e Governamentais |
+| Reservoir | Hidrografia |
+| RestrictedTrafficArea | Zonas de gestão, restrição ou regulamentação e unidades de reporte |
+| RiverBasin | Hidrografia |
+| RoadTransportNetwork | Redes de Transportes |
+| RoadTransportNode | Redes de Transportes |
+| RoadTransportSegment | Redes de Transportes |
+| Tank | Serviços de Utilidade Pública e Governamentais |
+| UrbanPlanningProcess | Uso e Ocupação do Solo |
+| WasteContainer | Serviços de Utilidade Pública e Governamentais |
+| WasteContainerIsle | Serviços de Utilidade Pública e Governamentais |
+| WaterDistributionNetwork | Serviços de Utilidade Pública e Governamentais |
 
 ## Notas
 
