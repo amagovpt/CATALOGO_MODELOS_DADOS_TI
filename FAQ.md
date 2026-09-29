@@ -244,7 +244,7 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 
 ### Histórico de alterações
 
-* **v1.7 (2026-09-29)** – Mehorada a FAQ sobre metadados e propriedades inspire
+* **v1.7 (2026-09-29)** – Melhorada a FAQ sobre metadados e propriedades inspire
 * **v1.6 (2026-09-08)** – Adicionada FAQ sobre metadados e propriedades inspire
 * **v1.5 (2026-07-02)** – Adicionada FAQ sobre extensão JSON dos ficheiros exemplo
 * **v1.4 (2026-06-22)** – Adicionada FAQ sobre modelos em falta
