@@ -57,7 +57,7 @@ Na tabela abaixo são apresentadas as propriedades presentes, bem como algumas n
 
 Considere que os seguintes conjuntos como incluídos numa temática INSPIRE. 
 
-| Dataset | Tema_INSPIRE |
+| Dataset | Tema INSPIRE |
 |---|---|
 | AirQualityMonitoring | Instalações de monitorização ambiental |
 | BuildingRegistration | Edifícios |
