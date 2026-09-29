@@ -1,13 +1,13 @@
 {
   "id": "urn:env:GreenspaceRecord:jsb-2025-01-2",
   "type": "GreenspaceRecord",
-  "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-1T18:00:00Z"} },
+  "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-01T18:00:00Z"} },
   "location": {
     "type" : "GeoProperty",
-    "value": { "type": "Point", "coordinates": [-8.42228860554215, 40.21068736663281]}
+    "value": { "type": "Point", "coordinates": [-8.42228860554215, 40.21068736663281] }
   },
   "address": {
-    "type" : "Property",
+    "type": "Property",
     "value": {
       "addressLocality": "Coimbra",
       "addressRegion"  : "Centro",

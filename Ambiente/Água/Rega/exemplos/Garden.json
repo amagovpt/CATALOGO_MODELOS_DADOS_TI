@@ -14,8 +14,8 @@
     },
     "areaServed": {"type": "Property", "value": "Av. Sá da Bandeira"},
     "category": { "type": "Property", "value": ["public"] },
-    "dateLastWatering": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-2T08:00:00Z"} },
-    "nextWateringDeadline": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-02-1T08:00:00Z"} },
+    "dateLastWatering": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-01-02T08:00:00Z"} },
+    "nextWateringDeadline": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-02-01T08:00:00Z"} },
     "description": {
         "type": "Property",
         "value": "A sua construção surge com o projeto de urbanização desta nova área da cidade. O projeto da autoria do paisagista portuense Jacinto Matos é delimitado por plátanos e por uma distribuição simétrica de canteiros em calçada portuguesa. O Jardim inaugurado em 1889, só foi concluído em 1929."

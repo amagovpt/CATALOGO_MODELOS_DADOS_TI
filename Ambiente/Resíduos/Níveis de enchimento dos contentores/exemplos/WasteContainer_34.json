@@ -26,7 +26,7 @@
         "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },
         "coordinateSystem": "EPSG:4258"
     },
-    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"} },
+    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00Z"} },
     "refWasteContainerIsle": {"type": "Relationship", "object": "urn:cml:WasteContainerIsle:15"},
     "status": {"type": "Property", "value": "unknown"},
     "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.WasteManagement/master/context.jsonld"]

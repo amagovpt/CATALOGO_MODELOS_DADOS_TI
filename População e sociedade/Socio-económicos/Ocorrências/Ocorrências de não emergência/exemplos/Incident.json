@@ -29,6 +29,6 @@
     "image": { "type": "Property", "value": ["https://api.municipality.city.pt/incidents/img/123.jpg"] },
     "notes": {"type": "Property", "value": "Emergency services have been notified"},
     "urgencyLevel": {"type": "Property", "value": "P2"},
-    "expectedResponseTime": {"type": "Property", "value": "PT4H"},
+    "expectedResponseTime": {"type": "Property", "value": "2025-01-09T11:00:00Z"},
     "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
 }

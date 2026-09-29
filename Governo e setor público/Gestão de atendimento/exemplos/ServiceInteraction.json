@@ -4,7 +4,7 @@
   "dateStarted": {"type": "Property", "value": "2025-09-24T10:00:00Z"},
   "dateFinished": {"type": "Property", "value": "2025-09-24T10:10:00Z"},
   "dateCreated": {"type": "Property", "value": "2025-09-24T12:00:00Z"},
-  "dateModified": {"type": "Property", "value": "2025-09-24T12 :00:00Z"},
+  "dateModified": {"type": "Property", "value": "2025-09-24T12:00:00Z"},
   "interactionType": {"type": "Property", "value": "inPerson"},
   "intakeChannel": {"type": "Property", "value": "counter"},
   "serviceStatus": {"type": "Property", "value": "completed"},

@@ -30,7 +30,7 @@
     "coordinateSystem": "EPSG:4258"
   },
   "reportedBy": {"type": "Property", "value": "Cidadão"},
-  "dateCreated": {"type": "Property", "value": "2025-01-16T10:00:00Z"},
+  "dateCreated": {"type": "Property", "value": "2025-01-016T10:00:00Z"},
   "dateModified": {"type": "Property", "value": "2025-01-09T10:45:00Z"},
   "startDate": {"type": "Property", "value": "2025-01-09T9:58:00Z"},
   "severity": {"type": "Property", "value": "Alto"},

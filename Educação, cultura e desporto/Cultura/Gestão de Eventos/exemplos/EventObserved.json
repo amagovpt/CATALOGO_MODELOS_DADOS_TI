@@ -5,7 +5,7 @@
     "dateStarted"      : {"type": "Property", "value": "2025-02-22T11:00:00Z"},
     "dateFinished"     : {"type": "Property", "value": "2025-05-22T17:00:00Z"},
     "dateCreated"      : {"type": "Property", "value": "2025-02-22T12:00:00Z"},
-    "dateModified"     : {"type": "Property", "value": "2025-05-22T18 :00:00Z"},
+    "dateModified"     : {"type": "Property", "value": "2025-05-22T18:00:00Z"},
     "location"         : {
         "type"            : "GeoProperty",
         "value"           : { "coordinates": [-9.1531378134911, 38.7244912199003], "type": "Point" },

@@ -21,7 +21,7 @@
     "binLoggedTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-29T20:00:00Z"} },
     "binMaxLoad": {"type": "Property", "value": 500},
     "binRecommendedLoad": {"type": "Property", "value": 250},
-    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00"} },
+    "dateCreated": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00Z"} },
     "location": {
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },
