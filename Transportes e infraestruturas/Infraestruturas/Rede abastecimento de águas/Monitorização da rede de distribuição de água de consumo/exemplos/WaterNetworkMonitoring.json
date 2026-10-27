@@ -175,8 +175,7 @@
     "observedBy"        : {"type": "Relationship", "object": "urn:ngsi-ld:Device:WaterLevelSensor:24M-07A"},
     "license"           : {
         "type" : "Property",
-        "value": "CC-BY-4.0",
-        "url"  : "https://creativecommons.org/licenses/by/4.0/"
+        "value": "https://creativecommons.org/licenses/by/4.0/"
     },
     "@context"          : ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
 }

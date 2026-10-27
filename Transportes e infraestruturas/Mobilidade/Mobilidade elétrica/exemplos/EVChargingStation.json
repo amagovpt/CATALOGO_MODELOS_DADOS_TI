@@ -100,14 +100,14 @@
     "type": "Property",  
     "value": {  
       "@type": "DateTime",  
-      "@value": "2024-05-02T20:28:41"  
+      "@value": "2024-05-02T20:28:41Z"  
     }  
   },  
   "startDateTime": {  
     "type": "Property",  
     "value": {  
       "@type": "DateTime",  
-      "@value": "2024-05-02T20:29:41"  
+      "@value": "2024-05-02T20:29:41Z"  
     }  
   },  
   "vehicleType": {  
@@ -118,7 +118,7 @@
     "type": "Property",  
     "value": {  
       "@type": "DateTime",  
-      "@value": "2024-05-02T20:28:41"  
+      "@value": "2024-05-02T20:28:41Z"  
     }  
   },  
   "@context": [  

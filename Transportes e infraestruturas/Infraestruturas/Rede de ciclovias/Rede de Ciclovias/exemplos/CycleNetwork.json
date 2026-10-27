@@ -4,9 +4,9 @@
   "description": {"type": "Property", "value": "Rede de ciclovias da cidade de Lisboa"},
   "name": {"type": "Property", "value": "RC-CLX"},
   "boundingBox": {
-    "type"            : "GeoProperty",
+    "type": "GeoProperty",
     "value"           : {
-      "type"       : "Polygon",
+      "type": "Polygon",
       "coordinates": [
         [
           [-9.175841969597688, 38.69777428179626 ],
@@ -28,21 +28,29 @@
     },
     "coordinateSystem": "EPSG:4258"
   },
-  "address": { "type": "Property", "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "addressLocality": "Lisboa", "district": "Lisboa" } },
-  "areaServed": {"type": "Property", "value": "Cidade de Lisboa"},
+  "address": {
+    "type": "Property",
+    "value": {
+      "addressCountry" : "Portugal",
+      "addressRegion"  : "Grande Lisboa",
+      "addressSubRegion": "Grande Lisboa",
+      "district"       : "Lisboa"
+    }
+  },
+  "areaServed" : {"type": "Property", "value": "Cidade de Lisboa"},
   "totalLength": {"type": "Property", "value": 200, "unitCode": "KMT"},
   "connectedNetworks": {
     "type"  : "Relationship",
     "object": ["urn:cml:CycleNetwork:Oeiras", "urn:cml:CycleNetwork:Loures"]
   },
   "hasParts": {
-    "type"  : "Relationship",
+    "type": "Relationship",
     "object": [
       "urn:cml:CycleLane:CL-001", "urn:cml:CycleLane:CL-002", "urn:cml:CycleLane:CL-998", "urn:cml:CycleLane:CL-999"
     ]
   },
   "seeAlso": {
-    "type" : "Property",
+    "type": "Property",
     "value": [
       "http://inspire.ec.europa.eu/theme/tn",
       "http://inspire.ec.europa.eu/featureconcept/TransportNetwork",
@@ -51,11 +59,11 @@
     ]
   },
   "beginLifespanVersion": {"type": "Property", "value": "2024-10-25T00:00:00.00Z"},
-  "createdAt": {"type": "Property", "value": "2024-10-01T08:00:00.00Z"},
-  "modifiedAt": {"type": "Property", "value": "2024-10-20T16:45:00.00Z"},
-  "owner": { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
+  "createdAt"           : {"type": "Property", "value": "2024-10-01T08:00:00.00Z"},
+  "modifiedAt"          : {"type": "Property", "value": "2024-10-20T16:45:00.00Z"},
+  "owner"               : { "type": "Relationship", "object": ["urn:cml:Organization:CMLisboa"] },
   "maintenanceAuthority": {
-    "type" : "Property",
+    "type": "Property",
     "value": {
       "name"        : "CMLisboa",
       "contactPoint": "estradas@ip.pt",

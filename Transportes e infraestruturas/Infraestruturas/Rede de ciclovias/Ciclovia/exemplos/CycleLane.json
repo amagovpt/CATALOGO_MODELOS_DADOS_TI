@@ -26,7 +26,7 @@
     },
     "address": {
         "type" : "Property",
-        "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa", "addressLocality": "Lisboa"}
+        "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "addressSubRegion":"Grande Lisboa", "district": "Lisboa",  "addressLocality": "Lisboa"}
     },
     "length": {"type": "Property", "value": 0.8, "unitCode": "KMT"},
     "pavementType": {"type": "Property", "value": "Asphalt"},

@@ -58,7 +58,7 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
-    "seeAlso": { "type": "Property", "value": ["https://mediotejo.pt/images/pdf/Brochura_Mação_vf.pdf"] },
+    "seeAlso": { "type": "Property", "value": ["https://mediotejo.pt/images/pdf/Brochura_Ma%C3%A7%C3%A3o_vf.pdf"] },
     "status": {"type": "Property", "value": "realizado"},
     "version": {"type": "Property", "value": "1.0"},
     "dataProvider": {"type": "Property", "value": "Médio Tejo, Comunidade Intermunicipal"},

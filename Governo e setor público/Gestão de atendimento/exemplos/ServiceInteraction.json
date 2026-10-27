@@ -4,7 +4,7 @@
   "dateStarted": {"type": "Property", "value": "2025-09-24T10:00:00Z"},
   "dateFinished": {"type": "Property", "value": "2025-09-24T10:10:00Z"},
   "dateCreated": {"type": "Property", "value": "2025-09-24T12:00:00Z"},
-  "dateModified": {"type": "Property", "value": "2025-09-24T12 :00:00Z"},
+  "dateModified": {"type": "Property", "value": "2025-09-24T12:00:00Z"},
   "interactionType": {"type": "Property", "value": "inPerson"},
   "intakeChannel": {"type": "Property", "value": "counter"},
   "serviceStatus": {"type": "Property", "value": "completed"},
@@ -38,7 +38,7 @@
   "bookingChannel": {"type": "Property", "value": "Web"},
   "bookingStatus": {"type": "Property", "value": "confirmed"},
   "ticketNumber": {"type": "Property", "value": "A-0321"},
-  "ticketDate": {"type": "Property", "value": "2025-09-24T9:30:00Z"},
+  "ticketDate": {"type": "Property", "value": "2025-09-24T09:30:00Z"},
   "ticketType": {"type": "Property", "value": "priority"},
   "ticketStatus": {"type": "Property", "value": "issued"},
   "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]

@@ -47,7 +47,7 @@
   },
   "address": {
     "type" : "Property",
-    "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "district": "Lisboa","addressLocality": "Lisboa"}
+    "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "addressSubRegion": "Grande Lisboa", "district": "Lisboa","addressLocality": "Lisboa"}
   },
   "areaServed": {"type": "Property", "value": "Área Metropolitana de Lisboa"},
   "networkType": {"type": "Property", "value": "road"},
