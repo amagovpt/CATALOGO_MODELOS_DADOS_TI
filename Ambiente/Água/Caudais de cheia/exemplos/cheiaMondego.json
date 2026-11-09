@@ -3,8 +3,8 @@
     "type": "FloodMonitoring",
     "alertLevel": {"type": "Property", "value": 3.33, "unitCode": "MTR"},
     "currentLevel": {"type": "Property", "value": 4.32, "unitCode": "MTR"},
-        "address": {
-        "type" : "Property",
+    "address": {
+        "type": "Property",
         "value": {
             "addressLocality": "Coimbra",
             "addressRegion"  : "Centro",
@@ -26,5 +26,6 @@
     },
     "referenceLevel": {"type": "Property", "value": 10, "unitCode": "MTR"},
     "stationID": {"type": "Property", "value": "APA-S13"},
+    "dataProvider": {"type": "Property", "value": "APA"},
     "@context": ["https://raw.githubusercontent.com/smart-data-models/dataModel.Environment/master/context.jsonld"]
 }

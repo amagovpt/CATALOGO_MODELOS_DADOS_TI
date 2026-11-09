@@ -40,6 +40,7 @@ Os atributos obrigatórios são:
 - `measurementValue`
 - `countType`
 - `aggregationPeriod`
+- `dataProvider`
 
 ## Notas
 

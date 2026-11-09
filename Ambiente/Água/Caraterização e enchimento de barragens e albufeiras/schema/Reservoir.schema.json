@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.1.1",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/Reservoir.schema.json",
   "title": "CNMD - Reservoir schema",
@@ -177,6 +177,7 @@
   },
   "required": [
     "id", "type", "address", "beginLifespanVersion", "hydroId",
-    "localType", "location", "reservoirHead", "usefulCapacity"
+    "localType", "location", "usefulCapacity", 
+    "currentStorage", "currentVolume", "name"
   ]
 }

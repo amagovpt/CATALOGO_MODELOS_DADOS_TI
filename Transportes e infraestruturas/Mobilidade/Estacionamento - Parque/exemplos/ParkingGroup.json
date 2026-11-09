@@ -8,6 +8,7 @@
   "allowedVehicleType": {"type": "Property", "value": "car"},
   "availableSpotNumber": {"type": "Property", "value": 1},
   "totalSpotNumber": {"type": "Property", "value": 2},
+  "dataProvider"  : {"type": "Property", "value": "CMCascais"},
   "address": {
     "type" : "Property",
     "value": {

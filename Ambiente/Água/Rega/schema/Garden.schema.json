@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.4",
+  "$schemaVersion": "0.1.0",
   "$id": "https://smart-data-models.github.io/dataModel/ParksAndGardens/Garden/schema.json",
   "title": "Smart Data Models - Parks and Gardens / Garden",
   "description": "A garden is a distinguishable planned space, usually outdoors, set aside for the display, cultivation, and enjoyment of plants and other forms of nature.",
@@ -146,6 +146,7 @@
     "type",
     "address",
     "location",
-    "category"
+    "category",
+    "name"
   ]
 }

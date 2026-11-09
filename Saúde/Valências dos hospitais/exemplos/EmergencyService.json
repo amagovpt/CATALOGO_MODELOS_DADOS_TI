@@ -1,20 +1,13 @@
 {
-    "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-    ],
+    "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"],
     "id": "urn:sns:EmergencyService:SUB-Cinfaes",
     "type": "EmergencyService",
     "name": {"type": "Property", "value": "SUB Cinfães"},
     "region": {"type": "Property", "value": "ARS Norte"},
     "legalNature": {"type": "Property", "value": "IP"},
-    "hospitalGroup": {
-        "type" : "Property"                                  ,
-        "value": "Grupo C"
-    },
-    "emergencyServiceType": {
-        "type" : "Property"                  ,
-        "value": "Serviço de Urgência Básica"
-    },
+    "dataProvider": {"type": "Property", "value": "https://www.sns.gov.pt"},
+    "hospitalGroup": {"type": "Property", "value": "Grupo C"},
+    "emergencyServiceType": {"type": "Property", "value": "Serviço de Urgência Básica"},
     "speciality": {"type": "Property", "value": "Urgência Adultos"},
     "ageRange": {"type": "Property", "value": "18 aos 150 anos"},
     "accessByPatientInitiative": {"type": "Property", "value": true},
@@ -23,38 +16,29 @@
     "accessByUrgentCareDoctors": {"type": "Property", "value": true},
     "accessByHospitalDoctors": {"type": "Property", "value": false},
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [-8.0912927613, 41.074141271]
-        },
+        "type"            : "GeoProperty",
+        "value"           : { "type": "Point", "coordinates": [-8.0912927613, 41.074141271] },
         "coordinateSystem": "EPSG:4326"
     },
     "address": {
         "type": "Property",
         "value": {
-            "addressCountry" : "Portugal"                  ,
-            "addressLocality": "Cinfães"                   ,
-            "district"       : "Viseu"                     ,
-            "addressRegion"  : "Centro"                    ,
+            "addressCountry" : "Portugal",
+            "addressLocality": "Cinfães",
+            "district"       : "Viseu",
+            "addressRegion"  : "Centro",
             "streetAddress"  : "Rua Capitão Salgueiro Maia",
-            "streetNr"       : "s/n"                       ,
+            "streetNr"       : "s/n",
             "postalCode"     : "4690-047"
         }
     },
     "areaServed": {"type": "Property", "value": "Freguesia de Cinfães"},
     "contactPoint": {
-        "type": "Property",
-        "value": {
-            "telephone": "+351255431374"                         ,
-            "email"    : "aces.baixotamega@arsnorte.min-saude.pt"
-        }
+        "type" : "Property",
+        "value": {"telephone": "+351255431374", "email": "aces.baixotamega@arsnorte.min-saude.pt"}
     },
-    "operationalHours": {"type": "Property", "value": "24/7"},
-    "facilityCapacity": {
-        "type": "Property",
-        "value": {"bedCapacity": 20, "staffCapacity": 50}
-    },
-    "ambulanceServiceAvailability": {"type": "Property", "value": true},
-    "dateModified": {"type": "Property", "value": "2025-01-14T12:00:00Z"}
+    "operationalHours"            : { "type": "Property", "value": "24/7"                                   },
+    "facilityCapacity"            : { "type": "Property", "value": {"bedCapacity": 20, "staffCapacity": 50} },
+    "ambulanceServiceAvailability": { "type": "Property", "value": true                                     },
+    "dateModified"                : { "type": "Property", "value": "2025-01-14T12:00:00Z"                   }
 }

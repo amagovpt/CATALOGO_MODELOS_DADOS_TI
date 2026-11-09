@@ -47,6 +47,8 @@ Os atributos obrigatórios são:
 - `serviceName`
 - `typeOfService`
 - `serviceStatus`
+- `providingEntity`
+- `interactionType`
 
 ## Notas
 

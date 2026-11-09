@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.2.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/AssetIntervention/schema.json",
   "title": "Asset Intervention schema",
@@ -128,7 +128,8 @@
             "airportInfrastructure",
             "publicSpaceStructures",
             "slopeStabilizationStructures",
-            "pedestrianandCyclingInfrastructure"
+            "pedestrianandCyclingInfrastructure",
+            "road"
           ],
           "description": "Property. Type of infrastructure affected by the intervention"
         },

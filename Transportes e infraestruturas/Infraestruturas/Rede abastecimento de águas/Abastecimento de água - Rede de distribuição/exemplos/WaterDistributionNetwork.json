@@ -66,7 +66,8 @@
             "addressCountry" : "Portugal",
             "addressLocality": "Lisboa",
             "district"       : "Lisboa",
-            "addressRegion"  : "Grande Lisboa"
+            "addressRegion"  : "Grande Lisboa",
+            "addressSubRegion" : "Grande Lisboa"
         }
     },
     "image": { "type": "Property", "value": ["https://example.com/imagens/rede-distribuicao.jpg"] },

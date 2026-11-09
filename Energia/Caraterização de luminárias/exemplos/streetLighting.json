@@ -10,6 +10,7 @@
     "feederID": {"type": "Property", "value": "F1"},
     "feederPillarNum": {"type": "Property", "value": "70"},
     "lanternHeight": {"type": "Property", "value": 10, "unitCode": "MTR"},
+    "dataProvider": {"type": "Property", "value": "EREDES"},
     "location": {
         "type" : "GeoProperty",
         "value": {

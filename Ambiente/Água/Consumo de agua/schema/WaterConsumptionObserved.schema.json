@@ -1,91 +1,59 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.2",
+  "$schemaVersion": "0.0.3",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.Waterconsumption/WaterconsumptionObserved/schema.json",
   "title": "Smart Data models - Water Consumption Observed schema",
   "description": "The Smart Water Meter model captures water consumption, customer side leak alarms and associated flow rate originating from the smart water meters",
   "type": "object",
   "allOf": [
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
-    },
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
-    },
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"    },
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"},
     {
       "properties": {
         "address": {
           "type": "object",
           "properties": {
             "addressLocality": {
-              "type": "string",
-              "minLength": 1,
+              "type"       : "string",
+              "minLength"  : 1,
               "description": "The locality, which must correspond to the municipality"
             },
-            "addressRegion": {
+            "addressRegion"  : {
               "type": "string",
-              "enum": [
-                "Norte",
-                "Centro",
-                "Oeste e Vale do Tejo",
-                "Grande Lisboa",
-                "Península de Setúbal",
-                "Alentejo",
-                "Algarve",
-                "Região Autónoma dos Açores",
-                "Região Autónoma da Madeira"
+              "enum"       : [
+                "Norte",                      "Centro",                     "Oeste e Vale do Tejo",
+                "Grande Lisboa",              "Península de Setúbal",       "Alentejo",
+                "Algarve",                    "Região Autónoma dos Açores", "Região Autónoma da Madeira"
               ],
               "description": "The NUTS 2 region in which the locality is located"
             },
-            "district": {
+            "district"       : {
               "type": "string",
-              "enum": [
-                "Açores",
-                "Aveiro",
-                "Beja",
-                "Braga",
-                "Bragança",
-                "Castelo Branco",
-                "Coimbra",
-                "Évora",
-                "Faro",
-                "Guarda",
-                "Madeira",
-                "Leiria",
-                "Lisboa",
-                "Portalegre",
-                "Porto",
-                "Santarém",
-                "Setúbal",
-                "Viana do Castelo",
-                "Vila Real",
-                "Viseu"
+              "enum"       : [
+                "Açores",           "Aveiro",           "Beja",             "Braga",            "Bragança",
+                "Castelo Branco",   "Coimbra",          "Évora",            "Faro",             "Guarda",
+                "Madeira",          "Leiria",           "Lisboa",           "Portalegre",       "Porto",
+                "Santarém",         "Setúbal",          "Viana do Castelo", "Vila Real",        "Viseu"
               ],
               "description": "The administrative district in which the locality is located"
             }
           },
-          "required": [
-            "addressLocality",
-            "addressRegion",
-            "district"
-          ]
+          "required": ["addressLocality", "addressRegion", "district"]
         },
         "type": {
-          "type": "string",
-          "enum": [
-            "WaterConsumptionObserved"
-          ],
+          "type"       : "string",
+          "enum"       : ["WaterConsumptionObserved"],
           "description": "Property. It has to be WaterConsumptionObserved. NGSI type"
         },
         "acquisitionStageFailure": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. No inductive response of metering device"
         },
         "alarmFlowPersistence": {
-          "type": "string",
+          "type"       : "string",
           "description": "Property. Alarm signifying continuous water use",
-          "enum": [
+          "enum"       : [
             "Nothing to report",
             "No persistence",
             "In progress impacting persistence",
@@ -94,66 +62,40 @@
           ]
         },
         "alarmInProgress": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Indicates that one or more alarms are in progress",
-          "enum": [
-            0,
-            1
-          ]
+          "enum"       : [0, 1]
         },
         "alarmStopsLeaks": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Alarm signifying the potential for an intermittent leak",
-          "enum": [
-            0,
-            1
-          ]
+          "enum"       : [0, 1]
         },
         "alarmTamper": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Alarm signifying the potential of mechanical tampering with the device",
-          "enum": [
-            0,
-            1
-          ]
+          "enum"       : [0, 1]
         },
         "alarmWaterQuality": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Alarm signifying the potential of backflows occurring",
-          "enum": [
-            0,
-            1
-          ]
+          "enum"       : [0, 1]
         },
         "maxFlow": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Maximum flow rate observed during the last week. Units:'litres/hour'"
         },
         "minFlow": {
-          "type": "integer",
+          "type"       : "integer",
           "description": "Property. Minimum flow rate observed during the last week. Units:'litres/hour'"
         },
-        "moduleTampered": {
-          "type": "integer",
-          "description": "Property. Removal of module from metering device"
-        },
+        "moduleTampered": {"type": "integer", "description": "Property. Removal of module from metering device"},
         "persistenceFlowDuration": {
           "type": "string",
           "description": "Property. The duration that persistence flow (continuous flow) is recorded by the meter. Text  field showing durations in minutes (m), hours (h) or days (d)",
           "enum": [
-            "15m < 60m",
-            "60m < 3h",
-            "3h < 6h",
-            "6h < 12h",
-            "12h < 24h",
-            "24h < 2d",
-            "2d < 4d",
-            "4d < 8d",
-            "8d < 15d",
-            "15d < 30d",
-            "30d < 90d",
-            "90d < 180d",
-            "> 180d"
+            "15m < 60m",  "60m < 3h",   "3h < 6h",    "6h < 12h",   "12h < 24h",  "24h < 2d",   "2d < 4d",
+            "4d < 8d",    "8d < 15d",   "15d < 30d",  "30d < 90d",  "90d < 180d", "> 180d"
           ]
         },
         "waterConsumption": {
@@ -161,23 +103,12 @@
           "description": "Property. The water meter reading. Note \u2013 this is total volume passed through the meter and is therefore a cumulative total at the time. Units:'Cubic meters'"
         },
         "waterType": {
-          "type": "string",
+          "type"       : "string",
           "description": "Property. The type of water by water temperature. Utility bills distinguish hot water",
-          "enum": [
-            "hot",
-            "cold",
-            "serviceWater"
-          ]
+          "enum"       : ["hot", "cold", "serviceWater"]
         }
       }
     }
   ],
-  "required": [
-    "id",
-    "type",
-    "address",
-    "dateObserved",
-"waterConsumption",
-"location"
-  ]
+  "required": ["id", "type", "address", "dateObserved", "waterConsumption", "location", "dataProvider"]
 }

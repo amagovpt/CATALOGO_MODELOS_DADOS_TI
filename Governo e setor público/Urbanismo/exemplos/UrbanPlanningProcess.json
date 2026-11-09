@@ -6,20 +6,39 @@
     "type"  : "Relationship",
     "object": "urn:rnc:BuildingRegistration:a63dd3b3"
   },
+  "address": {
+    "type" : "Property",
+    "value": {
+      "addressCountry" : "Portugal",
+      "postalCode"     : "1150–294 ",
+      "addressRegion"  : "Grande Lisboa",
+      "addressSubRegion"  : "Grande Lisboa",
+      "addressLocality": "Lisboa",
+      "district"       : "Lisboa",
+      "streetAddress"  : "Rua de Santa Marta",
+      "streetNr"       : "55E"
+    }
+  },
+   "location": {
+    "type"            : "GeoProperty",
+    "value"           : { "coordinates": [-9.1466638743362, 38.72518414358991], "type": "Point" },
+    "coordinateSystem": "EPSG:4326"
+  },
   "refFraction": {
     "type"  : "Relationship",
     "object": "urn:rnc:HousingUnit:8dd5236d38b3"
   },
   "interventionType": {"type": "Property", "value": "ampliação"},
   "submittedAt": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
+  "dateCreated": {"type": "Property", "value": "2025-05-29T11:00:00Z"},
   "dateModified": {"type": "Property", "value": "2025-10-09T11:00:00Z"},
-  "status": {"type": "Property", "value": "despachado"},
-  "proceedingDecision": {"type": "Property", "value": "homologação_favorável"},
+  "status": {"type": "Property", "value": "decidido_favorável"},
+  "proceedingDecision": {"type": "Property", "value": "informação_favorável"},
   "lastDecisionAt": {"type": "Property", "value": "2025-10-08T11:00:00Z"},
   "procedureType": {"type": "Property", "value": "pedido_de_informação_prévia"},
   "urbanOperationType": {
     "type" : "Property",
-    "value": "outras_operações_urbanísticas"
+    "value": "conservação"
   },
   "licenseNumber": {"type": "Property", "value": "50/2025"},
   "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.1",
-  "modelTags": "IUDX",
+  "$schemaVersion": "0.4.0",
+  "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.PointOfInterest/PointOfInterest/schema.json",
   "title": "Smart Data Models - Point of Interest schema",
   "description": "This entity contains a harmonised geographic description of a Point of Interest",
@@ -296,6 +296,8 @@
     "name",
     "address",
     "category",
-    "location"
+    "location",
+    "dataProvider",
+    "source"
   ]
 }

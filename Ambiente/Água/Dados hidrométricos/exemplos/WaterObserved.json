@@ -3,6 +3,7 @@
     "type": "WaterObserved",
     "alternateName": {"type": "Property", "value": "Rio Douro, Foz"},
     "areaServed": {"type": "Property", "value": "Foz do Rio Douro"},
+    "dataProvider": {"type": "Property", "value": "APA"},
     "dateObserved": {"type": "Relationship", "object": "2025-01-10T14:07:00.209Z"},
     "description": {"type": "Property", "value": "Observação da evolução dos níveis de água"},
     "flow": {"type": "Property", "value": 714, "unitCode": "MQS"},

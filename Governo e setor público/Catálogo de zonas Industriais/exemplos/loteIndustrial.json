@@ -6,12 +6,13 @@
         "type" : "Property",
         "value": "Lote industrial integrado na Zona de desenvolvimento económico de Alcanede."
     },
-    "lotNumber": {"type": "Property", "value": 1},
+    "dataProvider": {"type": "Property", "value": "https://www.cimlt.eu"},
+    "lotNumber"   : {"type": "Property", "value": 1                     },
     "location": {
-        "type" : "GeoProperty",
+        "type": "GeoProperty",
         "value": {
-            "type"            : "Polygon",
-            "coordinates"     : [
+            "type": "Polygon",
+            "coordinates": [
                 [
                     [-8.842430931717615, 39.45366976146008 ],
                     [-8.843116295527295, 39.453016157437645],
@@ -23,7 +24,7 @@
         }
     },
     "address": {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressCountry" : "Portugal",
             "addressRegion"  : "Oeste e Vale do Tejo",

@@ -8,6 +8,7 @@
     "activeEnergyExport": {"type": "Property", "value": 0.03, "unitCode": "KWH"},
     "reactiveEnergyExport": {"type": "Property", "value": 0.01, "unitCode": "KVR"},
     "apparentEnergyExport": {"type": "Property", "value": 0.04, "unitCode": "KVA"},
+    "dataProvider": {"type": "Property", "value": "ERedes"},
     "dateObserved": {"type": "Property", "value": "2026-01-23T12:00:00Z"},
     "voltage": { "type": "Property", "value": {"L1": 230.0, "N": 0.0}, "unitCode": "VLT" },
     "current": { "type": "Property", "value": {"L1": 3.4, "N": 3.4}, "unitCode": "AMP" },

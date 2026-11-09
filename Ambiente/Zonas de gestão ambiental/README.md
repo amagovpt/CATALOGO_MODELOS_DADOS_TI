@@ -54,6 +54,8 @@ Os atributos obrigatórios são:
 - `managedBy`
 - `controlledActivityType`
 - `environmentalDomain`
+- `name`
+- `zoneTypeCode`
 
 ## Notas
 

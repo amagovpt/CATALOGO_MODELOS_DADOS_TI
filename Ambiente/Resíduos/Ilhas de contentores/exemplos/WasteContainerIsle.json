@@ -1,8 +1,8 @@
 {
-  "id"               : "urn:cml:WasteContainerIsle:15",
-  "type"             : "WasteContainerIsle",
+  "id"  : "urn:cml:WasteContainerIsle:15",
+  "type": "WasteContainerIsle",
   "address"          : {
-    "type" : "Property",
+    "type": "Property",
     "value": {
       "addressCountry" : "Portugal",
       "addressLocality": "Lisboa",
@@ -11,9 +11,10 @@
       "streetAddress"  : "R. Professora Vigínia Vau"
     }
   },
-  "dateCreated"      : { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00Z"} },
-  "description"      : {"type": "Property", "value": "Ilha Telheiras, R. Professora Vigínia Vau"},
-  "features"         : { "type": "Property", "value": ["underground"] },
+  "dataProvider": { "type": "Property", "value": "cm-lisboa"                                             },
+  "dateCreated" : { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-10-10T10:00:00Z"} },
+  "description" : { "type": "Property", "value": "Ilha Telheiras, R. Professora Vigínia Vau"             },
+  "features"    : { "type": "Property", "value": ["underground"]                                         },
   "location"         : {
     "type"            : "GeoProperty",
     "value"           : { "type": "Point", "coordinates": [-9.1658245766, 38.7621018101] },

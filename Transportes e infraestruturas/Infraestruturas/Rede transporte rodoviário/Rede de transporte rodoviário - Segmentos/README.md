@@ -5,6 +5,7 @@ Este modelo utiliza o formato NGSI-LD, sendo compatível com [ETSI GS CIM 009 V1
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
 ## Propriedades
+
 Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 
@@ -70,6 +71,7 @@ Os atributos obrigatórios são:
 - `lanes`
 - `direction`
 - `refNetwork`
+- `dataProvider`
 
 ## Notas
 

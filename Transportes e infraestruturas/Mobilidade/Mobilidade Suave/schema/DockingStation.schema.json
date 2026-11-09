@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.2.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/DockingStation.schema.json",
   "title": "CNMD - DockingStation schema",
@@ -172,6 +172,8 @@
     "observationDate",
     "stationName",
     "stationCode",
-    "status"
+    "status",
+    "totalSlotNumber",
+    "dataProvider"
   ]
 }

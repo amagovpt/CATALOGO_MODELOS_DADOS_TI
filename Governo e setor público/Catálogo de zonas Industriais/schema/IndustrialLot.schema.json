@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://territoriosinteligentes.gov.pt/dataModel.IndustrialZone/IndustrialLot/schema.json",
   "title": "IndustrialLot schema",
@@ -219,10 +219,11 @@
     "type",
     "address",
     "availabilityStatus",
-    "beginLifespanVersion",
     "lotArea",
     "lotNumber",
     "location",
-    "locatedInZone"
+    "locatedInZone",
+    "name",
+    "dataProvider"
   ]
 }

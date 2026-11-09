@@ -4,8 +4,8 @@ O modelos de dado para representar **Transporte a pedido** é o `TransportOnDema
 Este modelo utiliza o formato NGSI-LD, sendo compatível com [ETSI GS CIM 009 V1.5.1, Context Information Management (CIM) - NGSI-LD API](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.05.01_60/gs_cim009v010501p.pdf), da [ETSI](https://www.etsi.org/) e com os requisitos de HVD da UE.
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
-
 ## Propriedades
+
 Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados. TODO
 
 | Propriedade | Tipo | Descrição | Nota |
@@ -15,7 +15,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | address    | Object          | Morada associada à unidade hospitalar | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
 | address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
-| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira' |
 | address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
 | address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
 | address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
@@ -30,7 +30,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | endDate | DateTime | Data e hora do fim da viagem | De acordo com a norma [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |
 | license | URI | Licença associada aos dados | URL da licença. Ex: [Licença Creative Commons](https://creativecommons.org/licenses/by/4.0/). Modelo: [https://schema.org/URL](https://schema.org/URL) |
 | modifiedAt | DateTime | Registo de data e hora da última modificação da entidade | Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |
-| pricePayed | Number | O valor pago pelo bilhete. | O valor tem duas casas decimais e não pode ser 0. Modelo: [https://schema.org/Number](https://schema.org/Number) |
+| pricePayed | Number | O valor pago pelo bilhete. | O valor tem duas casas decimais e tem de ser igual ou maior que 0. Modelo: [https://schema.org/Number](https://schema.org/Number) |
 | location | GeoJSON | Rota do serviço a pedido | Normalmente é usado o tipo geométrico `LineString`. Valores possíveis: 'Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString' ou 'MultiPolygon' |
 | seeAlso | Array | Descrições adicionais | Lista de URLs para recursos externos. Modelo: [https://schema.org/URL](https://schema.org/URL) |
 | serviceType | String | O tipo do serviço prestado | Enumerado: <br>- Municipal,<br>- Intermunicipal,<br>- Outro. Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -39,7 +39,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | sourceMunicipalityID | Integer | Identificador da município de origem | Os IDs de transação não se destinam a ser usados diretamente na lógica da aplicação, mas são úteis para depuração e monitorização. Modelo: [https://schema.org/Integer](https://schema.org/Integer) |
 | sourceMunicipality | String | O município origem do serviço | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | startDate | DateTime | Data e hora do início da viagem | De acordo com a norma [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime) |
-| standardPrice | Number | O valor de tabela do bilhete. | O valor tem duas casas decimais e não pode ser 0. Modelo: [https://schema.org/Number](https://schema.org/Number) |
+| standardPrice | Number | O valor de tabela do bilhete. | O valor tem duas casas decimais e tem de ser igual ou maior que 0. Modelo: [https://schema.org/Number](https://schema.org/Number) |
 | status | String | Estado de viagem | Enumerado: <br>- realizado,<br>- desistiu/cancelou,<br>- outro. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | ticketType | String | Tipo de bilhete cobrado |  Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | transactionid | Integer | Identificador da transacção | Os IDs de transação não se destinam a ser usados diretamente na lógica da aplicação, mas são úteis para depuração e monitorização.Modelo: [https://schema.org/Integer](https://schema.org/Integer) |
@@ -54,11 +54,10 @@ Os atributos obrigatórios são:
 - `address`
 - `sourceLocation`
 - `destinationLocation`
-- `pricePayed`
-- `standardPrice`
 - `startDate`
 - `status`
-
+- `serviceType`
+- `dataProvider`
 
 ## Notas
 

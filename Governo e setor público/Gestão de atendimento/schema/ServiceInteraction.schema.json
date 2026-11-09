@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.2.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/ServiceInteraction.schema.json",
   "title": "CNMD - ServiceInteraction schema",
@@ -144,7 +144,14 @@
           "description": "Property. Channel through which the service request was received."
         },
         "providingEntity": {
-          "type": "string",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType/anyOf/1"
+            }
+          ],
           "description": "Property. Name or URI of the entity that provides the service."
         },
         "serviceStatus": {
@@ -218,6 +225,8 @@
     "dateFinished",
     "serviceName",
     "typeOfService",
-    "serviceStatus"
+    "serviceStatus",
+    "providingEntity",
+    "interactionType"
   ]
 }

@@ -25,6 +25,8 @@
         "value"           : { "type": "Point", "coordinates": [-9.15088242443241, 38.71078839848025] },
         "coordinateSystem": "EPSG:4326"
     },
+    "source"  : {"type": "Property", "value": "Empresa Ruídosa LDA"},
+    "refDevice": { "type": "Relationship", "object": "urn:arte:device:sensor55ty" },
     "refPointOfInterest": { "type": "Relationship", "object": "urn:cml:poi:incognito:3612" },
     "distanceAverage"   : {"type": "Property", "value": "150", "unitCode": "CMT"},
     "sonometerClass"    : {"type": "Property", "value": "2"},

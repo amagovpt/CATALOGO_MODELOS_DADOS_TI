@@ -167,6 +167,8 @@ Os atributos obrigatórios são:
 - `address`
 - `dateObserved`
 - `location`
+- `dataProvider`
+- `refPointOfInterest`
 
 Têm de ser incluídas os valores de *todos* os parâmetros de decorrem de imposições legais [Decreto-Lei n.º 69/2023, de 21 de agosto](https://diariodarepublica.pt/dr/detalhe/decreto-lei/69-2023-220113533) e [Diretiva (UE) 2020/2184 do Parlamento Europeu e do Conselho de 16 de dezembro de 2020 relativa à qualidade da água destinada ao consumo humano](https://eur-lex.europa.eu/eli/dir/2020/2184/oj?locale=pt#ntr28-L_2020435PT.01000101-E0028), podendo estes variar dependendo do tipo de água a analisar e do usufruto que a água terá.
 

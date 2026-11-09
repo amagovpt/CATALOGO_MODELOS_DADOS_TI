@@ -1,6 +1,7 @@
 {
     "id": "urn:apa:Basin:PT:Guadiana:001",
     "type": "RiverBasin",
+    "name": {"type": "Property", "value": "Guadiana"},
     "category": { "type": "Property", "value": ["HydroObject"] },
     "beginLifespanVersion": {"type": "Property", "value": "2024-01-30T10:00:00Z"},
     "localType": {"type": "Property", "value": "river basin"},
@@ -9,7 +10,7 @@
         "value": {"classificationScheme": "EU:WFD", "localId": "pt/12/a", "namespace": "PT.APA.HY-P"}
     },
     "address": {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressLocality": "Moura",
             "addressRegion"  : "Alentejo",
@@ -18,27 +19,25 @@
         }
     },
     "location": {
-        "type"            : "GeoProperty",
+        "type": "GeoProperty",
         "value"           : {
-            
-                "coordinates": [
-                    [
-                        [-7.783805371865014, 38.92119185555666],
-                        [-7.783805371865014, 37.08506157400592],
-                        [-6.892768689502134, 37.08506157400592],
-                        [-6.892768689502134, 38.92119185555666],
-                        [-7.783805371865014, 38.92119185555666]
-                    ]
-                ],
-                "type"       : "Polygon"
-           
+            "coordinates": [
+                [
+                    [-7.783805371865014, 38.92119185555666],
+                    [-7.783805371865014, 37.08506157400592],
+                    [-6.892768689502134, 37.08506157400592],
+                    [-6.892768689502134, 38.92119185555666],
+                    [-7.783805371865014, 38.92119185555666]
+                ]
+            ],
+            "type": "Polygon"
         },
         "coordinateSystem": "EPSG:4258"
     },
-    "maxElevation": {"type": "Property", "value": 1580, "unitCode": "MTR"},
-    "meanElevation": {"type": "Property", "value": 562, "unitCode": "MTR"},
-    "minElevation": {"type": "Property", "value": 74, "unitCode": "MTR"},
-    "meanSlope": {"type": "Property", "value": 6.40, "unitCode": "P1"},
+    "maxElevation" : {"type": "Property", "value": 1580   , "unitCode": "MTR"},
+    "meanElevation": {"type": "Property", "value":  562   , "unitCode": "MTR"},
+    "minElevation" : {"type": "Property", "value":   74   , "unitCode": "MTR"},
+    "meanSlope"    : {"type": "Property", "value":    6.40, "unitCode": "P1" },
     "meanAnnualPrecipitation": {
         "type"             : "Property",
         "value"            : 593,
@@ -46,12 +45,12 @@
         "samplingFrequency": "R/2024-09-21/P3M",
         "observedAt"       : "2024-12-20T08:00:00Z"
     },
-    "watershedArea": {"type": "Property", "value": 53912.39, "unitCode": "KMK"},
-    "totalWatershedArea": {"type": "Property", "value": 55289, "unitCode": "KMK"},
-    "levelOfDetail": { "type": "Property", "value": {"equivalentScale": 25000} },
-    "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
+    "watershedArea"          : { "type": "Property", "value": 53912.39,                   "unitCode": "KMK" },
+    "totalWatershedArea"     : { "type": "Property", "value": 55289,                      "unitCode": "KMK" },
+    "levelOfDetail"          : { "type": "Property", "value": {"equivalentScale": 25000}                    },
+    "hydrologicalPersistence": { "type": "Property", "value": "perennial"                                   },
     "relatedHydroObject": {
-        "type"  : "Relationship",
+        "type": "Relationship",
         "object": [
             "urn:apa:Reservoir:PT:Alqueva:001",
             "urn:apa:Reservoir:PT:Caia:005",

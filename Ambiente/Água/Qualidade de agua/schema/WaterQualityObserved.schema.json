@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.6",
+  "$schemaVersion": "0.0.7",
   "modelTags": "NAIADES, DigitalWater.city, B-WaterSmart, Waterverse",
   "$id": "https://smart-data-models.github.io/dataModel.WaterQuality/WaterQualityObserved/schema.json",
   "title": "Water quality observed schema",
@@ -407,6 +407,8 @@
     "type",
     "address",
     "dateObserved",
-    "location"
+    "location",
+    "dataProvider",
+    "refPointOfInterest"
   ]
 }

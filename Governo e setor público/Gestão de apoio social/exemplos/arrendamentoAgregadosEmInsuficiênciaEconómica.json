@@ -4,9 +4,9 @@
     "observedBy"      : {"type": "Relationship", "object": "urn:cmpm:Organization:Municipality:PT-XYZ"},
     "areaServed"      : {"type": "Property", "value": "Porto de Mós"},
     "location"        : {
-        "type"            : "GeoProperty",
+        "type": "GeoProperty",
         "value"           : {
-            "type"       : "Polygon",
+            "type": "Polygon",
             "coordinates": [
                 [
                     [-8.9500, 39.7200], [-8.9200, 39.7200], [-8.8700, 39.7100], [-8.8300, 39.6900], [-8.7900, 39.6700],
@@ -19,8 +19,9 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
+    "publicService": {"type": "Property", "value": "Arrendamento Apoiado"},
     "address"         : {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressCountry" : "Portugal",
             "postalCode"     : "2410-021",

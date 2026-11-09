@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.1",
+  "$schemaVersion": "0.3.2",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/RoadTransportNode.schema.json",
   "title": "CNMD - RoadTransportNode schema",
@@ -183,6 +183,7 @@
     "location",
     "nodeType",
     "formType",
-    "connects"
+    "connects",
+    "dataProvider"
   ]
 }

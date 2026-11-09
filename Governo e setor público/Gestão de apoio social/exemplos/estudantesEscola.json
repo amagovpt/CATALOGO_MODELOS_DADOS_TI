@@ -19,6 +19,7 @@
         }
     },
     "observedBy"      : {"type": "Relationship", "object": "urn:cmpm:Organization:Municipality:PortoMós1"},
+    "publicService": {"type": "Property", "value": "Serviços de Ação Social Escolar"},
     "areaServed"      : {"type": "Property", "value": "Porto de Mós"},
     "aggregationLevel": {"type": "Property", "value": "facility"},
     "indicator"       : {"type": "Property", "value": "studentsCount"},

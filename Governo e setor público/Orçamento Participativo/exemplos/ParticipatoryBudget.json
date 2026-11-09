@@ -1,5 +1,5 @@
 {
-    "id"             : "urn:cml:ParticipatoryBudget:112233",
+    "id"             : "urn:cmarouca:ParticipatoryBudget:112233",
     "type"           : "ParticipatoryBudget",
     "name"           : {"type": "Property", "value": "EcoEstação do Arda - Estação de Serviço da Ecovia do Arda"},
     "edition"        : {"type": "Property", "value": "OP2025"},
@@ -12,9 +12,9 @@
         "value"           : { "type": "Point", "coordinates": [-8.292200104789636, 40.92606844919757] },
         "coordinateSystem": "EPSG:4326"
     },
-    "category"       : { "type": "Property", "value": ["Culture and Heritage"] },
+    "category": { "type": "Property", "value": ["Culture and Heritage"] },
     "address"        : {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressCountry" : "Portugal",
             "addressRegion"  : "Norte",
@@ -22,6 +22,7 @@
             "addressLocality": "Arouca"
         }
     },
+    "dataProvider"   : {"type": "Property", "value": "CMArouca"},
     "dateStarted"    : {"type": "Property", "value": "2025-01-01T07:30:00Z"},
     "dateSubmission" : {"type": "Property", "value": "2025-01-02T07:30:00Z"},
     "status"         : {"type": "Property", "value": "Under analysis"},

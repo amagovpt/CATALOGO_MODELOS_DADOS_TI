@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Energy/GasConsumption/schema.json",
   "title": "GasConsumption schema",
@@ -126,10 +126,7 @@
           "minimum": 0,
           "description": "Property. Gas consumption for the current day. Model:'https://schema.org/Number'."
         },
-        "dataProvider": {
-          "type": "string",
-          "description": "Property. Identifier of the data provider. Model:'https://schema.org/Text'."
-        },
+        
         "dateCreated": {
           "type": "string",
           "format": "date-time",
@@ -246,6 +243,9 @@
     "address",
     "dateObserved",
     "location",
-    "gasType"
+    "gasType",
+    "dataProvider",
+    "totalConsumption",
+    "meterStatus"
   ]
 }

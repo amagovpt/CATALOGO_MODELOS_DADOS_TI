@@ -222,11 +222,8 @@
     "address",
     "beginLifespanVersion",
     "dataProvider",
-    "length",
-    "location",
+    "totalLength",
     "name",
-    "owner",
-    "refNetwork",
-    "typology"
+    "owner"
   ]
 }

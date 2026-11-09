@@ -17,7 +17,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | address    | Object          | Morada associada à unidade hospitalar | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
 | address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
-| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira' |
 | address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
 | address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
 | address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
@@ -30,6 +30,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | ageRange    | String  | Faixa etária dos pacientes atendidos | Enumerado: <br>- 0 aos 0 anos,<br>- 0 aos 150 anos,<br>- 0 aos 17 anos,<br>- 1 aos 150 anos,<br>- 18 aos 150 anos.  Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | ambulanceServiceAvailability    | Boolean | Especifica se é disponibilidade de serviços de ambulância   | Valor: true ou false.  Modelo: [https://schema.org/Boolean](https://schema.org/Boolean) |
 | administrativeArea    | String  | Área administrativa onde a unidade está localizada     | Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| dataProvider  | String    | Uma sequência de caracteres que identifica o fornecedor da entidade de dados | Modelo: [https://schema.org/Text](https://schema.org/Text)  |
 | dateModified        | DateTime | Registo de data e hora da última modificação da entidade |  Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | facilityCapacity      | Array  | Capacidade operacional da unidade |  Inclui o número de leitos e profissionais.  Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | contactPoint| Array  | Dados de contato da unidade hospitalar  |   Contém o número de telefone e e-mail. Modelo: [https://schema.org/Text](https://schema.org/Text) |
@@ -41,11 +42,10 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | region      | String  | Região administrativa de saúde a que a unidade pertence| Enumerado: <br>- ARS Norte,<br>- ARS Lisboa e Vale do Tejo,<br>- ARS Centro,<br>- ARS Alentejo,<br>- SRS Açores, <br>- ARS Algarve,<br>- IASAÚDE Madeira.  Modelo: [https://schema.org/Text](https://schema.org/Text)   |
 | speciality   | String  | Especialidade atendida pela unidade  | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 
-
-
 ## Propriedades obrigatórias
 
 Os atributos obrigatórios são:
+
 - `id`
 - `type`
 - `dateModified`
@@ -55,6 +55,8 @@ Os atributos obrigatórios são:
 - `emergencyServiceType`
 - `speciality`
 - `address`
+- `region`
+- `dataProvider`
 
 ## Notas
 

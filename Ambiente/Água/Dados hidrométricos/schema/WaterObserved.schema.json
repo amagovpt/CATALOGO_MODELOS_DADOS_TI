@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.Environment/WaterObserved/schema.json",
-  "$schemaVersion": "0.0.4",
+  "$schemaVersion": "0.0.5",
   "title": "Water Observed schema",
   "description": " Water observation data model is intended to represent the parameters of flow, level and volume of water observed, as well as the swell information, over a fixed or variable area. This observation also includes the masses of floating objects on this area. The data collected is provided by Sensors, Cameras,Water stations positioned at specific or sensitive locations for rivers, streams, torrent, lakes, seas, etc.",
   "type": "object",
@@ -184,6 +184,8 @@
     "type",
     "location",
     "dateObserved",
-    "address"
+    "address",
+    "waterLevel",
+    "dataProvider"
   ]
 }

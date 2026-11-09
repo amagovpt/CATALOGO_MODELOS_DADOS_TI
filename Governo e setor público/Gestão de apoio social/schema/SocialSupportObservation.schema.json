@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.0.2",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/SocialSupportObservation/schema.json",
   "title": "SocialSupportObservation schema",
@@ -169,6 +169,8 @@
     "validTo",
     "aggregationLevel",
     "indicator",
-    "value"
+    "value",
+    "observedBy",
+    "publicService"
   ]
 }

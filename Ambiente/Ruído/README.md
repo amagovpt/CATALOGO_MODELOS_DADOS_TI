@@ -52,7 +52,9 @@ Os atributos obrigatórios são:
 - `dateObservedTo`
 - `dataProvider`
 - `location`
-- `LAeq`
+- `LAeq`,
+- `refDevice`
+- `source`
 
 ## Notas
 

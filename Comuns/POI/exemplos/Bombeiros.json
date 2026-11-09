@@ -6,8 +6,9 @@
         "type" : "Property",
         "value": "Regimento de Sapadores Bombeiros - 1ª Companhia - Quartel do Comando."
     },
+    "source": {"type": "Property", "value": "https://cm-lisboa.pt/"},
     "address"           : {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressCountry" : "Portugal",
             "addressLocality": "Lisboa",
@@ -17,16 +18,13 @@
             "postalCode"     : "1249-071"
         }
     },
-    "category"          : {
-        "type" : "Property",
-        "value": ["Quartel de bombeiros"]
-    },
+    "category": { "type": "Property", "value": ["Quartel de bombeiros"] },
     "location"          : {
         "type" : "GeoProperty",
         "value": { "type": "Point", "coordinates": [-9.12709, 38.71762] }
     },
     "contactPoint"      : {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "telephone"  : "+351 800 913 913",
             "email"      : "rsb@cm-lisboa.pt",
@@ -35,7 +33,7 @@
         }
     },
     "openingHours"      : {
-        "type" : "Property",
+        "type": "Property",
         "value": [
             {"dayOfWeek": "Monday",    "opens": "00:00", "closes": "23:59"},
             {"dayOfWeek": "Tuesday",   "opens": "00:00", "closes": "23:59"},
@@ -54,7 +52,7 @@
     "dateModified"      : {"type": "Property", "value": "2025-02-26T12:45:00Z"},
     "updateFrequency"   : {"type": "Property", "value": "quarterly"},
     "seeAlso"           : {
-        "type" : "Property",
+        "type": "Property",
         "value": [
             "https://informacoeseservicos.lisboa.pt/contactos/diretorio-da-cidade/regimento-de-sapadores-bombeiros-1-companhia-quartel-do-comando"
         ]

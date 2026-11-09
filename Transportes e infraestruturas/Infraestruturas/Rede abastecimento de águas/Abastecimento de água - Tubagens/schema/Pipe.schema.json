@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.WaterDistributionManagementEPANET/Pipe/schema.json",
   "title": "Smart Data Models - Pipe schema",
@@ -390,6 +390,7 @@
     "materialClass",
     "pressureClass",
     "slope",
-    "status"
+    "status",
+    "dataProvider"
   ]
 }

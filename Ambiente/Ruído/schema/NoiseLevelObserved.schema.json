@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.2.1",
+  "$schemaVersion": "0.3.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Environment/NoiseLevelObserved/schema.json",
   "title": " Smart Data Models - Noise Level observed schema",
@@ -191,6 +191,8 @@
     "location",
     "address",
     "dataProvider",
-    "LAeq"
+    "LAeq",
+    "refDevice",
+    "source"
   ]
 }

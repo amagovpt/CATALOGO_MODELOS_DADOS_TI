@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.4.1",
+  "$schemaVersion": "0.4.2",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.Weather/WeatherAlert/schema.json",
   "title": "Smart Data Models - Weather Alert data model ",
@@ -94,6 +94,9 @@
     "alertSource",
     "category",
     "subCategory",
-    "dateIssued"
+    "dateIssued",
+    "severity",
+    "validFrom",
+    "validTo"
   ]
 }

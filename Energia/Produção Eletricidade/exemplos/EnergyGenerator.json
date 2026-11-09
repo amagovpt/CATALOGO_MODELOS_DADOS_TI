@@ -6,6 +6,8 @@
     "aggregationLevel" : {"type": "Property", "value": "device"},
     "installedCapacity": {"type": "Property", "value": 2.0, "unitCode": "KWT"},
     "connectionType"   : {"type": "Property", "value": "gridTied"},
+    "dataProvider": {"type": "Property", "value": "ERedes"},
+    "status": {"type": "Property", "value": "operational"},
     "location"         : {
         "type"            : "GeoProperty",
         "value"           : { "type": "Point", "coordinates": [-9.1393801, 38.747392] },

@@ -307,6 +307,8 @@
    "binCapacity",
    "binColor",
    "binFullnessThreshold",
-   "status" 
+   "status" ,
+   "storedWasteKind",
+   "dataProvider"
   ]
 }

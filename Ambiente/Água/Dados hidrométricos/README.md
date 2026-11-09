@@ -54,6 +54,8 @@ Os atributos obrigatórios são:
 - `address`
 - `dateObserved`
 - `location`
+- `waterLevel`
+- `dataProvider`
 
 ## Notas
 

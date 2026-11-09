@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.1",
+  "$schemaVersion": "0.4.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/DrainageNetwork.schema.json",
   "title": "CNMD - DrainageNetwork schema",
@@ -253,6 +253,8 @@
     "networkType",
     "beginLifespanVersion",
     "areaServed",
-    "owner"
+    "owner",
+    "dataProvider",
+    "status"
   ]
 }

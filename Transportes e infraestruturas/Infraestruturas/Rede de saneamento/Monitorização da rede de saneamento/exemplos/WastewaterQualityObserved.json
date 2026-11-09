@@ -1,125 +1,96 @@
 {
-    "id": "urn:ersar:WastewaterQualityObserved:ETAR:001",
+    "id"  : "urn:ersar:WastewaterQualityObserved:ETAR:001",
     "type": "WastewaterQualityObserved",
     "location": {
-        "type": "GeoProperty",
-        "value": {
-            "type": "Point",
-            "coordinates": [-9.038625329378092, 38.88522388832804]
-        }
+        "type" : "GeoProperty",
+        "value": { "type": "Point", "coordinates": [-9.038625329378092, 38.88522388832804] }
     },
-    "areaServed": {"type": "Property", "value": "Expo"},
+    "areaServed"  : {"type": "Property", "value": "Expo" },
+    "dataProvider": {"type": "Property", "value": "ERSAR"},
     "address": {
         "type": "Property",
         "value": {
-            "addressLocality": "Lisboa"                              ,
-            "addressRegion": "Grande Lisboa" ,
-            "district": "Lisboa" ,
-            "postalCode"     : "2615-174"                            ,
+            "addressLocality": "Lisboa",
+            "addressRegion"  : "Grande Lisboa",
+            "district"       : "Lisboa",
+            "postalCode"     : "2615-174",
             "streetAddress"  : "Etar De Alverca, Alverca do Ribatejo"
-            
         }
     },
     "dateObserved": {"type": "Property", "value": "2025-02-10T12:00:00Z"},
     "biochemicalOxygenDemand": {
-        "type": "Property",
-        "value": 15,
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : 15,
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "chemicalOxygenDemand": {
-        "type": "Property",
-        "value": 50,
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : 50,
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "totalSuspendedSolids": {
-        "type": "Property",
-        "value": 25,
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : 25,
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "nitrates": {
-        "type": "Property",
-        "value": 10,
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : 10,
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "phosphates": {
-        "type": "Property",
-        "value": 2,
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : 2,
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "heavyMetals": {
-        "type": "Property",
-        "value": {"Lead": 0.05, "Mercury": 0.002, "Cadmium": 0.005},
-        "unitCode": "M1",
+        "type"             : "Property",
+        "value"            : {"Lead": 0.05, "Mercury": 0.002, "Cadmium": 0.005},
+        "unitCode"         : "M1",
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "pH": {
-        "type": "Property",
-        "value": 7.2,
+        "type"             : "Property",
+        "value"            : 7.2,
         "qualityAssessment": {
-            "accuracy": 1.0,
-            "precision": 0.5,
-            "lastCalibration": {
-                "@type" : "DateTime"               ,
-                "@value": "2024-01-15T00:00:00.00Z"
-            }
+            "accuracy"       : 1.0,
+            "precision"      : 0.5,
+            "lastCalibration": {"@type": "DateTime", "@value": "2024-01-15T00:00:00.00Z"}
         }
     },
     "temperature": {"type": "Property", "value": 18, "unitCode": "CEL"},
     "treatmentLevel": {"type": "Property", "value": "Secondary"},
     "complianceStatus": {"type": "Property", "value": "Compliant"},
     "dischargePoint": {"type": "Property", "value": "River A"},
-    "reportingAuthority": {
-        "type" : "Property"                                ,
-        "value": "https://www.aguasdotejoatlantico.adp.pt/"
-    },
-    "@context": [
-        "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
-    ]
+    "reportingAuthority": {"type": "Property", "value": "https://www.aguasdotejoatlantico.adp.pt/"},
+    "@context": ["https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"]
 }

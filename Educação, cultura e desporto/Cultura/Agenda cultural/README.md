@@ -5,8 +5,8 @@ O modelo de dados a seguir para representar **Agenda Cultural**
 Este modelo utiliza o formato NGSI-LD, sendo compatível com [ETSI GS CIM 009 V1.5.1, Context Information Management (CIM) - NGSI-LD API](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.05.01_60/gs_cim009v010501p.pdf), da [ETSI](https://www.etsi.org/).
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
-
 ## Propriedades
+
 Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 
 | Propriedade | Tipo | Descrição | Nota |
@@ -16,7 +16,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | address    | Object          | Morada associada ao evento | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
 | address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
-| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira' |
 | address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
 | address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
 | address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
@@ -24,6 +24,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | accessibility        | Array       | Recursos de acessibilidade disponíveis        |  Valores possíveis: 'wheelchairAccessible' ,'audioDescription' signLanguageInterpreter'. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | ageRating       | String       | Classificação etária do evento |  Modelo: [https://schema.org/Text](https://schema.org/Text)      |
 | category | Array | Uma sequência de termos que pretendem classificar o  evento |   Lista de possíveis valores, individuais ou combinados: 'Literário', 'Cinema', 'Música', 'Tradicional', 'Religioso', 'Culinária', 'Educação', 'Comunitária', 'Desporto', 'Espetáculo', 'Artes Visuais', 'Festivais', 'Outros'.   Modelo: [https://schema.org/Text](https://schema.org/Text)   |
+| dataProvider | String | Uma sequência de caracteres que identifica o fornecedor de dados | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | dateCreated        | DateTime | Data e hora da criação  |  Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | dateModified        | DateTime | Registo de data e hora da última modificação da entidade |  Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | dateFinished        | DateTime | Registo de data e hora da conclusão do evento |   É omitido quando a intervenção está a decorrer. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
@@ -48,6 +49,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 ## Propriedades obrigatórias
 
 Os atributos obrigatórios são:
+
 - `id`
 - `title`
 - `type`
@@ -57,6 +59,7 @@ Os atributos obrigatórios são:
 - `dateFinished`
 - `ageRating`
 - `address`
+- `dataProvider`
 
 ## Notas
 

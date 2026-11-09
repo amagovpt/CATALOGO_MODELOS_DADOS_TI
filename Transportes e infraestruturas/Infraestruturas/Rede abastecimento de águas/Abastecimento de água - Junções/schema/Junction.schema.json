@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/Junction.schema.json",
   "title": "CNMD - Junction schema",
@@ -377,6 +377,7 @@
     "dimension",
     "material",
     "materialClass",
-    "pressureClass"
+    "pressureClass",
+    "dataProvider"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.0.2",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.WasteManagement/WasteContainerIsle/schema.json",
   "title": " - Waste Management / Waste Container Isle",
@@ -114,6 +114,8 @@
     "id",
     "type",
     "location",
-    "address"
+    "address",
+    "refWasteContainer",
+     "dataProvider"
   ]
 }

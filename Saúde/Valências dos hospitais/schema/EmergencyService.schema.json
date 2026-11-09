@@ -1,10 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Health/EmergencyService/schema.json",
   "title": "Smart Data models - Emergency Service schema",
-  "description": "This model represents a hospital's emergency service unit (valência), including access conditions, capacity, contact details and operating conditions",
+  "description": "This model represents a hospital's emergency service unit, including access conditions, capacity, contact details and operating conditions",
   "type": "object",
   "allOf": [
     {
@@ -222,6 +222,8 @@
     "dateModified",
     "operationalHours",
     "emergencyServiceType",
-    "speciality"
+    "speciality",
+    "region",
+    "dataProvider"
   ]
 }

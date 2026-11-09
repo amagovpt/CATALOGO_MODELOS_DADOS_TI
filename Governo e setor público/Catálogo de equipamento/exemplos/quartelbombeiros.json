@@ -8,6 +8,7 @@
     },
     "category"          : {"type": "Property", "value": "emergency"},
     "condition"         : {"type": "Property", "value": "fair"},
+    "dataProvider"         : {"type": "Property", "value": "anepc"},
     "address"           : {
         "type" : "Property",
         "value": {

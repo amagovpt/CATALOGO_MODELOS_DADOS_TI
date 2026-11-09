@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Event/Event/schema.json",
   "title": "Smart Data models - Event schema",
@@ -247,6 +247,7 @@
     "address",
     "dateStarted",
     "dateFinished",
-    "ageRating"
+    "ageRating",
+    "dataProvider"
   ]
 }

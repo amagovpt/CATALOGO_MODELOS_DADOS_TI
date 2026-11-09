@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://territoriosinteligentes.gov.pt/dataModel.PublicEquipment/PublicEquipment/schema.json",
   "title": "PublicEquipment schema",
@@ -313,6 +313,8 @@
     "location",
     "name",
     "owner",
-    "serviceStatus"
+    "serviceStatus",
+    "dataProvider",
+    "publicAccess"
   ]
 }

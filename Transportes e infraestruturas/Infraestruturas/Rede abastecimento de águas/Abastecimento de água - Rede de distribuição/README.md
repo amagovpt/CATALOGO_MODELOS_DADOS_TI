@@ -14,8 +14,9 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | type | String | Tipo de entidade | Valor constante igual a `WaterDistributionNetwork`|
 | address    | Object          | Morada associada ao item | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String    | Indica o país        | Por exemplo, Portugal. Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry)     |
-| address.addressLocality| String    | A localidade tem de ser coincidente com o município        | Este campo é obrigatório quando o atributo `address` é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
-| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.addressLocality| String    | A localidade tem de ser coincidente com o município        |  Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality)     |
+| address.addressRegion  | String    | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o atributo `address` é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'|
+| address.addressSubRegion | String | Uma sub região onde se situa a localidade | Este campo é obrigatório quando o campo 'address' é obrigatório. As sub-regiões correspondem às NUTS 3 conforme nomenclatura do INE. Valores possíveis: 'Alto Minho', 'Cávado', 'Ave', 'Área Metropolitana do Porto', 'Alto Tâmega e Barroso', 'Tâmega e Sousa', 'Douro', 'Terras de Trás-os-Montes', 'Região de Aveiro', 'Região de Coimbra', 'Região de Leiria', 'Viseu Dão Lafões', 'Beira Baixa', 'Beiras e Serra da Estrela', 'Oeste', 'Médio Tejo', 'Lezíria do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo Litoral', 'Baixo Alentejo', 'Alto Alentejo', 'Alentejo Central', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira' |
 | address.district  | String    | Um distrito é um tipo de divisão administrativa |  Este campo é obrigatório quando o atributo `address` é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
 | address.postalCode     | String    | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode)          |
 | address.streetAddress  | String    | Endereço da rua         | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)|
@@ -63,6 +64,8 @@ Os atributos obrigatórios são:
 - `areaServed`
 - `owner`
 - `status`
+- `address`
+- `dataProvider`
 
 ## Notas
 

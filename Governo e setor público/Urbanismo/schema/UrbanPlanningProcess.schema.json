@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.2.1",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/UrbanPlanningProcess.schema.json",
   "title": "CNMD - UrbanPlanningProcess schema",
@@ -38,6 +38,38 @@
               ],
               "description": "The NUTS 2 region in which the locality is located"
             },
+            "addressSubRegion": {
+              "type": "string",
+              "enum": [
+                "Alto Minho",
+                "Cávado",
+                "Ave",
+                "Área Metropolitana do Porto",
+                "Alto Tâmega e Barroso",
+                "Tâmega e Sousa",
+                "Douro",
+                "Terras de Trás-os-Montes",
+                "Região de Aveiro",
+                "Região de Coimbra",
+                "Região de Leiria",
+                "Viseu Dão Lafões",
+                "Beira Baixa",
+                "Beiras e Serra da Estrela",
+                "Oeste",
+                "Médio Tejo",
+                "Lezíria do Tejo",
+                "Grande Lisboa",
+                "Península de Setúbal",
+                "Alentejo Litoral",
+                "Baixo Alentejo",
+                "Alto Alentejo",
+                "Alentejo Central",
+                "Algarve",
+                "Região Autónoma dos Açores",
+                "Região Autónoma da Madeira"
+              ],
+              "description": "Property. NUTS 3 sub region in which the locality is located."
+            },
             "district": {
               "type": "string",
               "enum": [
@@ -68,6 +100,7 @@
           "required": [
             "addressLocality",
             "addressRegion",
+            "addressSubRegion",
             "district"
           ]
         },
@@ -89,12 +122,13 @@
         "interventionType": {
           "type": "string",
           "enum": [
-            "alteração",
-            "ampliação",
-            "conservação",
             "construção",
-            "demolição",
-            "reconstrução"
+            "reconstrução",
+            "ampliação",
+            "alteração_exterior",
+            "alteração_interior",
+            "conservação",
+            "construção_piscina"
           ],
           "description": "Property. Type of intervention for which licensing is requested."
         },
@@ -107,19 +141,38 @@
           "type": "string",
           "description": "Property. Construction or works permit number."
         },
+        "phase": {
+          "type": "string",
+          "enum": [
+            "submissão",
+            "saneamento_liminar",
+            "decisão",
+            "decisão_arquitetura",
+            "decisão_especialidades",
+            "decisão_controlo_sucessivo",
+            "pagamento_de_taxas_e_encargos",
+            "obra_diligências_seguintes",
+            "conclusão"
+          ],
+          "description": "Property. Current phase of the urban planning process."
+        },
         "proceedingDecision": {
           "type": "string",
           "enum": [
-            "aceitação",
             "aprovação",
+            "aprovação_tácita",
             "deferimento",
             "deferimento_tácito",
-            "extinção",
-            "homologação_desfavorável",
-            "homologação_favorável",
+            "informação_favorável",
+            "informação_desfavorável",
             "indeferimento",
             "rejeição",
-            "rejeição_liminar"
+            "ineptidão",
+            "rejeição_liminar",
+            "extinção",
+            "caducidade",
+            "determinação_vistoria",
+            "aperfeiçoamento"
           ],
           "description": "Property. Current decision on the urban planning process."
         },
@@ -130,26 +183,39 @@
         "procedureType": {
           "type": "string",
           "enum": [
-            "comunicação_prévia_com_prazo",
-            "insenção_de_controlo_prévio",
-            "legalização",
             "licenciamento",
+            "comunicação_prévia",
+            "comunicação_prévia_utilização",
+            "comunicação_prévia_com_prazo",
             "pedido_de_informação_prévia",
-            "outros_pedidos"
+            "comunicação_de_início_de_trabalhos",
+            "outros_procedimentos"
           ],
           "description": "Property. Type of licensing procedure."
+        },
+        "serviceCode": {
+          "type": "string",
+          "description": "Property. CUSP code."
+        },
+        "responsibleEntityCode": {
+          "type": "string",
+          "description": "Property. Identifier of the entity in CUSP."
         },
         "status": {
           "type": "string",
           "enum": [
-            "instruction",
-            "instrução",
-            "análise",
-            "pendente",
-            "em_decisão",
-            "despachado",
-            "concluído",
-            "arquivado"
+            "aguarda_pagamento",
+            "em_análise",
+            "aguarda_elementos",
+            "decidido_favorável",
+            "decidido_desfavorável",
+            "consultas_externas",
+            "aguarda_audiência_dos_interessados",
+            "aguarda_pedido_seguinte",
+            "arquivado",
+            "suspenso",
+            "aguarda_vistoria",
+            "aguarda_início_dos_trabalhos"
           ],
           "description": "Property. Current status of the urban planning process."
         },
@@ -169,17 +235,92 @@
         "urbanOperationType": {
           "type": "string",
           "enum": [
-            "demolição",
-            "loteamento",
-            "obras_edificação",
-            "obras_urbanização",
-            "trabalhos_remodelação_terrenos",
-            "outras_operações_urbanísticas"
+            "construção",
+            "reconstrução",
+            "ampliação",
+            "alteração_exterior",
+            "alteração_interior",
+            "conservação",
+            "construção_piscina"
           ],
           "description": "Property. Type of urban planning operation."
         }
       },
       "allOf": [
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "licenciamento"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "aprovação",
+                  "aprovação_tácita",
+                  "deferimento",
+                  "deferimento_tácito",
+                  "indeferimento",
+                  "rejeição_liminar",
+                  "extinção",
+                  "caducidade",
+                  "aperfeiçoamento"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "comunicação_prévia"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "ineptidão",
+                  "extinção",
+                  "caducidade"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "comunicação_prévia_utilização"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "ineptidão",
+                  "extinção"
+                ]
+              }
+            }
+          }
+        },
         {
           "if": {
             "properties": {
@@ -195,58 +336,10 @@
             "properties": {
               "proceedingDecision": {
                 "enum": [
-                  "aceitação",
-                  "extinção",
                   "rejeição",
-                  "rejeição_liminar"
-                ]
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "procedureType": {
-                "const": "insenção_de_controlo_prévio"
-              }
-            },
-            "required": [
-              "procedureType"
-            ]
-          },
-          "then": {
-            "not": {
-              "required": [
-                "proceedingDecision"
-              ]
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "procedureType": {
-                "enum": [
-                  "legalização",
-                  "licenciamento"
-                ]
-              }
-            },
-            "required": [
-              "procedureType"
-            ]
-          },
-          "then": {
-            "properties": {
-              "proceedingDecision": {
-                "enum": [
-                  "aprovação",
-                  "deferimento",
-                  "deferimento_tácito",
+                  "ineptidão",
                   "extinção",
-                  "indeferimento",
-                  "rejeição_liminar"
+                  "determinação_vistoria"
                 ]
               }
             }
@@ -268,10 +361,12 @@
               "proceedingDecision": {
                 "enum": [
                   "deferimento_tácito",
+                  "informação_favorável",
+                  "informação_desfavorável",
+                  "rejeição_liminar",
                   "extinção",
-                  "homologação_desfavorável",
-                  "homologação_favorável",
-                  "rejeição_liminar"
+                  "caducidade",
+                  "aperfeiçoamento"
                 ]
               }
             }
@@ -281,7 +376,7 @@
           "if": {
             "properties": {
               "procedureType": {
-                "const": "outros_pedidos"
+                "const": "comunicação_de_início_de_trabalhos"
               }
             },
             "required": [
@@ -292,9 +387,33 @@
             "properties": {
               "proceedingDecision": {
                 "enum": [
-                  "deferimento_tácito",
                   "extinção",
-                  "rejeição_liminar"
+                  "caducidade"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "procedureType": {
+                "const": "outros_procedimentos"
+              }
+            },
+            "required": [
+              "procedureType"
+            ]
+          },
+          "then": {
+            "properties": {
+              "proceedingDecision": {
+                "enum": [
+                  "deferimento",
+                  "deferimento_tácito",
+                  "indeferimento",
+                  "extinção",
+                  "determinação_vistoria"
                 ]
               }
             }
@@ -306,11 +425,14 @@
   "required": [
     "id",
     "type",
-    "refBuilding",
     "interventionType",
     "processNumber",
     "procedureType",
     "urbanOperationType",
-    "status"
+    "status",
+    "address",
+    "location",
+    "dateCreated",
+    "dateModified"
   ]
 }

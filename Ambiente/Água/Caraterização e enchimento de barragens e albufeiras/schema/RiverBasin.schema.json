@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.1.0",
+  "$schemaVersion": "0.1.1",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/RiverBasin.schema.json",
   "title": "CNMD - RiverBasin schema",
@@ -164,6 +164,6 @@
   },
   "required": [
     "id", "type", "address", "beginLifespanVersion", "hydroId",
-    "localType", "location"
+    "localType", "location", "name", "watershedArea"
   ]
 }

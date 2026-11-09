@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.3",
+  "$schemaVersion": "0.1.0",
   "$id": "https://smart-data-models.github.io/data-models/specs/ParksAndGardens/GreenspaceRecord/schema.json",
   "title": "Smart Data Models - Parks and Gardens / Greenspace Record",
   "description": "This entity contains a harmonised description of the conditions recorded on a particular area or point inside a greenspace (flower bed, garden, etc.).",
@@ -104,54 +104,15 @@
           "description": "Property. The observed soild moisture measured as Pressure, presure in units of kiloPascals (kPa). Units:'kPa'. Model:'https://schema.org/Number'"
         },
         "refGreenspace": {
-          "anyOf": [
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 256,
-              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
-              "description": "Property. Identifier format of any NGSI entity"
-            },
-            {
-              "type": "string",
-              "format": "uri",
-              "description": "Property. Identifier format of any NGSI entity"
-            }
-          ],
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship. The garden or flower bed to which this record refers to. Model:'https://schema.org/URL'"
         },
         "refDevice": {
-          "anyOf": [
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 256,
-              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
-              "description": "Property. Identifier format of any NGSI entity"
-            },
-            {
-              "type": "string",
-              "format": "uri",
-              "description": "Property. Identifier format of any NGSI entity"
-            }
-          ],
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship. The device or devices used to obtain the data expressed by this record. Model:'https://schema.org/URL'"
         },
         "refWeatherObserved": {
-          "anyOf": [
-            {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 256,
-              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
-              "description": "Property. Identifier format of any NGSI entity"
-            },
-            {
-              "type": "string",
-              "format": "uri",
-              "description": "Property. Identifier format of any NGSI entity"
-            }
-          ],
+          "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship.  Weather observed associated to the measurements described by this entity. Model:'https://schema.org/URL'"
         },
         "litterCoverage": {
@@ -170,5 +131,22 @@
     "dateObserved",
     "location",
     "refGreenspace"
+  ],
+  "anyOf": [
+    {
+      "required": [
+        "soilMoistureEc"
+      ]
+    },
+    {
+      "required": [
+        "soilMoisturePressure"
+      ]
+    },
+    {
+      "required": [
+        "soilTemperature"
+      ]
+    }
   ]
 }

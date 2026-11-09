@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.1",
+  "$schemaVersion": "0.1.0",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/PassengerCountAggregation/schema.json",
   "title": "Passenger Count Aggregation schema",
@@ -163,6 +163,7 @@
     "operator",
     "measurementValue",
     "countType",
-    "aggregationPeriod"
+    "aggregationPeriod",
+    "dataProvider"
   ]
 }

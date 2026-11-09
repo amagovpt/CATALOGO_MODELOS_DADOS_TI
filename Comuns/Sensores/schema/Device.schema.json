@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.0.9",
+  "$schemaVersion": "0.1.0",
   "modelTags": "",
   "$id": "https://smart-data-models.github.io/dataModel.Device/Device/schema.json",
   "title": " Smart Data Models - Device schema",
@@ -188,6 +188,10 @@
     "id",
     "type",
     "address",
-    "controlledProperty"
+    "controlledProperty",
+    "refDeviceModel",
+    "value",
+    "deviceCategory",
+    "dataProvider"
   ]
 }

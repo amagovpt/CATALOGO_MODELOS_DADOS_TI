@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.1",
+  "$schemaVersion": "0.4.0",
   "modelTags": "CNMD",
   "$id": "https://territoriosinteligentes.gov.pt/dataModel.EnvironmentalManagementZone/EnvironmentalManagementZone/schema.json",
   "title": "EnvironmentalManagementZone schema",
@@ -211,6 +211,8 @@
     "managementModel",
     "managedBy",
     "controlledActivityType",
-    "environmentalDomain"
+    "environmentalDomain",
+    "name",
+    "zoneTypeCode"
   ]
 }

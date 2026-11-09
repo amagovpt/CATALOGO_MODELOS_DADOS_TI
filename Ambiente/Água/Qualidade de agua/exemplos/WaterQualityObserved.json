@@ -17,6 +17,8 @@
         "type" : "Property",
         "value": {"addressLocality": "Montemor-o-Velho", "addressRegion": "Centro", "district": "Coimbra"}
     },
+    "dataProvider": {"type": "Property", "value": "CM-MontemorVelho"},
+    "refPointOfInterest": {"type": "Relationship", "object": "urn:ARTE:WaterQualityObserved:station333"},
     "pH": {
         "type": "Property",
         "value": 7.7,

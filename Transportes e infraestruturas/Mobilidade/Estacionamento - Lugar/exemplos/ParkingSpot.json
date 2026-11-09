@@ -6,8 +6,9 @@
   "category"      : { "type": "Property", "value": ["onStreet"] },
   "refParkingSite": {"type": "Relationship", "object": "urn:cmcascais:OnStreetParking:cascais:dfrancisco_avilez_6"},
   "name"          : {"type": "Property", "value": "A-13"},
+  "dataProvider"  : {"type": "Property", "value": "CMCascais"},
   "address"       : {
-    "type" : "Property",
+    "type": "Property",
     "value": {
       "addressCountry"  : "Portugal",
       "addressLocality" : "Cascais",

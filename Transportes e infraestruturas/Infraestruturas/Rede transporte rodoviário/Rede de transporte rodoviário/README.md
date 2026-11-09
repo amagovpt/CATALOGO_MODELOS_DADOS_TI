@@ -65,6 +65,8 @@ Os atributos obrigatórios são:
 - `totalLength`
 - `totalNodes`
 - `totalSegments`
+- `dataProvider`
+- `areaServed`
 
 ## Notas
 

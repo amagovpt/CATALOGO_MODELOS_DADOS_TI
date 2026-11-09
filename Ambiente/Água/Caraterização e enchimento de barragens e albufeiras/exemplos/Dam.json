@@ -9,11 +9,12 @@
         "type" : "Property",
         "value": {"spelling": "Alqueva", "language": "pt", "nameStatus": "official"}
     },
-    "hydroId": { "type": "Property", "value": {"localId": "B.Alqueva", "namespace": "PT.APA.HY-P"} },
+    "hydroId"          : { "type": "Property", "value": {"localId": "B.Alqueva", "namespace": "PT.APA.HY-P"} },
+    "operationalStatus": { "type": "Property", "value": "operational"                                        },
     "location": {
-        "type" : "GeoProperty",
+        "type": "GeoProperty",
         "value": {
-            "type"       : "LineString",
+            "type": "LineString",
             "coordinates": [
                 [-8.418277294000802, 41.54894322474789],
                 [-8.418631860953667, 41.54859597022656],
@@ -25,7 +26,7 @@
         }
     },
     "address": {
-        "type" : "Property",
+        "type": "Property",
         "value": {
             "addressLocality": "Moura",
             "addressRegion"  : "Alentejo",
@@ -35,7 +36,7 @@
     },
     "name": {"type": "Property", "value": "Barragem de Alqueva"},
     "operatingCompany": {
-        "type": "Property",
+        "type" : "Property",
         "value": "EDIA - Empresa de Desenvolvimento e Infra-Estruturas do Alqueva, S.A."
     },
     "condition": {"type": "Property", "value": "functional"},
@@ -44,44 +45,32 @@
     "crestLength": {"type": "Property", "value": 458, "unitCode": "MTR"},
     "length": {"type": "Property", "value": 458, "unitCode": "MTR"},
     "storageCapacity": {"type": "Property", "value": 4150, "unitCode": "HMQ"},
-    "currentVolume": {
-        "type": "Property",
-        "value": 3394.7,
-        "unitCode": "HMQ",
-        "observedAt": "2025-02-05T12:00:00Z"
-    },
-    "currentStorage": {
-        "type": "Property",
-        "value": 0.818,
-        "observedAt": "2025-02-05T12:00:00Z"
-    },
+    "currentVolume": {"type": "Property", "value": 3394.7, "unitCode": "HMQ", "observedAt": "2025-02-05T12:00:00Z"},
+    "currentStorage": {"type": "Property", "value": 0.818, "observedAt": "2025-02-05T12:00:00Z"},
     "surfaceArea": {"type": "Property", "value": 250, "unitCode": "KMK"},
     "spillwayFlowRate": {"type": "Property", "value": 6300, "unitCode": "MQS"},
     "spillwayType": {"type": "Property", "value": "Soleira tipo WES"},
     "maxBottomDischargeFlow": {"type": "Property", "value": 160, "unitCode": "MQS"},
     "waterStorage": {
-        "type": "Property",
-        "value": {
-            "trendIndicator": "decreasing",
-            "samplingFrequency": "P1M"
-        },
+        "type"      : "Property",
+        "value"     : {"trendIndicator": "decreasing", "samplingFrequency": "P1M"},
         "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterLevelSensor:24M-07A"},
         "observedAt": "2025-02-05T12:00:00Z"
     },
-    "levelOfDetail": {"type": "Property", "value": {"equivalentScale": 25000}},
-    "manMadeObject": {"type": "Property", "value": "Retém a água"},
+    "levelOfDetail": { "type": "Property", "value": {"equivalentScale": 25000} },
+    "manMadeObject": { "type": "Property", "value": "Retém a água"             },
     "waterBody": {
-        "type": "Property",
+        "type" : "Property",
         "value": {"artificial": true, "heavilyModified": true, "assignment": "WFD", "maintenanceResponsibility": "IH"}
     },
     "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
     "waterQualityMonitoring": {
         "type": "Property",
-        "value": {
-            "parameters": {
-                "temperature": {"value": 15.5, "unitCode": "CEL"},
-                "pH": {"value": 7.2},
-                "dissolvedOxygen": {"value": 8.5, "unitCode": "M1"}
+        "value"     : {
+            "parameters"       : {
+                "temperature"    : {"value": 15.5, "unitCode": "CEL"},
+                "pH"             : {"value":  7.2                   },
+                "dissolvedOxygen": {"value":  8.5, "unitCode": "M1" }
             },
             "samplingFrequency": "P1M"
         },
@@ -89,11 +78,10 @@
         "observedAt": "2025-02-05T12:00:00Z"
     },
     "relatedHydroObject": {
-        "type": "Relationship",
+        "type"  : "Relationship",
         "object": ["urn:apa:Reservoir:PT:Alqueva:001", "urn:apa:WaterBody:WaterStream:001"]
     },
     "inRiverBasin": {"type": "Relationship", "object": "urn:apa:RiverBasin:001"},
-
     "@context": {
         "ngsi-ld"                : "https://uri.etsi.org/ngsi-ld/",
         "smartdatamodels"        : "https://smartdatamodels.org/dataModel.waterStorage/",

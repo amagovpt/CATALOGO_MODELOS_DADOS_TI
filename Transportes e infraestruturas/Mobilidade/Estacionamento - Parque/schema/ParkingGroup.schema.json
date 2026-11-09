@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.1",
+  "$schemaVersion": "0.4.0",
   "modelTags": "CNMD",
   "$id": "https://smart-data-models.github.io/dataModel.Parking/ParkingGroup/schema.json",
   "title": "CNMD - ParkingGroup schema",
@@ -260,6 +260,9 @@
     "id",
     "type",
     "address",
-    "refParkingSite"
+    "refParkingSite",
+    "category",
+    "totalSpotNumber",
+    "dataProvider"
   ]
 }

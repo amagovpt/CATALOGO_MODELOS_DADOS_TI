@@ -1,84 +1,50 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.4",
-  "modelTags": "IUDX",
-  "$id": "https://smart-data-models.github.io/dataModel.Weather/WeatherObserved/schema.json",
-  "title": "Weather Observed schema - Smart Data Models",
+  "$schema"       : "https://json-schema.org/draft/2020-12/schema",
+  "$schemaVersion": "0.3.5",
+  "modelTags"     : "IUDX",
+  "$id"           : "https://smart-data-models.github.io/dataModel.Weather/WeatherObserved/schema.json",
+  "title"         : "Weather Observed schema - Smart Data Models",
   "description": "An observation of weather conditions at a certain place and time. This data model has been developed in cooperation with mobile operators and the GSMA.",
   "type": "object",
   "allOf": [
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"
-    },
-    {
-      "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"
-    },
-    {
-      "$ref": "https://smart-data-models.github.io/dataModel.Weather/weather-schema.json#/definitions/Weather-Commons"
-    },
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/GSMA-Commons"          },
+    {"$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/Location-Commons"      },
+    {"$ref": "https://smart-data-models.github.io/dataModel.Weather/weather-schema.json#/definitions/Weather-Commons"},
     {
       "properties": {
         "address": {
           "type": "object",
           "properties": {
             "addressLocality": {
-              "type": "string",
-              "minLength": 1,
+              "type"       : "string",
+              "minLength"  : 1,
               "description": "The locality, which must correspond to the municipality"
             },
-            "addressRegion": {
+            "addressRegion"  : {
               "type": "string",
-              "enum": [
-                "Norte",
-                "Centro",
-                "Oeste e Vale do Tejo",
-                "Grande Lisboa",
-                "Península de Setúbal",
-                "Alentejo",
-                "Algarve",
-                "Região Autónoma dos Açores",
-                "Região Autónoma da Madeira"
+              "enum"       : [
+                "Norte",                      "Centro",                     "Oeste e Vale do Tejo",
+                "Grande Lisboa",              "Península de Setúbal",       "Alentejo",
+                "Algarve",                    "Região Autónoma dos Açores", "Região Autónoma da Madeira"
               ],
               "description": "The NUTS 2 region in which the locality is located"
             },
-            "district": {
+            "district"       : {
               "type": "string",
-              "enum": [
-                "Açores",
-                "Aveiro",
-                "Beja",
-                "Braga",
-                "Bragança",
-                "Castelo Branco",
-                "Coimbra",
-                "Évora",
-                "Faro",
-                "Guarda",
-                "Madeira",
-                "Leiria",
-                "Lisboa",
-                "Portalegre",
-                "Porto",
-                "Santarém",
-                "Setúbal",
-                "Viana do Castelo",
-                "Vila Real",
-                "Viseu"
+              "enum"       : [
+                "Açores",           "Aveiro",           "Beja",             "Braga",            "Bragança",
+                "Castelo Branco",   "Coimbra",          "Évora",            "Faro",             "Guarda",
+                "Madeira",          "Leiria",           "Lisboa",           "Portalegre",       "Porto",
+                "Santarém",         "Setúbal",          "Viana do Castelo", "Vila Real",        "Viseu"
               ],
               "description": "The administrative district in which the locality is located"
             }
           },
-          "required": [
-            "addressLocality",
-            "addressRegion",
-            "district"
-          ]
+          "required": ["addressLocality", "addressRegion", "district"]
         },
         "type": {
-          "type": "string",
-          "enum": [
-            "WeatherObserved"
-          ],
+          "type"       : "string",
+          "enum"       : ["WeatherObserved"],
           "description": "Property. NGSI Entity type. It has to be WeatherObserved"
         },
         "dateObserved": {
@@ -106,17 +72,8 @@
         },
         "pressureTendency": {
           "oneOf": [
-            {
-              "type": "string",
-              "enum": [
-                "falling",
-                "raising",
-                "steady"
-              ]
-            },
-            {
-              "type": "number"
-            }
+            { "type": "string", "enum": ["falling", "raising", "steady"] },
+            { "type": "number"                                           }
           ],
           "description": "Property. Enum:'falling, raising, steady'. Is the pressure rising or falling? It can be expressed in quantitative terms or qualitative terms"
         },
@@ -127,17 +84,13 @@
         "refDevice": {
           "anyOf": [
             {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 256,
-              "pattern": "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
+              "type"       : "string",
+              "minLength"  : 1,
+              "maxLength"  : 256,
+              "pattern"    : "^[\\w\\-\\.\\{\\}\\$\\+\\*\\[\\]`|~^@!,:\\\\]+$",
               "description": "Property. Identifier format of any NGSI entity"
             },
-            {
-              "type": "string",
-              "format": "uri",
-              "description": "Property. Identifier format of any NGSI entity"
-            }
+            {"type": "string", "format": "uri", "description": "Property. Identifier format of any NGSI entity"}
           ],
           "description": "Relationship. Model:'https://schema.org/URL'. A reference to the device(s) which captured this observation"
         },
@@ -157,7 +110,7 @@
           "description": "Property. Model:'https://schema.org/Number'. The maximum UV index for the period, based on the World Health Organization's UV Index measure. [http://www.who.int/uv/intersunprogramme/activities/uv_index/en/](http://www.who.int/uv/intersunprogramme/activities/uv_index/en/) the values between 1 and 11 are the valid range for the index. The value 0 is for describing that no signal is detected so no value is stored"
         },
         "aqiMajorPollutant": {
-          "type": "string",
+          "type"       : "string",
           "description": "Property. Model:'https://schema.org/Text'. Major pollutant in the Air Quality Index (AQI)"
         },
         "aqiMajorPollutantForecast": {
@@ -185,7 +138,7 @@
           "description": "Property. Model:'https://schema.org/Number'. Forecasted overall Air Quality Index (AQI) over a certain duration in future"
         },
         "airTemperatureTSA": {
-          "type": "object",
+          "type"       : "object",
           "description": "Property. Air temperature time series aggregation",
           "$ref": "https://smart-data-models.github.io/dataModel.Environment/Environment-schema.json#/definitions/TimeSeriesAggregation"
         }
@@ -193,11 +146,8 @@
     }
   ],
   "required": [
-    "id",
-    "type",
-    "address",
-    "dateObserved",
-    "location",
-    "dataProvider"
+    "id",                 "type",               "address",            "dateObserved",       "location",
+    "dataProvider",       "temperature",        "precipitation",      "relativeHumidity",   "windSpeed",
+    "windDirection",      "refPointOfInterest"
   ]
 }

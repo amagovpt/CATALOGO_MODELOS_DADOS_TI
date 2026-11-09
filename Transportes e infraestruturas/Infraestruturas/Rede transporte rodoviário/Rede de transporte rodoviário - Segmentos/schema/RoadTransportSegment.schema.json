@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$schemaVersion": "0.3.2",
+  "$schemaVersion": "0.3.3",
   "modelTags": "CNMD",
   "$id": "https://example.org/schemas/RoadTransportSegment.schema.json",
   "title": "CNMD - RoadTransportSegment schema",
@@ -269,6 +269,7 @@
     "length",
     "lanes",
     "direction",
-    "refNetwork"
+    "refNetwork",
+    "dataProvider"
   ]
 }

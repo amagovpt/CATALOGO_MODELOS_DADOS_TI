@@ -4,6 +4,7 @@
     "title"             : {"type": "Property", "value": "Manuel Gomes da Costa"},
     "subtitle"          : {"type": "Property", "value": "A fábrica"},
     "description"       : {"type": "Property", "value": "Uma antologia fotográfica de Manuel Gomes da Costa..."},
+    "dataProvider"       : {"type": "Property", "value": "https://egeac.pt"},
     "image"             : {
         "type" : "Property",
         "value": "https://www.agendalx.pt/content/uploads/2025/03/Imagem2-e1741612321249.jpg"

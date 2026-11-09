@@ -43,6 +43,7 @@
         },
         "coordinateSystem": "EPSG:4258"
     },
+    "zoneTypeCode": {"type": "Property", "value": "DrinkingWaterProtectionArea"},
     "areaServed": { "type": "Property", "value": "Sines" },
     "managedBy": {"type": "Property", "value": "CM-Sines"},
     "refUpperZone": {"type": "Relationship", "object": "urn:ersar:EnvironmentalManagementZone:33"},

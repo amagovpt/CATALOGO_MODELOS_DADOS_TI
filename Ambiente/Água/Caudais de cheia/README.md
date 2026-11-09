@@ -54,6 +54,8 @@ Os atributos obrigatórios são:
 - `currentLevel`
 - `referenceLevel`
 - `measuredDistance`
+- `dataProvider`
+- `floodLevelStatus`
 
 ## Notas
 

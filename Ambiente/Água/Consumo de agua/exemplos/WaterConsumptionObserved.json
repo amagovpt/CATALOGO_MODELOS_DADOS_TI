@@ -20,7 +20,7 @@
     },
     "dateObserved": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-12-10T14:57:39.000Z"} },
     "acquisitionStageFailure": {"type": "Property", "value": 0},
-    "alarmFlowPersistence": {"type": "Text", "value": "Nothing to report"},
+    "alarmFlowPersistence": {"type": "Property", "value": "Nothing to report"},
     "alarmInProgress": {"type": "Property", "value": 1},
     "alarmStopsLeaks": {"type": "Property", "value": 0},
     "alarmTamper": {"type": "Property", "value": 0},

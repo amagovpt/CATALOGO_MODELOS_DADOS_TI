@@ -73,12 +73,13 @@ Os atributos obrigatórios são:
 - `name`
 - `type`
 - `address`
-- `dimension
+- `dimension`
 - `location`
 - `maxFlowRate`
 - `junctionType`
 - `status`
 - `refNetwork`
+- `dataProvider`
 
 ## Notas
 

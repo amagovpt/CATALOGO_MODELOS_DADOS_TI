@@ -12,6 +12,7 @@
             "postalCode": "1250"
         }
     },
+    "dataProvider": {"type": "Property", "value": "https://www.emel.pt/pt/"},
     "areaServed": {"type": "Property", "value": "Marquês de Pombal"},
     "agency_name": {"type": "Property", "value": "EMEL"},
     "agency_url": {

@@ -1,41 +1,30 @@
 {
-  "id": "urn:arte:PointOfInterest:DrinkingWaterFountain33",
+  "id"  : "urn:arte:PointOfInterest:DrinkingWaterFountain33",
   "type": "PointOfInterest",
-
-  "address": {
-        "type" : "Property",
-        "value": {"addressCountry": "PT", "addressRegion": "Grande Lisboa", "district": "Lisboa", "addressLocality": "Lisboa","streetAddress":"Rua Jorge Amado",
-      "postalCode":"1950 Lisboa", "streetNr" :"33A"}
-    },
-    "description" : {"type" : "Property",
-        "value":"Fonte de Água Potável"},
-  "category": {
+  "address"     : {
     "type": "Property",
-    "value": [
-      "Fontanário/ponto de água"
-    ]
-  },
-  "location": {
-    "type": "GeoProperty",
     "value": {
-     "coordinates": [
-          -9.122146741039415,
-          38.74418151525137
-        ],
-        "type": "Point"
-    }, "coordinateSystem": "EPSG:4258"
+      "addressCountry" : "PT",
+      "addressRegion"  : "Grande Lisboa",
+      "district"       : "Lisboa",
+      "addressLocality": "Lisboa",
+      "streetAddress"  : "Rua Jorge Amado",
+      "postalCode"     : "1950 Lisboa",
+      "streetNr"       : "33A"
+    }
   },
-  "name": {
-    "type": "Property",
-    "value": "Bebedouro Parque Infantil Belas Vista sul"
+  "description" : { "type": "Property", "value": "Fonte de Água Potável"      },
+  "dataProvider": { "type": "Property", "value": "CMLisboa"                   },
+  "source"      : { "type": "Property", "value": "https://cm-lisboa.pt/"      },
+  "category"    : { "type": "Property", "value": ["Fontanário/ponto de água"] },
+  "location"    : {
+    "type"            : "GeoProperty",
+    "value"           : { "coordinates": [-9.122146741039415, 38.74418151525137], "type": "Point" },
+    "coordinateSystem": "EPSG:4258"
   },
-  "refSeeAlso": {
-    "type": "Property",
-    "value": [
-      "https://geodados-cml.hub.arcgis.com"
-    ]
-  },
-  "@context": [
+  "name"        : {"type": "Property", "value": "Bebedouro Parque Infantil Belas Vista sul"},
+  "refSeeAlso"  : { "type": "Property", "value": ["https://geodados-cml.hub.arcgis.com"] },
+  "@context"    : [
     "https://raw.githubusercontent.com/smart-data-models/dataModel.PointOfInterest/master/context.jsonld"
   ]
 }

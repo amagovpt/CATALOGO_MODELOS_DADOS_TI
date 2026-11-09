@@ -1,7 +1,7 @@
 # Descrição
 
 O modelo de dados a seguir para representar **Recolha de Resíduos**
-é o [WasteObserved](https://github.com/smart-data-models/dataModel.WasteManagement/tree/master/WasteObserved) inspirado no [FIWARE Smart Data Models](https://github.com/smart-data-models/). 
+é o [WasteObserved](https://github.com/smart-data-models/dataModel.WasteManagement/tree/master/WasteObserved) inspirado no [FIWARE Smart Data Models](https://github.com/smart-data-models/).
 Este modelo utiliza o formato NGSI-LD, sendo compatível com [ETSI GS CIM 009 V1.5.1, Context Information Management (CIM) - NGSI-LD API](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.05.01_60/gs_cim009v010501p.pdf), da [ETSI](https://www.etsi.org/).
 Nas anotações é possível encontrar um exemplo deste modelo, e de outros relacionados, ilustrando o seu uso no âmbito da [ENTI](https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/estrategia-nacional-de-territorios-inteligentes).
 
@@ -25,7 +25,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | alternateName | String | Nome alternativo para a área de observação  |  Ex: nome comum ou local da localização. Modelo: [https://schema.org/Text](https://schema.org/Text).  |
 | annotations       | Array          | Anotações sobre a observação  | Modelo: [ https://schema.org/Text]( https://schema.org/Text)   |
 | areaServed | String | A área geográfica onde é prestado um serviço ou oferecido um artigo | Modelo: [https://schema.org/Text](https://schema.org/Text).|
-| color       | String          | Cor do item, de acordo com o cógido d cores em vigor |  Ex: amarelo. Modelo: [https://schema.org/Text](https://schema.org/Text).  |
+| color       | String          | Cor do item, de acordo com o código de cores em vigor |  Ex: amarelo. Modelo: [https://schema.org/Text](https://schema.org/Text).  |
 | dataProvider     | String          | Identidade do fornecedor dos dados | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | dateCreated        | DateTime | Data e hora da criação  |  Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
 | dateModified        | DateTime | Registo de data e hora da última modificação da entidade |  Este será normalmente atribuído pela plataforma de armazenamento. De acordo com a norma  [ISO 8601-1:2019](https://www.iso.org/standard/70907.html). Modelo: [https://schema.org/DateTime](https://schema.org/DateTime)  |
@@ -54,6 +54,7 @@ Os atributos obrigatórios são:
 - `dateObserved`
 - `location`
 - `weight`
+- `dataProvider`
 
 ## Notas
 
