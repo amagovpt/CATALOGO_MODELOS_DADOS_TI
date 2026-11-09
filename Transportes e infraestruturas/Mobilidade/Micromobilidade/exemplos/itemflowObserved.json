@@ -3,23 +3,23 @@
     "type": "ItemFlowObserved",
     "dateObserved": {
         "type": "Property",
-        "value": {"@type": "DateTime", "@value": "2025-11-15T08:00:00Z"}
+        "value": "2025-11-15T08:00:00Z"
     },
     "dateObservedFrom": {
         "type": "Property",
-        "value": {"@type": "DateTime", "@value": "2025-11-15T08:00:00Z"}
+        "value": "2025-11-15T08:00:00Z"
     },
     "dateObservedTo": {
         "type": "Property",
-        "value": {"@type": "DateTime", "@value": "2025-11-15T11:59:59Z"}
+        "value": "2025-11-15T11:59:59Z"
     },
-    "address"           : {
-        "type" : "Property",
+    "address": {
+        "type": "Property",
         "value": {
-            "addressCountry" : "Portugal",
+            "addressCountry": "PT",
             "addressLocality": "Lisboa",
-            "district"       : "Lisboa",
-            "addressRegion"  : "Grande Lisboa"            
+            "district": "Lisboa",
+            "addressRegion": "Grande Lisboa"
         }
     },
     "location": {
@@ -35,19 +35,16 @@
     "laneDirection": {"type": "Property", "value": "forward"},
     "intensity": {"type": "Property", "value": 37, "unitCode": "1"},
     "averageSpeed": {"type": "Property", "value": 15.2, "unitCode": "KMH"},
-    "averageGapDistance": {
-        "type": "Property",
-        "value": 5.3,
-        "unitCode": "KMH"
-    },
+    "averageGapDistance": {"type": "Property", "value": 5.3, "unitCode": "MTR"},
     "refDevice": {
-        "type"  : "Relationship",
+        "type": "Relationship",
         "object": "urn:ngsi-ld:Device:bike-counter-5552"
     },
     "refRoadSegment": {
-        "type"  : "Relationship",
+        "type": "Relationship",
         "object": "urn:ngsi-ld:CycleLane:CL-001"
     },
+    "dataProvider": {"type": "Property", "value": "CMLisboa"},
     "@context": [
         "https://smartdatamodels.org/context.jsonld",
         "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"

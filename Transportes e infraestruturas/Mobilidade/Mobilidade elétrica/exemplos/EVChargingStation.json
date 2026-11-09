@@ -28,7 +28,10 @@
       "other"  
     ]  
   },  
-  
+  "dataProvider": {
+    "type": "Property",
+    "value": "CMLisboa"
+  },  
   "location": {  
     "type": "GeoProperty",  
     "value": {  
@@ -54,7 +57,6 @@
       "Mennekes"  
     ]  
   },  
-
   "contactPoint": {  
     "type": "Property",  
     "value": {  
@@ -64,7 +66,12 @@
   "source": {  
     "type": "Property",  
     "value": "https://comparaervilhas.pt/"  
-  },  
+  }, 
+  "status": {
+    "type": "Property",
+    "value": "working",
+    "observedAt": "2024-05-02T20:28:41Z"
+  },
   "powerConsumption": {  
     "type": "Property",  
     "value": 12.0,

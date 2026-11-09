@@ -106,20 +106,10 @@
           "minimum": 0,
           "description": "Property. Model:'https://schema.org/Number'. Arsenic detected"
         },
-        "c6h6": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Benzene detected"
-        },
         "cd": {
           "type": "number",
           "minimum": 0,
           "description": "Property. Cadmium detected"
-        },
-        "co": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Carbon Monoxide detected"
         },
         "coLevel": {
           "type": "string",
@@ -140,30 +130,52 @@
           "minimum": 0,
           "description": "Property. Nitrogen monoxide detected"
         },
-        "no2": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Nitrogen dioxide detected"
-        },
         "nox": {
           "type": "number",
           "minimum": 0,
           "description": "Property. Other Nitrogen oxides detected"
         },
-        "o3": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Ozone detected "
+        "o3":   {
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Ozone (O3) concentration. Units: micrograms per cubic metre (GQ)", 
+          "examples": [45.2]
+        },
+        "no2":  {
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Nitrogen dioxide (NO2) concentration. Units: micrograms per cubic metre (GQ)", 
+          "examples": [28.4]
         },
         "pm10": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Particulate matter 10 micrometers or less in diameter"
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Particulate matter 10 micrometres or less in diameter. Units: micrograms per cubic metre (GQ)", 
+          "examples": [21.0]
         },
         "pm25": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Particulate matter 2.5 micrometers or less in diameter"
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Particulate matter 2.5 micrometres or less in diameter. Units: micrograms per cubic metre (GQ)",
+          "examples": [11.3]
+        },
+        "so2":  {
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Sulfur dioxide (SO2) concentration. Units: micrograms per cubic metre (GQ)", 
+          "examples": [3.1]
+        },
+        "c6h6": {
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Benzene (C6H6) concentration. Units: micrograms per cubic metre (GQ)", 
+          "examples": [0.8]
+        },
+        "co":   {
+          "type": "number", 
+          "minimum": 0, 
+          "description": "Property. Carbon monoxide (CO) concentration. Units: milligrams per cubic metre (GP)", 
+          "examples": [0.4]
         },
         "pb": {
           "type": "number",
@@ -185,11 +197,6 @@
           "type": "number",
           "minimum": 0,
           "description": "Property. Hydrogen sulfide detected"
-        },
-        "so2": {
-          "type": "number",
-          "minimum": 0,
-          "description": "Property. Sulfur dioxide detected"
         },
         "typeofLocation": {
           "type": "string",
@@ -305,11 +312,18 @@
   "required": [
     "id",
     "type",
-    "dateObserved",
-    "location",
     "address",
     "dataProvider",
+    "dateObserved",
+    "location",
     "name",
-    "refPointOfInterest"
+    "refPointOfInterest",
+    "o3",
+    "no2",
+    "pm10",
+    "pm25",
+    "so2",
+    "c6h6",
+    "co"
   ]
 }

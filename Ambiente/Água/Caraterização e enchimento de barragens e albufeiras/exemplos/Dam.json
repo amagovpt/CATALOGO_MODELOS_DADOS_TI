@@ -33,58 +33,67 @@
             "addressCountry" : "Portugal"
         }
     },
-    "operationalStatus": {"type": "Property", "value": "operational"},
+    "name": {"type": "Property", "value": "Barragem de Alqueva"},
+    "operatingCompany": {
+        "type": "Property",
+        "value": "EDIA - Empresa de Desenvolvimento e Infra-Estruturas do Alqueva, S.A."
+    },
     "condition": {"type": "Property", "value": "functional"},
     "height": {"type": "Property", "value": 96, "unitCode": "MTR"},
-    "length": {"type": "Property", "value": 300.0, "unitCode": "MTR"},
     "crestElevation": {"type": "Property", "value": 154, "unitCode": "MTR"},
     "crestLength": {"type": "Property", "value": 458, "unitCode": "MTR"},
-    "storageCapacity": {"type": "Property", "value": 1000000.0, "unitCode": "MTQ"},
-    "surfaceArea": {"type": "Property", "value": 500000.0, "unitCode": "MTK"},
+    "length": {"type": "Property", "value": 458, "unitCode": "MTR"},
+    "storageCapacity": {"type": "Property", "value": 4150, "unitCode": "HMQ"},
+    "currentVolume": {
+        "type": "Property",
+        "value": 3394.7,
+        "unitCode": "HMQ",
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "currentStorage": {
+        "type": "Property",
+        "value": 0.818,
+        "observedAt": "2025-02-05T12:00:00Z"
+    },
+    "surfaceArea": {"type": "Property", "value": 250, "unitCode": "KMK"},
     "spillwayFlowRate": {"type": "Property", "value": 6300, "unitCode": "MQS"},
-    "spillwayType": {"type": "Property", "value": "Soleira tipo wes"},
+    "spillwayType": {"type": "Property", "value": "Soleira tipo WES"},
     "maxBottomDischargeFlow": {"type": "Property", "value": 160, "unitCode": "MQS"},
     "waterStorage": {
-        "type"      : "Property",
-        "value"     : {
-            "currentVolume"    : 800000.0,
-            "fillLevel"        : 81.8,
-            "trendIndicator"   : "decreasing",
-            "samplingFrequency": "P1M",
-            "observedAt"       : "2024-01-30T10:00:00Z"
+        "type": "Property",
+        "value": {
+            "trendIndicator": "decreasing",
+            "samplingFrequency": "P1M"
         },
         "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterLevelSensor:24M-07A"},
         "observedAt": "2025-02-05T12:00:00Z"
     },
-    "levelOfDetail": { "type": "Property", "value": {"equivalentScale": 25000} },
+    "levelOfDetail": {"type": "Property", "value": {"equivalentScale": 25000}},
     "manMadeObject": {"type": "Property", "value": "Retém a água"},
     "waterBody": {
-        "type" : "Property",
+        "type": "Property",
         "value": {"artificial": true, "heavilyModified": true, "assignment": "WFD", "maintenanceResponsibility": "IH"}
     },
     "hydrologicalPersistence": {"type": "Property", "value": "perennial"},
     "waterQualityMonitoring": {
-        "type"      : "Property",
-        "value"     : {
-            "parameters"       : {
-                "temperature"    : {"value": 15.5, "unitCode": "CEL"},
-                "pH"             : {"value":  7.2                   },
-                "dissolvedOxygen": {"value":  8.5, "unitCode": "MGQ"}
+        "type": "Property",
+        "value": {
+            "parameters": {
+                "temperature": {"value": 15.5, "unitCode": "CEL"},
+                "pH": {"value": 7.2},
+                "dissolvedOxygen": {"value": 8.5, "unitCode": "M1"}
             },
             "samplingFrequency": "P1M"
         },
-        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterQUALITYSensor:24M-07AX"},
+        "observedBy": {"type": "Relationship", "object": "urn:apa:Device:WaterQualitySensor:24M-07AX"},
         "observedAt": "2025-02-05T12:00:00Z"
     },
     "relatedHydroObject": {
-        "type"  : "Relationship",
+        "type": "Relationship",
         "object": ["urn:apa:Reservoir:PT:Alqueva:001", "urn:apa:WaterBody:WaterStream:001"]
     },
     "inRiverBasin": {"type": "Relationship", "object": "urn:apa:RiverBasin:001"},
-    "operatingCompany": {
-        "type" : "Property",
-        "value": "Empresa de desenvolvimento e infraestruturas do alqueva, s.a. (edia)"
-    },
+
     "@context": {
         "ngsi-ld"                : "https://uri.etsi.org/ngsi-ld/",
         "smartdatamodels"        : "https://smartdatamodels.org/dataModel.waterStorage/",
@@ -117,6 +126,8 @@
         "spillwayFlowRate"       : "smartdatamodels:spillwayFlowRate",
         "spillwayType"           : "smartdatamodels:spillwayType",
         "maxBottomDischargeFlow" : "smartdatamodels:maxBottomDischargeFlow",
+        "name"                   : "https://schema.org/name",
+        "currentStorage"         : "smartdatamodels:currentStorage",
         "waterStorage"           : "smartdatamodels:waterStorage",
         "currentVolume"          : "smartdatamodels:currentVolume",
         "fillLevel"              : "smartdatamodels:fillLevel",

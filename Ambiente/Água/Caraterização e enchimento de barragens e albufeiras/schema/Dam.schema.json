@@ -127,5 +127,19 @@
     "nonNegativeNumber": {"type": "number", "minimum": 0                                                           },
     "entityIdentifier" : {"type": "string",               "format": "uri", "pattern": "^[a-zA-Z][a-zA-Z0-9+.-]*:.+"}
   },
-  "required"      : ["id", "type", "address", "beginLifespanVersion", "hydroId", "localType", "location"]
-}
+  "required": [
+    "id",
+    "type",
+    "address",
+    "beginLifespanVersion",
+    "currentStorage",
+    "currentVolume",
+    "hydroId",
+    "localType",
+    "location",
+    "name",
+    "operatingCompany",
+    "operationalStatus",
+    "storageCapacity"
+  ]
+  }

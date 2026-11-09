@@ -18,6 +18,11 @@
         "address": {
           "type": "object",
           "properties": {
+            "addressCountry": {
+              "type": "string",
+              "enum": ["PT"],
+              "description": "Country code according to ISO 3166-1 alpha-2"
+            },
             "addressLocality": {
               "type": "string",
               "minLength": 1,
@@ -41,31 +46,16 @@
             "district": {
               "type": "string",
               "enum": [
-                "Açores",
-                "Aveiro",
-                "Beja",
-                "Braga",
-                "Bragança",
-                "Castelo Branco",
-                "Coimbra",
-                "Évora",
-                "Faro",
-                "Guarda",
-                "Madeira",
-                "Leiria",
-                "Lisboa",
-                "Portalegre",
-                "Porto",
-                "Santarém",
-                "Setúbal",
-                "Viana do Castelo",
-                "Vila Real",
-                "Viseu"
+                "Açores", "Aveiro", "Beja", "Braga", "Bragança", "Castelo Branco",
+                "Coimbra", "Évora", "Faro", "Guarda", "Madeira", "Leiria", "Lisboa",
+                "Portalegre", "Porto", "Santarém", "Setúbal", "Viana do Castelo",
+                "Vila Real", "Viseu"
               ],
               "description": "The administrative district in which the locality is located"
             }
           },
           "required": [
+            "addressCountry",
             "addressLocality",
             "addressRegion",
             "district"
@@ -99,6 +89,11 @@
         "congested": {
           "type": "boolean",
           "description": "Property. Whether congestion occurred during the observation period; absence means false"
+        },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity"
         },
         "dateObserved": {
           "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/dateObserved"
@@ -194,7 +189,12 @@
     "id",
     "type",
     "address",
+    "dataProvider",
     "dateObserved",
+    "dateObservedFrom",
+    "dateObservedTo",
+    "intensity",
+    "itemType",
     "location"
   ]
 }

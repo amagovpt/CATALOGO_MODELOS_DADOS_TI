@@ -21,7 +21,7 @@
     "so2"               : {"type": "Property", "value": 3, "unitCode": "GQ"},
     "c6h6"              : {"type": "Property", "value": 0.6, "unitCode": "GQ"},
     "co"                : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
-    "co2"               : {"type": "Property", "value": 0.4, "unitCode": "GQ"},
+    "co2"               : {"type": "Property", "value": 0.4, "unitCode": "GP"},
     "temperature"       : {"type": "Property", "value": 22.2, "unitCode": "CEL"},
     "windDirection"     : {"type": "Property", "value": 180, "unitCode": "DD"},
     "windSpeed"         : {"type": "Property", "value": 0.64},

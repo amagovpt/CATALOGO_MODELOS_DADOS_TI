@@ -28,13 +28,13 @@
         "type" : "Property",
         "value": {"addressCountry": "Portugal", "addressRegion": "Grande Lisboa", "addressSubRegion":"Grande Lisboa", "district": "Lisboa",  "addressLocality": "Lisboa"}
     },
-    "length": {"type": "Property", "value": 0.8, "unitCode": "KMT"},
+    "length": {"type": "Property", "value": 0.37, "unitCode": "KMT"},
     "pavementType": {"type": "Property", "value": "Asphalt"},
     "pavementCondition": {"type": "Property", "value": 4},
     "lastMaintenance": { "type": "Property", "value": {"@type": "DateTime", "@value": "2023-05-15T00:00:00.00Z"} },
     "nextMaintenance": { "type": "Property", "value": {"@type": "DateTime", "@value": "2025-05-15T00:00:00.00Z"} },
     "connectsTo": { "type": "Property", "value": ["urn:cml:CycleLane:CL-002", "urn:cml:CycleLane:CL-003"] },
-    "nearBy": { "type": "Property", "value": ["DrinkingWaterFountain33"] },
+    "nearBy": { "type": "Property", "value": ["urn:cml:DrinkingWaterFountain:33"] },
     "image": {
         "type" : "Property",
         "value": [
@@ -51,7 +51,7 @@
     "minAltitude": {"type": "Property", "value": 97, "unitCode": "MTR"},
     "maxAltitude": {"type": "Property", "value": 100, "unitCode": "MTR"},
     "beginLifespanVersion": {"type": "Property", "value": "2021-05-01T00:00:00Z"},
-    "status": {"type": "Property", "value": "excellent"},
+    "status": {"type": "Property", "value": "good"},
     "createdAt": {"type": "Property", "value":"2020-05-01T00:00:00Z"},
     "modifiedAt": {"type": "Property", "value":"2025-04-10T12:00:00Z"},
     "owner": { "type": "Relationship", "object": ["urn:ngsi-ld:CMLisboa"] },

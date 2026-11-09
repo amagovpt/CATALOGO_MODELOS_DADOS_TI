@@ -17,13 +17,13 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | address    | Object          | Morada associada ao local | Inclui município, região, rua, número e código postal, entre outros. Modelo: [https://schema.org/address](https://schema.org/address). A localidade tem de ser coincidente com o município. As regiões correspondem às NUTS 2 conforme nomenclatura do INE |
 | address.addressCountry| String | O país | Por exemplo, Portugal. Modelo: Modelo: [https://schema.org/addressCountry](https://schema.org/addressCountry) |
 | address.addressLocality| String | A localidade tem de ser coincidente com o município | Este campo é obrigatório quando o campo 'address' é obrigatório. Modelo: [https://schema.org/addressLocality](https://schema.org/addressLocality) |
-| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira'
+| address.addressRegion | String | A região em que se situa a localidade, e que fica no país | Este campo é obrigatório quando o campo 'address' é obrigatório. As regiões correspondem às NUTS 2 conforme nomenclatura do INE. Valores possíveis: 'Norte', 'Centro', 'Oeste e Vale do Tejo', 'Grande Lisboa', 'Península de Setúbal', 'Alentejo', 'Algarve', 'Região Autónoma dos Açores', 'Região Autónoma da Madeira' |
 | address.district | String | Um distrito é um tipo de divisão administrativa | Este campo é obrigatório quando o campo 'address' é obrigatório. Valores possíveis: 'Açores', 'Aveiro', 'Beja', 'Braga', 'Bragança', 'Castelo Branco', 'Coimbra', 'Évora', 'Faro', 'Guarda', 'Madeira', 'Leiria', 'Lisboa', 'Portalegre', 'Porto', 'Santarém', 'Setúbal', 'Viana do Castelo', 'Vila Real', 'Viseu' |
 | address.postalCode | String | Código postal | Modelo: [https://schema.org/postalCode](https://schema.org/postalCode) |
 | address.streetAddress | String | Endereço da rua | Modelo: [https://schema.org/streetAddress](https://schema.org/streetAddress)  |
 | address.streetNr | String | Número de polícia | Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | alternateName       | String          | Nome alternativo para a área de medida  |  Ex: nome comum ou local da localização  |
-| apparentEnergyExport  | Object    | 
+| apparentEnergyExport | Object | Energia aparente exportada por fase | Valores de L1, L2 e L3. Normalmente expressa em kilovolt-ampere-hora (KVAH)...|
 | apparentPower    | Object    | Potência aparente consumida por fase  | Valores de L1, L2 e L3 que representam valores para a fase 1, 2 e 3, respetivamente. Normalmente expressa em volt-ampere (VA). Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue) | 
 | areaServed | String | A área geográfica onde é prestado um serviço ou oferecido um artigo | Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | current    | Object    | Corrente eléctrica por fase  | Valores de L1, L2, L3 e N que representam valores para a fase 1, 2, 3 e neutra, respetivamente. Normalmente expressa em ampere (AMP). Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue) | 
@@ -39,7 +39,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | frequency | Number    | Frequência do circuito    | Normalmente expressa em hertz (HTZ) Modelo: [https://schema.org/Number](https://schema.org/Number) |
 | location | GeoJSON | Referência Geojson para a entidade |  Valores possíveis: 'Point', 'LineString', 'Polygon', 'MultiPoint', 'MultiLineString' ou 'MultiPolygon'. O mesmo que [Geometry](https://inspire.ec.europa.eu/codelist/GeometrySpecificationValue) |
 | name | String | Nome do objeto |   Modelo: [https://schema.org/Text](https://schema.org/Text)   |
-| phaseToPhaseVoltage   | Object    | Valor da voltagem entre fases | Valores medidos: L12, L23 e L31, i.e. valor da tensão da fase 1 para a fase 2, da fase 2 para a fase 3 e daa fase 3 para a fase 1, respetivamente. Normalmente expressa em volts (VLT). odelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue)   |
+| phaseToPhaseVoltage   | Object    | Valor da voltagem entre fases | Valores medidos: L12, L23 e L31, i.e. valor da tensão da fase 1 para a fase 2, da fase 2 para a fase 3 e daa fase 3 para a fase 1, respetivamente. Normalmente expressa em volts (VLT). Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue)   |
 | phaseType | String    | Tipo de fase, único   | Enumerado: <br>- 'singlePhase', <br>- 'threePhase. Modelo: [https://schema.org/Text](https://schema.org/Text)|
 | phaseVoltage  | Object    | Tensão entre cada condutor de fase e neutro   | Valores medidos: L1, L2 e L3.  Normalmente expressa em volts (VLT). Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue)   |
 | powerFactor   | Object    | Fator de potência para cada fase   | Valores medidos: L1, L2 e L3.  Modelo: [https://schema.org/StructuredValue](https://schema.org/StructuredValue)   |
@@ -49,7 +49,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | totalActiveEnergyExport    | Number    | Energia total exportada |  Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
 | totalActiveEnergyImport    | Number    | Energia total consumida |  Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
 | totalActivePower    | Number    | Potência ativa total consumida |  Normalmente expressa em watts (WTT). Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
-| totalApparentPower    | Number    | Potência aparente total consumida |  Normalmente expressa em volt-ampere (VA). PowerModelo: [https://schema.org/Number](https://schema.org/Number)   | 
+| totalApparentPower    | Number    | Potência aparente total consumida |  Normalmente expressa em volt-ampere (VA). Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
 | totalReactiveEnergyExport    | Number    | Total da energia reactiva de frequência  exportada |  Normalmente expressa em kilovolt-ampere-hora reactiva (KVARH). Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
 | totalReactiveEnergyImport    | Number    | Total da energia reactiva consumida |  Normalmente expressa em kilovolt-ampere-hora reactiva (KVARH). Modelo: [https://schema.org/Number](https://schema.org/Number)   | 
 
@@ -60,10 +60,14 @@ Os atributos obrigatórios são:
 - `id`
 - `type`
 - `address`
-- `generatorType`
+- `dataProvider`
+- `dateObserved` (*)
+- `dateObservedFrom` (*)
+- `dateObservedTo` (*)
 - `location`
-- `installedCapacity`
-- `connectionType`
+- `phaseType`
+
+(*) É obrigatório `dateObserved` ou, em alternativa, o par `dateObservedFrom` e `dateObservedTo`.
 
 ## Notas
 

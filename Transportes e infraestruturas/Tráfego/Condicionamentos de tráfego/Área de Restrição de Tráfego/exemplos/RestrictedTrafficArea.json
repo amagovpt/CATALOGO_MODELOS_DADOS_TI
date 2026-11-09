@@ -31,7 +31,14 @@
     },
     "coordinateSystem": "EPSG:4326"
   },
-  "name": {"type": "Property", "value": "Corte de estrada"},
+  "name": {
+    "type": "Property",
+    "value": "Corte de estrada"
+  },
+  "dataProvider": {
+    "type": "Property",
+    "value": "CMLisboa"
+  },
   "notAllowedVehicleType": { "type": "Property", "value": ["anyVehicle"] },
   "restrictionValidityHours": {
     "type" : "Property"                       ,

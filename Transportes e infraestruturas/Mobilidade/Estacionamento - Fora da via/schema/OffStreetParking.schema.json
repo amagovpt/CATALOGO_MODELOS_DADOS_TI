@@ -118,7 +118,8 @@
           },
           "minItems": 1,
           "uniqueItems": true,
-          "description": "Property. Categories of the off-street parking site."
+          "description": "Property. Categories of the off-street parking site.",
+          "examples": [["underground", "public", "feeCharged", "mediumTerm", "barrierAccess"]]
         },
         "chargeType": {
           "type": "array",
@@ -132,6 +133,12 @@
           "minItems": 1,
           "uniqueItems": true,
           "description": "Property. Types of charge applied by the parking site."
+        },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity.",
+          "examples": ["CMPorto"]
         },
         "extCategory": {
           "type": "array",
@@ -242,6 +249,12 @@
             "wardNum": { "type": "number" }
           },
           "description": "Property. Municipal information associated with the observation."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. The name of this item.",
+          "examples": ["Parque de estacionamento Trindade"]
         },
         "observationDateTime": {
           "type": "string",
@@ -384,12 +397,14 @@
           },
           "minItems": 1,
           "uniqueItems": true,
-          "description": "Property. Current statuses of the parking site."
+          "description": "Property. Current statuses of the parking site.",
+          "examples": [["open", "spacesAvailable"]]
         },
         "totalSpotNumber": {
           "type": "integer",
           "minimum": 0,
-          "description": "Property. Total number of spaces offered by the parking site."
+          "description": "Property. Total number of spaces offered by the parking site.",
+          "examples": [414]
         },
         "twoWheelerSlots": {
           "$ref": "#/$defs/slotAvailability",
@@ -427,5 +442,15 @@
       }
     }
   ],
-  "required": ["id", "type", "address", "location"]
+  "required": [
+    "id",
+    "type",
+    "address",
+    "category",
+    "dataProvider",
+    "location",
+    "name",
+    "status",
+    "totalSpotNumber"
+  ]
 }

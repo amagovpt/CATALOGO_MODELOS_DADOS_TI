@@ -108,6 +108,22 @@
           "minItems": 1,
           "uniqueItems": true
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity.",
+          "examples": [
+            "CMLisboa"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. The name of this item.",
+          "examples": [
+            "Corte de estrada"
+          ]
+        },
         "notAllowedVehicleType": {
           "type": "array",
           "description": "Property. Vehicle type(s) not allowed to cross the restricted traffic area",
@@ -215,7 +231,9 @@
     "type",
     "address",
     "category",
+    "dataProvider",
     "location",
+    "name",
     "restrictionValidityHours",
     "validityEndDate",
     "validityStartDate"

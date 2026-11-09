@@ -152,6 +152,10 @@
             "working"
           ]
         },
+        "name": {
+          "type": "string",
+          "description": "Property. The name of the charging station. Model:'https://schema.org/Text'. "
+        },
         "network": {
           "type": "string",
           "description": "Property. The name of the Network, with that the operator cooperates. Model:'https://schema.org/Text'. "
@@ -213,6 +217,10 @@
           "type": "string",
           "format": "uri",
           "description": "Relationship. URI pointing to the data-descriptor entity"
+        },
+        "dataProvider":{
+          "type": "string",
+          "description": "Property. Name of provider of the data entity"
         },
         "powerConsumption": {
           "type": "number",
@@ -311,6 +319,10 @@
   "required": [
     "id",
     "type",
+    "name",
+    "operator",
+    "dataProvider",
+    "status",
     "address",
     "location",
     "socketType",

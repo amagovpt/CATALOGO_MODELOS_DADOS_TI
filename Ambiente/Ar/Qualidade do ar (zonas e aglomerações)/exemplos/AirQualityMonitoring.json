@@ -1,28 +1,30 @@
 {
   "id": "urn:apa:AirQualityMonitoring:id:334525717",
   "type": "AirQualityMonitoring",
+  "name": {"type": "Property", "value": "Estação de Entrecampos"},
+  "observationDateTime": {"type": "Property", "value": "2024-10-20T04:00:00Z"},
   "address": {
-    "type" : "Property",
+    "type": "Property",
     "value": {
-      "addressCountry" : "Portugal",
+      "addressCountry": "Portugal",
       "addressLocality": "Lisboa",
-      "district"       : "Lisboa",
-      "addressRegion"  : "Grande Lisboa",
-      "streetAddress"  : "Praça de Entrecampos"
+      "addressRegion": "Grande Lisboa",
+      "district": "Lisboa",
+      "streetAddress": "Praça de Entrecampos"
     }
   },
   "location": {
-    "type"            : "GeoProperty",
-    "value"           : { "type": "Point", "coordinates": [-9.149012, 38.748566] },
-    "altitude"        : {"type": "Property", "value": 86, "unitCode": "MTR"},
+    "type": "GeoProperty",
+    "value": {"type": "Point", "coordinates": [-9.149012, 38.748566]},
+    "altitude": {"type": "Property", "value": 86, "unitCode": "MTR"},
     "coordinateSystem": "EPSG:4258"
   },
   "airQualityIndex": {"type": "Property", "value": 8},
-  "airQualityLevel": {"type": "Property", "value": "GOOD"},
+  "airQualityLevel": {"type": "Property", "value": "Good"},
   "airTemperatureTSA": {
-    "type"    : "Property",
-    "value"   : {"avgOverTime": 18.1, "minOverTime": 7.7, "maxOverTime": 30.8, "instValue": 20.8},
-    "unitCode": "CC"
+    "type": "Property",
+    "value": {"avgOverTime": 18.1, "minOverTime": 7.7, "maxOverTime": 30.8, "instValue": 20.8},
+    "unitCode": "CEL"
   },
   "alternateName": {"type": "Property", "value": "AQM sampling"},
   "aqiMajorPollutant": {"type": "Property", "value": "no2"},
@@ -57,7 +59,6 @@
     "value"   : {"avgOverTime": 65.8, "minOverTime": 4.0, "maxOverTime": 88.0, "instValue": 4.0},
     "unitCode": "GQ"
   },
-  "observationDateTime": { "type": "Property", "value": {"@type": "DateTime", "@value": "2024-12-13T00:00:00Z"} },
   "pm10TSA": {
     "type"    : "Property",
     "value"   : {"avgOverTime": 17.3, "minOverTime": 10.3, "maxOverTime": 63.1, "instValue": 19.0},

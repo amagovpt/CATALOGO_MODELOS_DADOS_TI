@@ -61,6 +61,12 @@
           },
           "required": ["addressSubRegion", "addressRegion", "district"]
         },
+         "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["CMLisboa"]
+        },
         "type": {
           "type"       : "string",
           "const"      : "CycleNetwork",
@@ -210,5 +216,17 @@
       ]
     }
   },
-  "required": ["id", "type", "name", "address", "boundingBox", "beginLifespanVersion", "owner", "totalLength"]
+  "required": [
+    "id",
+    "type",
+    "address",
+    "beginLifespanVersion",
+    "dataProvider",
+    "length",
+    "location",
+    "name",
+    "owner",
+    "refNetwork",
+    "typology"
+  ]
 }

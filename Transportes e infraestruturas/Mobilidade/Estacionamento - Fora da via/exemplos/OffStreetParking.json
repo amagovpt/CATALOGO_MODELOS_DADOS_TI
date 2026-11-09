@@ -1,34 +1,41 @@
 {
   "id": "urn:cmporto:OffStreetParking:porto-ParkingLot-23889",
   "type": "OffStreetParking",
-  "extCategory": { "type": "Property", "value": ["A"] },
-  "layout": { "type": "Property", "value": ["multiLevel"] },
   "name": {"type": "Property", "value": "Parque de estacionamento Trindade"},
+  "category": {
+    "type": "Property",
+    "value": ["underground", "public", "feeCharged", "mediumTerm", "barrierAccess"]
+  },
+  "status": {"type": "Property", "value": ["open", "spacesAvailable"]},
+  "dataProvider": {"type": "Property", "value": "CMPorto"},
+  "extCategory": {"type": "Property", "value": ["A"]},
+  "layout": {"type": "Property", "value": ["multiLevel"]},
   "requiredPermit": {"type": "Property", "value": []},
-  "allowedVehicleType": { "type": "Property", "value": ["car"] },
+  "allowedVehicleType": {"type": "Property", "value": ["car"]},
   "availableSpotNumber": {"type": "Property", "value": 132, "observedAt": "2025-09-21T12:00:00Z"},
   "totalSpotNumber": {"type": "Property", "value": 414},
   "occupiedSpotNumber": {"type": "Property", "value": 282},
   "occupancyModified": {"type": "Property", "value": "2025-09-21T12:00:00Z"},
   "occupancy": {"type": "Property", "value": 0.68},
   "location": {
-    "type" : "GeoProperty",
-    "value": { "type": "Point", "coordinates": [-8.60961198807, 41.150691773], "coordinateSystem": "EPSG:4326" }
+    "type": "GeoProperty",
+    "value": {"type": "Point", "coordinates": [-8.60961198807, 41.150691773]},
+    "coordinateSystem": "EPSG:4258"
   },
-  "chargeType": { "type": "Property", "value": ["temporaryPrice"] },
+  "chargeType": {"type": "Property", "value": ["temporaryPrice"]},
   "address": {
-    "type" : "Property",
+    "type": "Property",
     "value": {
+      "addressCountry": "Portugal",
       "addressLocality": "Porto",
-      "addressCountry" : "Portugal",
-      "addressRegion"  : "Norte",
-      "district"       : "Porto",
-      "streetAddress"  : "Rua de Fernandes Tomás"
+      "addressRegion": "Norte",
+      "district": "Porto",
+      "streetAddress": "Rua de Fernandes Tomás"
     }
   },
   "maximumParkingDuration": {"type": "Property", "value": "PT8H"},
   "description": {
-    "type" : "Property",
+    "type": "Property",
     "value": "Municipal car park located near the Trindade metro station and the Town Hall"
   },
   "vehicleEntranceCount": {"type": "Property", "value": 28},

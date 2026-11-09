@@ -71,6 +71,18 @@
             "district"
           ]
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["E-REDES"]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. The name of this item. Model: 'https://schema.org/Text'",
+          "examples": ["Lisbon City Hall - Campo Grande Central Building"]
+        },
         "type": {
           "type": "string",
           "description": "Property. NGSI property type. It has to be ACMeasurement",
@@ -536,8 +548,13 @@
   "required": [
     "id",
     "type",
+    "address",
+    "dataProvider",
     "location",
-    "dateObserved",
     "phaseType"
+  ],
+  "anyOf": [
+    { "required": ["dateObserved"] },
+    { "required": ["dateObservedFrom", "dateObservedTo"] }
   ]
 }

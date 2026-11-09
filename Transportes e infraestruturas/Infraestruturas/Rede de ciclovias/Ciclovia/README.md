@@ -52,7 +52,7 @@ Na tabela abaixo são apresentadas as propriedades presentes no modelo de dados.
 | segregation | String | Tipo de separação existente | Enumerado: <br>- fullySegregated,<br>- hardPhysicalSeparation,<br>- softPhysicalSeparation,<br>- visualSeparationOnly,<br>- mixedTraffic. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | status | String | Estado de conservação da pista | Enumerado: <br>- excellent,<br>- good,<br>- fair,<br>- poor,<br>- critical. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | typology | String | Tipologia da pista ciclável | Enumerado:<br>- 30+Bike,<br>- one-way,<br>- two-way,<br>- contraflow,<br>- cycleLane,<br>- sharedWithPedestrians,<br>- trail,<br>- eco-trail. Modelo: [https://schema.org/Text](https://schema.org/Text) |
-| updateFrequency | String | Frequência de atualização dos dados | Ex: mensal. Modelo: [https://schema.org/Text](https://schema.org/Text) |
+| updateFrequency | String | Frequência de atualização dos dados | Ex: monthly. Modelo: [https://schema.org/Text](https://schema.org/Text) |
 | version | String | Versão do modelo dos dados | Modelo: [https://schema.org/Text](https://schema.org/Text) |
 
 ## Propriedades obrigatórias
@@ -67,6 +67,9 @@ Os atributos obrigatórios são:
 - `beginLifespanVersion`
 - `owner`
 - `refNetwork`
+- `length`
+- `typology`
+- `dataProvider`
 
 ## Notas
 

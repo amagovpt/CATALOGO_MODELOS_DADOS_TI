@@ -229,7 +229,15 @@
     "id",
     "type",
     "address",
+    "dataProvider",
+    "dateStarted",
+    "infrastructureType",
+    "interventionType",
+    "location",
     "name",
-    "location"
+    "responsibleAgent",
+    "responsibleAuthority",
+    "status",
+    "targetAsset"
   ]
 }

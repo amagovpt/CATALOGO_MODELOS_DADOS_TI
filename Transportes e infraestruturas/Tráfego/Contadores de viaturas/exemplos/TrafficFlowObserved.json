@@ -1,6 +1,7 @@
 {
     "id": "urn:ip:TrafficFlowObserved-11123232",
     "type": "TrafficFlowObserved",
+    "dataProvider": {"type": "Property", "value": "IP"},
     "address": {
         "type": "Property",
         "value": {

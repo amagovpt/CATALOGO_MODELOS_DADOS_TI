@@ -97,19 +97,35 @@
           "minimum": 0,
           "description": "Property. Average width of the parking spaces."
         },
-        "category": {
+         "category": {
           "type": "array",
           "items": {
             "type": "string",
             "enum": [
-              "blueZone", "feeCharged", "forDisabled", "forElectricalCharging",
-              "forLoadUnload", "forResidents", "free", "greenZone", "mediumTerm",
-              "onlyWithPermit", "shortTerm", "taxiStop"
+              "blueZone",
+              "feeCharged",
+              "forDisabled",
+              "forElectricalCharging",
+              "forLoadUnload",
+              "forResidents",
+              "free",
+              "greenZone",
+              "mediumTerm",
+              "onlyWithPermit",
+              "shortTerm",
+              "taxiStop"
             ]
           },
           "minItems": 1,
           "uniqueItems": true,
-          "description": "Property. Categories of the on-street parking area."
+          "description": "Property. Categories of the on-street parking area.",
+          "examples": [
+            [
+              "blueZone",
+              "shortTerm",
+              "forDisabled"
+            ]
+          ]
         },
         "chargeType": {
           "type": "array",
@@ -124,6 +140,14 @@
           "minItems": 1,
           "uniqueItems": true,
           "description": "Property. Types of charge applied by the parking site."
+        },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity.",
+          "examples": [
+            "CMCascais"
+          ]
         },
         "extraSpotNumber": {
           "type": "integer",
@@ -256,5 +280,13 @@
       }
     }
   ],
-  "required": ["id", "type", "address", "location"]
+   "required": [
+    "id",
+    "type",
+    "address",
+    "category",
+    "dataProvider",
+    "location",
+    "totalSpotNumber"
+  ]
 }

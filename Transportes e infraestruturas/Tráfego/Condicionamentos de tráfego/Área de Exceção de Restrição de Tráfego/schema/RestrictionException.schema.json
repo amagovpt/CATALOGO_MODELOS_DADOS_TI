@@ -71,6 +71,18 @@
             "district"
           ]
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["CMLisboa"]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. The name of this item. Model: 'https://schema.org/Text'",
+          "examples": ["Exceção Azinhaga da Cidade - veículos de baixas emissões"]
+        },
         "type": {
           "type": "string",
           "const": "RestrictionException",
@@ -89,7 +101,8 @@
         },
         "exceptionValidityHours": {
           "type": "string",
-          "description": "Property. Days of the week and hours in which the exception is valid. Model:'http://schema.org/openingHours' "
+          "description": "Property. Days of the week and hours in which the exception is valid. Model:'http://schema.org/openingHours' ",
+          "examples": ["Mo-Fr 08:00-18:00"]
         },
         "refVehicleModel": {
           "type": "array",
@@ -109,8 +122,9 @@
     "id",
     "type",
     "address",
-    "allowedVehicleType",
-    "refRestrictedTrafficArea",
+    "dataProvider",
+    "exceptionValidityHours",
+    "location",
     "name"
   ]
 }

@@ -71,6 +71,12 @@
             "district"
           ]
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["IP"]
+        },
         "type": {
           "type": "string",
           "const": "TrafficFlowObserved",

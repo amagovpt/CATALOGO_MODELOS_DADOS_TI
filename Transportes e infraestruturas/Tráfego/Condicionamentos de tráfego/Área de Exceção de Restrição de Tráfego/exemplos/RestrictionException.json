@@ -1,22 +1,43 @@
 {
-  "id": "urn:CML:RestrictedTrafficArea:R1",
+  "id": "urn:CML:RestrictionException:R1",
   "type": "RestrictionException",
-  "name": {"type": "Property", "value": "AzinhagaDaCidade"},
+  "name": {"type": "Property", "value": "Exceção Azinhaga da Cidade - veículos de baixas emissões"},
+  "dataProvider": {"type": "Property", "value": "CMLisboa"},
   "allowedVehicleType": {
     "type": "Property",
     "value": ["euro6,-,petrol", "-,-,electricity"]
   },
+  "exceptionValidityHours": {"type": "Property", "value": "Mo-Fr 08:00-18:00"},
   "address": {
     "type": "Property",
     "value": {
-      "addressCountry" : "Portugal"                ,
-      "addressLocality": "Lisboa"            ,
+      "addressCountry": "Portugal",
+      "addressLocality": "Lisboa",
       "addressRegion": "Grande Lisboa",
-      "district": "Lisboa"            
+      "district": "Lisboa",
+      "streetAddress": "Azinhaga da Cidade"
     }
   },
+  "location": {
+    "type": "GeoProperty",
+    "value": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [-9.159949219646393, 38.77556298191604],
+          [-9.160523467244872, 38.774990621080605],
+          [-9.160974142575753, 38.77415190581823],
+          [-9.16085420478555, 38.774208576079275],
+          [-9.160428970804844, 38.77499628804233],
+          [-9.159847454249132, 38.77549781235007],
+          [-9.159949219646393, 38.77556298191604]
+        ]
+      ]
+    },
+    "coordinateSystem": "EPSG:4326"
+  },
   "refRestrictedTrafficArea": {
-    "type" : "Relationship"                                        ,
+    "type": "Relationship",
     "object": "urn:CML:RestrictedTrafficArea:AzinhagaDaCidade"
   },
   "@context": [

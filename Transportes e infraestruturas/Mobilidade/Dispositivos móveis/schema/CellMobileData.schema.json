@@ -66,6 +66,12 @@
           "minimum": 0,
           "description": "Property. Number of distinct roaming devices that left the cell during the reporting period."
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["CMLisboa"]
+        },
         "refMobileDeviceCell": {
           "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship. Reference to the MobileDeviceCell to which the metrics apply."
@@ -95,8 +101,10 @@
     "numberOfDistinctDevicesByCountry",
     "numberOfEnteringDevices",
     "numberOfLeavingDevicesRoaming",
+    "numberOfLeavingDevices",
     "endDate",
     "startDate",
+    "dataProvider",
     "refMobileDeviceCell"
   ]
 }

@@ -59,6 +59,7 @@ Os atributos obrigatórios são:
 - `beginLifespanVersion`
 - `owner`
 - `totalLength`
+- `dataProvider`
 
 ## Notas
 

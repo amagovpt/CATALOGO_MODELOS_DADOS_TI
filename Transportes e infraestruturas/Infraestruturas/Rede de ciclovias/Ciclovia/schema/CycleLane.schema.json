@@ -80,11 +80,7 @@
               "description": "The administrative district in which the locality is located"
             }
           },
-          "required": [
-            "addressSubRegion",
-            "addressRegion",
-            "district"
-          ]
+          "required": ["addressLocality", "addressRegion", "addressSubRegion", "district"]
         },
         "type": {
           "type": "string",
@@ -194,6 +190,12 @@
           ],
           "description": "Property. Type of pavement used on the cycle lane."
         },
+        "dataProvider": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Property. A sequence of characters identifying the provider of the harmonised data entity. Model: 'https://schema.org/Text'",
+          "examples": ["CMLisboa"]
+        },
         "refNetwork": {
           "$ref": "https://smart-data-models.github.io/data-models/common-schema.json#/definitions/EntityIdentifierType",
           "description": "Relationship. Cycle network to which the cycle lane belongs."
@@ -255,6 +257,9 @@
     "location",
     "beginLifespanVersion",
     "owner",
-    "refNetwork"
+    "refNetwork",
+    "length",
+    "typology",
+    "dataProvider"
   ]
 }
