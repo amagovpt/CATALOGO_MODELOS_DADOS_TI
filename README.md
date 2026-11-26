@@ -21,7 +21,7 @@ O CNMD está organizado por áreas temáticas e, para cada tema existe:
 - um ficheiro `README.md`, que descreve o modelos (ou modelos) usado na área temática;
 - uma directoria `exemplos` que contém um ou mais exemplos de uso do(s) modelo(s);
 - uma directoria `schema` que contém os JSON Schemas que permitem validar o(s) modelo(s);
-- um ficheiro 'Granularidades e frequência de entrega CNMD.xlsx' com a granularidade espacial, temporal e frequência de atualização dos dados a partilhar com a ARTE.
+- um ficheiro [Granularidades e frequência de entrega CNMD](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/blob/main/Granularidades%20e%20frequ%C3%AAncia%20de%20entrega%20CNMD.xlsx) com a granularidade espacial, temporal e frequência de atualização dos dados a partilhar com a ARTE.
 
 ## FAQs
 
