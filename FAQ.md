@@ -207,6 +207,15 @@ Não é admissível atribuir valores inválidos, artificiais ou inconsistentes a
 - Confirmar se o modelo de dados está corretamente interpretado;
 - Em caso de dúvida, contactar a equipa responsável pelo modelo antes de submeter os dados.
 
+Podem ocorrer situações em que este aspeto não se deve a uma lacuna da origem de dados, mas sim a diferentes parâmetros recolhidos por sensores (e.g., pode haver sensores de qualidade doa ar que recolhem NO2 e outros não) ou propriedades que não estão disponíveis dependendo do ERP da entidade (e.g., um determinado ERP não fornece informação de um determinado empreiteiro responsável por uma intervenção no espaço público)
+
+Nesses casos deverão ser considerados os seguintes valores
+
+| Situação | Valor a considerar |
+|-----------|------------------|
+| Valor não disponível | ND |
+| Campo numérico obrigatório | 999999 |
+
 **Exemplos de valores inválidos:**
 
 ```json 
