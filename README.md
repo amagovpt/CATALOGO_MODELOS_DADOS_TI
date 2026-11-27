@@ -23,7 +23,7 @@ O CNMD está organizado por áreas temáticas e, para cada tema existe:
 - uma directoria `schema` que contém os JSON Schemas que permitem validar o(s) modelo(s);
 - um ficheiro [Granularidades e frequência de entrega CNMD](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/blob/main/Granularidades%20e%20frequ%C3%AAncia%20de%20entrega%20CNMD.xlsx) com a granularidade espacial, temporal e frequência de atualização dos dados a partilhar com a ARTE.
 - um ficheiro com o [Código da Divisão Administrativa/Revisão 2025 do INE](https://github.com/amagovpt/CATALOGO_MODELOS_DADOS_TI/blob/main/C%C3%B3digo%20da%20Divis%C3%A3o%20Administrativa_Revis%C3%A3o_2025_v%2009-07-2025_Final_SMI_Outubro_2.xlsx) que contém a designação oficial dos municípios. Estas designações deverão ser utilizadas nos enumerados da propriedade address.addressLocality.
-- Está disponível um validador de schemas [Validador de schemas do CNMD](https://github.com/amagovpt/VALIDADOR_MODELOS_DADOS_CNMD/tree/66b03173fa5b1aab0de21c3477b9dcf8574db1e0) que deve ser utilizado para fazer uma validação prévia dos schemas do CNMD antes do envio dos conjuntos de dados para a ARTE.
+- Está disponível um [validador de schemas do CNMD](https://github.com/amagovpt/VALIDADOR_MODELOS_DADOS_CNMD/tree/66b03173fa5b1aab0de21c3477b9dcf8574db1e0) que deve ser utilizado para fazer uma validação prévia dos schemas do CNMD antes do envio dos conjuntos de dados para a ARTE.
 
 ## FAQs
 
