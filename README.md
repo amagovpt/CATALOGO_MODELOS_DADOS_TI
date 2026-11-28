@@ -1,8 +1,6 @@
-# Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes
+<p align="center"><img src="ENTI_LOGOTIPO H.png"alt="Logótipo ENTI — Estratégia Nacional de Territórios Inteligentes." width="500" length= "50"/>
 
-<p align="center">
-  <img src="Logo_ARTE.png" alt="ARTE" width="180">
-</p>
+# Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-em%20evolu%C3%A7%C3%A3o-blue" alt="Estado: em evolução">
@@ -30,3 +28,10 @@ O CNMD está organizado por áreas temáticas e, para cada tema existe:
 A área de **[FAQ](FAQ.md)** do Catálogo Nacional de Modelos de Dados para os Territórios Inteligentes foi criada para apoiar as entidades e utilizadores na correta adequação dos dados que pretendem disponibilizar aos modelos publicados neste catálogo. Aqui encontrará esclarecimentos práticos sobre conceitos, regras e procedimentos que garantem uma aplicação consistente, interoperável e alinhada com as orientações definidas.
 
 O Catálogo Nacional de Modelos de Dados é um instrumento em **evolução contínua**, em permanente melhoria e expansão. Por esse motivo, também as perguntas frequentes são atualizadas de forma dinâmica, acompanhando a maturidade do catálogo, as necessidades das entidades e os desafios que surgem na adoção dos modelos.
+
+<p align="center">
+<img src="BARRA_PRR.png" alt="drawing" width="500" length= "100"/>
+</p>
+<p align="center">
+<img src="Logotipo_ARTE__Horizontal_cor_pt.png" alt="drawing" width="200" length= "30"/>
+</p>
